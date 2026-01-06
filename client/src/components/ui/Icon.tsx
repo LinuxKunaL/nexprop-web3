@@ -1,12 +1,12 @@
-import { MaterialIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
 
 type IconProps = {
-  name: React.ComponentProps<typeof MaterialIcons>["name"];
+  name: React.ComponentProps<typeof MaterialCommunityIcons>["name"];
   size?: number;
   color?: string;
 };
 
 export default function Icon({ name, size = 24, color = "black" }: IconProps) {
-  return <MaterialIcons name={name} size={size} color={color} />;
+  return <MaterialCommunityIcons name={name} size={size} color={color} />;
 }

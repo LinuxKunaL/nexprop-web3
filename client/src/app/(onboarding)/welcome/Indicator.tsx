@@ -14,11 +14,11 @@ export default function Indicator({ translateX }: { translateX: number }) {
     <View testID="indicator" className="flex flex-row mb-2">
       <Animated.View
         style={[animatedStyles]}
-        className="h-1 w-9 bg-card-secondary-dark m-1 rounded-full absolute z-10"
+        className="h-1 w-9 dark:bg-card bg-card-secondary-dark m-1 rounded-full absolute z-10"
       />
-      <View className="h-1 w-9 bg-gray-300 m-1 rounded-full" />
-      <View className="h-1 w-9 bg-gray-300 m-1 rounded-full" />
-      <View className="h-1 w-9 bg-gray-300 m-1 rounded-full" />
+      <View className="h-1 w-9 dark:bg-gray-600 bg-gray-300 m-1 rounded-full" />
+      <View className="h-1 w-9  dark:bg-gray-600 bg-gray-300 m-1 rounded-full" />
+      <View className="h-1 w-9  dark:bg-gray-600 bg-gray-300 m-1 rounded-full" />
     </View>
   );
 }

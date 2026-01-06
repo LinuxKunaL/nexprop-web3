@@ -1,15 +1,15 @@
 import AuthProvider from "@providers/AuthProvider";
 import FontsProvider from "@providers/FontsProvider";
 import StyleProvider from "@providers/StyleProvider";
-import ThemeSwitch from "@providers/ThemeSwitch";
+import ThemeProvider from "@providers/ThemeProvider";
 
 export function AppProviders({ children }: { children: React.ReactNode }) {
   return (
     <AuthProvider>
       <FontsProvider>
-        {/* <ThemeSwitch> */}
+        <ThemeProvider>
           <StyleProvider>{children}</StyleProvider>
-        {/* </ThemeSwitch> */}
+        </ThemeProvider>
       </FontsProvider>
     </AuthProvider>
   );

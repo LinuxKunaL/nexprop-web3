@@ -12,6 +12,9 @@ import Animated, {
   FadeOut,
 } from "react-native-reanimated";
 import Indicator from "./Indicator";
+import { useRouter } from "expo-router";
+import { colors } from "src/constants/theme";
+import { useTheme } from "@providers/ThemeProvider";
 
 type TOnboardingSlides = {
   id: number;
@@ -22,17 +25,19 @@ type TOnboardingSlides = {
 
 export default function index() {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
+  const { theme } = useTheme();
   const translateX = useSharedValue<number>(0);
+  const router = useRouter();
 
   const onboardingSlides: TOnboardingSlides[] = [
     {
       id: 1,
       title: (
         <React.Fragment>
-          <Text className="font-sans font-medium text-2xl text-center text-card-secondary-dark">
+          <Text className="font-sans font-medium text-2xl text-center dark:text-card text-card-secondary-dark">
             Find best place to stay in{" "}
           </Text>
-          <Text className="text-card-dark font-bolds font-semibold text-2xl text-center">
+          <Text className="dark:text-card text-card-dark font-bolds font-semibold text-2xl text-center">
             Good price 😊
           </Text>
         </React.Fragment>
@@ -44,10 +49,10 @@ export default function index() {
       id: 2,
       title: (
         <React.Fragment>
-          <Text className="font-sans font-medium text-2xl text-center text-card-secondary-dark">
+          <Text className="font-sans font-medium text-2xl text-center dark:text-card text-card-secondary-dark">
             Safe Payments with Escrow{" "}
           </Text>
-          <Text className="text-card-dark font-bolds font-semibold text-2xl text-center">
+          <Text className="dark:text-card text-card-dark font-bolds font-semibold text-2xl text-center">
             In secure way 🔒
           </Text>
         </React.Fragment>
@@ -60,10 +65,10 @@ export default function index() {
       id: 3,
       title: (
         <React.Fragment>
-          <Text className="font-sans font-medium text-2xl text-center text-card-secondary-dark">
+          <Text className="font-sans font-medium text-2xl text-center dark:text-card text-card-secondary-dark">
             Find Properties by Location.{" "}
           </Text>
-          <Text className="text-card-dark font-bolds font-semibold text-2xl text-center">
+          <Text className="dark:text-card text-card-dark font-bolds font-semibold text-2xl text-center">
             Via GPS📍
           </Text>
         </React.Fragment>
@@ -80,11 +85,13 @@ export default function index() {
     if (currentSlide < onboardingSlides.length - 1) {
       translateX.value += 19.3;
       setCurrentSlide(currentSlide + 1);
+    } else {
+      router.navigate("/login");
     }
   };
 
   return (
-    <View className="h-screen g-primary" testID="page">
+    <View className="h-screen" testID="page">
       <StatusBar
         barStyle="light-content"
         backgroundColor="transparent"
@@ -100,7 +107,7 @@ export default function index() {
         <CurrentImage
           width={"100%"}
           height={"100%"}
-          fill="#fff"
+          fill={theme == "dark" ? colors["background-dark"] : colors.card}
           preserveAspectRatio="xMidYMid slice"
         />
       </Animated.View>
@@ -128,9 +135,10 @@ export default function index() {
             key={`desc-${currentSlide}`}
             entering={FadeIn}
             exiting={FadeOut}
-            className="text-center text-base font-sans text-muted mt-4 mb-8 px-10"
+            className="text-center text-base font-sans dark:text-muted-dark text-muted mt-4 mb-8 px-10"
             testID="intro-description"
           >
+            {/* {theme} */}
             {onboardingSlides[currentSlide]?.description}
           </Animated.Text>
           <Button

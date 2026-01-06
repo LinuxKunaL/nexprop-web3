@@ -1,6 +1,6 @@
 import { AppProviders } from "@providers/index";
+import ThemeToggleButton from "@ui/ThemeToggleButton";
 import { Stack } from "expo-router";
-import { View } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function RootLayout() {
@@ -8,6 +8,7 @@ export default function RootLayout() {
     <SafeAreaProvider>
       <AppProviders>
         <Stack screenOptions={{ headerShown: false }} />
+        <ThemeToggleButton />
       </AppProviders>
     </SafeAreaProvider>
   );
