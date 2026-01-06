@@ -4,7 +4,10 @@
   "description": "Nexprop Application ",
   "scripts": {
     "start:app": "cd client && npm run start",
-    "start:app:android": "cd client && npm run android"
+    "start:app:mirror": "scrcpy",
+    "start:app:android": "cd client && npm run android",
+    "install:client:packages": "cd client && npm install",
+    "install:server:packages": "cd server && npm install"
   },
   "keywords": [],
   "author": "",

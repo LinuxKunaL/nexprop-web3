@@ -1,4 +1,8 @@
 .vscode
-/client/node_modules
-/client/.env
-/server/node_modules
+
+*.env
+*.log
+*node_modules
+*dist
+
+.DS_Store
