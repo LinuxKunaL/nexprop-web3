@@ -13,7 +13,7 @@ import Animated, {
 } from "react-native-reanimated";
 import Indicator from "./Indicator";
 
-type IntroType = {
+type TOnboardingSlides = {
   id: number;
   title: React.ReactNode;
   image: React.FC<SvgProps>;
@@ -21,21 +21,21 @@ type IntroType = {
 };
 
 export default function index() {
-  const [currentIntro, setCurrentIntro] = useState<number>(0);
+  const [currentSlide, setCurrentSlide] = useState<number>(0);
   const translateX = useSharedValue<number>(0);
 
-  const intro: IntroType[] = [
+  const onboardingSlides: TOnboardingSlides[] = [
     {
       id: 1,
       title: (
-        <>
+        <React.Fragment>
           <Text className="font-sans font-medium text-2xl text-center text-card-secondary-dark">
             Find best place to stay in{" "}
           </Text>
           <Text className="text-card-dark font-bolds font-semibold text-2xl text-center">
             Good price 😊
           </Text>
-        </>
+        </React.Fragment>
       ),
       image: IntroNature,
       description: "Buy, sell, and bid properties securely using blockchain.",
@@ -43,14 +43,14 @@ export default function index() {
     {
       id: 2,
       title: (
-        <>
+        <React.Fragment>
           <Text className="font-sans font-medium text-2xl text-center text-card-secondary-dark">
             Safe Payments with Escrow{" "}
           </Text>
           <Text className="text-card-dark font-bolds font-semibold text-2xl text-center">
             In secure way 🔒
           </Text>
-        </>
+        </React.Fragment>
       ),
       image: IntroEth,
       description:
@@ -59,14 +59,14 @@ export default function index() {
     {
       id: 3,
       title: (
-        <>
+        <React.Fragment>
           <Text className="font-sans font-medium text-2xl text-center text-card-secondary-dark">
             Find Properties by Location.{" "}
           </Text>
           <Text className="text-card-dark font-bolds font-semibold text-2xl text-center">
             Via GPS📍
           </Text>
-        </>
+        </React.Fragment>
       ),
       image: IntroGPS,
       description:
@@ -74,12 +74,12 @@ export default function index() {
     },
   ];
 
-  const CurrentImage = intro[currentIntro]?.image;
+  const CurrentImage = onboardingSlides[currentSlide]?.image;
 
-  const handleNextIntro = () => {
-    if (currentIntro < intro.length - 1) {
+  const handleNextSlide = () => {
+    if (currentSlide < onboardingSlides.length - 1) {
       translateX.value += 19.3;
-      setCurrentIntro(currentIntro + 1);
+      setCurrentSlide(currentSlide + 1);
     }
   };
 
@@ -91,7 +91,7 @@ export default function index() {
         translucent
       />
       <Animated.View
-        key={`image-${currentIntro}`}
+        key={`image-${currentSlide}`}
         entering={FadeIn}
         exiting={FadeOut}
         className="flex flex-1 top-0"
@@ -116,30 +116,32 @@ export default function index() {
         >
           <Indicator translateX={translateX.value} />
           <Animated.View
-            key={`title-${currentIntro}`}
+            key={`title-${currentSlide}`}
             entering={FadeIn}
             exiting={FadeOut}
             className="flex flex-col"
             testID="intro-title"
           >
-            {intro[currentIntro]?.title}
+            {onboardingSlides[currentSlide]?.title}
           </Animated.View>
           <Animated.Text
-            key={`desc-${currentIntro}`}
+            key={`desc-${currentSlide}`}
             entering={FadeIn}
             exiting={FadeOut}
             className="text-center text-base font-sans text-muted mt-4 mb-8 px-10"
             testID="intro-description"
           >
-            {intro[currentIntro]?.description}
+            {onboardingSlides[currentSlide]?.description}
           </Animated.Text>
           <Button
             variant="solid"
             size="md"
             fontSize="lg"
-            onPress={handleNextIntro}
+            onPress={handleNextSlide}
           >
-            {currentIntro === intro.length - 1 ? "Get Started" : "Next"}
+            {currentSlide === onboardingSlides.length - 1
+              ? "Get Started"
+              : "Next"}
           </Button>
         </View>
       </View>
