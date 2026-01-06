@@ -1,0 +1,13 @@
+{
+  "name": "nexprop",
+  "version": "1.0.0",
+  "description": "Nexprop Application ",
+  "scripts": {
+    "start:app": "cd client && npm run start",
+    "start:app:android": "cd client && npm run android"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

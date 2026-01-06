@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -----------------------------
+   Base styles
+--------------------------------*/
+
+.view-container {
+  @apply dark:bg-background-dark bg-background flex-1 px-5;
+}
+
+.db-r {
+  @apply border-2 border-red-500;
+}
+
+.db-g {
+  @apply border-2 border-green-500;
+}
+.db-b {
+  @apply border-2 border-blue-500;
+}
+.db-y {
+  @apply border-2 border-yellow-500;
+}
+.db-p {
+  @apply border-2 border-purple-500;
+}
+.db-o {
+  @apply border-2 border-orange-500;
+}
+.db-pk {
+  @apply border-2 border-pink-500;
+}
