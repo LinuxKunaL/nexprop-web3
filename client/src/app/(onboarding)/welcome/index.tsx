@@ -1,4 +1,4 @@
-import { View, Text, StatusBar } from "react-native";
+import { View, Text } from "react-native";
 import IntroNature from "@assets/images/intro-nature.svg";
 import IntroEth from "@assets/images/intro-eth.svg";
 import IntroGPS from "@assets/images/intro-gps.svg";
@@ -15,6 +15,7 @@ import Indicator from "./Indicator";
 import { useRouter } from "expo-router";
 import { colors } from "src/constants/theme";
 import { useTheme } from "@providers/ThemeProvider";
+import { StatusBar } from "expo-status-bar";
 
 type TOnboardingSlides = {
   id: number;
@@ -92,11 +93,6 @@ export default function index() {
 
   return (
     <View className="h-screen" testID="page">
-      <StatusBar
-        barStyle="light-content"
-        backgroundColor="transparent"
-        translucent
-      />
       <Animated.View
         key={`image-${currentSlide}`}
         entering={FadeIn}
