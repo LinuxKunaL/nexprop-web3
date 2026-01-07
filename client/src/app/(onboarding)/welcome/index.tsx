@@ -15,7 +15,6 @@ import Indicator from "./Indicator";
 import { useRouter } from "expo-router";
 import { colors } from "src/constants/theme";
 import { useTheme } from "@providers/ThemeProvider";
-import { StatusBar } from "expo-status-bar";
 
 type TOnboardingSlides = {
   id: number;

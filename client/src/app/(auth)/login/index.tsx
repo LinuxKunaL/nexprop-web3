@@ -2,8 +2,10 @@ import { View, Text } from "react-native";
 import BuildHouse from "@assets/images/login-house-build.svg";
 import TouchableText from "@ui/TouchableText";
 import Button from "@ui/Button";
+import { useRouter } from "expo-router";
 
 export default function Login() {
+  const router = useRouter();
   return (
     <View
       className="flex-1 dark:bg-background-dark bg-background"
@@ -12,9 +14,9 @@ export default function Login() {
       <View className="" testID="building-image">
         <BuildHouse />
       </View>
-      <View testID="container" className="mt-3 gap-4">
+      <View testID="container" className="mt-3 gap-4 flex-1">
         <View testID="container-test" className="gap-4">
-          <Text className="font-semibold dark:text-foreground-dark text-foreground text-3xl">
+          <Text className="font-semibold dark:text-foreground-dark text-foreground text-2xl">
             Login Here
           </Text>
           <Text className="font-sans dark:text-muted-dark text-muted text-lg">
@@ -24,9 +26,12 @@ export default function Login() {
         </View>
         <View testID="google-button">
           <Button
-            variant="solid"
-            fontSize="lg"
             size="md"
+            fontSize="lg"
+            variant="solid"
+            onPress={() => {
+              router.navigate("/(auth)/connect-wallet");
+            }}
             icon={{ name: "google", color: "white" }}
           >
             Continue With Google

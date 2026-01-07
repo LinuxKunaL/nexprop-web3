@@ -40,10 +40,10 @@ const Button: React.FC<Props> = (props) => {
       onLongPress={handleLongPress}
       className={clsx(
         props.className,
-        "w-full items-center justify-center rounded-xl flex flex-row gap-1",
+        "w-full items-center justify-center rounded-xl flex flex-row gap-3",
         props.disabled && "opacity-70",
         props.variant === "solid" && "bg-primary",
-        props.variant === "secondary" && "bg-black border border-primary",
+        props.variant === "secondary" && "bg-card-secondary-dark",
         props.variant === "ghost" && "bg-primary/30",
         props.variant === "gray" && "bg-gray-600",
         props.size === "xs" && "p-1",
