@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import Icon from "./Icon";
+import Icon, { TIconName } from "@ui/Icon";
 import { Text, TouchableOpacity, Vibration } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
@@ -12,7 +12,7 @@ type Props = {
   onLongPress?: (params?: any) => void;
   children: string | React.ReactNode | React.ReactNode[];
   icon?: {
-    name: React.ComponentProps<typeof MaterialCommunityIcons>["name"];
+    name: TIconName;
     color?: string;
     size?: number;
   };

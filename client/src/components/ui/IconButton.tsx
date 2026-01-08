@@ -2,6 +2,7 @@ import React from "react";
 import { TouchableOpacity, Vibration } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { clsx } from "clsx";
+import { TIconName } from "@ui/Icon";
 
 type Props = {
   className?: string;
@@ -9,7 +10,7 @@ type Props = {
   onLongPress?: (params?: any) => void;
   variant: "primary" | "secondary" | "tertiary" | "transparent";
   size?: "xs" | "sm" | "md" | "lg";
-  name: React.ComponentProps<typeof MaterialCommunityIcons>["name"];
+  name: TIconName;
   color?: string;
   iconSize?: number;
   disabled?: boolean;
@@ -66,11 +67,7 @@ const IconButton: React.FC<Props> = ({
         className
       )}
     >
-      <MaterialCommunityIcons
-        name={name}
-        size={iconSize}
-        color={color}
-      />
+      <MaterialCommunityIcons name={name} size={iconSize} color={color} />
     </TouchableOpacity>
   );
 };

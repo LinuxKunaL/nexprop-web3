@@ -49,8 +49,8 @@ export default function BusinessDetails() {
           </Text>
           <Input placeholder="Enter your contact" />
         </View>
-        <Button variant="solid" fontSize="md" size="md">
-            Submit
+        <Button className="mt-2" variant="solid" fontSize="md" size="md">
+          Submit
         </Button>
       </View>
     </View>
