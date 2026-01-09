@@ -1,7 +1,7 @@
 import { Redirect } from "expo-router";
 
 const Index = () => {
-  return <Redirect href="/(protected)/(tabs)/home" />;
+  return <Redirect href="/splash" />;
 };
 
 export default Index;

@@ -16,7 +16,8 @@ module.exports = function (api) {
             "@assets": "./src/assets",
             "@providers":"./src/providers",
             "@states":"./src/states",
-            "@screen":"./src/app"
+            "@screen":"./src/app",
+            "@theme":"./src/constants"
           },
           extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
         },

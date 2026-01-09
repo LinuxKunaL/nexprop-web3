@@ -2,8 +2,10 @@ import { View, Text } from "react-native";
 import React from "react";
 import Input from "@ui/Input";
 import Button from "@ui/Button";
+import { useRouter } from "expo-router";
 
 export default function BusinessDetails() {
+  const router = useRouter()
   return (
     <View
       className="flex-1 dark:bg-background-dark bg-background"
@@ -49,7 +51,9 @@ export default function BusinessDetails() {
           </Text>
           <Input placeholder="Enter your contact" />
         </View>
-        <Button className="mt-2" variant="solid" fontSize="md" size="md">
+        <Button className="mt-2" variant="solid" fontSize="md" size="md" onPress={()=>{
+          router.navigate("/(protected)/(tabs)/home")
+        }}>
           Submit
         </Button>
       </View>

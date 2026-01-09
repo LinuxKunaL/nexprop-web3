@@ -11,8 +11,10 @@ export default function ThemeToggleButton() {
     <View
       style={{
         position: "absolute",
-        top: insets.top + 10,
-        right: 16,
+        // top: insets.top + 10,
+        right: "5%",
+        // left:"45%",
+        bottom:"15%",
         zIndex: 9999,
       }}
     >

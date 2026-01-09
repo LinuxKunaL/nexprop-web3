@@ -1,19 +1,21 @@
 import React from "react";
-import { TouchableOpacity, Vibration } from "react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { clsx } from "clsx";
 import { TIconName } from "@ui/Icon";
+import { TouchableOpacity, Vibration } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { useTheme } from "@providers/ThemeProvider";
+import { colors } from "@constants/theme";
 
 type Props = {
+  color?: string;
+  name: TIconName;
+  iconSize?: number;
   className?: string;
+  disabled?: boolean;
   onPress?: (params?: any) => void;
   onLongPress?: (params?: any) => void;
-  variant: "primary" | "secondary" | "tertiary" | "transparent";
   size?: "xs" | "sm" | "md" | "lg";
-  name: TIconName;
-  color?: string;
-  iconSize?: number;
-  disabled?: boolean;
+  variant: "primary" | "secondary" | "tertiary" | "transparent" | "theme";
 };
 
 const IconButton: React.FC<Props> = ({
@@ -27,6 +29,10 @@ const IconButton: React.FC<Props> = ({
   size = "sm",
   onLongPress,
 }) => {
+  const { theme } = useTheme();
+
+  const themeIconColor = theme == "dark" ? colors.card : colors["card-dark"];
+
   const handlePress = () => {
     if (disabled) return;
     Vibration.vibrate(100);
@@ -51,6 +57,8 @@ const IconButton: React.FC<Props> = ({
     secondary: "bg-muted",
     tertiary: "bg-transparent border border-primary",
     transparent: "bg-transparent",
+    theme:
+      "",
   };
 
   return (
@@ -67,7 +75,11 @@ const IconButton: React.FC<Props> = ({
         className
       )}
     >
-      <MaterialCommunityIcons name={name} size={iconSize} color={color} />
+      <MaterialCommunityIcons
+        name={name}
+        size={iconSize}
+        color={variant == "theme" ? themeIconColor : color}
+      />
     </TouchableOpacity>
   );
 };

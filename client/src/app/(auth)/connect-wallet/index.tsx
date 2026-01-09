@@ -28,7 +28,7 @@ export default function ConnectWallet() {
             size="md"
             fontSize="lg"
             onPress={()=>{
-                router.navigate("/_sitemap")
+                router.navigate("/business-details")
             }}
             variant="secondary"
             icon={{ name: "wallet", color: "white" }}
