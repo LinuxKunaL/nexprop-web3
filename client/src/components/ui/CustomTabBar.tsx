@@ -1,5 +1,5 @@
 import Icon from "./Icon";
-import { View, Text } from "react-native";
+import { View, Text, Vibration } from "react-native";
 import IconButton from "./IconButton";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { Pressable } from "react-native";
@@ -23,13 +23,14 @@ export default function CustomTabBar({ state, navigation }: BottomTabBarProps) {
   const activeRoute = state.routes[state.index].name.split("/")[0];
 
   const navigate = (path: string) => {
+    Vibration.vibrate(100)
     navigation.navigate(`${path}/index`);
   };
 
   return (
     <View
-      className="flex-row bg-card dark:bg-card-dark px-1 py-2 h-24"
-      style={{ paddingBottom: bottom }}
+      className="flex-row bg-card dark:bg-card-dark px-1 py-2 h-20 mx-4 rounded-full"
+      style={{ marginBottom: bottom }}
     >
       <Pressable
         className="flex-col gap-1 justify-center items-center flex-1"
@@ -41,7 +42,7 @@ export default function CustomTabBar({ state, navigation }: BottomTabBarProps) {
           name="home"
           color={activeRoute == "home" ? colors.primary : iconTheme()}
         />
-        <Text
+        {/* <Text
           className={clsx(
             "font-medium",
             activeRoute == "home"
@@ -50,7 +51,7 @@ export default function CustomTabBar({ state, navigation }: BottomTabBarProps) {
           )}
         >
           Home
-        </Text>
+        </Text> */}
       </Pressable>
       <Pressable
         className="flex-col gap-1 justify-center items-center flex-1"
@@ -62,7 +63,7 @@ export default function CustomTabBar({ state, navigation }: BottomTabBarProps) {
           name="magnify"
           color={activeRoute == "search" ? colors.primary : iconTheme()}
         />
-        <Text
+        {/* <Text
           className={clsx(
             "font-medium",
             activeRoute == "search"
@@ -71,10 +72,10 @@ export default function CustomTabBar({ state, navigation }: BottomTabBarProps) {
           )}
         >
           Search
-        </Text>
+        </Text> */}
       </Pressable>
       <View
-        className="justify-center items-center size-20 relative -top-11 rounded-full dark:bg-card-dark bg-card "
+        className="justify-center items-center size-auto relative -top-11s rounded-full dark:bg-card-dark bg-card"
         testID="create-property-button"
       >
         <IconButton
@@ -95,7 +96,7 @@ export default function CustomTabBar({ state, navigation }: BottomTabBarProps) {
           name="heart"
           color={activeRoute == "wishlist" ? colors.primary : iconTheme()}
         />
-        <Text
+        {/* <Text
           className={clsx(
             "font-medium",
             activeRoute == "wishlist"
@@ -104,7 +105,7 @@ export default function CustomTabBar({ state, navigation }: BottomTabBarProps) {
           )}
         >
           Wishlist
-        </Text>
+        </Text> */}
       </Pressable>
       <Pressable
         className="flex-col gap-1 justify-center items-center flex-1"
@@ -116,7 +117,7 @@ export default function CustomTabBar({ state, navigation }: BottomTabBarProps) {
           name="account"
           color={activeRoute == "profile" ? colors.primary : iconTheme()}
         />
-        <Text
+        {/* <Text
           className={clsx(
             "font-medium",
             activeRoute == "profile"
@@ -125,7 +126,7 @@ export default function CustomTabBar({ state, navigation }: BottomTabBarProps) {
           )}
         >
           Profile
-        </Text>
+        </Text> */}
       </Pressable>
     </View>
   );
