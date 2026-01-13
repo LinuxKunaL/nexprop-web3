@@ -2,6 +2,8 @@ import { View, Text, TouchableHighlight } from "react-native";
 import Icon, { TIconName } from "./Icon";
 import clsx from "clsx";
 import { Vibration } from "react-native";
+import { useTheme } from "@providers/ThemeProvider";
+import { colors } from "@constants/theme";
 
 type Props = {
   icon?: {
@@ -9,28 +11,29 @@ type Props = {
     color: string;
     size?: number;
   };
-  color?: string;
   textColor?: string;
   className?: string;
   onPress?: () => void;
   iconPlace?: "after" | "before";
-  variant?: "solid" | "graySolid" | "ghost";
+  variant?: "whiteSolid" | "graySolid" | "primarySolid" | "ghost";
   size?: "xs" | "sm" | "md" | "lg";
   children?: React.ReactNode;
 };
 
 export default function Badge({
   icon,
-  color,
   className,
   onPress,
   textColor,
   iconPlace = "before",
-  variant = "solid",
+  variant = "whiteSolid",
   size = "md",
   children,
 }: Props) {
+  const { theme } = useTheme();
   const Container = onPress ? TouchableHighlight : View;
+  const textThemed =
+    theme == "dark" ? colors["foreground-dark"] : colors.foreground;
 
   const sizeClasses = {
     xs: "px-1 py-0.3",
@@ -47,8 +50,9 @@ export default function Badge({
   };
 
   const backgroundColor = {
-    solid: "bg-white",
-    graySolid: "bg-muted-dark",
+    whiteSolid: "bg-white",
+    primarySolid:"bg-primary",
+    graySolid: "bg-[#e4e7e9] dark:bg-card-secondary-dark",
     ghost: "bg-primary/40",
   };
 
@@ -79,7 +83,7 @@ export default function Badge({
         <Text
           className={clsx("font-medium", textSizeClasses[size])}
           style={{
-            color: textColor,
+            color: textColor || textThemed,
           }}
         >
           {children}
