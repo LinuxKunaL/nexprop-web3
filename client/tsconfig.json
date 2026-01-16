@@ -5,13 +5,16 @@
     "baseUrl": ".",
     "paths": {
       "@ui/*": ["src/components/ui/*"],
+      "@components/*": ["src/components/*"],
       "@utils/*": ["src/utils/*"],
       "@hooks/*": ["src/hooks/*"],
       "@assets/*": ["src/assets/*"],
       "@providers/*": ["src/providers/*"],
       "@states/*": ["src/states/*"],
       "@screen/*": ["src/app/*"],
-      "@constants/*":["src/constants/*"]
+      "@constants/*":["src/constants/*"],
+      "@types_/*":["src/types/*"],
+      "@context/*":["src/context/*"]
     }
   },
   "include": [

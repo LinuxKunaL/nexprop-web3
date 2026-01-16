@@ -5,5 +5,5 @@ type AuthProviderProps = {
 };
 
 export default function AuthProvider({ children }: AuthProviderProps) {
-  return <>{children}</>;
+  return <React.Fragment>{children}</React.Fragment>;
 }

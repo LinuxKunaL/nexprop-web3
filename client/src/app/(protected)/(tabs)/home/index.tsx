@@ -6,7 +6,6 @@ import { colors } from "@constants/theme";
 import NotificationBell from "@ui/NotificationBell";
 import { Image, ScrollView, Text, View } from "react-native";
 import PropertyGlassCard from "@ui/PropertyGlassCard";
-import { TabBarSpacer } from "@ui/CustomTabBar";
 
 export default function index() {
   const categories = ["Department", "Office", "Bungalow", "Area", "Villa"];
@@ -175,7 +174,6 @@ export default function index() {
             </View>
           </View>
         </View>
-        <TabBarSpacer />
       </ScrollView>
     </View>
   );

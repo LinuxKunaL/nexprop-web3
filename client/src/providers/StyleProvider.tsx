@@ -6,5 +6,5 @@ type StyleProviderProps = {
 };
 
 export default function StyleProvider({ children }: StyleProviderProps) {
-  return <>{children}</>;
+  return <React.Fragment>{children}</React.Fragment>;
 }

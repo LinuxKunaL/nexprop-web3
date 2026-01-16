@@ -1,5 +1,5 @@
 import { useFonts } from "expo-font";
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 
 type FontsProviderProps = {
   children: ReactNode;
@@ -17,5 +17,5 @@ export default function FontsProvider({ children }: FontsProviderProps) {
     return null;
   }
 
-  return <>{children}</>;
+  return <React.Fragment>{children}</React.Fragment>;
 }

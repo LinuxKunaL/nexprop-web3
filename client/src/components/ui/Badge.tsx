@@ -8,11 +8,13 @@ import { colors } from "@constants/theme";
 type Props = {
   icon?: {
     name: TIconName;
-    color: string;
+    color?: string;
     size?: number;
+    themed?: boolean;
   };
   textColor?: string;
   className?: string;
+  containerClassName?: string;
   onPress?: () => void;
   iconPlace?: "after" | "before";
   variant?: "whiteSolid" | "graySolid" | "primarySolid" | "ghost";
@@ -22,17 +24,18 @@ type Props = {
 
 export default function Badge({
   icon,
-  className,
   onPress,
+  children,
+  className,
   textColor,
+  size = "md",
   iconPlace = "before",
   variant = "whiteSolid",
-  size = "md",
-  children,
+  containerClassName,
 }: Props) {
   const { theme } = useTheme();
   const Container = onPress ? TouchableHighlight : View;
-  const textThemed =
+  const foregroundThemed =
     theme == "dark" ? colors["foreground-dark"] : colors.foreground;
 
   const sizeClasses = {
@@ -51,7 +54,7 @@ export default function Badge({
 
   const backgroundColor = {
     whiteSolid: "bg-white",
-    primarySolid:"bg-primary",
+    primarySolid: "bg-primary",
     graySolid: "bg-[#e4e7e9] dark:bg-card-secondary-dark",
     ghost: "bg-primary/40",
   };
@@ -67,7 +70,10 @@ export default function Badge({
     <Container
       onPress={handleOnPress}
       activeOpacity={0.8}
-      className="rounded-md self-start overflow-hidden"
+      className={clsx(
+        "rounded-md self-start overflow-hidden",
+        containerClassName
+      )}
     >
       <View
         className={clsx(
@@ -83,13 +89,17 @@ export default function Badge({
         <Text
           className={clsx("font-medium", textSizeClasses[size])}
           style={{
-            color: textColor || textThemed,
+            color: textColor || foregroundThemed,
           }}
         >
           {children}
         </Text>
         {icon && iconPlace === "after" && (
-          <Icon name={icon.name} size={icon.size ?? 14} color={icon.color} />
+          <Icon
+            name={icon.name}
+            size={icon.size ?? 14}
+            color={icon.themed ? foregroundThemed : icon.color}
+          />
         )}
       </View>
     </Container>

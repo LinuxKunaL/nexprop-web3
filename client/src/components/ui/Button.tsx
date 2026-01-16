@@ -2,7 +2,6 @@ import React from "react";
 import clsx from "clsx";
 import Icon, { TIconName } from "@ui/Icon";
 import { Text, TouchableOpacity, Vibration } from "react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 type Props = {
   disabled?: boolean;
@@ -40,7 +39,7 @@ const Button: React.FC<Props> = (props) => {
       onLongPress={handleLongPress}
       className={clsx(
         props.className,
-        "w-full items-center justify-center rounded-xl flex flex-row gap-3",
+        "items-center justify-center rounded-xl flex flex-row gap-3",
         props.disabled && "opacity-70",
         props.variant === "solid" && "bg-primary",
         props.variant === "secondary" && "bg-card-secondary-dark",

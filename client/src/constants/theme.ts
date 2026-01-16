@@ -11,8 +11,9 @@ export const colors = {
   primary: "#14B8A6",
 
   /* ---------- DARK ---------- */
-  
-  "background-dark": "#111315", 
+
+  "background-dark": "#111315",
+  "card-dark": "#1A1C1E",
   "card-secondary-dark": "#2D2F31",
 
   "foreground-dark": "#FFFFFF",

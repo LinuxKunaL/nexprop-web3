@@ -11,13 +11,16 @@ module.exports = function (api) {
         {
           alias: {
             "@ui": "./src/components/ui",
+            "@components": "./src/components",
             "@utils": "./src/utils",
             "@hooks": "./src/hooks",
             "@assets": "./src/assets",
             "@providers":"./src/providers",
             "@states":"./src/states",
             "@screen":"./src/app",
-            "@theme":"./src/constants"
+            "@theme":"./src/constants",
+            "@types_:":"./src/types",
+            "@context:":"./src/context"
           },
           extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
         },
