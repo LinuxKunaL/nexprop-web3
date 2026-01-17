@@ -7,60 +7,60 @@ import NotificationBell from "@ui/NotificationBell";
 import { Image, ScrollView, Text, View } from "react-native";
 import PropertyGlassCard from "@ui/PropertyGlassCard";
 
+export const properties = [
+  {
+    id: 1,
+    title: "Samiksha Nivas",
+    location: "Lonikand, Pune",
+    image:
+      "https://cdn.shopify.com/s/files/1/0163/6622/files/realestate8_1024x1024.jpg?v=1665516166",
+    price: "2 ETH",
+    distance: "9 km Away",
+  },
+  {
+    id: 2,
+    title: "Green Valley Heights",
+    location: "Wakad, Pune",
+    image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994",
+    price: "3.5 ETH",
+    distance: "4 km Away",
+  },
+  {
+    id: 3,
+    title: "Skyline Residency",
+    location: "Baner, Pune",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    price: "1.8 ETH",
+    distance: "6 km Away",
+  },
+  {
+    id: 4,
+    title: "Blue Pearl Homes",
+    location: "Kharadi, Pune",
+    image: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6",
+    price: "2.2 ETH",
+    distance: "3 km Away",
+  },
+  {
+    id: 5,
+    title: "Elite Horizon",
+    location: "Hadapsar, Pune",
+    image: "https://images.unsplash.com/photo-1599423300746-b62533397364",
+    price: "4 ETH",
+    distance: "11 km Away",
+  },
+  {
+    id: 6,
+    title: "Urban Nest",
+    location: "Viman Nagar, Pune",
+    image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914",
+    price: "2.7 ETH",
+    distance: "5 km Away",
+  },
+];
+
 export default function index() {
   const categories = ["Department", "Office", "Bungalow", "Area", "Villa"];
-
-  const properties = [
-    {
-      id: 1,
-      title: "Samiksha Nivas",
-      location: "Lonikand, Pune",
-      image:
-        "https://cdn.shopify.com/s/files/1/0163/6622/files/realestate8_1024x1024.jpg?v=1665516166",
-      price: "2 ETH",
-      distance: "9 km Away",
-    },
-    {
-      id: 2,
-      title: "Green Valley Heights",
-      location: "Wakad, Pune",
-      image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994",
-      price: "3.5 ETH",
-      distance: "4 km Away",
-    },
-    {
-      id: 3,
-      title: "Skyline Residency",
-      location: "Baner, Pune",
-      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
-      price: "1.8 ETH",
-      distance: "6 km Away",
-    },
-    {
-      id: 4,
-      title: "Blue Pearl Homes",
-      location: "Kharadi, Pune",
-      image: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6",
-      price: "2.2 ETH",
-      distance: "3 km Away",
-    },
-    {
-      id: 5,
-      title: "Elite Horizon",
-      location: "Hadapsar, Pune",
-      image: "https://images.unsplash.com/photo-1599423300746-b62533397364",
-      price: "4 ETH",
-      distance: "11 km Away",
-    },
-    {
-      id: 6,
-      title: "Urban Nest",
-      location: "Viman Nagar, Pune",
-      image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914",
-      price: "2.7 ETH",
-      distance: "5 km Away",
-    },
-  ];
 
   return (
     <View

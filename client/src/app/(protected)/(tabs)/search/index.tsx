@@ -1,14 +1,18 @@
 import Icon from "@ui/Icon";
 import Badge from "@ui/Badge";
 import Input from "@ui/Input";
-import { View } from "react-native";
-import React, { useRef, useState } from "react";
+import { ScrollView, View } from "react-native";
+import React, { useRef } from "react";
 import { TSheetRef } from "@types_/bottomSheet";
 import LocationBottomSheet from "./components/LocationBottomSheet";
+import TypeBottomSheet from "./components/TypeBottomSheet";
+import AreaBottomSheet from "./components/AreaBottomSheet";
+import PriceBottomSheet from "./components/PriceBottomSheet";
+import { properties } from "../home";
+import PropertyGlassCard from "@ui/PropertyGlassCard";
 
 export default function index() {
   const filters = ["Location", "Type", "Area", "Price"] as const;
-  const [currentSheet, setCurrentSheet] = useState<string>();
 
   const locationBottomSheetRef = useRef<TSheetRef | null>(null);
   const typeBottomSheetRef = useRef<TSheetRef | null>(null);
@@ -55,7 +59,19 @@ export default function index() {
           ))}
         </View>
       </View>
+      <ScrollView bounces showsVerticalScrollIndicator={false}>
+        <View testID="properties-list" className="mb-10">
+          <View className="flex-col gap-6" testID="properties-container">
+            {properties.map((item) => (
+              <PropertyGlassCard key={item.id} item={item} />
+            ))}
+          </View>
+        </View>
+      </ScrollView>
       <LocationBottomSheet ref={locationBottomSheetRef} />
+      <TypeBottomSheet ref={typeBottomSheetRef} />
+      <AreaBottomSheet ref={areaBottomSheetRef} />
+      <PriceBottomSheet ref={priceBottomSheetRef} />
     </View>
   );
 }

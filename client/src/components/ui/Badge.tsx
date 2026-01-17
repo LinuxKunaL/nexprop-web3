@@ -14,12 +14,13 @@ type Props = {
   };
   textColor?: string;
   className?: string;
-  containerClassName?: string;
   onPress?: () => void;
+  children?: React.ReactNode;
+  textAlign?: "start" | "mid" | "end";
+  containerClassName?: string;
   iconPlace?: "after" | "before";
   variant?: "whiteSolid" | "graySolid" | "primarySolid" | "ghost";
   size?: "xs" | "sm" | "md" | "lg";
-  children?: React.ReactNode;
 };
 
 export default function Badge({
@@ -29,6 +30,7 @@ export default function Badge({
   className,
   textColor,
   size = "md",
+  textAlign,
   iconPlace = "before",
   variant = "whiteSolid",
   containerClassName,
@@ -66,6 +68,12 @@ export default function Badge({
     }
   };
 
+  const textAlignCls = {
+    start: "w-full text-left",
+    mid: "w-full text-center",
+    end: "w-full text-end",
+  };
+
   return (
     <Container
       onPress={handleOnPress}
@@ -87,7 +95,11 @@ export default function Badge({
           <Icon name={icon.name} size={icon.size ?? 14} color={icon.color} />
         )}
         <Text
-          className={clsx("font-medium", textSizeClasses[size])}
+          className={clsx(
+            "font-medium",
+            textSizeClasses[size],
+            textAlign && textAlignCls[textAlign]
+          )}
           style={{
             color: textColor || foregroundThemed,
           }}

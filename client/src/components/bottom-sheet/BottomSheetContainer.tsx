@@ -8,10 +8,15 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 type props = {
   children: React.ReactElement;
+  height?: number;
   ref: RefObject<TSheetRef | null>;
 };
 
-export default function BottomSheetContainer({ children, ref }: props) {
+export default function BottomSheetContainer({
+  children,
+  ref,
+  height = 500,
+}: props) {
   const { theme } = useTheme();
   const { bottom } = useSafeAreaInsets();
 
@@ -21,7 +26,8 @@ export default function BottomSheetContainer({ children, ref }: props) {
   return (
     <BottomSheet
       ref={ref}
-      height={500}
+      draggable
+      height={height}
       customStyles={{
         wrapper: {
           backgroundColor: "rgba(0,0,0,0.5)",
@@ -32,10 +38,15 @@ export default function BottomSheetContainer({ children, ref }: props) {
           borderTopStartRadius: 10,
           paddingBottom: bottom,
         },
+        draggableIcon: {
+          backgroundColor: colors.primary,
+          height: 4,
+          width: 60,
+        },
       }}
       customModalProps={{ animationType: "fade", statusBarTranslucent: true }}
     >
-      <View className="h-full p-4">{children}</View>
+      <View className="flex-1 p-4">{children}</View>
     </BottomSheet>
   );
 }

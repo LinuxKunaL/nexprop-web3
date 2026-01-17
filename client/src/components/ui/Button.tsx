@@ -17,7 +17,7 @@ type Props = {
   };
   size: "xs" | "sm" | "md" | "lg";
   fontSize: "xs" | "sm" | "md" | "lg";
-  variant: "solid" | "secondary" | "ghost" | "gray";
+  variant: "solid" | "secondary" | "ghost" | "gray" | "transparent";
 };
 
 const Button: React.FC<Props> = (props) => {
@@ -41,6 +41,7 @@ const Button: React.FC<Props> = (props) => {
         props.className,
         "items-center justify-center rounded-xl flex flex-row gap-3",
         props.disabled && "opacity-70",
+        props.variant === "transparent" && "",
         props.variant === "solid" && "bg-primary",
         props.variant === "secondary" && "bg-card-secondary-dark",
         props.variant === "ghost" && "bg-primary/30",
