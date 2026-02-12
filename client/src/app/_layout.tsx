@@ -1,4 +1,4 @@
-import { BottomSheetProvider } from "@gorhom/bottom-sheet/lib/typescript/contexts";
+// import { BottomSheetProvider } from "@gorhom/bottom-sheet/lib/typescript/contexts";
 import { AppProviders } from "@providers/index";
 import ThemeToggleButton from "@ui/ThemeToggleButton";
 import { Stack } from "expo-router";

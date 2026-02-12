@@ -24,7 +24,7 @@ export default function Icon({
 }: IconProps) {
   const { theme } = useTheme();
   const themedColor =
-    theme == "dark" ? colors.background : colors["background-dark"];
+    theme === "dark" ? colors.background : colors["background-dark"];
 
   return (
     <MaterialCommunityIcons
