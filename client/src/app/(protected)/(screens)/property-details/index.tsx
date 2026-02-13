@@ -1,14 +1,22 @@
-import { View } from "react-native";
+import { ScrollView, View } from "react-native";
 import React from "react";
 import PropertyHeader from "./components/PropertyHeader";
+import OwnerCard from "./components/OwnerCard";
+import PurchaseCard from "./components/PurchaseCard";
+import PropertyMeta from "./components/PropertyMeta";
 
 export default function PropertyDetails() {
   return (
-    <View
-      className="dark:bg-background-dark bg-background flex-1 px-4 pt-4 gap-7"
-      testID="screen"
+    <ScrollView
+      className="dark:bg-background-dark bg-background flex-1 px-4 pt-4"
+      showsVerticalScrollIndicator={false}
     >
-      <PropertyHeader />
-    </View>
+      <View className="gap-7 mb-10" testID="screen">
+        <PropertyHeader />
+        <PurchaseCard />
+        <OwnerCard />
+        <PropertyMeta />
+      </View>
+    </ScrollView>
   );
 }

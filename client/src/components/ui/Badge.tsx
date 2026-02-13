@@ -58,7 +58,7 @@ export default function Badge({
     whiteSolid: "bg-white",
     primarySolid: "bg-primary",
     graySolid: "bg-[#e4e7e9] dark:bg-card-secondary-dark",
-    ghost: "bg-primary/40",
+    ghost: "bg-primary/20",
   };
 
   const handleOnPress = () => {

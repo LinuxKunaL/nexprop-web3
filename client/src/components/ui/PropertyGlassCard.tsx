@@ -19,7 +19,7 @@ type PropertyGlassCardProps = {
 const PropertyGlassCard = ({ item }: PropertyGlassCardProps) => {
   const { theme } = useTheme();
   const tintThemed =
-    theme == "dark"
+    theme === "dark"
       ? "systemUltraThinMaterialDark"
       : "systemUltraThinMaterialLight";
 
