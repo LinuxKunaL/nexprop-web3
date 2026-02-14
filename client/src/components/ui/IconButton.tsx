@@ -78,7 +78,7 @@ const IconButton: React.FC<Props> = ({
       <MaterialCommunityIcons
         name={name}
         size={iconSize}
-        color={variant == "theme" ? themeIconColor : color}
+        color={variant === "theme" ? themeIconColor : color}
       />
     </TouchableOpacity>
   );

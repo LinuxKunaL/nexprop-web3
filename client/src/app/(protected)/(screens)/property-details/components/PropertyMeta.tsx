@@ -87,7 +87,7 @@ const PropertyMeta = (props: Props) => {
         <Text className="font-medium text-foreground dark:text-foreground-dark text-lg">
           Item Activity
         </Text>
-        <ScrollView horizontal>
+        <ScrollView horizontal className="overflow-hidden rounded-xl">
           <View className="overflow-hidden rounded-xl">
             <View className="flex-row dark:bg-muted-dark/10 bg-muted/10 p-3">
               <Text className="w-24 font-medium dark:text-foreground-dark text-foreground">
