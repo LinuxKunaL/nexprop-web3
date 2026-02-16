@@ -1,12 +1,16 @@
 import React from "react";
 import { clsx } from "clsx";
 import { TIconName } from "@ui/Icon";
-import { TouchableOpacity, Vibration } from "react-native";
+import {
+  TouchableOpacity,
+  TouchableOpacityProps,
+  Vibration,
+} from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useTheme } from "@providers/ThemeProvider";
 import { colors } from "@constants/theme";
 
-type Props = {
+type Props = TouchableOpacityProps & {
   color?: string;
   name: TIconName;
   iconSize?: number;
@@ -57,8 +61,7 @@ const IconButton: React.FC<Props> = ({
     secondary: "bg-muted",
     tertiary: "bg-transparent border border-primary",
     transparent: "bg-transparent",
-    theme:
-      "",
+    theme: "",
   };
 
   return (
@@ -72,7 +75,7 @@ const IconButton: React.FC<Props> = ({
         disabled && "opacity-50",
         sizeClasses[size],
         variantClasses[variant],
-        className
+        className,
       )}
     >
       <MaterialCommunityIcons

@@ -9,6 +9,7 @@ export const colors = {
   border: "#E0E0E0",
 
   primary: "#14B8A6",
+  "primary/20": "rgba(20, 184, 166,0.30)",
 
   /* ---------- DARK ---------- */
 

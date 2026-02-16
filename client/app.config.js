@@ -8,9 +8,9 @@ export default {
     orientation: "portrait",
     icon: "./assets/images/icon.png",
     scheme: "nexprop",
-    splash:{
-       "resizeMode": "contain",
-      "backgroundColor": "#111315"
+    splash: {
+      resizeMode: "contain",
+      backgroundColor: "#111315",
     },
     router: {
       appRoot: "src/app",
@@ -29,11 +29,13 @@ export default {
       },
       edgeToEdgeEnabled: true,
       predictiveBackGestureEnabled: false,
+      permissions: ["INTERNET", "ACCESS_FINE_LOCATION"],
+      softwareKeyboardLayoutMode: "resize",
     },
     web: {
       output: "static",
       favicon: "./assets/images/favicon.png",
-      "bundler": "metro"
+      bundler: "metro",
     },
     plugins: [
       "expo-router",
