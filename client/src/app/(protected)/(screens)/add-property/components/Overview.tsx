@@ -4,6 +4,7 @@ import TouchableText from "@ui/TouchableText";
 import { clsx } from "clsx";
 import Input from "@ui/Input";
 import Icon from "@ui/Icon";
+import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
 
 type Props = {};
 
@@ -12,7 +13,10 @@ const Overview = (props: Props) => {
 
   return (
     <View className="flex-1">
-      <ScrollView showsVerticalScrollIndicator={false}>
+     <KeyboardAwareScrollView
+        bottomOffset={10}
+        showsVerticalScrollIndicator={false}
+      >
         <View className="flex-col gap-4 flex-1 h-full mb-5">
           <Input placeholder="Property Title" />
           <Input placeholder="Category" />
@@ -73,7 +77,7 @@ const Overview = (props: Props) => {
             <Input placeholder="End Date & Time" />
           </View>
         </View>
-      </ScrollView>
+      </KeyboardAwareScrollView>
     </View>
   );
 };
