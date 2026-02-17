@@ -7,7 +7,7 @@ import { getPlaceName } from "src/services/location/geocodeService";
 
 const Location = () => {
   return (
-    <View className="flex-1 mb-6 px-4">
+    <View className="flex-1">
       <KeyboardAwareScrollView
         bottomOffset={10}
         showsVerticalScrollIndicator={false}

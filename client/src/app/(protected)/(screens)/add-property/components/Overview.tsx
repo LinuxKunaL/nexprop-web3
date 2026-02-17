@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import TouchableText from "@ui/TouchableText";
 import { clsx } from "clsx";
 import Input from "@ui/Input";
-import Button from "@ui/Button";
 import Icon from "@ui/Icon";
 
 type Props = {};
@@ -12,7 +11,7 @@ const Overview = (props: Props) => {
   const [saleType, setSaleType] = useState("direct");
 
   return (
-    <View className="flex-1 mb-6 px-4">
+    <View className="flex-1">
       <ScrollView showsVerticalScrollIndicator={false}>
         <View className="flex-col gap-4 flex-1 h-full mb-5">
           <Input placeholder="Property Title" />
@@ -75,9 +74,6 @@ const Overview = (props: Props) => {
           </View>
         </View>
       </ScrollView>
-      <Button variant="solid" size="md" fontSize="md">
-        Add Propriety
-      </Button>
     </View>
   );
 };
