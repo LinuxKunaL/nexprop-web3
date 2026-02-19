@@ -1,18 +1,21 @@
+import { useRoute } from "@react-navigation/native";
 import CustomTabBar from "@ui/CustomTabBar";
-import { Tabs } from "expo-router";
-import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { Tabs, useNavigation } from "expo-router";
+import React, { useState } from "react";
+import { View } from "react-native";
 
 export default function TabLayout() {
+  const [isProfile, setIsProfile] = useState<boolean>(false);
+  const nav = useRoute();
+
+  console.log(nav);
+
   return (
-    <SafeAreaView
-      edges={["top", "left", "right"]}
-      className="flex-1 dark:bg-background-dark bg-background"
-    >
+    <View className="flex-1 dark:bg-background-dark bg-background">
       <Tabs
         screenOptions={{ headerShown: false }}
         tabBar={(props) => <CustomTabBar {...props} />}
       />
-    </SafeAreaView>
+    </View>
   );
 }

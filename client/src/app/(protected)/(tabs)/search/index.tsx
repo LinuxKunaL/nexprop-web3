@@ -10,6 +10,7 @@ import AreaBottomSheet from "./components/AreaBottomSheet";
 import PriceBottomSheet from "./components/PriceBottomSheet";
 import { properties } from "../home";
 import PropertyGlassCard from "@ui/PropertyGlassCard";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function index() {
   const filters = ["Location", "Type", "Area", "Price"] as const;
@@ -33,7 +34,8 @@ export default function index() {
   };
 
   return (
-    <View
+    <SafeAreaView
+      edges={["top", "left", "right"]}
       className="dark:bg-background-dark bg-background flex-1 px-4 pt-4 gap-7"
       testID="screen"
     >
@@ -72,6 +74,6 @@ export default function index() {
       <TypeBottomSheet ref={typeBottomSheetRef} />
       <AreaBottomSheet ref={areaBottomSheetRef} />
       <PriceBottomSheet ref={priceBottomSheetRef} />
-    </View>
+    </SafeAreaView>
   );
 }

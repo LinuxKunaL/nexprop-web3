@@ -6,6 +6,7 @@ import { colors } from "@constants/theme";
 import NotificationBell from "@ui/NotificationBell";
 import { Image, ScrollView, Text, View } from "react-native";
 import PropertyGlassCard from "@ui/PropertyGlassCard";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export const properties = [
   {
@@ -63,9 +64,10 @@ export default function index() {
   const categories = ["Department", "Office", "Bungalow", "Area", "Villa"];
 
   return (
-    <View
+    <SafeAreaView
       className="dark:bg-background-dark bg-background flex-1 px-4 pt-4 gap-7"
       testID="screen"
+      edges={["top", "left", "right"]}
     >
       <View testID="header" className="flex-row justify-between items-center">
         <View testID="profile-location" className="flex-row gap-3">
@@ -175,6 +177,6 @@ export default function index() {
           </View>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
