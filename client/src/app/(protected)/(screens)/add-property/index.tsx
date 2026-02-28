@@ -8,6 +8,7 @@ import Location from "./components/Location";
 import Media from "./components/Media";
 import Document from "./components/Documents";
 import Button from "@ui/Button";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const AddProperty = () => {
   const [currentTab, setCurrentTab] = useState("Overview");
@@ -30,7 +31,11 @@ const AddProperty = () => {
   }, [currentTab]);
 
   return (
-    <View className="dark:bg-background-dark bg-background flex-1 pt-4">
+    <SafeAreaView
+      className="dark:bg-background-dark bg-background flex-1 pt-4"
+      testID="screen"
+      edges={["top", "left", "right"]}
+    >
       <View className="flex-1" testID="screen">
         <View className="flex-row justify-between px-4" testID="header">
           <IconButton name="arrow-left" iconSize={24} variant="theme" />
@@ -73,7 +78,7 @@ const AddProperty = () => {
           </Button>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

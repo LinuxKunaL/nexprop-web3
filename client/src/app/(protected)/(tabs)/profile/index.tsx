@@ -24,8 +24,10 @@ import Animated, {
 } from "react-native-reanimated";
 import { clsx } from "clsx";
 import { useTheme } from "@providers/ThemeProvider";
+import { useRouter } from "expo-router";
 
 export default function Profile() {
+  const router = useRouter();
   const { top } = useSafeAreaInsets();
   const [headerHeight, setHeaderHeight] = useState<number>(86);
   const [profileViewHeight, setProfileViewHeight] = useState<number>(260);
@@ -243,7 +245,14 @@ export default function Profile() {
               <Text className="text-foreground dark:text-foreground-dark text-lg font-medium">
                 My Business
               </Text>
-              <TouchableText textClassName="text-primary font-sans underline">
+              <TouchableText
+                onPress={() => {
+                  router.navigate(
+                    "/(protected)/(screens)/business-detail/BusinessDetails",
+                  );
+                }}
+                textClassName="text-primary font-sans underline"
+              >
                 Edit Business
               </TouchableText>
             </View>
