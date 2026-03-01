@@ -3,6 +3,16 @@ import clsx from "clsx";
 import Icon, { TIconName } from "@ui/Icon";
 import { Text, TouchableOpacity, Vibration } from "react-native";
 
+type VariantType =
+  | "solid"
+  | "secondary"
+  | "ghost"
+  | "gray"
+  | "transparent"
+  | "danger"
+
+type SizeType = "xs" | "sm" | "md" | "lg";
+
 type Props = {
   disabled?: boolean;
   textColor?: string;
@@ -15,63 +25,96 @@ type Props = {
     color?: string;
     size?: number;
   };
-  size: "xs" | "sm" | "md" | "lg";
-  fontSize: "xs" | "sm" | "md" | "lg";
-  variant: "solid" | "secondary" | "ghost" | "gray" | "transparent";
+  size?: SizeType;
+  fontSize?: SizeType;
+  variant?: VariantType;
 };
 
-const Button: React.FC<Props> = (props) => {
+const variantStyles: Record<VariantType, string> = {
+  solid: "bg-primary",
+  secondary: "bg-card-secondary-dark",
+  ghost: "bg-primary/30",
+  gray: "bg-gray-600",
+  transparent: "",
+  danger: "bg-red-600",
+};
+
+const textVariantStyles: Record<VariantType, string> = {
+  solid: "text-white",
+  secondary: "text-white",
+  ghost: "text-primary",
+  gray: "text-white",
+  transparent: "text-primary",
+  danger: "text-white",
+};
+
+const sizeStyles: Record<SizeType, string> = {
+  xs: "p-1",
+  sm: "p-2",
+  md: "p-3",
+  lg: "p-4",
+};
+
+const fontSizeStyles: Record<SizeType, string> = {
+  xs: "text-xs",
+  sm: "text-sm",
+  md: "text-base",
+  lg: "text-lg",
+};
+
+const Button: React.FC<Props> = ({
+  disabled,
+  textColor,
+  className,
+  onPress,
+  onLongPress,
+  children,
+  icon,
+  size = "md",
+  fontSize = "md",
+  variant = "solid",
+}) => {
   const handlePress = () => {
     Vibration.vibrate(100);
-    props.onPress?.();
+    onPress?.();
   };
 
   const handleLongPress = () => {
     Vibration.vibrate(100);
-    props.onLongPress?.();
+    onLongPress?.();
   };
 
   return (
     <TouchableOpacity
       activeOpacity={0.8}
-      disabled={props.disabled}
+      disabled={disabled}
       onPress={handlePress}
       onLongPress={handleLongPress}
       className={clsx(
-        props.className,
-        "items-center justify-center rounded-xl flex flex-row gap-3",
-        props.disabled && "opacity-70",
-        props.variant === "transparent" && "",
-        props.variant === "solid" && "bg-primary",
-        props.variant === "secondary" && "bg-card-secondary-dark",
-        props.variant === "ghost" && "bg-primary/30",
-        props.variant === "gray" && "bg-gray-600",
-        props.size === "xs" && "p-1",
-        props.size === "sm" && "p-2",
-        props.size === "md" && "p-3",
-        props.size === "lg" && "p-4"
+        "items-center justify-center rounded-xl flex-row gap-2",
+        variantStyles[variant],
+        sizeStyles[size],
+        disabled && "opacity-70",
+        className
       )}
     >
-      {props.icon && (
+      {icon && (
         <Icon
-          name={props.icon.name}
-          color={props.icon.color}
-          size={props.icon.size}
+          name={icon.name}
+          color={icon.color}
+          size={icon.size}
         />
       )}
+
       <Text
         className={clsx(
           "font-semibold text-center",
-          props.fontSize === "xs" && "text-xs",
-          props.fontSize === "sm" && "text-sm",
-          props.fontSize === "md" && "text-base",
-          props.fontSize === "lg" && "text-lg",
-          !props.textColor && "text-white",
-          props.variant === "ghost" && "text-primary"
+          fontSizeStyles[fontSize],
+          !textColor && textVariantStyles[variant]
         )}
-        style={props.textColor ? { color: props.textColor } : undefined}
+        style={textColor ? { color: textColor } : undefined}
       >
-        {props.children}
+        {children}
       </Text>
     </TouchableOpacity>
   );

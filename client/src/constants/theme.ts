@@ -21,6 +21,9 @@ export const colors = {
   "muted-dark": "#B4B6B8",
 
   "border-dark": "#5C5C5C",
+  success: "#22c55e",
+  danger: "#ef4444",
+  warring:"#eab308"
 } as const;
 
 export type ThemeColors = typeof colors;

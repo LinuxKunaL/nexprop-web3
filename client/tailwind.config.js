@@ -28,6 +28,7 @@ module.exports = {
         "muted-dark": "#B4B6B8",
 
         "border-dark": "#5C5C5C",
+        "success":"#22c55e"
       },
       fontFamily: {
         sans: ["RubikRegular"],
