@@ -30,7 +30,7 @@ export default function Login() {
             fontSize="lg"
             variant="solid"
             onPress={() => {
-              router.navigate("/(auth)/connect-wallet");
+              router.navigate("/connect-wallet");
             }}
             icon={{ name: "google", color: "white" }}
           >
@@ -41,7 +41,7 @@ export default function Login() {
           <Text className="font-sans dark:text-muted-dark text-muted text-lg">
             Read term and conditions{" "}
           </Text>
-          <TouchableText className="font-sans text-primary text-lg">
+          <TouchableText textClassName="font-sans text-primary text-lg">
             read here
           </TouchableText>
         </View>

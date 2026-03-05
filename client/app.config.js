@@ -6,11 +6,11 @@ export default {
     slug: "nexprop",
     version: "1.0.0",
     orientation: "portrait",
-    icon: "./assets/images/icon.png",
+    icon: "src/assets/images/logos/icon.png",
     scheme: "nexprop",
     splash: {
       resizeMode: "contain",
-      backgroundColor: "#111315",
+      backgroundColor: "#14B8A6",
     },
     router: {
       appRoot: "src/app",
@@ -22,11 +22,12 @@ export default {
     },
     android: {
       adaptiveIcon: {
-        backgroundColor: "#E6F4FE",
-        foregroundImage: "./assets/images/android-icon-foreground.png",
-        backgroundImage: "./assets/images/android-icon-background.png",
-        monochromeImage: "./assets/images/android-icon-monochrome.png",
+        backgroundColor: "#14B8A6",
+        foregroundImage: "src/assets/images/logos/android-icon-foreground.png",
+        backgroundImage: "src/assets/images/logos/android-icon-background.png",
+        monochromeImage: "src/assets/images/logos/android-icon-monochrome.png",
       },
+      package: "com.giga.nexprop",
       edgeToEdgeEnabled: true,
       predictiveBackGestureEnabled: false,
       permissions: ["INTERNET", "ACCESS_FINE_LOCATION"],
@@ -34,7 +35,7 @@ export default {
     },
     web: {
       output: "static",
-      favicon: "./assets/images/favicon.png",
+      favicon: "src/assets/images/logos/favicon.png",
       bundler: "metro",
     },
     plugins: [
@@ -42,7 +43,7 @@ export default {
       [
         "expo-splash-screen",
         {
-          image: "./assets/images/splash-icon.png",
+          image: "src/assets/images/logos/icon.png",
           imageWidth: 200,
           resizeMode: "contain",
           backgroundColor: "#ffffff",

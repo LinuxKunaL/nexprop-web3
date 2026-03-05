@@ -7,7 +7,9 @@
     "start:app:mirror": "scrcpy",
     "start:app:android": "cd client && npm run android",
     "install:client:packages": "cd client && npm install",
-    "install:server:packages": "cd server && npm install"
+    "install:server:packages": "cd server && npm install",
+    "build:android:apk": "cd client/android && gradlew assembleDebug",
+    "install:debug:apk": "adb install client/android/app/build/outputs/apk/debug/app-debug.apk"
   },
   "keywords": [],
   "author": "",

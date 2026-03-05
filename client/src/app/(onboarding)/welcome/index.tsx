@@ -133,13 +133,13 @@ export default function index() {
             className="text-center text-base font-sans dark:text-muted-dark text-muted mt-4 mb-8 px-10"
             testID="intro-description"
           >
-            {/* {theme} */}
             {onboardingSlides[currentSlide]?.description}
           </Animated.Text>
           <Button
             variant="solid"
             size="md"
             fontSize="lg"
+            className="w-full"
             onPress={handleNextSlide}
           >
             {currentSlide === onboardingSlides.length - 1
