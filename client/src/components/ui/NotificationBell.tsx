@@ -1,13 +1,16 @@
-import { Text, TouchableOpacity, View } from "react-native";
-import { Vibration } from "react-native";
+import { Text, TouchableOpacity, View, Vibration } from "react-native";
 import Icon from "./Icon";
+import { useRouter } from "expo-router";
 
 type Props = {
   count?: number;
 };
 
 export default function NotificationBell({ count }: Props) {
+  const router = useRouter();
+  
   const handlePress = () => {
+    router.navigate("/notifications");
     Vibration.vibrate(100);
   };
 

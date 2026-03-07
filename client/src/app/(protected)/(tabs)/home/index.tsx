@@ -2,66 +2,17 @@ import React from "react";
 import Icon from "@ui/Icon";
 import Input from "@ui/Input";
 import Badge from "@ui/Badge";
+import { useRouter } from "expo-router";
 import { colors } from "@constants/theme";
+import { propertiesData } from "@data/properties";
 import NotificationBell from "@ui/NotificationBell";
-import { Image, ScrollView, Text, View } from "react-native";
 import PropertyGlassCard from "@ui/PropertyGlassCard";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { Image, Pressable, ScrollView, Text, View } from "react-native";
 
-export const properties = [
-  {
-    id: 1,
-    title: "Samiksha Nivas",
-    location: "Lonikand, Pune",
-    image:
-      "https://cdn.shopify.com/s/files/1/0163/6622/files/realestate8_1024x1024.jpg?v=1665516166",
-    price: "2 ETH",
-    distance: "9 km Away",
-  },
-  {
-    id: 2,
-    title: "Green Valley Heights",
-    location: "Wakad, Pune",
-    image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994",
-    price: "3.5 ETH",
-    distance: "4 km Away",
-  },
-  {
-    id: 3,
-    title: "Skyline Residency",
-    location: "Baner, Pune",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
-    price: "1.8 ETH",
-    distance: "6 km Away",
-  },
-  {
-    id: 4,
-    title: "Blue Pearl Homes",
-    location: "Kharadi, Pune",
-    image: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6",
-    price: "2.2 ETH",
-    distance: "3 km Away",
-  },
-  {
-    id: 5,
-    title: "Elite Horizon",
-    location: "Hadapsar, Pune",
-    image: "https://images.unsplash.com/photo-1599423300746-b62533397364",
-    price: "4 ETH",
-    distance: "11 km Away",
-  },
-  {
-    id: 6,
-    title: "Urban Nest",
-    location: "Viman Nagar, Pune",
-    image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914",
-    price: "2.7 ETH",
-    distance: "5 km Away",
-  },
-];
-
-export default function index() {
+export default function Home() {
   const categories = ["Department", "Office", "Bungalow", "Area", "Villa"];
+  const router = useRouter();
 
   return (
     <SafeAreaView
@@ -110,9 +61,12 @@ export default function index() {
                 testID="properties-container"
               >
                 {Array.from({ length: 3 }).map((_, key) => (
-                  <View
+                  <Pressable
                     key={key}
                     className="size-64 rounded-xl overflow-hidden relative border-[1px]q border-border-dark/20"
+                    onPress={() => {
+                      router.navigate("/properties/10");
+                    }}
                   >
                     <View
                       testID="float-details"
@@ -144,7 +98,7 @@ export default function index() {
                       className="absolute size-64"
                       src="https://cdn.shopify.com/s/files/1/0163/6622/files/realestate8_1024x1024.jpg?v=1665516166"
                     />
-                  </View>
+                  </Pressable>
                 ))}
               </View>
             </ScrollView>
@@ -170,7 +124,7 @@ export default function index() {
               </Text>
             </View>
             <View className="pt-4 flex-col gap-6" testID="properties-container">
-              {properties.map((item) => (
+              {propertiesData.map((item) => (
                 <PropertyGlassCard key={item.id} item={item} />
               ))}
             </View>

@@ -2,24 +2,18 @@ import {
   View,
   Text,
   ScrollView,
-  Image,
   LayoutChangeEvent,
   NativeSyntheticEvent,
   NativeScrollEvent,
-  Modal,
 } from "react-native";
 import React, { useRef, useState } from "react";
-import {
-  SafeAreaView,
-  useSafeAreaInsets,
-} from "react-native-safe-area-context";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Animated, {
-  interpolate,
   interpolateColor,
   useAnimatedStyle,
   useSharedValue,
 } from "react-native-reanimated";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import IconButton from "@ui/IconButton";
 import Icon from "@ui/Icon";
 import { useTheme } from "@providers/ThemeProvider";
@@ -33,9 +27,10 @@ import LocationBottomSheet from "@screen/(protected)/(tabs)/search/components/Lo
 import TypeBottomSheet from "@screen/(protected)/(tabs)/search/components/TypeBottomSheet";
 import AreaBottomSheet from "@screen/(protected)/(tabs)/search/components/AreaBottomSheet";
 import PriceBottomSheet from "@screen/(protected)/(tabs)/search/components/PriceBottomSheet";
-import { properties } from "@screen/(protected)/(tabs)/home";
 import PropertyGlassCard from "@ui/PropertyGlassCard";
 import BusinessBgSvg from "@assets/images/business-bg-svg";
+import { propertiesData } from "@data/properties";
+import BackButton from "@ui/BackButton";
 
 type Props = {};
 
@@ -83,23 +78,6 @@ const BusinessDetails = (props: Props) => {
     };
   });
 
-  const profileZoom = useAnimatedStyle(() => {
-    const translateY = interpolate(
-      bgImageTransform.value,
-      [0, 100],
-      [0, 50],
-      "extend",
-    );
-    const scale = interpolate(
-      bgImageTransform.value,
-      [0, 100],
-      [1, 1.5],
-      "clamp",
-    );
-    return {
-      transform: [{ translateY }, { scale }],
-    };
-  });
   const filters = ["Location", "Type", "Area", "Price"] as const;
 
   const locationBottomSheetRef = useRef<TSheetRef | null>(null);
@@ -130,7 +108,7 @@ const BusinessDetails = (props: Props) => {
         onLayout={onHeaderLayout}
       >
         <View className="flex-row justify-between items-center pb-5">
-          <IconButton name="arrow-left" iconSize={24} variant="theme" />
+          <BackButton />
           <Text className="font-medium text-xl text-foreground dark:text-foreground-dark">
             My Business
           </Text>
@@ -218,7 +196,7 @@ const BusinessDetails = (props: Props) => {
             </View>
             <View testID="properties-list" className="mb-10">
               <View className="flex-col gap-6" testID="properties-container">
-                {properties.map((item) => (
+                {propertiesData.map((item) => (
                   <PropertyGlassCard key={item.id} item={item} />
                 ))}
               </View>

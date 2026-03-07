@@ -10,7 +10,7 @@ export default function TabLayout() {
     //   className="flex-1 dark:bg-background-dark bg-background"
     // >
     <View className="flex-1 dark:bg-background-dark bg-background">
-      <Stack screenOptions={{ headerShown: false }} />
+      <Stack screenOptions={{ headerShown: false,animation:"none"}} />
     </View>
     // </SafeAreaView>
   );

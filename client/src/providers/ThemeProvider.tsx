@@ -1,17 +1,17 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { colorScheme } from "nativewind";
 
-type Theme = "light" | "dark";
+export type TTheme = "light" | "dark";
 
 type ThemeContextType = {
-  theme: Theme;
+  theme: TTheme;
   toggleTheme: () => void;
 };
 
 const ThemeContext = createContext<ThemeContextType | null>(null);
 
 function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>(colorScheme.get() ?? "light");
+  const [theme, setTheme] = useState<TTheme>(colorScheme.get() ?? "light");
 
   useEffect(() => {
     colorScheme.set(theme);

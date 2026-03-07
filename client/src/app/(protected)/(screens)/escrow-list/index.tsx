@@ -4,6 +4,7 @@ import IconButton from "@ui/IconButton";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Input from "@ui/Input";
 import Icon from "@ui/Icon";
+import BackButton from "@ui/BackButton";
 
 type Props = {};
 
@@ -17,7 +18,7 @@ const index = (props: Props) => {
         testID="header"
         className="flex-row justify-between items-center pb-5"
       >
-        <IconButton name="arrow-left" iconSize={24} variant="theme" />
+       <BackButton/>
         <Text className="font-medium text-xl text-foreground dark:text-foreground-dark">
           All Escrow
         </Text>

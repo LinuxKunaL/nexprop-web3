@@ -1,13 +1,11 @@
-import { colors } from "@constants/theme";
-import Icon from "@ui/Icon";
-import IconButton from "@ui/IconButton";
 import React from "react";
+import Icon from "@ui/Icon";
+import BackButton from "@ui/BackButton";
+import { colors } from "@constants/theme";
 import { View, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-type Props = {};
-
-const index = (props: Props) => {
+const notification = () => {
   return (
     <SafeAreaView
       edges={["top", "left", "right"]}
@@ -17,7 +15,7 @@ const index = (props: Props) => {
         testID="header"
         className="flex-row justify-between items-center pb-5"
       >
-        <IconButton name="arrow-left" iconSize={24} variant="theme" />
+        <BackButton />
         <Text className="font-medium text-xl text-foreground dark:text-foreground-dark">
           Notifications
         </Text>
@@ -60,4 +58,4 @@ const index = (props: Props) => {
   );
 };
 
-export default index;
+export default notification;

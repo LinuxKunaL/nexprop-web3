@@ -10,7 +10,7 @@ export default function RootLayout() {
     <SafeAreaProvider>
       <GestureHandlerRootView className="flex-1">
         <AppProviders>
-          <Stack screenOptions={{ headerShown: false }} />
+          <Stack screenOptions={{ headerShown: false, animation: "none" }} />
           <ThemeToggleButton />
         </AppProviders>
       </GestureHandlerRootView>

@@ -1,31 +1,26 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
-import { BlurView } from "expo-blur";
 import Icon from "./Icon";
 import Badge from "./Badge";
+import { useRouter } from "expo-router";
 import { colors } from "@constants/theme";
-import { useTheme } from "@providers/ThemeProvider";
+import { TProperty } from "@types_/property";
+import { View, Text, Image, Pressable } from "react-native";
 
 type PropertyGlassCardProps = {
-  item: {
-    title: string;
-    location: string;
-    image: string;
-    price: string;
-    distance: string;
-  };
+  item: TProperty | undefined;
 };
 
 const PropertyGlassCard = ({ item }: PropertyGlassCardProps) => {
-  const { theme } = useTheme();
-  const tintThemed =
-    theme === "dark"
-      ? "systemUltraThinMaterialDark"
-      : "systemUltraThinMaterialLight";
+  const router = useRouter();
 
   return (
-    <View className="flex-row gap-2 w-full bg-card dark:bg-card-dark rounded-lg overflow-hidden">
-      <Image className="size-28" src={item.image} />
+    <Pressable
+      onPress={() => {
+        router.navigate(`/properties/${item?.id}`);
+      }}
+      className="flex-row gap-2 w-full bg-card dark:bg-card-dark rounded-lg overflow-hidden"
+    >
+      <Image className="size-28" src={item?.image} />
       <View className="flex-col justify-between flex-1 z-10 relative py-2 pr-2">
         <View>
           <Text
@@ -33,7 +28,7 @@ const PropertyGlassCard = ({ item }: PropertyGlassCardProps) => {
             numberOfLines={1}
             ellipsizeMode="tail"
           >
-            {item.title}
+            {item?.title}
           </Text>
 
           <View className="flex-row items-center gap-1">
@@ -43,7 +38,7 @@ const PropertyGlassCard = ({ item }: PropertyGlassCardProps) => {
               numberOfLines={1}
               ellipsizeMode="tail"
             >
-              {item.location}
+              {item?.location}
             </Text>
           </View>
         </View>
@@ -55,15 +50,14 @@ const PropertyGlassCard = ({ item }: PropertyGlassCardProps) => {
             variant="primarySolid"
             icon={{ name: "ethereum", color: "white" }}
           >
-            {item.price}
+            {item?.price}
           </Badge>
-
           <Badge size="sm" iconPlace="after" variant="graySolid">
-            {item.distance}
+            {item?.distance}
           </Badge>
         </View>
       </View>
-    </View>
+    </Pressable>
   );
 };
 

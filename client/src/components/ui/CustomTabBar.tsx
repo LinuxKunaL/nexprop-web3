@@ -1,14 +1,15 @@
-import clsx from "clsx";
+import { clsx } from "clsx";
 import Icon from "./Icon";
 import IconButton from "./IconButton";
 import { colors } from "src/constants/theme";
-import { View, Text, Vibration } from "react-native";
 import { useTheme } from "@providers/ThemeProvider";
-import { Pressable as PressView } from "react-native";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { View, Text, Vibration, Pressable as PressView } from "react-native";
+import { useRouter } from "expo-router";
 
 export default function CustomTabBar({ state, navigation }: BottomTabBarProps) {
+  const router = useRouter();
   const { theme } = useTheme();
   const { bottom } = useSafeAreaInsets();
   const activeRoute = state.routes[state.index].name.split("/")[0];
@@ -18,6 +19,10 @@ export default function CustomTabBar({ state, navigation }: BottomTabBarProps) {
   const navigate = (path: string) => {
     Vibration.vibrate(100);
     navigation.navigate(`${path}/index`);
+  };
+
+  const openAddpropery = () => {
+    router.navigate("/properties/add");
   };
 
   return (
@@ -33,14 +38,14 @@ export default function CustomTabBar({ state, navigation }: BottomTabBarProps) {
       >
         <Icon
           name="home"
-          color={activeRoute == "home" ? colors.primary : iconTheme}
+          color={activeRoute === "home" ? colors.primary : iconTheme}
         />
         <Text
           className={clsx(
             "font-medium",
-            activeRoute == "home"
+            activeRoute === "home"
               ? "text-primary"
-              : "dark:text-muted-dark text-muted"
+              : "dark:text-muted-dark text-muted",
           )}
         >
           Home
@@ -54,14 +59,14 @@ export default function CustomTabBar({ state, navigation }: BottomTabBarProps) {
       >
         <Icon
           name="magnify"
-          color={activeRoute == "search" ? colors.primary : iconTheme}
+          color={activeRoute === "search" ? colors.primary : iconTheme}
         />
         <Text
           className={clsx(
             "font-medium",
-            activeRoute == "search"
+            activeRoute === "search"
               ? "text-primary"
-              : "dark:text-muted-dark text-muted"
+              : "dark:text-muted-dark text-muted",
           )}
         >
           Search
@@ -69,12 +74,14 @@ export default function CustomTabBar({ state, navigation }: BottomTabBarProps) {
       </PressView>
       <PressView
         className="justify-center items-center size-20 relative -top-11 rounded-full dark:bg-card-dark bg-card"
+        onPress={openAddpropery}
         testID="create-property-button"
       >
         <IconButton
           name="plus"
           variant="primary"
           className="!size-14 !rounded-full"
+          onPress={openAddpropery}
           iconSize={31}
           color="white"
         />
@@ -87,14 +94,14 @@ export default function CustomTabBar({ state, navigation }: BottomTabBarProps) {
       >
         <Icon
           name="heart"
-          color={activeRoute == "wishlist" ? colors.primary : iconTheme}
+          color={activeRoute === "wishlist" ? colors.primary : iconTheme}
         />
         <Text
           className={clsx(
             "font-medium",
-            activeRoute == "wishlist"
+            activeRoute === "wishlist"
               ? "text-primary"
-              : "dark:text-muted-dark text-muted"
+              : "dark:text-muted-dark text-muted",
           )}
         >
           Wishlist
@@ -108,14 +115,14 @@ export default function CustomTabBar({ state, navigation }: BottomTabBarProps) {
       >
         <Icon
           name="account"
-          color={activeRoute == "profile" ? colors.primary : iconTheme}
+          color={activeRoute === "profile" ? colors.primary : iconTheme}
         />
         <Text
           className={clsx(
             "font-medium",
-            activeRoute == "profile"
+            activeRoute === "profile"
               ? "text-primary"
-              : "dark:text-muted-dark text-muted"
+              : "dark:text-muted-dark text-muted",
           )}
         >
           Profile

@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import React, { RefObject, useRef } from "react";
+import React, { RefObject } from "react";
 import { colors } from "@constants/theme";
 import { useTheme } from "@providers/ThemeProvider";
 import BottomSheet from "react-native-raw-bottom-sheet";

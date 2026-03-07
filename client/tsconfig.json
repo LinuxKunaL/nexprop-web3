@@ -14,7 +14,9 @@
       "@screen/*": ["src/app/*"],
       "@constants/*":["src/constants/*"],
       "@types_/*":["src/types/*"],
-      "@context/*":["src/context/*"]
+      "@context/*":["src/context/*"],
+      "@data/*":["src/data/*"]
+
     }
   },
   "include": [

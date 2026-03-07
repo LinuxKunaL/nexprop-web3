@@ -7,7 +7,7 @@ export default function _layout() {
   return (
     <SafeAreaView className="flex-1 dark:bg-background-dark bg-background px-4 pt-4">
       <StatusBar style="auto" />
-      <Stack screenOptions={{ headerShown: false }} />
+      <Stack screenOptions={{ headerShown: false, animation: "none" }} />
     </SafeAreaView>
   );
 }

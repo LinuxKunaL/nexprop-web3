@@ -9,7 +9,7 @@
     "install:client:packages": "cd client && npm install",
     "install:server:packages": "cd server && npm install",
     "build:android:apk": "cd client/android && gradlew assembleDebug",
-    "install:debug:apk": "adb install client/android/app/build/outputs/apk/debug/app-debug.apk"
+    "install:debug:apk": "adb install client/android/app/build/outputs/apk/release/app-release.apk"
   },
   "keywords": [],
   "author": "",

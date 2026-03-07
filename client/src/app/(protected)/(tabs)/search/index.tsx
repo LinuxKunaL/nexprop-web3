@@ -8,11 +8,11 @@ import LocationBottomSheet from "./components/LocationBottomSheet";
 import TypeBottomSheet from "./components/TypeBottomSheet";
 import AreaBottomSheet from "./components/AreaBottomSheet";
 import PriceBottomSheet from "./components/PriceBottomSheet";
-import { properties } from "../home";
 import PropertyGlassCard from "@ui/PropertyGlassCard";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { propertiesData } from "@data/properties";
 
-export default function index() {
+export default function Search() {
   const filters = ["Location", "Type", "Area", "Price"] as const;
 
   const locationBottomSheetRef = useRef<TSheetRef | null>(null);
@@ -32,6 +32,7 @@ export default function index() {
   const handleOpenFilterSheet = (key: (typeof filters)[number]) => {
     sheetRefs[key].current?.open();
   };
+  console.log("again render");
 
   return (
     <SafeAreaView
@@ -64,7 +65,7 @@ export default function index() {
       <ScrollView bounces showsVerticalScrollIndicator={false}>
         <View testID="properties-list" className="mb-10">
           <View className="flex-col gap-6" testID="properties-container">
-            {properties.map((item) => (
+            {propertiesData.map((item) => (
               <PropertyGlassCard key={item.id} item={item} />
             ))}
           </View>

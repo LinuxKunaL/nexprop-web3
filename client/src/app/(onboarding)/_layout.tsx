@@ -6,7 +6,7 @@ export default function _layout() {
   return (
     <>
       <StatusBar style="light" />
-      <Stack screenOptions={{ headerShown: false }} />
+      <Stack screenOptions={{ headerShown: false,animation:"none" }} />
     </>
   );
 }

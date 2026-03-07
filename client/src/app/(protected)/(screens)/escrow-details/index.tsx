@@ -1,11 +1,10 @@
 import React from "react";
-import IconButton from "@ui/IconButton";
 import { View, Text } from "react-native";
-import EscrowInit from "./components/EscrowInit";
 import PropertyGlassCard from "@ui/PropertyGlassCard";
-import { properties } from "@screen/(protected)/(tabs)/home";
 import { SafeAreaView } from "react-native-safe-area-context";
 import EscrowStatus from "./components/EscrowStatus";
+import BackButton from "@ui/BackButton";
+import { propertiesData } from "@data/properties";
 
 type Props = {};
 
@@ -19,7 +18,7 @@ const index = (props: Props) => {
         testID="header"
         className="flex-row justify-between items-center pb-5"
       >
-        <IconButton name="arrow-left" iconSize={24} variant="theme" />
+        <BackButton />
         <Text className="font-medium text-xl text-foreground dark:text-foreground-dark">
           Escrow Procedure
         </Text>
@@ -30,10 +29,10 @@ const index = (props: Props) => {
           Properties Details
         </Text>
         <View testID="property-box">
-          <PropertyGlassCard item={properties[0]} />
+          <PropertyGlassCard item={propertiesData[0]} />
         </View>
         {/* <EscrowInit /> */}
-        <EscrowStatus/>
+        <EscrowStatus />
       </View>
     </SafeAreaView>
   );

@@ -3,11 +3,13 @@ import React from "react";
 import Input from "@ui/Input";
 import Button from "@ui/Button";
 import { useRouter } from "expo-router";
+import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
 
 export default function BusinessDetails() {
-  const router = useRouter()
+  const router = useRouter();
   return (
-    <View
+    <KeyboardAwareScrollView
+      showsVerticalScrollIndicator={false}
       className="flex-1 dark:bg-background-dark bg-background"
       testID="screen"
     >
@@ -51,12 +53,18 @@ export default function BusinessDetails() {
           </Text>
           <Input placeholder="Enter your contact" />
         </View>
-        <Button className="mt-2" variant="solid" fontSize="md" size="md" onPress={()=>{
-          router.navigate("/(protected)/(tabs)/home")
-        }}>
+        <Button
+          className="mt-2"
+          variant="solid"
+          fontSize="md"
+          size="md"
+          onPress={() => {
+            router.navigate("/(protected)/(tabs)/home");
+          }}
+        >
           Submit
         </Button>
       </View>
-    </View>
+    </KeyboardAwareScrollView>
   );
 }
