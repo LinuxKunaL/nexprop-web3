@@ -1,17 +1,26 @@
 import { View, Text } from "react-native";
 import React from "react";
 import TouchableText from "@ui/TouchableText";
+import { useRouter } from "expo-router";
 
 type Props = {};
 
 const Escrow = (props: Props) => {
+  const router = useRouter();
+
+  const handleViewAll = () => {
+    router.navigate("/escrow/list");
+  };
   return (
     <View className="px-4 gap-5" testID="escrow">
       <View className="justify-between flex-row items-center" testID="title">
         <Text className="text-foreground dark:text-foreground-dark text-lg font-medium">
           Current Escrow
         </Text>
-        <TouchableText textClassName="text-primary font-sans underline">
+        <TouchableText
+          onPress={handleViewAll}
+          textClassName="text-primary font-sans underline"
+        >
           View All
         </TouchableText>
       </View>

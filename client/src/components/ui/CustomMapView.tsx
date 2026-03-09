@@ -7,7 +7,7 @@ import MapView, {
   MarkerDragStartEndEvent,
 } from "react-native-maps";
 import IconButton from "@ui/IconButton";
-import { useUserLocation } from "@hooks/map/useUserLocation";
+import { useUserLocation } from "@hooks/map/use-user-location";
 import { useTheme } from "@providers/ThemeProvider";
 
 type TCoords = {

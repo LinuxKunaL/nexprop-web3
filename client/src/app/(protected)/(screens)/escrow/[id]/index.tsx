@@ -2,13 +2,16 @@ import React from "react";
 import { View, Text } from "react-native";
 import PropertyGlassCard from "@ui/PropertyGlassCard";
 import { SafeAreaView } from "react-native-safe-area-context";
-import EscrowStatus from "./components/EscrowStatus";
 import BackButton from "@ui/BackButton";
 import { propertiesData } from "@data/properties";
+import EscrowStatus from "./components/EscrowStatus";
+import { useLocalSearchParams } from "expo-router";
 
 type Props = {};
 
 const index = (props: Props) => {
+  const { id } = useLocalSearchParams();
+
   return (
     <SafeAreaView
       edges={["top", "left", "right"]}

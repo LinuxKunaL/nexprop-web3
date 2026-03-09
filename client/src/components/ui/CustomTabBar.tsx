@@ -5,7 +5,13 @@ import { colors } from "src/constants/theme";
 import { useTheme } from "@providers/ThemeProvider";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { View, Text, Vibration, Pressable as PressView } from "react-native";
+import {
+  View,
+  Text,
+  Vibration,
+  Pressable as PressView,
+  Platform,
+} from "react-native";
 import { useRouter } from "expo-router";
 
 export default function CustomTabBar({ state, navigation }: BottomTabBarProps) {
@@ -13,11 +19,12 @@ export default function CustomTabBar({ state, navigation }: BottomTabBarProps) {
   const { theme } = useTheme();
   const { bottom } = useSafeAreaInsets();
   const activeRoute = state.routes[state.index].name.split("/")[0];
-
   const iconTheme = theme === "dark" ? colors["muted-dark"] : colors["muted"];
 
   const navigate = (path: string) => {
-    Vibration.vibrate(100);
+    if (Platform.OS === "android") {
+      Vibration.vibrate(100);
+    }
     navigation.navigate(`${path}/index`);
   };
 
