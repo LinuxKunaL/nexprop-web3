@@ -22,6 +22,7 @@ module.exports = function (api) {
             "@types_:": "./src/types",
             "@context:": "./src/context",
             "@data:": "./src/data",
+            "@feature:": "./src/features",
           },
           extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
         },

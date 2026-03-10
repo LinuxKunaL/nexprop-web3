@@ -15,8 +15,9 @@
       "@constants/*":["src/constants/*"],
       "@types_/*":["src/types/*"],
       "@context/*":["src/context/*"],
-      "@data/*":["src/data/*"]
-
+      "@data/*":["src/data/*"],
+      "@feature/*":["src/features/*"],
+      
     }
   },
   "include": [

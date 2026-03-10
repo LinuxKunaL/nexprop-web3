@@ -1,0 +1,1 @@
+export { default} from "@feature/property/screens/PropertyFormScreen"

@@ -4,6 +4,7 @@ module.exports = {
   content: [
     "./src/app/**/*.{js,jsx,ts,tsx}",
     "./src/components/**/*.{js,jsx,ts,tsx}",
+    "./src/features/**/*.{js,jsx,ts,tsx}",
   ],
   presets: [require("nativewind/preset")],
   theme: {
@@ -28,7 +29,7 @@ module.exports = {
         "muted-dark": "#B4B6B8",
 
         "border-dark": "#5C5C5C",
-        "success":"#22c55e"
+        success: "#22c55e",
       },
       fontFamily: {
         sans: ["RubikRegular"],

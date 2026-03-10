@@ -1,0 +1,1 @@
+export {default} from "@feature/search/screens/SearchScreen"
