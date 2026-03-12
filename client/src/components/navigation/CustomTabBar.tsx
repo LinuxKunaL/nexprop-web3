@@ -34,7 +34,7 @@ export default function CustomTabBar({ state, navigation }: BottomTabBarProps) {
 
   return (
     <View
-      className="flex-row bg-card dark:bg-card-dark px-1 py-2 h-24"
+      className="flex-row bg-card dark:bg-card-dark px-1 py-2 max-h-full border-t-[0.9px] border-border/70 dark:border-border-dark/30"
       style={{ paddingBottom: bottom }}
     >
       <PressView

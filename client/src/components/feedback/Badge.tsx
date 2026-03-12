@@ -85,7 +85,7 @@ export default function Badge({
     >
       <View
         className={clsx(
-          "flex-row items-center gap-1",
+          "flex-row items-center gap-1 justify-center",
           sizeClasses[size],
           backgroundColor[variant],
           className
