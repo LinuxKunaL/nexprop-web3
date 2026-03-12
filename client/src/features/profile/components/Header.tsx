@@ -5,10 +5,16 @@ import React, { useContext } from "react";
 import { ProfileContext } from "../context";
 import ScreenHeader from "@components/layout/ScreenHeader";
 import Animated from "react-native-reanimated";
+import { useRouter } from "expo-router";
 
 const Header = () => {
+  const router = useRouter();
   const { headerFadeColor, onHeaderLayout, isHeaderBorder, theme } =
     useContext(ProfileContext);
+
+  const navigateSetting = () => {
+    router.navigate("/settings");
+  };
 
   return (
     <Animated.View
@@ -23,6 +29,7 @@ const Header = () => {
       <ScreenHeader
         title="Profile"
         icon={{ name: "cog-outline", variant: "theme" }}
+        onPressIcon={navigateSetting}
       />
     </Animated.View>
   );
