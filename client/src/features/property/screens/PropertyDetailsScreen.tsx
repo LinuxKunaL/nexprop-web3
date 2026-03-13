@@ -1,16 +1,14 @@
-import { ScrollView, View } from "react-native";
-import React, { useEffect, useState } from "react";
-import { useLocalSearchParams } from "expo-router";
+import React, { useContext } from "react";
+import { ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
-import { TProperty } from "@feature/property/types";
-import { propertiesData } from "@data/properties";
-
 import OwnerCard from "../components/details-screen/OwnerCard";
 import PurchaseCard from "../components/details-screen/PurchaseCard";
 import PropertyMeta from "../components/details-screen/PropertyMeta";
 import PropertyHeader from "../components/details-screen/PropertyHeader";
-import { PropertyDetailsProvider } from "../details-context";
+import {
+  PropertyDetailsContext,
+  PropertyDetailsProvider,
+} from "../details-context";
 
 export default function PropertyDetailsScreen() {
   return (

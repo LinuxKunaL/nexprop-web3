@@ -1,35 +1,53 @@
+import { TProperty } from "@feature/property/types";
 import { usePersistentState } from "@hooks/other/use-persistent-state";
 import { useCallback, useEffect, useState } from "react";
 
-type TWishlist = string[];
+type TWishlist = {
+  id: string;
+  image: string;
+  title: string;
+  location: string;
+  price: string;
+  distance: string;
+};
 
-const useWishlist = (id: number | undefined) => {
-  const [isWishlist, setIsWishlist] = useState<boolean | undefined>(false);
-  const [getWishlist, setWishlist] = usePersistentState<TWishlist>("wishlist");
+const useWishlist = (property: TProperty | undefined) => {
+  const [isWishlist, setIsWishlist] = useState(false);
 
-  console.log(id, "user");
+  const [wishlist, setWishlist] = usePersistentState<TWishlist[]>("wishlist");
+
+  const propertyId = property?.id?.toString();
 
   useEffect(() => {
-    if (id) {
-      const isThere = getWishlist?.includes(id.toString());
-      if (typeof isThere == "boolean") {
-        setIsWishlist(isThere);
-      }
-    }
-  }, [id]);
+    if (!propertyId || !wishlist) return;
 
-  console.log(getWishlist, isWishlist);
+    const exists = wishlist.some((item) => item.id === propertyId);
+
+    setIsWishlist(exists);
+  }, [wishlist, propertyId]);
+
   const handleToggleWishlist = useCallback(() => {
+    if (!property || !propertyId) return;
+
     if (isWishlist) {
-      const filter = getWishlist?.filter((item) => item != id?.toString());
-      setWishlist(filter);
+      setWishlist((prev) =>
+        (prev ?? []).filter((item) => item.id !== propertyId),
+      );
       setIsWishlist(false);
     } else {
-    
-      setWishlist((prev: any) => [...prev, id]);
+      const newItem: TWishlist = {
+        id: propertyId,
+        image: property.image,
+        title: property.title,
+        location: property.location,
+        price: property.price,
+        distance: property.distance,
+      };
+
+      setWishlist((prev) => [...(prev ?? []), newItem]);
       setIsWishlist(true);
     }
-  }, [id]);
+  }, [isWishlist, property, propertyId, setWishlist]);
 
   return { handleToggleWishlist, isWishlist };
 };

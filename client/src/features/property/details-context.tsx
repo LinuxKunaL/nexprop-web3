@@ -18,19 +18,15 @@ export const PropertyDetailsContext = createContext<TContextType>(
 export const PropertyDetailsProvider = ({ children }: Props) => {
   const { id } = useLocalSearchParams();
   const [property, setProperty] = useState<TProperty>({} as TProperty);
-  console.log(id);
 
   useEffect(() => {
-    
     if (id) {
       const result = propertiesData.find((item) => item.id === Number(id));
-      console.log(result,"resilt");
-      
       setProperty(result as TProperty);
     }
   }, [id]);
 
-  console.log(property);
+  if (!property.id) return;
 
   return (
     <PropertyDetailsContext.Provider value={{ property }}>

@@ -16,9 +16,8 @@ const PropertyImageCarousel = () => {
   const progress = useSharedValue(0);
   const { width } = useWindowDimensions();
   const { property } = useContext(PropertyDetailsContext);
-  const { handleToggleWishlist, isWishlist } = useWishlist(property.id);
+  const { handleToggleWishlist, isWishlist } = useWishlist(property);
   const carouselRef = React.useRef<ICarouselInstance>(null);
-
   const [images, setImages] = useState<string[]>([]);
 
   useEffect(() => {

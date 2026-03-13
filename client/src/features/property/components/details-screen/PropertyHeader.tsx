@@ -8,9 +8,6 @@ import { PropertyDetailsContext } from "@feature/property/details-context";
 
 const PropertyHeader = () => {
   const { property } = useContext(PropertyDetailsContext);
-  
-  console.log(property);
-  
   return (
     <View className="gap-6">
       <PropertyImageCarousel />
@@ -28,7 +25,7 @@ const PropertyHeader = () => {
       <View className="flex-col gap-2" testID="address">
         <View className="flex-row justify-between">
           <Text className="font-medium text-xl capitalize dark:text-foreground-dark text-foreground">
-            {property?.address.street}
+            {property?.address?.street}
           </Text>
           <Badge variant="ghost" textColor={colors.primary}>
             {property?.category}
@@ -41,7 +38,7 @@ const PropertyHeader = () => {
             numberOfLines={1}
             ellipsizeMode="tail"
           >
-            {property?.address.addressLine}
+            {property?.address?.addressLine}
           </Text>
         </View>
       </View>

@@ -3,7 +3,6 @@ import Icon from "@components/display/Icon";
 import Button from "@components/buttons/Button";
 import { colors } from "@constants/theme";
 import { View, Text } from "react-native";
-import { TProperty } from "@feature/property/types";
 import { useTheme } from "@providers/ThemeProvider";
 import { PropertyDetailsContext } from "@feature/property/details-context";
 
@@ -27,7 +26,7 @@ const PurchaseCard = () => {
           <>
             <Icon name="timer-outline" size={21} color={colors.primary} />
             <Text className="font-medium dark:text-foreground-dark text-foreground text-base">
-              {property?.bidDetails.time}
+              {property?.bidDetails?.time}
             </Text>
           </>
         )}
