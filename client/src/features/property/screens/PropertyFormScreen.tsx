@@ -8,10 +8,10 @@ import Button from "@components/buttons/Button";
 
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import Overview from "../components/add-screen/Overview";
-import Location from "../components/add-screen/Location";
-import Media from "../components/add-screen/Media";
-import Document from "../components/add-screen/Documents";
+import Overview from "../components/form-screen/Overview";
+import Location from "../components/form-screen/Location";
+import Media from "../components/form-screen/Media";
+import Document from "../components/form-screen/Documents";
 import BackButton from "@components/navigation/BackButton";
 
 const AddPropertyScreen = () => {

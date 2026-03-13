@@ -1,23 +1,31 @@
 import { useWindowDimensions, View, Image, Pressable } from "react-native";
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Carousel, {
   ICarouselInstance,
   Pagination,
 } from "react-native-reanimated-carousel";
+import { useRouter } from "expo-router";
+import { colors } from "@constants/theme";
 import Icon from "@components/display/Icon";
 import { useSharedValue } from "react-native-reanimated";
-import { colors } from "@constants/theme";
-import { useRouter } from "expo-router";
+import useWishlist from "@feature/wishlist/hooks/use-wishlist";
+import { PropertyDetailsContext } from "@feature/property/details-context";
 
-type Props = {
-  images: string[] | undefined;
-};
-
-const PropertyImageCarousel = ({ images }: Props) => {
+const PropertyImageCarousel = () => {
   const router = useRouter();
   const progress = useSharedValue(0);
   const { width } = useWindowDimensions();
+  const { property } = useContext(PropertyDetailsContext);
+  const { handleToggleWishlist, isWishlist } = useWishlist(property.id);
   const carouselRef = React.useRef<ICarouselInstance>(null);
+
+  const [images, setImages] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (property) {
+      setImages([property?.image || "", ...(property?.carouselImages || [])]);
+    }
+  }, [property]);
 
   const handleBack = () => {
     router.back();
@@ -35,9 +43,16 @@ const PropertyImageCarousel = ({ images }: Props) => {
         >
           <Icon name="arrow-u-left-top" size={24} color="white" />
         </Pressable>
-        <View className="size-12 border-2 border-white bg-primary/80 rounded-lg justify-center items-center">
-          <Icon name="bookmark" size={24} color="white" />
-        </View>
+        <Pressable
+          onPress={handleToggleWishlist}
+          className="size-12 border-2 border-white bg-primary/80 rounded-lg justify-center items-center"
+        >
+          <Icon
+            name={isWishlist ? "bookmark" : "bookmark-outline"}
+            size={24}
+            color="white"
+          />
+        </Pressable>
       </View>
       <Carousel
         width={width}

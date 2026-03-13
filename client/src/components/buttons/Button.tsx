@@ -94,7 +94,7 @@ const Button: React.FC<Props> = ({
         "items-center justify-center rounded-xl flex-row gap-2",
         variantStyles[variant],
         sizeStyles[size],
-        disabled && "opacity-70",
+        disabled && "opacity-40",
         className
       )}
     >

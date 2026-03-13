@@ -1,16 +1,13 @@
-import { View, Text, ScrollView, FlatList } from "react-native";
-import React, { Fragment } from "react";
-import splitCamelCase from "@utils/splitCamelCase";
-import TouchableText from "@components/buttons/TouchableText";
 import { clsx } from "clsx";
-import { TProperty } from "@feature/property/types";
+import React, { Fragment, useContext } from "react";
 import shortAddress from "@utils/shortAddress";
+import splitCamelCase from "@utils/splitCamelCase";
+import { View, Text, ScrollView, FlatList } from "react-native";
+import TouchableText from "@components/buttons/TouchableText";
+import { PropertyDetailsContext } from "@feature/property/details-context";
 
-type Props = {
-  property: TProperty | undefined;
-};
-
-const PropertyMeta = ({ property }: Props) => {
+const PropertyMeta = () => {
+  const { property } = useContext(PropertyDetailsContext);
   return (
     <Fragment>
       <View className="gap-2" testID="description">

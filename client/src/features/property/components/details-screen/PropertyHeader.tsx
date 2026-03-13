@@ -1,21 +1,19 @@
+import React, { useContext } from "react";
 import { View, Text } from "react-native";
-import React from "react";
-import PropertyImageCarousel from "./PropertyImageCarousel";
-import Icon from "@components/display/Icon";
 import { colors } from "@constants/theme";
+import Icon from "@components/display/Icon";
 import Badge from "@components/feedback/Badge";
-import { TProperty } from "@feature/property/types";
+import PropertyImageCarousel from "./PropertyImageCarousel";
+import { PropertyDetailsContext } from "@feature/property/details-context";
 
-type Props = {
-  property: TProperty | undefined;
-};
-
-const PropertyHeader = ({ property }: Props) => {
+const PropertyHeader = () => {
+  const { property } = useContext(PropertyDetailsContext);
+  
+  console.log(property);
+  
   return (
     <View className="gap-6">
-      <PropertyImageCarousel
-        images={[property?.image || "", ...(property?.carouselImages || [])]}
-      />
+      <PropertyImageCarousel />
       <View className="flex-row gap-2 items-center" testID="business-name">
         <Text className="text-primary font-medium text-lg">
           {property?.businessName}

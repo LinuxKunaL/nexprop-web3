@@ -14,6 +14,7 @@ const Location = () => {
       >
         <View className="flex-col gap-4 flex-1 h-full mb-5">
           <CustomMapView
+            height="fixed"
             onPinDrop={async (coords) => {
               const address = await getPlaceName(coords);
               console.log(address);

@@ -6,22 +6,21 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { TProperty } from "@feature/property/types";
 import { propertiesData } from "@data/properties";
 
-import OwnerCard from "../components/view-screen/OwnerCard";
-import PurchaseCard from "../components/view-screen/PurchaseCard";
-import PropertyMeta from "../components/view-screen/PropertyMeta";
-import PropertyHeader from "../components/view-screen/PropertyHeader";
+import OwnerCard from "../components/details-screen/OwnerCard";
+import PurchaseCard from "../components/details-screen/PurchaseCard";
+import PropertyMeta from "../components/details-screen/PropertyMeta";
+import PropertyHeader from "../components/details-screen/PropertyHeader";
+import { PropertyDetailsProvider } from "../details-context";
 
 export default function PropertyDetailsScreen() {
-  const { id } = useLocalSearchParams();
-  const [data, setData] = useState<TProperty>();
+  return (
+    <PropertyDetailsProvider>
+      <PropertyDetailsContent />
+    </PropertyDetailsProvider>
+  );
+}
 
-  useEffect(() => {
-    if (id) {
-      const property = propertiesData.find((item) => item.id === Number(id));
-      setData(property as TProperty);
-    }
-  }, [id]);
-
+function PropertyDetailsContent() {
   return (
     <SafeAreaView
       edges={["top", "left", "right"]}
@@ -32,10 +31,10 @@ export default function PropertyDetailsScreen() {
         showsVerticalScrollIndicator={false}
       >
         <View className="gap-6 mb-10" testID="screen">
-          <PropertyHeader property={data} />
-          <PurchaseCard property={data} />
-          <OwnerCard owner={data?.owner}/>
-          <PropertyMeta property={data}/>
+          <PropertyHeader />
+          <PurchaseCard />
+          <OwnerCard />
+          <PropertyMeta />
         </View>
       </ScrollView>
     </SafeAreaView>

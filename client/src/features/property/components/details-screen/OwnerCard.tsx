@@ -1,23 +1,19 @@
 import { View, Text, Image } from "react-native";
-import React from "react";
+import React, { useContext } from "react";
 import IconButton from "@components/buttons/IconButton";
-import { TProperty } from "@feature/property/types";
+import { PropertyDetailsContext } from "@feature/property/details-context";
 
-type Props = {
-  owner: TProperty["owner"] | undefined;
-};
-
-const OwnerCard = ({owner}: Props) => {
+const OwnerCard = () => {
+  const {
+    property: { owner },
+  } = useContext(PropertyDetailsContext);
   return (
     <View
       className="flex-row justify-between items-center"
       testID="owner-profile"
     >
       <View className="flex-row gap-3">
-        <Image
-          className="size-14 rounded-full"
-          src={owner?.avatar}
-        />
+        <Image className="size-14 rounded-full" src={owner?.avatar} />
         <View className="flex-col gap-0">
           <Text className="font-medium text-foreground dark:text-foreground-dark">
             {owner?.name}

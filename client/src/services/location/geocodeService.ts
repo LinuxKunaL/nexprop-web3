@@ -39,9 +39,7 @@ type TReturn = {
   state?: string;
 };
 
-export const getPlaceName = async (
-  coords: TCoords,
-): Promise<TReturn | undefined | unknown> => {
+export const getPlaceName = async (coords: TCoords): Promise<TReturn|undefined> => {
   try {
     const response = await axios.get(
       `https://photon.komoot.io/reverse?lat=${coords.latitude}&lon=${coords.longitude}`,
@@ -60,6 +58,5 @@ export const getPlaceName = async (
     throw { status: 404 };
   } catch (error) {
     console.log(error);
-    return error;
   }
 };

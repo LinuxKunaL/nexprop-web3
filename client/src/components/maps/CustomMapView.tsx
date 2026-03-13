@@ -9,15 +9,17 @@ import MapView, {
 import IconButton from "@components/buttons/IconButton";
 import { useUserLocation } from "@hooks/map/use-user-location";
 import { useTheme } from "@providers/ThemeProvider";
-
-type TCoords = {
-  latitude: number;
-  longitude: number;
-};
+import { TCoords } from "./types";
 
 type Props = {
   onPinDrag?: ({ latitude, longitude }: TCoords) => null;
   onPinDrop?: ({ latitude, longitude }: TCoords) => any;
+  onLoad?: () => any;
+  height?: "fixed" | "full";
+  initialRegion?: {
+    latitude: number;
+    longitude: number;
+  };
 };
 
 const darkMapStyle = [
@@ -56,6 +58,26 @@ const CustomMapView = (props: Props) => {
     latitude: 0,
   });
 
+  useEffect(() => {
+    if (props.initialRegion) {
+      setPinLocation(props.initialRegion);
+      mapRef.current?.animateToRegion(
+        {
+          ...props.initialRegion,
+          latitudeDelta: 0.005,
+          longitudeDelta: 0.005,
+        },
+        300,
+      );
+    }
+  }, [props.initialRegion]);
+
+  useEffect(() => {
+    if (!props.initialRegion) {
+      setPinLocation(location);
+    }
+  }, [location]);
+
   const handlePinFocus = useCallback(() => {
     mapRef.current?.animateToRegion(
       {
@@ -66,10 +88,6 @@ const CustomMapView = (props: Props) => {
       300,
     );
   }, [pinLocation]);
-
-  useEffect(() => {
-    setPinLocation(location);
-  }, [location]);
 
   const handleRefreshPin = () => {
     setPinLocation(location);
@@ -108,6 +126,7 @@ const CustomMapView = (props: Props) => {
         zoomControlEnabled={true}
         showsUserLocation={true}
         showsMyLocationButton={true}
+        onMapLoaded={props.onLoad}
         onLongPress={handlePinPlaceOnPress}
         customMapStyle={theme === "dark" ? darkMapStyle : []}
         initialRegion={{
@@ -118,7 +137,7 @@ const CustomMapView = (props: Props) => {
         }}
         style={{
           width: "auto",
-          height: 300,
+          height: props.height == "fixed" ? 300 : "100%",
         }}
       >
         <Marker

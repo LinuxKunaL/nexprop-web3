@@ -1,19 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import Icon from "@components/display/Icon";
 import Button from "@components/buttons/Button";
 import { colors } from "@constants/theme";
 import { View, Text } from "react-native";
 import { TProperty } from "@feature/property/types";
 import { useTheme } from "@providers/ThemeProvider";
+import { PropertyDetailsContext } from "@feature/property/details-context";
 
-type Props = {
-  property: TProperty | undefined;
-};
-
-const PurchaseCard = ({ property }: Props) => {
+const PurchaseCard = () => {
   const { theme } = useTheme();
+  const { property } = useContext(PropertyDetailsContext);
+
   const sellingType = property?.sellingType === "direct";
-  
+
   return (
     <View
       className="p-5 dark:bg-card-dark bg-card rounded-xl gap-4"
