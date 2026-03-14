@@ -22,11 +22,9 @@ export default function ScreenHeader({
   return (
     <View className="flex-row justify-between items-center h-16 mb-3">
       {backButtonVisble && <BackButton />}
-
       <Text className="font-medium text-xl text-foreground dark:text-foreground-dark">
         {title}
       </Text>
-
       <IconButton
         onPress={onPressIcon}
         name={icon?.name}

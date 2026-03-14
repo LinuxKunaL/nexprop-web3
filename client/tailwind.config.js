@@ -30,6 +30,7 @@ module.exports = {
 
         "border-dark": "#5C5C5C",
         success: "#22c55e",
+        danger:"#ef4444"
       },
       fontFamily: {
         sans: ["RubikRegular"],
