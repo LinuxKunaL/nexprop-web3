@@ -1,9 +1,9 @@
-import { View, Text, TouchableHighlight } from "react-native";
-import Icon, { TIconName } from "../display/Icon";
 import clsx from "clsx";
 import { Vibration } from "react-native";
+import Icon, { TIconName } from "../display/Icon";
 import { useTheme } from "@providers/ThemeProvider";
-import { colors } from "@constants/theme";
+import { useThemeStore } from "@stores/theme.store";
+import { View, Text, TouchableHighlight } from "react-native";
 
 type Props = {
   icon?: {
@@ -36,6 +36,7 @@ export default function Badge({
   containerClassName,
 }: Props) {
   const { theme } = useTheme();
+  const colors = useThemeStore((st) => st.colors);
   const Container = onPress ? TouchableHighlight : View;
   const foregroundThemed =
     theme == "dark" ? colors["foreground-dark"] : colors.foreground;
@@ -80,7 +81,7 @@ export default function Badge({
       activeOpacity={0.8}
       className={clsx(
         "rounded-md self-start overflow-hidden",
-        containerClassName
+        containerClassName,
       )}
     >
       <View
@@ -88,7 +89,7 @@ export default function Badge({
           "flex-row items-center gap-1 justify-center",
           sizeClasses[size],
           backgroundColor[variant],
-          className
+          className,
         )}
       >
         {icon && iconPlace === "before" && (
@@ -98,7 +99,7 @@ export default function Badge({
           className={clsx(
             "font-medium",
             textSizeClasses[size],
-            textAlign && textAlignCls[textAlign]
+            textAlign && textAlignCls[textAlign],
           )}
           style={{
             color: textColor || foregroundThemed,

@@ -23,6 +23,7 @@ module.exports = function (api) {
             "@context:": "./src/context",
             "@data:": "./src/data",
             "@feature:": "./src/features",
+            "@stores:": "./src/stores",
           },
           extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
         },

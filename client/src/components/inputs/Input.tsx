@@ -1,7 +1,7 @@
 import { TextInput, KeyboardTypeOptions, TextInputProps } from "react-native";
 import React from "react";
 import { clsx } from "clsx";
-import { colors } from "src/constants/theme";
+import { useThemeStore } from "@stores/theme.store";
 
 type Props = TextInputProps & {
   placeholder?: string;
@@ -17,6 +17,7 @@ type Props = TextInputProps & {
 };
 
 const Input: React.FC<Props> = (props) => {
+  const colors = useThemeStore((st) => st.colors);
   return (
     <TextInput
       {...props}

@@ -1,7 +1,6 @@
 import { clsx } from "clsx";
 import Icon from "../display/Icon";
 import IconButton from "../buttons/IconButton";
-import { colors } from "src/constants/theme";
 import { useTheme } from "@providers/ThemeProvider";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -13,11 +12,14 @@ import {
   Platform,
 } from "react-native";
 import { useRouter } from "expo-router";
+import { useThemeStore } from "@stores/theme.store";
+import CustomCircle from "@components/layout/CustomCircle";
 
 export default function CustomTabBar({ state, navigation }: BottomTabBarProps) {
   const router = useRouter();
   const { theme } = useTheme();
   const { bottom } = useSafeAreaInsets();
+  const colors = useThemeStore((st) => st.colors);
   const activeRoute = state.routes[state.index].name.split("/")[0];
   const iconTheme = theme === "dark" ? colors["muted-dark"] : colors["muted"];
 
@@ -80,18 +82,20 @@ export default function CustomTabBar({ state, navigation }: BottomTabBarProps) {
         </Text>
       </PressView>
       <PressView
-        className="justify-center items-center size-20 relative -top-11 rounded-full dark:bg-card-dark bg-card"
+        className="justify-center items-center size-20 relative -top-12 rounded-full dark:bg-card-dark bg-card"
         onPress={openAddpropery}
         testID="create-property-button"
       >
-        <IconButton
-          name="plus"
-          variant="primary"
-          className="!size-14 !rounded-full"
-          onPress={openAddpropery}
-          iconSize={31}
-          color="white"
-        />
+        <CustomCircle size={72} strokeWidth={0.9}>
+          <IconButton
+            name="plus"
+            variant="primary"
+            className="!size-14 !rounded-full"
+            onPress={openAddpropery}
+            iconSize={31}
+            color="white"
+          />
+        </CustomCircle>
       </PressView>
       <PressView
         className="flex-col gap-1 justify-center items-center flex-1"

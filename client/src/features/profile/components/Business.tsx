@@ -2,13 +2,14 @@ import { View, Text } from "react-native";
 import React from "react";
 import TouchableText from "@components/buttons/TouchableText";
 import Icon from "@components/display/Icon";
-import { colors } from "@constants/theme";
+import { useThemeStore } from "@stores/theme.store";
 import { useRouter } from "expo-router";
 
 type Props = {};
 
 const Business = (props: Props) => {
   const router = useRouter();
+  const colors = useThemeStore((st) => st.colors);
   return (
     <View className="px-4 gap-5" testID="business">
       <View className="justify-between flex-row items-center" testID="title">

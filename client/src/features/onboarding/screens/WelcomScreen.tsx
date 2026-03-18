@@ -13,9 +13,10 @@ import Animated, {
 } from "react-native-reanimated";
 import Indicator from "@components/feedback/Indicator";
 import { useRouter } from "expo-router";
-import { colors } from "src/constants/theme";
+
 import { useTheme } from "@providers/ThemeProvider";
 import { StatusBar } from "expo-status-bar";
+import { useThemeStore } from "@stores/theme.store";
 
 type TOnboardingSlides = {
   id: number;
@@ -25,11 +26,11 @@ type TOnboardingSlides = {
 };
 
 export default function WelcomeScreen() {
+  const colors = useThemeStore((st) => st.colors);
   const [currentSlide, setCurrentSlide] = useState<number>(0);
   const { theme } = useTheme();
   const translateX = useSharedValue<number>(0);
   const router = useRouter();
-
   const onboardingSlides: TOnboardingSlides[] = [
     {
       id: 1,

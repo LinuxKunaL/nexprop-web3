@@ -1,13 +1,13 @@
 import React from "react";
 import { useRouter } from "expo-router";
 import Icon from "@components/display/Icon";
-import { colors } from "@constants/theme";
 import Badge from "@components/feedback/Badge";
 import { View, Text, ScrollView, Pressable, Image } from "react-native";
+import { useThemeStore } from "@stores/theme.store";
 
 const FeaturedProperties = () => {
   const router = useRouter();
-
+const colors = useThemeStore((st) => st.colors);
   return (
     <View testID="featured-properties">
       <View testID="title" className="flex-row gap-1">

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Icon from "@components/display/Icon";
 import Button from "@components/buttons/Button";
-import { colors } from "@constants/theme";
+import { useThemeStore } from "@stores/theme.store";
 import { View, Text } from "react-native";
 import { useTheme } from "@providers/ThemeProvider";
 import { PropertyDetailsContext } from "@feature/property/details-context";
@@ -9,7 +9,7 @@ import { PropertyDetailsContext } from "@feature/property/details-context";
 const PurchaseCard = () => {
   const { theme } = useTheme();
   const { property } = useContext(PropertyDetailsContext);
-
+ const colors = useThemeStore((st) => st.colors);
   const sellingType = property?.sellingType === "direct";
 
   return (

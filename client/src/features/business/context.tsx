@@ -11,9 +11,9 @@ import {
   useAnimatedStyle,
   useSharedValue,
 } from "react-native-reanimated";
-import { colors } from "@constants/theme";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { TTheme, useTheme } from "@providers/ThemeProvider";
+import { useThemeStore } from "@stores/theme.store";
 
 type Props = {
   children: React.ReactNode[] | React.ReactNode;
@@ -38,6 +38,7 @@ export const BuinessProvider = ({ children }: Props) => {
   const [businessAvatarHeight, setBusinessAvatarHeight] = useState<number>(260);
   const [isHeaderBorder, setIsHeaderBorder] = useState<boolean>(false);
   const headerOpacity = useSharedValue<number>(0);
+  const colors = useThemeStore((st) => st.colors);
   const { top } = useSafeAreaInsets();
   const { theme } = useTheme();
 

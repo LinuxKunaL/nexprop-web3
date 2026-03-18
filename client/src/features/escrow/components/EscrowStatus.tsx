@@ -5,13 +5,14 @@ import Modal from "@components/overlays/Model";
 import Button from "@components/buttons/Button";
 import React, { useState } from "react";
 import IconButton from "@components/buttons/IconButton";
-import { colors } from "@constants/theme";
 import { View, Text } from "react-native";
 import splitCamelCase from "@utils/splitCamelCase";
+import { useThemeStore } from "@stores/theme.store";
 
 type Props = {};
 
 const EscrowStatus = (props: Props) => {
+  const colors = useThemeStore((st) => st.colors);
   const [isViewDocument, setIsViewDocument] = useState(false);
 
   const details = {

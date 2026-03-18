@@ -4,14 +4,14 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import ScreenHeader from "@components/layout/ScreenHeader";
 import Icon from "@components/display/Icon";
 import Hr from "@components/layout/Hr";
-import { colors } from "@constants/theme";
+import { useThemeStore } from "@stores/theme.store";
 import { useRouter } from "expo-router";
 import { Pressable } from "react-native";
 import { TouchableHighlight } from "react-native";
 
 const SettingsScreen = () => {
   const router = useRouter();
-
+  const colors = useThemeStore((st) => st.colors);
   const handleNavigate = (route: any) => {
     router.navigate(route);
   };
@@ -57,12 +57,17 @@ const SettingsScreen = () => {
             Notification
           </Text>
         </Pressable>
-        <View className="gap-3 flex-row items-center p-3">
-          <Icon name="theme-light-dark" isThemed />
+        <Pressable
+          onPress={() => {
+            handleNavigate("/settings/appearance");
+          }}
+          className="gap-3 flex-row items-center p-3"
+        >
+          <Icon name="format-color-fill" isThemed />
           <Text className="dark:text-foreground-dark text-foreground font-medium">
-            Change Theme
+            Appearance
           </Text>
-        </View>
+        </Pressable>
         <Hr />
         <View className="gap-3 flex-row items-center p-3">
           <Icon name="head-question" isThemed />

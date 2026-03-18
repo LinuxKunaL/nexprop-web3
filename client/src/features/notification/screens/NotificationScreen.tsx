@@ -1,11 +1,12 @@
 import React from "react";
 import Icon from "@components/display/Icon";
-import { colors } from "@constants/theme";
 import { View, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";;
 import ScreenHeader from "@components/layout/ScreenHeader";
+import { useThemeStore } from "@stores/theme.store";
 
 const NotificationScreen = () => {
+  const colors = useThemeStore((st) => st.colors);
   return (
     <SafeAreaView
       edges={["top", "left", "right"]}

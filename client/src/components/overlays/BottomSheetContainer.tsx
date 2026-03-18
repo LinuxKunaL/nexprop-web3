@@ -1,10 +1,10 @@
 import { View } from "react-native";
 import React, { RefObject } from "react";
-import { colors } from "@constants/theme";
 import { useTheme } from "@providers/ThemeProvider";
 import BottomSheet from "react-native-raw-bottom-sheet";
 import { TSheetRef } from "@types_/bottomSheet";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { useThemeStore } from "@stores/theme.store";
 
 type props = {
   children: React.ReactElement;
@@ -19,7 +19,7 @@ export default function BottomSheetContainer({
 }: props) {
   const { theme } = useTheme();
   const { bottom } = useSafeAreaInsets();
-
+  const colors = useThemeStore((st) => st.colors);
   const SheetBackgroundThemed =
     theme === "dark" ? colors["background-dark"] : colors.card;
 

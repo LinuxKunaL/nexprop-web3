@@ -5,7 +5,7 @@ import Carousel, {
   Pagination,
 } from "react-native-reanimated-carousel";
 import { useRouter } from "expo-router";
-import { colors } from "@constants/theme";
+import { useThemeStore } from "@stores/theme.store";
 import Icon from "@components/display/Icon";
 import { useSharedValue } from "react-native-reanimated";
 import useWishlist from "@feature/wishlist/hooks/use-wishlist";
@@ -15,11 +15,11 @@ const PropertyImageCarousel = () => {
   const router = useRouter();
   const progress = useSharedValue(0);
   const { width } = useWindowDimensions();
+  const colors = useThemeStore((st) => st.colors);
   const { property } = useContext(PropertyDetailsContext);
   const { handleToggleWishlist, isWishlist } = useWishlist(property);
   const carouselRef = React.useRef<ICarouselInstance>(null);
   const [images, setImages] = useState<string[]>([]);
-
   useEffect(() => {
     if (property) {
       setImages([property?.image || "", ...(property?.carouselImages || [])]);

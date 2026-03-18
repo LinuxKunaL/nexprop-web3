@@ -1,11 +1,12 @@
 import { View, Text } from "react-native";
 import React from "react";
 import Icon from "@components/display/Icon";
-import { colors } from "@constants/theme";
+import { useThemeStore } from "@stores/theme.store";
 
 type Props = {};
 
 const Document = (props: Props) => {
+   const colors = useThemeStore((st) => st.colors);
   return (
     <View className="flex-1 h-full w-full gap-4">
       <View

@@ -1,30 +1,23 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect } from "react";
 import { colorScheme } from "nativewind";
-
-export type TTheme = "light" | "dark";
+import useAppearance from "@hooks/other/use-appearance";
+import { ThemeState } from "@types_/theme";
 
 type ThemeContextType = {
-  theme: TTheme;
-  toggleTheme: () => void;
+  theme: ThemeState["theme"];
 };
 
 const ThemeContext = createContext<ThemeContextType | null>(null);
 
 function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<TTheme>(colorScheme.get() ?? "light");
+  const { theme } = useAppearance();
 
   useEffect(() => {
     colorScheme.set(theme);
   }, [theme]);
 
-  const toggleTheme = () => {
-    setTheme((t) => (t === "dark" ? "light" : "dark"));
-  };
-
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
+    <ThemeContext.Provider value={{ theme }}>{children}</ThemeContext.Provider>
   );
 }
 

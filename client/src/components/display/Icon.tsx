@@ -1,6 +1,6 @@
-import { colors } from "@constants/theme";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useTheme } from "@providers/ThemeProvider";
+import { useThemeStore } from "@stores/theme.store";
 import React from "react";
 
 type IconProps = {
@@ -18,11 +18,17 @@ export type TIconName = React.ComponentProps<
 export default function Icon({
   name,
   size = 24,
-  color = colors["background-dark"],
+  color,
   isThemed = false,
   className,
 }: IconProps) {
   const { theme } = useTheme();
+
+  // ✅ hook inside component
+  const colors = useThemeStore((st) => st.colors);
+
+  const defaultColor = colors["background-dark"];
+
   const themedColor =
     theme === "dark" ? colors.background : colors["background-dark"];
 
@@ -30,7 +36,7 @@ export default function Icon({
     <MaterialCommunityIcons
       name={name}
       size={size}
-      color={isThemed ? themedColor : color}
+      color={isThemed ? themedColor : (color ?? defaultColor)}
       className={className}
     />
   );

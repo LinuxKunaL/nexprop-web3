@@ -2,15 +2,16 @@ import { View, Text, Pressable, Image } from "react-native";
 import React, { useContext } from "react";
 import Icon from "@components/display/Icon";
 import NotificationBell from "@components/feedback/NotificationBell";
-import { colors } from "@constants/theme";
 import { usePersistentState } from "@hooks/other/use-persistent-state";
 import { TLocation } from "@components/maps/types";
 import { HomeContext } from "../context";
+import { useThemeStore } from "@stores/theme.store";
 
 type Props = {};
 
 const Header = (props: Props) => {
   const { locationModel, setLocationModel } = useContext(HomeContext);
+  const colors = useThemeStore((st) => st.colors);
   const [userLocation] = usePersistentState<TLocation>("user_location");
   const openLocationModel = () => {
     setLocationModel(!locationModel);

@@ -10,27 +10,27 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "#F5F5F5",
-        card: "#FFFFFF",
+        background: "rgb(var(--color-background) / <alpha-value>)",
+        card: "rgb(var(--color-card) / <alpha-value>)",
 
-        foreground: "#0F0F0F",
-        muted: "#5C5C5C",
+        foreground: "rgb(var(--color-foreground) / <alpha-value>)",
+        muted: "rgb(var(--color-muted) / <alpha-value>)",
 
-        border: "#E0E0E0",
+        border: "rgb(var(--color-border) / <alpha-value>)",
 
-        primary: "#14B8A6",
+        primary: "rgb(var(--color-primary) / <alpha-value>)",
 
         /* DARK */
-        "background-dark": "#111315",
-        "card-dark": "#1A1C1E",
-        "card-secondary-dark": "#2D2F31",
+        "background-dark": "rgb(var(--color-background-dark) / <alpha-value>)",
+        "card-dark": "rgb(var(--color-card-dark) / <alpha-value>)",
+        "card-secondary-dark": "rgb(var(--color-card-secondary-dark) / <alpha-value>)",
 
-        "foreground-dark": "#FFFFFF",
-        "muted-dark": "#B4B6B8",
+        "foreground-dark": "rgb(var(--color-foreground-dark) / <alpha-value>)",
+        "muted-dark": "rgb(var(--color-muted-dark) / <alpha-value>)",
 
-        "border-dark": "#5C5C5C",
-        success: "#22c55e",
-        danger:"#ef4444"
+        "border-dark": "rgb(var(--color-border-dark) / <alpha-value>)",
+        success: "rgb(var(--color-success) / <alpha-value>)",
+        danger:"rgb(var(--color-danger) / <alpha-value>)"
       },
       fontFamily: {
         sans: ["RubikRegular"],

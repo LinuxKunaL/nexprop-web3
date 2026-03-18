@@ -3,7 +3,7 @@ import { Text, View } from "react-native";
 import { TSheetRef } from "@types_/bottomSheet";
 import BottomSheetLayout from "./BottomSheetLayout";
 import Slider from "@react-native-community/slider";
-import { colors } from "@constants/theme";
+import { useThemeStore } from "@stores/theme.store";
 import Button from "@components/buttons/Button";
 import Badge from "@components/feedback/Badge";
 
@@ -15,7 +15,7 @@ export default function AreaBottomSheet({ ref }: Props) {
   const [value, setValue] = useState(0);
   const areaUnits = ["Sq ft", "Acre", "Hectare"] as const;
   const [unit, setUnit] = useState<(typeof areaUnits)[number]>("Sq ft");
-
+  const colors = useThemeStore((st) => st.colors);
   const unitViseMaxValues = {
     "Sq ft": 400,
     Acre: 200,

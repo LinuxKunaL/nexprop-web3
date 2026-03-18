@@ -2,9 +2,9 @@ import React from "react";
 import Icon from "./Icon";
 import Badge from "../feedback/Badge";
 import { useRouter } from "expo-router";
-import { colors } from "@constants/theme";
 import { View, Text, Image, Pressable } from "react-native";
 import { TProperty } from "@feature/property/types";
+import { useThemeStore } from "@stores/theme.store";
 
 type PropertyGlassCardProps = {
   item: TProperty | undefined;
@@ -12,6 +12,7 @@ type PropertyGlassCardProps = {
 
 const PropertyGlassCard = ({ item }: PropertyGlassCardProps) => {
   const router = useRouter();
+  const colors = useThemeStore((st) => st.colors);
 
   return (
     <Pressable

@@ -3,7 +3,7 @@ import { RefObject } from "react";
 import { View } from "react-native";
 import { Text } from "react-native";
 import { Pressable } from "react-native";
-import { colors } from "@constants/theme";
+import { useThemeStore } from "@stores/theme.store";
 import Icon, { TIconName } from "@components/display/Icon";
 import { TSheetRef } from "@types_/bottomSheet";
 import BottomSheetLayout from "./BottomSheetLayout";
@@ -18,6 +18,7 @@ type TTypesCard = {
 };
 
 export default function TypeBottomSheet({ ref }: Props) {
+   const colors = useThemeStore((st) => st.colors);
   const typesCard: TTypesCard[] = [
     {
       name: "Apartment",

@@ -4,7 +4,7 @@ import { TSheetRef } from "@types_/bottomSheet";
 import { View } from "react-native";
 import { Text } from "react-native";
 import Slider from "@react-native-community/slider";
-import { colors } from "@constants/theme";
+import { useThemeStore } from "@stores/theme.store";
 import Badge from "@components/feedback/Badge";
 
 type Props = {
@@ -13,7 +13,7 @@ type Props = {
 
 export default function PriceBottomSheet({ ref }: Props) {
   const [values, setValues] = useState({ min: 100, max: 300 });
-
+  const colors = useThemeStore((st) => st.colors);
   return (
     <BottomSheetLayout ref={ref} title="Price" height={360}>
       <View className="flex-1 gap-4">
@@ -60,7 +60,7 @@ export default function PriceBottomSheet({ ref }: Props) {
             <Badge
               size="lg"
               onPress={() => {
-                setValues({ min: 0.050, max: 1.0 });
+                setValues({ min: 0.05, max: 1.0 });
               }}
               variant="ghost"
               containerClassName="flex-auto"
@@ -72,7 +72,7 @@ export default function PriceBottomSheet({ ref }: Props) {
               size="lg"
               variant="ghost"
               onPress={() => {
-                setValues({ min: 3.500, max: 5.500 });
+                setValues({ min: 3.5, max: 5.5 });
               }}
               containerClassName="flex-auto"
               textAlign="mid"
@@ -83,7 +83,7 @@ export default function PriceBottomSheet({ ref }: Props) {
               size="lg"
               variant="ghost"
               onPress={() => {
-                setValues({ min: 7.500, max: 9.500 });
+                setValues({ min: 7.5, max: 9.5 });
               }}
               containerClassName="flex-auto"
               textAlign="mid"

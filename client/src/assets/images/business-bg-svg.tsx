@@ -1,13 +1,14 @@
-import { View, Text } from "react-native";
+import { View} from "react-native";
 import React from "react";
 import Svg, { G, Path } from "react-native-svg";
-import { colors } from "@constants/theme";
+import { useThemeStore } from "@stores/theme.store";
 
 type Props = {
   className: string;
 };
 
 const BusinessBgSvg = (props: Props) => {
+   const colors = useThemeStore((st) => st.colors);
   return (
     <View className={props.className}>
       <Svg id="visual">

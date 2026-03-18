@@ -1,11 +1,12 @@
 import { View, Text } from "react-native";
 import React from "react";
 import Icon from "@components/display/Icon";
-import { colors } from "@constants/theme";
+import { useThemeStore } from "@stores/theme.store";
 
 type Props = {};
 
 const WalletInfo = (props: Props) => {
+  const colors = useThemeStore((st) => st.colors);
   return (
     <View className="px-4 gap-5" testID="wallet-info">
       <View className="flex-row gap-2">

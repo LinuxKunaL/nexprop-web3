@@ -1,7 +1,7 @@
 import Icon from "@components/display/Icon";
 import Input from "@components/inputs/Input";
 import { RefObject } from "react";
-import { colors } from "@constants/theme";
+import { useThemeStore } from "@stores/theme.store";
 import { TSheetRef } from "@types_/bottomSheet";
 import { View, Text, ScrollView } from "react-native";
 import BottomSheetLayout from "./BottomSheetLayout";
@@ -11,6 +11,7 @@ type Props = {
 };
 
 export default function LocationBottomSheet({ ref }: Props) {
+   const colors = useThemeStore((st) => st.colors);
   return (
     <BottomSheetLayout ref={ref} title="Location">
       <View className="">

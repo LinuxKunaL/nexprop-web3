@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { View, Text } from "react-native";
-import { colors } from "@constants/theme";
+import { useThemeStore } from "@stores/theme.store";
 import Icon from "@components/display/Icon";
 import Badge from "@components/feedback/Badge";
 import PropertyImageCarousel from "./PropertyImageCarousel";
@@ -8,6 +8,7 @@ import { PropertyDetailsContext } from "@feature/property/details-context";
 
 const PropertyHeader = () => {
   const { property } = useContext(PropertyDetailsContext);
+  const colors = useThemeStore((st) => st.colors);
   return (
     <View className="gap-6">
       <PropertyImageCarousel />

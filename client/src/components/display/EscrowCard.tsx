@@ -9,8 +9,8 @@ import React, { useCallback } from "react";
 import clsx from "clsx";
 
 import { useRouter } from "expo-router";
-import { colors } from "@constants/theme";
 import { TEscrow } from "@feature/escrow/types";
+import { useThemeStore } from "@stores/theme.store";
 
 type Props = {
   item: TEscrow;
@@ -18,7 +18,8 @@ type Props = {
 
 const EscrowCard = ({ item }: Props) => {
   const router = useRouter();
-
+  const colors = useThemeStore((st) => st.colors);
+  
   const statusTextStyle = (status: (typeof item)["status"]) => {
     if (status === "pending") return "text-yellow-500";
     else if (status === "cancel") return "text-red-500";

@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useTheme } from "@providers/ThemeProvider";
-import { colors } from "@constants/theme";
+import { useThemeStore } from "@stores/theme.store";
 
 export type TIconButton = TouchableOpacityProps & {
   color?: string;
@@ -34,6 +34,7 @@ const IconButton: React.FC<TIconButton> = ({
   onLongPress,
 }) => {
   const { theme } = useTheme();
+  const colors = useThemeStore((st) => st.colors);
 
   const themeIconColor = theme == "dark" ? colors.card : colors["card-dark"];
 

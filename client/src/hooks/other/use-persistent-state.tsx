@@ -1,16 +1,20 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-type PersistentKeys = "user_location" | "wishlist";
+type PersistentKeys = "user_location" | "wishlist" | "theme" | "theme_template";
 
-export function usePersistentState<T>(
-  key: PersistentKeys,
-): [
+type Props<T> = [
   T | undefined,
   React.Dispatch<React.SetStateAction<T | undefined>>,
   () => void,
-] {
+];
+
+export function usePersistentState<T>(
+  key: PersistentKeys,
+  initValue?: T,
+): Props<T> {
   const [state, setState] = useState<T | undefined>(undefined);
+  const isLoaded = useRef(false);
 
   useEffect(() => {
     const load = async () => {
@@ -18,9 +22,13 @@ export function usePersistentState<T>(
         const value = await AsyncStorage.getItem(key);
         if (value !== null) {
           setState(JSON.parse(value));
+        } else if (initValue !== undefined) {
+          setState(initValue);
         }
       } catch (error) {
         console.warn("AsyncStorage load error:", error);
+      } finally {
+        isLoaded.current = true;
       }
     };
     load();
@@ -28,6 +36,7 @@ export function usePersistentState<T>(
 
   useEffect(() => {
     const save = async () => {
+      if (!isLoaded.current) return;
       try {
         if (state !== undefined) {
           await AsyncStorage.setItem(key, JSON.stringify(state));
@@ -41,6 +50,7 @@ export function usePersistentState<T>(
 
   const deleteState = async () => {
     await AsyncStorage.removeItem(key);
+    setState(undefined);
   };
 
   return [state, setState, deleteState];

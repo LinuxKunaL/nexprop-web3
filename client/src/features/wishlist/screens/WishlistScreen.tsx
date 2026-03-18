@@ -1,11 +1,9 @@
 import { View, Text, ScrollView, RefreshControl } from "react-native";
 import React, { useCallback, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { propertiesData } from "@data/properties";
 import PropertyGlassCard from "@components/display/PropertyCard";
 import { usePersistentState } from "@hooks/other/use-persistent-state";
 import { TProperty } from "@feature/property/types";
-import { colors } from "@constants/theme";
 
 export default function WishlistScreen() {
   const [wishlist] = usePersistentState<TProperty[]>("wishlist");
