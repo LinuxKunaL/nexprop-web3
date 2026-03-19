@@ -49,6 +49,7 @@ const Appearance = () => {
         <View className="p-2 gap-2 flex-row">
           {themeButtons.map((btn) => (
             <Pressable
+              key={btn.name}
               android_ripple={{
                 color: colors.primary,
                 borderless: true,

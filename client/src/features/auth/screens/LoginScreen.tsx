@@ -1,5 +1,5 @@
 import { View, Text } from "react-native";
-import BuildHouse from "@assets/images/login-house-build.svg";
+import HouseBuild from "@assets/images/svgs/house-build";
 import TouchableText from "@components/buttons/TouchableText";
 import Button from "@components/buttons/Button";
 import { useRouter } from "expo-router";
@@ -11,8 +11,8 @@ export default function LoginScreen() {
       className="flex-1 dark:bg-background-dark bg-background"
       testID="screen"
     >
-      <View className="" testID="building-image">
-        <BuildHouse />
+      <View testID="building-image">
+        <HouseBuild />
       </View>
       <View testID="container" className="mt-3 gap-4 flex-1">
         <View testID="container-test" className="gap-4">

@@ -1,8 +1,4 @@
 import { View, Text } from "react-native";
-import IntroNature from "@assets/images/intro-nature.svg";
-import IntroEth from "@assets/images/intro-eth.svg";
-import IntroGPS from "@assets/images/intro-gps.svg";
-
 import { SvgProps } from "react-native-svg";
 import React, { useState } from "react";
 import Button from "@components/buttons/Button";
@@ -18,10 +14,14 @@ import { useTheme } from "@providers/ThemeProvider";
 import { StatusBar } from "expo-status-bar";
 import { useThemeStore } from "@stores/theme.store";
 
+import IntroGps from "@assets/images/svgs/intro-gps";
+import IntroEth from "@assets/images/svgs/intro-eth";
+import IntroNature from "@assets/images/svgs/intro-nature";
+
 type TOnboardingSlides = {
   id: number;
   title: React.ReactNode;
-  image: React.FC<SvgProps>;
+  image: React.ReactNode;
   description: string;
 };
 
@@ -44,7 +44,7 @@ export default function WelcomeScreen() {
           </Text>
         </React.Fragment>
       ),
-      image: IntroNature,
+      image: <IntroNature />,
       description: "Buy, sell, and bid properties securely using blockchain.",
     },
     {
@@ -59,7 +59,7 @@ export default function WelcomeScreen() {
           </Text>
         </React.Fragment>
       ),
-      image: IntroEth,
+      image: <IntroEth />,
       description:
         "Your funds are held safely in escrow until you verify property documents.",
     },
@@ -75,7 +75,7 @@ export default function WelcomeScreen() {
           </Text>
         </React.Fragment>
       ),
-      image: IntroGPS,
+      image: <IntroGps />,
       description:
         "Engage with verified real estate agents for a seamless experience.",
     },
@@ -99,15 +99,13 @@ export default function WelcomeScreen() {
         key={`image-${currentSlide}`}
         entering={FadeIn}
         exiting={FadeOut}
-        className="flex flex-1 top-0"
+        className="flex flex-1 top-0 justify-center items-center"
         testID="intro-image"
       >
-        <CurrentImage
-          width={"100%"}
-          height={"100%"}
-          fill={theme == "dark" ? colors["background-dark"] : colors.card}
-          preserveAspectRatio="xMidYMid slice"
-        />
+        {onboardingSlides[currentSlide]?.image}
+        {/* <IntroNature /> */}
+        {/* <IntroGps/> */}
+        {/* <IntroEth/> */}
       </Animated.View>
       <View
         className="absolute flex-1 h-full items-center justify-center flex-col"

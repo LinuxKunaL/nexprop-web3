@@ -36,7 +36,7 @@ const Modal = (props: Props) => {
       <View className="bg-black/50 flex-1 justify-center items-center px-4">
         <View
           className={clsx(
-            "bg-card-dark self-center rounded-lg w-full",
+            "bg-card dark:bg-card-dark self-center rounded-lg w-full",
             props.height,
           )}
         >

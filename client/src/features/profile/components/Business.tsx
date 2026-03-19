@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, Pressable } from "react-native";
 import React from "react";
 import TouchableText from "@components/buttons/TouchableText";
 import Icon from "@components/display/Icon";
@@ -25,7 +25,13 @@ const Business = (props: Props) => {
           Edit Business
         </TouchableText>
       </View>
-      <View className="flex-row gap-2" testID="business-card">
+      <Pressable
+        onPress={() => {
+          router.navigate("/business/100");
+        }}
+        className="flex-row gap-2"
+        testID="business-card"
+      >
         <View className="size-20 rounded-lg dark:bg-card-secondary-dark justify-center items-center bg-card">
           <Icon name="office-building" size={32} isThemed />
         </View>
@@ -43,7 +49,7 @@ const Business = (props: Props) => {
             Developer
           </Text>
         </View>
-      </View>
+      </Pressable>
     </View>
   );
 };

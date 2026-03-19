@@ -2,6 +2,8 @@ import { View, Text } from "react-native";
 import React from "react";
 import TouchableText from "@components/buttons/TouchableText";
 import { useRouter } from "expo-router";
+import { escrowsData } from "@data/escrow";
+import EscrowCard from "@components/display/EscrowCard";
 
 type Props = {};
 
@@ -24,7 +26,8 @@ const Escrow = (props: Props) => {
           View All
         </TouchableText>
       </View>
-      <View className="p-3 gap-2 border-2 rounded-lg border-border/50 dark:border-border-dark/50">
+      <EscrowCard item={escrowsData[0]} />
+      {/* <View className="p-3 gap-2 border-2 rounded-lg border-border/50 dark:border-border-dark/50">
         <View className="flex-row justify-between">
           <Text className="text-muted dark:text-muted-dark font-medium">
             Escrow ID :
@@ -47,7 +50,7 @@ const Escrow = (props: Props) => {
             72 Hours
           </Text>
         </View>
-      </View>
+      </View> */}
     </View>
   );
 };

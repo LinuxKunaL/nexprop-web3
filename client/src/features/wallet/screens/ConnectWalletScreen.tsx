@@ -1,7 +1,7 @@
 import Button from "@components/buttons/Button";
 import { View, Text } from "react-native";
 import { useRouter } from "expo-router";
-import WalletConnect from "@assets/images/wallet-eth.svg";
+import WalletEth from "@assets/images/svgs/wallet-eth";
 
 export default function ConnectWalletScreen() {
   const router = useRouter();
@@ -10,17 +10,17 @@ export default function ConnectWalletScreen() {
       className="flex-1 dark:bg-background-dark bg-background"
       testID="screen"
     >
-      <View className="" testID="building-image">
-        <WalletConnect />
+      <View testID="building-image">
+        <WalletEth />
       </View>
-      <View testID="container" className="mt-3 gap-6">
+      <View testID="container" className="mt-3 gap-4">
         <View testID="container-test" className="gap-4">
           <Text className="font-semibold dark:text-foreground-dark text-foreground text-2xl">
             Connect Your Wallet
           </Text>
           <Text className="font-sans dark:text-muted-dark text-muted text-lg">
             Securely connect your crypto wallet to start buying, bidding, or
-            listing properties.
+            listing properties. quickly and securely.
           </Text>
         </View>
         <View testID="wallet-button">

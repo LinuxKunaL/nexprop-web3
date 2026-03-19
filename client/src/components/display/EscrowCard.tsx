@@ -35,7 +35,7 @@ const EscrowCard = ({ item }: Props) => {
       onPress={handleOpenEscrow}
       className="p-3 gap-2 rounded-lg bg-card dark:bg-card-dark"
     >
-      <ActivityIndicator color={colors.primary} />
+      {/* <ActivityIndicator color={colors.primary} /> */}
       <View className="flex-row justify-between">
         <Text className="text-muted dark:text-muted-dark font-medium">
           Escrow ID :
