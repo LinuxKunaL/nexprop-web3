@@ -8,8 +8,10 @@
     "start:app:android": "cd client && npm run android",
     "install:client:packages": "cd client && npm install",
     "install:server:packages": "cd server && npm install",
-    "build:android:apk": "cd client/android && gradlew assembleDebug",
-    "install:debug:apk": "adb install client/android/app/build/outputs/apk/release/app-release.apk"
+    "build:android:debug-apk": "cd client/android && ./gradlew assembleDebug",
+    "build:android:release-apk": "cd client/android && ./gradlew assembleRelease",
+    "install:debug:apk": "adb install client/android/app/build/outputs/apk/debug/app-debug.apk",
+    "install:release:apk": "adb install client/android/app/build/outputs/apk/release/app-release.apk"
   },
   "keywords": [],
   "author": "",

@@ -8,14 +8,14 @@ import { View, Text, ToastAndroid } from "react-native";
 import CustomMapView from "@components/maps/CustomMapView";
 import { getPlaceName } from "src/services/location/geocodeService";
 import { usePersistentState } from "@hooks/other/use-persistent-state";
+import { useMeStore } from "@stores/me.store";
 
 const LocationModel = () => {
   const [selectedLocation, setSelectedLocation] = useState<TLocation>(
     {} as TLocation,
   );
-  const [userLocation, setUserLocation] =
-    usePersistentState<TLocation>("user_location");
 
+  const { userLocation, setUserLocation } = useMeStore();
   const [isAddressFound, setIsAddressFound] = useState(true);
   const { locationModel, setLocationModel } = useContext(HomeContext);
   const [mapDragHappen, setMapDragHappen] = useState(false);
@@ -32,12 +32,11 @@ const LocationModel = () => {
     }
   };
 
-  const onPinDrop = async (coords: TCoords) => {
+  const handleGetAddress = async (coords: TCoords) => {
     const address = await getPlaceName(coords);
     if (coords) {
       setMapDragHappen(true);
     }
-
     if (address?.status == 200) {
       setIsAddressFound(true);
       setSelectedLocation({
@@ -65,14 +64,10 @@ const LocationModel = () => {
       scrollType="keyboardAware"
     >
       <View className="flex-1 gap-4">
-        <Text className="font-sans text-muted dark:text-muted-dark">
-          Drag the pin to adjust the location, or long press anywhere on the map
-          to place it.
-        </Text>
         <View className="flex-1">
           <CustomMapView
             initialRegion={userLocation?.coords}
-            onPinDrop={onPinDrop}
+            onPinDrop={handleGetAddress}
           />
         </View>
         {isAddressFound ? (

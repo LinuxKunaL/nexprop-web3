@@ -1,21 +1,22 @@
-import { View, Text, Pressable, Image } from "react-native";
+import { HomeContext } from "../context";
 import React, { useContext } from "react";
 import Icon from "@components/display/Icon";
-import NotificationBell from "@components/feedback/NotificationBell";
-import { usePersistentState } from "@hooks/other/use-persistent-state";
-import { TLocation } from "@components/maps/types";
-import { HomeContext } from "../context";
+import { useMeStore } from "@stores/me.store";
 import { useThemeStore } from "@stores/theme.store";
+import { View, Text, Pressable, Image } from "react-native";
+import NotificationBell from "@components/feedback/NotificationBell";
 
 type Props = {};
 
 const Header = (props: Props) => {
   const { locationModel, setLocationModel } = useContext(HomeContext);
   const colors = useThemeStore((st) => st.colors);
-  const [userLocation] = usePersistentState<TLocation>("user_location");
+  const { userLocation } = useMeStore();
+
   const openLocationModel = () => {
     setLocationModel(!locationModel);
   };
+
   return (
     <View testID="header" className="flex-row justify-between items-center">
       <Pressable
@@ -31,11 +32,17 @@ const Header = (props: Props) => {
           <Text className="font-medium text-foreground dark:text-foreground-dark">
             Location
           </Text>
-          <View className="flex-row">
+          <View className="flex-row items-center">
             <Icon name="map-marker" size={19} color={colors.primary} />
-            <Text className="font-sans capitalize text-muted dark:text-muted-dark">
-              {userLocation?.city}, {userLocation?.state}
-            </Text>
+            {userLocation ? (
+              <Text className="font-sans capitalize text-muted dark:text-muted-dark">
+                {userLocation?.city}, {userLocation?.state}
+              </Text>
+            ) : (
+              <Text className="font-sans italic capitalize text-muted text-sm dark:text-muted-dark">
+                Click to set location
+              </Text>
+            )}
           </View>
         </View>
       </Pressable>

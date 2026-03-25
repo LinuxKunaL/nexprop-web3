@@ -16,6 +16,7 @@ const PropertyGlassCard = ({ item }: PropertyGlassCardProps) => {
 
   return (
     <Pressable
+      key={item?.id}
       onPress={() => {
         router.navigate(`/property/${item?.id}`);
       }}
