@@ -24,9 +24,6 @@ export default function CustomTabBar({ state, navigation }: BottomTabBarProps) {
   const iconTheme = theme === "dark" ? colors["muted-dark"] : colors["muted"];
 
   const navigate = (path: string) => {
-    if (Platform.OS === "android") {
-      Vibration.vibrate(100);
-    }
     navigation.navigate(path);
   };
 

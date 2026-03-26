@@ -40,13 +40,11 @@ const IconButton: React.FC<TIconButton> = ({
 
   const handlePress = () => {
     if (disabled) return;
-    Vibration.vibrate(100);
     onPress?.();
   };
 
   const handleLongPress = () => {
     if (disabled) return;
-    Vibration.vibrate(100);
     onLongPress?.();
   };
 

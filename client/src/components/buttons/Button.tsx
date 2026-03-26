@@ -75,12 +75,10 @@ const Button: React.FC<Props> = ({
   variant = "solid",
 }) => {
   const handlePress = () => {
-    Vibration.vibrate(100);
     onPress?.();
   };
 
   const handleLongPress = () => {
-    Vibration.vibrate(100);
     onLongPress?.();
   };
 

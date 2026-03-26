@@ -63,7 +63,6 @@ export default function Badge({
   };
 
   const handleOnPress = () => {
-    Vibration.vibrate(100);
     if (onPress) {
       onPress();
     }

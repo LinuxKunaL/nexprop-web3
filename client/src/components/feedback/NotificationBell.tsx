@@ -11,7 +11,6 @@ export default function NotificationBell({ count }: Props) {
   
   const handlePress = () => {
     router.navigate("/notifications");
-    Vibration.vibrate(100);
   };
 
   return (

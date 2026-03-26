@@ -22,17 +22,20 @@ export default {
       bundleIdentifier: "com.giga.nexprop",
     },
     android: {
+      icon: "src/assets/images/logos/icon.png",
       adaptiveIcon: {
-        backgroundColor: "#14B8A6",
-        foregroundImage: "src/assets/images/logos/android-icon-foreground.png",
-        backgroundImage: "src/assets/images/logos/android-icon-background.png",
-        monochromeImage: "src/assets/images/logos/android-icon-monochrome.png",
+        foregroundImage: "src/assets/images/logos/icon.png",
       },
       package: "com.giga.nexprop",
       edgeToEdgeEnabled: true,
       predictiveBackGestureEnabled: false,
       permissions: ["INTERNET", "ACCESS_FINE_LOCATION"],
       softwareKeyboardLayoutMode: "resize",
+      config: {
+        googleMaps: {
+          apiKey: process.env.GOOGLE_MAPS_API_KEY,
+        },
+      },
     },
     web: {
       output: "static",
@@ -44,7 +47,7 @@ export default {
       [
         "expo-splash-screen",
         {
-          image: "src/assets/images/logos/icon.png",
+          image: "src/assets/images/logos/splash-icon.png",
           imageWidth: 200,
           resizeMode: "contain",
           backgroundColor: "#ffffff",
