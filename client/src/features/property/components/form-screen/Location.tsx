@@ -3,7 +3,7 @@ import Input from "@components/inputs/Input";
 import { View, Text } from "react-native";
 import CustomMapView from "@components/maps/CustomMapView";
 import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
-import { getPlaceName } from "src/services/location/geocodeService";
+import { getPlaceName } from "@services/location/geocodeService";
 
 const Location = () => {
   return (

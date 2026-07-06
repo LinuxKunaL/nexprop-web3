@@ -1,19 +1,33 @@
-export function generateShades(rgbStr: string, factor = 0.2) {
-  if (rgbStr) {
-    const [r, g, b] = rgbStr.match(/\d+/g).map(Number);
+export function generateShades(
+  rgbStr: string,
+  factor: number = 0.2
+): {
+  light: string;
+  normal: string;
+  dark: string;
+  darker: string;
+} {
+  const matches = rgbStr.match(/\d+/g);
 
-  const clamp = (v) => Math.max(0, Math.min(255, v));
+  if (!matches || matches.length < 3) {
+    throw new Error("Invalid RGB string. Expected format: rgb(255, 255, 255)");
+  }
+
+  const [r, g, b] = matches.map(Number);
+
+  const clamp = (v: number): number =>
+    Math.max(0, Math.min(255, v));
 
   // Bright for visibility
-  const lighten = (v) =>
+  const lighten = (v: number): number =>
     clamp(Math.round(v + (255 - v) * (factor + 0.15)));
 
   // Soft dark
-  const darken = (v) =>
+  const darken = (v: number): number =>
     clamp(Math.round(v * (1 - factor * 0.5)));
 
-  // Deeper dark (but still controlled)
-  const darker = (v) =>
+  // Deeper dark
+  const darker = (v: number): number =>
     clamp(Math.round(v * (1 - factor)));
 
   return {
@@ -22,5 +36,4 @@ export function generateShades(rgbStr: string, factor = 0.2) {
     dark: `rgb(${darken(r)}, ${darken(g)}, ${darken(b)})`,
     darker: `rgb(${darker(r)}, ${darker(g)}, ${darker(b)})`,
   };
-  }
 }

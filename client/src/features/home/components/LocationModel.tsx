@@ -6,9 +6,8 @@ import { TCoords, TLocation } from "@components/maps/types";
 import React, { useContext, useEffect, useState } from "react";
 import { View, Text, ToastAndroid } from "react-native";
 import CustomMapView from "@components/maps/CustomMapView";
-import { getPlaceName } from "src/services/location/geocodeService";
-import { usePersistentState } from "@hooks/other/use-persistent-state";
 import { useMeStore } from "@stores/me.store";
+import { getPlaceName } from "@services/location/geocodeService";
 
 const LocationModel = () => {
   const [selectedLocation, setSelectedLocation] = useState<TLocation>(

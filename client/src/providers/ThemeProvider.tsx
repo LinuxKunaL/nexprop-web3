@@ -9,6 +9,8 @@ type ThemeContextType = {
 
 const ThemeContext = createContext<ThemeContextType | null>(null);
 
+export type TTheme = ThemeState["theme"];
+
 function ThemeProvider({ children }: { children: React.ReactNode }) {
   const { theme } = useAppearance();
 
