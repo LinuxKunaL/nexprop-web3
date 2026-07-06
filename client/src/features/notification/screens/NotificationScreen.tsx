@@ -12,7 +12,7 @@ const NotificationScreen = () => {
       edges={["top", "left", "right"]}
       className="flex-1 dark:bg-background-dark bg-background px-4"
     >
-      <ScreenHeader backButtonVisble title="Notifications" />
+      <ScreenHeader backButtonVisible title="Notifications" />
       <View testID="notifications-list" className="gap-5 flex-col">
         <Text className="font-medium dark:text-foreground-dark text-foreground">
           Today

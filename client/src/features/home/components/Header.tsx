@@ -6,9 +6,7 @@ import { useThemeStore } from "@stores/theme.store";
 import { View, Text, Pressable, Image } from "react-native";
 import NotificationBell from "@components/feedback/NotificationBell";
 
-type Props = {};
-
-const Header = (props: Props) => {
+const Header = () => {
   const { locationModel, setLocationModel } = useContext(HomeContext);
   const colors = useThemeStore((st) => st.colors);
   const { userLocation } = useMeStore();

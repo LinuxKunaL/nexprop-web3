@@ -8,9 +8,9 @@ import { useLocalSearchParams } from "expo-router";
 import EscrowStatus from "../components/EscrowStatus";
 import ScreenHeader from "@components/layout/ScreenHeader";
 
-type Props = {};
 
-const EscrowDetailsScreen = (props: Props) => {
+
+const EscrowDetailsScreen = () => {
   const { id } = useLocalSearchParams();
 
   return (
@@ -18,7 +18,7 @@ const EscrowDetailsScreen = (props: Props) => {
       edges={["top", "left", "right"]}
       className="flex-1 dark:bg-background-dark bg-background px-4"
     >
-      <ScreenHeader title="Escrow Procedure" backButtonVisble />
+      <ScreenHeader title="Escrow Procedure" backButtonVisible />
       <View className="gap-5">
         <Text className="text-foreground dark:text-foreground-dark text-lg font-medium">
           Properties Details

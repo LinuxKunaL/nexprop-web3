@@ -33,11 +33,11 @@ export const propertiesData = [
     description:
       "Luxury residential building with modern architecture and parking space.",
     metadetails: {
-      contractAdress: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      contractAddress: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
       tokenId: "101",
       chain: "Ethereum",
       lastUpdate: "2026-03-04",
-      platfromEarning: "2%",
+      platformEarning: "2%",
     },
 
     itemActivity: [
@@ -118,11 +118,11 @@ export const propertiesData = [
     description: "Modern apartment with balcony view and gym facilities.",
 
     metadetails: {
-      contractAdress: "0xA0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      contractAddress: "0xA0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
       tokenId: "202",
       chain: "Polygon",
       lastUpdate: "2026-03-05",
-      platfromEarning: "2.5%",
+      platformEarning: "2.5%",
     },
 
     itemActivity: [
@@ -203,11 +203,11 @@ export const propertiesData = [
     description: "Luxury villa with private garden and swimming pool.",
 
     metadetails: {
-      contractAdress: "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      contractAddress: "0xdAC17F958D2ee523a2206206994597C13D831ec7",
       tokenId: "303",
       chain: "Ethereum",
       lastUpdate: "2026-03-03",
-      platfromEarning: "2%",
+      platformEarning: "2%",
     },
 
     itemActivity: [
@@ -288,11 +288,11 @@ export const propertiesData = [
     description: "Commercial office tower in IT hub.",
 
     metadetails: {
-      contractAdress: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      contractAddress: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
       tokenId: "404",
       chain: "Polygon",
       lastUpdate: "2026-03-06",
-      platfromEarning: "3%",
+      platformEarning: "3%",
     },
 
     itemActivity: [
@@ -373,11 +373,11 @@ export const propertiesData = [
     description: "Premium apartment near IT park.",
 
     metadetails: {
-      contractAdress: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      contractAddress: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
       tokenId: "505",
       chain: "Ethereum",
       lastUpdate: "2026-03-02",
-      platfromEarning: "2%",
+      platformEarning: "2%",
     },
 
     itemActivity: [

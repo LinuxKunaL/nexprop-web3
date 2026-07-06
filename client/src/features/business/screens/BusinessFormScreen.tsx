@@ -35,7 +35,7 @@ export default function BusinessFormScreen() {
           </Text>
         </View>
       )}
-      {isEdit && <ScreenHeader title="Edit Business" backButtonVisble />}
+      {isEdit && <ScreenHeader title="Edit Business" backButtonVisible />}
       <View className="mt-4 gap-5" testID="form-container">
         <View className="gap-4" testID="form-input">
           <Text className="font-medium dark:text-foreground-dark text-foreground">

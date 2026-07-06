@@ -3,9 +3,9 @@ import React from "react";
 import Icon from "@components/display/Icon";
 import { useThemeStore } from "@stores/theme.store";
 
-type Props = {};
 
-const WalletInfo = (props: Props) => {
+
+const WalletInfo = () => {
   const colors = useThemeStore((st) => st.colors);
   return (
     <View className="px-4 gap-5" testID="wallet-info">

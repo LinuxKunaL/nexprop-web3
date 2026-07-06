@@ -21,7 +21,7 @@ const SettingsScreen = () => {
       className="dark:bg-background-dark bg-background flex-1 px-4"
       testID="screen"
     >
-      <ScreenHeader title="Settings" backButtonVisble />
+      <ScreenHeader title="Settings" backButtonVisible />
       <View className="gap-3">
         <Pressable
           onPress={() => {

@@ -5,9 +5,9 @@ import Icon from "@components/display/Icon";
 import { useThemeStore } from "@stores/theme.store";
 import { useRouter } from "expo-router";
 
-type Props = {};
 
-const Business = (props: Props) => {
+
+const Business = () => {
   const router = useRouter();
   const colors = useThemeStore((st) => st.colors);
   return (

@@ -13,9 +13,9 @@ import PriceBottomSheet from "@feature/search/components/PriceBottomSheet";
 import PropertyGlassCard from "@components/display/PropertyCard";
 import { propertiesData } from "@data/properties";
 import { useRouter } from "expo-router";
-type Props = {};
 
-const PropertyList = (props: Props) => {
+
+const PropertyList = () => {
   const filters = ["Location", "Type", "Area", "Price"] as const;
   const router = useRouter();
 

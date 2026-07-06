@@ -1,13 +1,13 @@
 import { View, ScrollView } from "react-native";
 import React, { useContext } from "react";
-import { BuinessContext } from "../context";
+import { BusinessContext } from "../context";
 
 type Props = {
   children: React.ReactNode[] | React.ReactNode;
 };
 
 const ScrollViewBuiness = ({ children }: Props) => {
-  const { handleOnScroll } = useContext(BuinessContext);
+  const { handleOnScroll } = useContext(BusinessContext);
   return (
     <ScrollView onScroll={handleOnScroll} showsVerticalScrollIndicator={false}>
       <View

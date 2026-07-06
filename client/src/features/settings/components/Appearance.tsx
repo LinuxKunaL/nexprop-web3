@@ -41,7 +41,7 @@ const Appearance = () => {
       className="dark:bg-background-dark bg-background flex-1 px-4"
       testID="screen"
     >
-      <ScreenHeader title="Appearance" backButtonVisble />
+      <ScreenHeader title="Appearance" backButtonVisible />
       <View className="gap-4 flex-1">
         <Text className="text-lg dark:text-foreground-dark text-foreground font-medium">
           Choose Theme

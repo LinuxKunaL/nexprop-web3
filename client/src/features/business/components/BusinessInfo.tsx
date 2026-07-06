@@ -1,12 +1,12 @@
 import Icon from "@components/display/Icon";
 import { View, Text } from "react-native";
 import React, { useContext } from "react";
-import { BuinessContext } from "../context";
+import { BusinessContext } from "../context";
 import BusinessBgSvg from "@assets/images/business-bg-svg";
 import { useThemeStore } from "@stores/theme.store";
 
 const BusinessInfo = () => {
-  const { headerHeight, onBusinessAvatarLayout } = useContext(BuinessContext);
+  const { headerHeight, onBusinessAvatarLayout } = useContext(BusinessContext);
   const colors = useThemeStore((st) => st.colors);
   return (
     <View

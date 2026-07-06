@@ -2,12 +2,12 @@ import clsx from "clsx";
 import React, { useContext } from "react";
 import ScreenHeader from "@components/layout/ScreenHeader";
 import Animated from "react-native-reanimated";
-import { BuinessContext } from "../context";
+import { BusinessContext } from "../context";
 import { useRouter } from "expo-router";
 
 const Header = () => {
   const { headerFadeColor, onHeaderLayout, isHeaderBorder, theme } =
-    useContext(BuinessContext);
+    useContext(BusinessContext);
   const router = useRouter();
 
   return (
@@ -22,7 +22,7 @@ const Header = () => {
     >
       <ScreenHeader
         title="My Business"
-        backButtonVisble
+        backButtonVisible
         icon={{ name: "pencil", variant: "theme" }}
         onPressIcon={() => router.navigate("/business/100/edit")}
       />

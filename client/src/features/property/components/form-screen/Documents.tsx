@@ -3,9 +3,9 @@ import React from "react";
 import Icon from "@components/display/Icon";
 import { useThemeStore } from "@stores/theme.store";
 
-type Props = {};
 
-const Document = (props: Props) => {
+
+const Document = () => {
    const colors = useThemeStore((st) => st.colors);
   return (
     <View className="flex-1 h-full w-full gap-4">

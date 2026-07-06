@@ -9,9 +9,9 @@ import { View, Text } from "react-native";
 import splitCamelCase from "@utils/splitCamelCase";
 import { useThemeStore } from "@stores/theme.store";
 
-type Props = {};
 
-const EscrowStatus = (props: Props) => {
+
+const EscrowStatus = () => {
   const colors = useThemeStore((st) => st.colors);
   const [isViewDocument, setIsViewDocument] = useState(false);
 

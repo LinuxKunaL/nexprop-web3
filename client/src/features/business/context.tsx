@@ -31,9 +31,9 @@ type TContextType = {
   onHeaderLayout: (event: LayoutChangeEvent) => void;
 };
 
-export const BuinessContext = createContext<TContextType>({} as TContextType);
+export const BusinessContext = createContext<TContextType>({} as TContextType);
 
-export const BuinessProvider = ({ children }: Props) => {
+export const BusinessProvider = ({ children }: Props) => {
   const [headerHeight, setHeaderHeight] = useState<number>(86);
   const [businessAvatarHeight, setBusinessAvatarHeight] = useState<number>(260);
   const [isHeaderBorder, setIsHeaderBorder] = useState<boolean>(false);
@@ -77,7 +77,7 @@ export const BuinessProvider = ({ children }: Props) => {
   });
 
   return (
-    <BuinessContext.Provider
+    <BusinessContext.Provider
       value={{
         theme,
         headerFadeColor,
@@ -89,6 +89,6 @@ export const BuinessProvider = ({ children }: Props) => {
       }}
     >
       {children}
-    </BuinessContext.Provider>
+    </BusinessContext.Provider>
   );
 };

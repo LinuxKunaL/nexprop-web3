@@ -2,14 +2,14 @@ import React from "react";
 import { View } from "react-native";
 
 import Header from "../components/Header";
-import { BuinessProvider } from "../context";
+import { BusinessProvider } from "../context";
 import PropertyList from "../components/PropertyList";
 import BusinessInfo from "../components/BusinessInfo";
-import ScrollViewBuiness from "../components/ScrollViewBuiness";
+import ScrollViewBuiness from "../components/ScrollViewBusiness";
 
 const BusinessDetailsScreen = () => {
   return (
-    <BuinessProvider>
+    <BusinessProvider>
       <View className="flex-1">
         <Header />
         <ScrollViewBuiness>
@@ -17,7 +17,7 @@ const BusinessDetailsScreen = () => {
           <PropertyList />
         </ScrollViewBuiness>
       </View>
-    </BuinessProvider>
+    </BusinessProvider>
   );
 };
 

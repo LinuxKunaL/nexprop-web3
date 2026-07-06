@@ -4,9 +4,9 @@ import TouchableText from "@components/buttons/TouchableText";
 import PropertyGlassCard from "@components/display/PropertyCard";
 import { propertiesData } from "@data/properties";
 
-type Props = {};
 
-const Properties = (props: Props) => {
+
+const Properties = () => {
   return (
     <View className="px-4 gap-5" testID="properties">
       <View className="justify-between flex-row items-center" testID="title">

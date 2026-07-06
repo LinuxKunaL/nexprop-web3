@@ -14,7 +14,7 @@ const EditAccount = () => {
       className="dark:bg-background-dark bg-background flex-1 px-4"
       testID="screen"
     >
-      <ScreenHeader title="Edit Account" backButtonVisble />
+      <ScreenHeader title="Edit Account" backButtonVisible />
       <View className="gap-2 justify-center items-center">
         <Pressable>
           <Image

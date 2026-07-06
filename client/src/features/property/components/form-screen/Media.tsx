@@ -2,9 +2,9 @@ import { View, ScrollView, Text } from "react-native";
 import React from "react";
 import Icon from "@components/display/Icon";
 
-type Props = {};
 
-const Media = (props: Props) => {
+
+const Media = () => {
   return (
     <View className="flex-1 h-full w-full">
       <ScrollView scrollEnabled showsVerticalScrollIndicator={false}>

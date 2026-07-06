@@ -2,9 +2,9 @@ import { View, Text } from "react-native";
 import React from "react";
 import Button from "@components/buttons/Button";
 
-type Props = {};
 
-const Action = (props: Props) => {
+
+const Action = () => {
   return (
     <View className="px-4 gap-5" testID="action">
       <View className="justify-between flex-row items-center" testID="title">

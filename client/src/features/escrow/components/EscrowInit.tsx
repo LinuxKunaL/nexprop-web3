@@ -4,9 +4,9 @@ import Button from "@components/buttons/Button";
 import Modal from "@components/overlays/Model";
 import Icon from "@components/display/Icon";
 
-type Props = {};
 
-const EscrowInit = (props: Props) => {
+
+const EscrowInit = () => {
   const [isRuleModal, setIsRuleModal] = useState(false);
 
   const escrowRules = [

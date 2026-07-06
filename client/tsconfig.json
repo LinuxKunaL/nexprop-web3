@@ -8,7 +8,6 @@
       "@hooks/*": ["./src/hooks/*"],
       "@assets/*": ["./src/assets/*"],
       "@providers/*": ["./src/providers/*"],
-      "@states/*": ["./src/states/*"],
       "@screen/*": ["./src/app/*"],
       "@constants/*": ["./src/constants/*"],
       "@types_/*": ["./src/types/*"],

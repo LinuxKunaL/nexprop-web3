@@ -5,9 +5,9 @@ import { useRouter } from "expo-router";
 import { escrowsData } from "@data/escrow";
 import EscrowCard from "@components/display/EscrowCard";
 
-type Props = {};
 
-const Escrow = (props: Props) => {
+
+const Escrow = () => {
   const router = useRouter();
 
   const handleViewAll = () => {

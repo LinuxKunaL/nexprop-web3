@@ -52,7 +52,7 @@ export default function AreaBottomSheet({ ref }: Props) {
             {areaUnits.map((item) => (
               <Button
                 key={item}
-                variant={unit == item ? "secondary" : "transparent"}
+                variant={unit === item ? "secondary" : "transparent"}
                 size="sm"
                 fontSize="sm"
                 className="flex-1"
@@ -87,6 +87,7 @@ export default function AreaBottomSheet({ ref }: Props) {
           <View className="flex-row gap-3">
             {QUICK_VALUES.map((item) => (
               <Badge
+                key={item}
                 size="lg"
                 onPress={() => {
                   setValue(quickValues[unit][item]);

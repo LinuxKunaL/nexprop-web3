@@ -13,7 +13,7 @@ const NotificationSetting = () => {
       className="dark:bg-background-dark bg-background flex-1 px-4"
       testID="screen"
     >
-      <ScreenHeader title="Notification Settings" backButtonVisble />
+      <ScreenHeader title="Notification Settings" backButtonVisible />
       <View className="p-2 gap-4">
         <View className="justify-between flex-row">
           <View>

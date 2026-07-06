@@ -6,14 +6,12 @@ import Input from "@components/inputs/Input";
 import Icon from "@components/display/Icon";
 import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
 
-type Props = {};
-
-const Overview = (props: Props) => {
+const Overview = () => {
   const [saleType, setSaleType] = useState("direct");
 
   return (
     <View className="flex-1">
-     <KeyboardAwareScrollView
+      <KeyboardAwareScrollView
         bottomOffset={10}
         showsVerticalScrollIndicator={false}
       >
@@ -31,7 +29,7 @@ const Overview = (props: Props) => {
           <View className="flex-row justify-between">
             <Text className="dark:text-muted-dark text-lg text-muted font-medium">
               Visible
-            <Icon name="information-variant-circle"/>
+              <Icon name="information-variant-circle" />
             </Text>
           </View>
           <View className="p-2 border border-transparent dark:border-border-dark/30 dark:bg-card-dark bg-card rounded-lg flex-row">

@@ -9,19 +9,19 @@ type Props = {
     name: TIconName;
     variant: TIconButton["variant"];
   };
-  backButtonVisble?: boolean;
+  backButtonVisible?: boolean;
   onPressIcon?: () => void;
 };
 
 export default function ScreenHeader({
   title,
-  backButtonVisble,
+  backButtonVisible,
   icon,
   onPressIcon,
 }: Props) {
   return (
     <View className="flex-row justify-between items-center h-16 mb-3">
-      {backButtonVisble && <BackButton />}
+      {backButtonVisible && <BackButton />}
       <Text className="font-medium text-xl text-foreground dark:text-foreground-dark">
         {title}
       </Text>

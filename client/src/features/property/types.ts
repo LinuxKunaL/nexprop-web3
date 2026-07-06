@@ -25,11 +25,11 @@ export type TProperty = {
   };
   description: string;
   metadetails: {
-    contractAdress: string;
+    contractAddress: string;
     tokenId: string;
     chain: string;
     lastUpdate: string;
-    platfromEarning: string;
+    platformEarning: string;
   };
   itemActivity: {
     event: string;
