@@ -1,0 +1,20 @@
+{
+  "LandNFT,sol.sol": {
+    "__sources__": {}
+  },
+  "LandNFT.sol": {
+    "__sources__": {}
+  },
+  "libraries/Errors.sol": {
+    "__sources__": {}
+  },
+  "libraries/Enums.sol": {
+    "__sources__": {}
+  },
+  "libraries/Events.sol": {
+    "__sources__": {}
+  },
+  "Treasury.sol": {
+    "__sources__": {}
+  }
+}
