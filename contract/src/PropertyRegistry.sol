@@ -4,19 +4,17 @@ pragma solidity ^0.8.34;
 import "./PropertyNFT.sol";
 
 contract PropertyRegistry {
-    
     PropertyNFT public propertyNFT;
 
-    constructor(address propertyNFTAddress){
+    constructor(address propertyNFTAddress) {
         propertyNFT = PropertyNFT(propertyNFTAddress);
     }
 
-    function registerProperty() public returns (uint) {
-       uint tokenId = propertyNFT.mint(msg.sender);
-       return  tokenId;
-    }
+    function registerProperty() public {}
 
     function getProperty() public {}
+
+    function getProperties() public {}
 
     function hideProperty() public {}
 
@@ -27,6 +25,4 @@ contract PropertyRegistry {
     function unfreezeProperty() public {}
 
     function listProperties() public {}
-
-
 }
