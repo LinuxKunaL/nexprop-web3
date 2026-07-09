@@ -6,6 +6,7 @@ library Structs {
         uint256 tokenId;
         uint256 businessId;
         address creator;
+        address owner;
         string listingType;
         uint256 price;
         string auctionStartPrice;

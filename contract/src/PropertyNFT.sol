@@ -13,18 +13,20 @@ contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender) {
 
     mapping(uint256 => Structs.Property) properties;
 
-    function mint(Structs.MintNFTParams calldata params) public returns (uint256) {
+    function mint(
+        Structs.MintNFTParams calldata params
+    ) public returns (uint256) {
         uint256 tokenId = ++nextTokenId;
 
         _safeMint(msg.sender, tokenId);
-        approve(msg.sender,tokenId);
-        
+
         Structs.Property memory propertyData = Structs.Property({
             tokenId: tokenId,
             creator: msg.sender,
+            owner:msg.sender,
+            price: params.price,
             businessId: params.businessId,
             listingType: params.listingType,
-            price: params.price,
             auctionStartPrice: params.auctionStartPrice,
             auctionStartTime: params.auctionStartTime,
             auctionEndTime: params.auctionEndTime,
@@ -38,22 +40,30 @@ contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender) {
         return tokenId;
     }
 
-    // function transfer(uint tokenId) public payable returns (address) {
-    //     address payable PropertyOwner = payable(ownerOf(tokenId));
+    function transfer(uint tokenId) public payable returns (address) {
+        require(tokenId <= nextTokenId,"Token not found");
 
-    //     safeTransferFrom(PropertyOwner, msg.sender, tokenId);
+        address payable PropertyOwner = payable(ownerOf(tokenId));
 
-    //     return PropertyOwner;
-    // }
+        _transfer(PropertyOwner, msg.sender, tokenId);
 
-    function get(uint256 tokenId) public view returns (Structs.Property memory) {
+        properties[tokenId].owner = msg.sender;
+        
+        return PropertyOwner;
+    }
+
+    function get(
+        uint256 tokenId
+    ) public view returns (Structs.Property memory) {
         return properties[tokenId];
     }
 
     function getAll() public view returns (Structs.Property[] memory) {
-        Structs.Property[] memory propertyList = new Structs.Property[](nextTokenId);
+        Structs.Property[] memory propertyList = new Structs.Property[](
+            nextTokenId
+        );
         for (uint256 i = 1; i <= nextTokenId; i++) {
-            propertyList[i-1] = properties[i];
+            propertyList[i - 1] = properties[i];
         }
         return propertyList;
     }
