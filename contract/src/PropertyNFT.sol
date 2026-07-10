@@ -5,8 +5,9 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 import "./libraries/Structs.sol";
+import "./interfaces/IPropertyNFT.sol";
 
-contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender) {
+contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender), IPropertyNFT {
     constructor() ERC721("nexprop main token creation", "NXP") {}
 
     uint256 public nextTokenId = 0;
@@ -14,7 +15,7 @@ contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender) {
     mapping(uint256 => Structs.Property) properties;
 
     function mint(
-        Structs.MintNFTParams calldata params
+        Structs.NFTMintParams calldata params
     ) public returns (uint256) {
         uint256 tokenId = ++nextTokenId;
 
@@ -23,15 +24,13 @@ contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender) {
         Structs.Property memory propertyData = Structs.Property({
             tokenId: tokenId,
             creator: msg.sender,
-            owner:msg.sender,
+            owner: msg.sender,
             price: params.price,
             businessId: params.businessId,
             listingType: params.listingType,
-            auctionStartPrice: params.auctionStartPrice,
-            auctionStartTime: params.auctionStartTime,
-            auctionEndTime: params.auctionEndTime,
             propertyStatus: params.propertyStatus,
             metadataCID: params.metadataCID,
+            isLocked: false,
             createdAt: block.timestamp
         });
 
@@ -41,20 +40,33 @@ contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender) {
     }
 
     function transfer(uint tokenId) public payable returns (address) {
-        require(tokenId <= nextTokenId,"Token not found");
+        require(tokenId > 0 && tokenId <= nextTokenId, "Token not found");
+        checkLock(tokenId);
 
         address payable PropertyOwner = payable(ownerOf(tokenId));
 
         _transfer(PropertyOwner, msg.sender, tokenId);
 
         properties[tokenId].owner = msg.sender;
-        
+
         return PropertyOwner;
+    }
+
+    function ownerOfToken(uint tokenId) public view returns (address) {
+        return ownerOf(tokenId);
+    }
+
+    function lock(uint tokenId, bool locked) public {
+        require(tokenId > 0 && tokenId <= nextTokenId, "Token not found");
+        // implement the permission for only Aution SM has access of lock
+        properties[tokenId].isLocked = locked;
     }
 
     function get(
         uint256 tokenId
     ) public view returns (Structs.Property memory) {
+        require(tokenId > 0 && tokenId <= nextTokenId, "Token not found");
+
         return properties[tokenId];
     }
 
@@ -70,6 +82,10 @@ contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender) {
 
     function total() public view returns (uint256) {
         return nextTokenId;
+    }
+
+    function checkLock(uint tokenId) public view {
+        require(!properties[tokenId].isLocked, "Token is locked");
     }
 }
 
