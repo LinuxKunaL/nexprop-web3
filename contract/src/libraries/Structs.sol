@@ -32,9 +32,9 @@ library Structs {
         uint256 businessId;
         ListingType listingType;
         uint256 price;
-        string auctionStartPrice;
-        string auctionStartTime;
-        string auctionEndTime;
+        uint auctionStartPrice;
+        uint auctionStartTime;
+        uint auctionEndTime;
         string propertyStatus;
         string metadataCID;
     }
