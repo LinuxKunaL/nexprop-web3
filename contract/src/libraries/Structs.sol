@@ -53,4 +53,36 @@ library Structs {
         string propertyStatus;
         string metadataCID;
     }
+
+    struct EscrowProgress {
+        bool fundsLocked;
+        bool documentsVerified;
+        bool paymentReleased;
+        bool escrowClosed;
+    }
+
+    struct Escrow {
+        uint escrowId;
+        uint tokenId;
+        address seller;
+        address buyer;
+        uint amount;
+        uint createdAt;
+        uint expiresAt;
+        EscrowProgress status;
+    }
+  struct CreateEscrowParams {
+        PurchaseMode purchaseMode;
+        uint tokenId;
+        uint amount;
+        address buyer;
+    }
+    struct BuyPropertyParams {
+        PurchaseMode purchaseMode;
+        uint tokenId;
+        uint amount;
+        address buyer;
+    }
+
+  
 }
