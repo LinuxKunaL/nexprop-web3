@@ -141,4 +141,20 @@ contract Auction is IAuction {
     function getHighestBid(uint auctionId) public view returns (uint) {
         return auctions[auctionId].highestBid;
     }
+
+    function getHighestBidder(uint auctionId) public view returns (address) {
+        return auctions[auctionId].highestBidder;
+    }
+
+    function declareWinner(
+        uint auctionId
+    ) public returns (uint, uint, address) {
+        endAuction(auctionId);
+
+        uint amount = auctions[auctionId].highestBid;
+        address winner = auctions[auctionId].highestBidder;
+        uint tokenId = auctions[auctionId].tokenId;
+
+        return (tokenId, amount, winner);
+    }
 }

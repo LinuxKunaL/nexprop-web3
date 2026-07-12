@@ -2,17 +2,25 @@
 pragma solidity ^0.8.34;
 
 import "./libraries/Structs.sol";
+
 import "./interfaces/IPropertyNFT.sol";
 import "./interfaces/IAuction.sol";
 import "./interfaces/IMarketplace.sol";
+import "./interfaces/IEscrow.sol";
 
 contract Marketplace is IMarketplace {
     IAuction public auction;
     IPropertyNFT public propertyNFT;
+    IEscrow public escrow;
 
-    constructor(address auctionAddress, address propertyNFTAddress) {
+    constructor(
+        address auctionAddress,
+        address propertyNFTAddress,
+        address escrowAddress
+    ) {
         auction = IAuction(auctionAddress);
         propertyNFT = IPropertyNFT(propertyNFTAddress);
+        escrow = IEscrow(escrowAddress);
     }
 
     function createProperty(
@@ -38,5 +46,24 @@ contract Marketplace is IMarketplace {
                 });
             auction.createAuction(auctionData);
         }
+    }
+
+    function DeclareAuctionWinner(uint auctionId) public {
+        (uint tokenId, uint amount, address winner) = auction.declareWinner(
+            auctionId
+        );
+
+        buyProperty(
+            Structs.BuyPropertyParams({
+                purchaseMode: PurchaseMode.Auction,
+                tokenId: tokenId,
+                amount: amount,
+                buyer: winner
+            })
+        );
+    }
+
+    function buyProperty(Structs.BuyPropertyParams memory params) public {
+        escrow.createEscrow();
     }
 }
