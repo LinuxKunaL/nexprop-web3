@@ -21,4 +21,8 @@ interface IAuction {
     function getAllAuctions() external view returns (Structs.Auction[] memory);
 
     function getHighestBid(uint) external view returns (uint);
+
+    function getHighestBidder(uint) external view returns (address);
+
+    function declareWinner(uint) external returns (uint, uint, address);
 }

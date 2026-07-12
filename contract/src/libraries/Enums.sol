@@ -17,3 +17,8 @@ enum AuctionStatus {
     Ended,
     Cancelled
 }
+
+enum PurchaseMode {
+    Direct,
+    Auction
+}
