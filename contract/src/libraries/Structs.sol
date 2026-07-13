@@ -38,7 +38,7 @@ library Structs {
         uint auctionEndTime;
         string propertyStatus;
         string metadataCID;
-       string documentsCID;
+        string documentsCID;
     }
 
     struct CreateAuctionParams {
@@ -54,7 +54,7 @@ library Structs {
         uint256 price;
         string propertyStatus;
         string metadataCID;
-         string documentsCID;
+        string documentsCID;
     }
 
     struct EscrowProgress {
@@ -67,14 +67,16 @@ library Structs {
     struct Escrow {
         uint escrowId;
         uint tokenId;
+        PurchaseMode purchaseMode;
         address seller;
         address buyer;
         uint amount;
         uint createdAt;
         uint expiresAt;
+        EscrowCloseReason closeReason;
         EscrowProgress status;
     }
-  struct CreateEscrowParams {
+    struct CreateEscrowParams {
         PurchaseMode purchaseMode;
         uint tokenId;
         uint amount;
@@ -86,6 +88,4 @@ library Structs {
         uint amount;
         address buyer;
     }
-
-  
 }

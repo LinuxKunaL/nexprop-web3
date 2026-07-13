@@ -8,13 +8,17 @@ interface IPropertyNFT {
         Structs.NFTMintParams calldata params
     ) external returns (uint256);
 
-    function transfer(uint) external payable returns (address);
+    function transfer(uint) external returns (address);
 
     function ownerOfToken(uint) external returns (address);
 
     function lock(uint, bool) external;
 
     function get(uint256) external view returns (Structs.Property memory);
+
+    function getDocumentsCID(uint) external view returns (string memory);
+
+    function getPrice(uint) external view returns (uint);
 
     function getAll() external view returns (Structs.Property[] memory);
 

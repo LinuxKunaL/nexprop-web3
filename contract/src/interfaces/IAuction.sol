@@ -8,9 +8,11 @@ interface IAuction {
         Structs.CreateAuctionParams calldata params
     ) external;
 
-    function placeBid(uint) external payable;
+    function placeBid(uint, address, uint) external;
 
-    function withdrawRefund(uint) external;
+    function getPendingRefund(uint, address) external returns (uint);
+
+    function clearPendingRefund(uint, address) external;
 
     function cancelAuction(uint) external;
 

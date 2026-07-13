@@ -22,6 +22,8 @@ contract Auction is IAuction {
     mapping(uint => mapping(address => uint)) pendingRefunds;
 
     function createAuction(Structs.CreateAuctionParams calldata params) public {
+        // this fun only call by marketplace
+
         uint256 auctionId = ++nextAuctionId;
 
         Structs.Auction memory auctionData = Structs.Auction({
@@ -38,7 +40,9 @@ contract Auction is IAuction {
         auctions[nextAuctionId] = auctionData;
     }
 
-    function placeBid(uint auctionId) public payable {
+    function placeBid(uint auctionId, address bidder, uint bidAmount) public {
+        // this fun only call by marketplace
+
         if (auctionId == 0 || auctionId > nextAuctionId) {
             revert AuctionNotFound();
         }
@@ -46,7 +50,7 @@ contract Auction is IAuction {
         uint tokenId = auctions[auctionId].tokenId;
         address ownerOfAuction = propertyNFT.ownerOfToken(tokenId);
 
-        if (msg.sender == ownerOfAuction) {
+        if (bidder == ownerOfAuction) {
             revert SellerCantBid();
         }
 
@@ -60,15 +64,15 @@ contract Auction is IAuction {
             revert AuctionEnded();
         }
 
-        address currentBidder = msg.sender;
-        uint currentBidPrice = msg.value;
+        address currentBidder = bidder;
+        uint currentBidPrice = bidAmount;
 
         if (auction.highestBid == 0) {
-            if (msg.value < auction.startPrice) {
+            if (bidAmount < auction.startPrice) {
                 revert BidTooLow();
             }
         } else {
-            if (msg.value <= auction.highestBid) {
+            if (bidAmount <= auction.highestBid) {
                 revert BidTooLow();
             }
         }
@@ -84,20 +88,37 @@ contract Auction is IAuction {
         auction.highestBid = currentBidPrice;
     }
 
-    function withdrawRefund(uint auctionId) public {
-        uint withdrawAmount = pendingRefunds[auctionId][msg.sender];
+    // function withdrawRefund(uint auctionId) public {
+    //     uint withdrawAmount = pendingRefunds[auctionId][msg.sender];
+
+    //     if (withdrawAmount == 0) {
+    //         revert NoRefundAvailable();
+    //     }
+
+    //     pendingRefunds[auctionId][msg.sender] = 0;
+
+    //     (bool success, ) = payable(msg.sender).call{value: withdrawAmount}("");
+
+    //     if (!success) {
+    //         revert FundTransferFailed();
+    //     }
+    // }
+
+    function getPendingRefund(
+        uint auctionId,
+        address sender
+    ) public view returns (uint) {
+        uint withdrawAmount = pendingRefunds[auctionId][sender];
 
         if (withdrawAmount == 0) {
             revert NoRefundAvailable();
         }
 
-        pendingRefunds[auctionId][msg.sender] = 0;
+        return withdrawAmount;
+    }
 
-        (bool success, ) = payable(msg.sender).call{value: withdrawAmount}("");
-
-        if (!success) {
-            revert FundTransferFailed();
-        }
+    function clearPendingRefund(uint auctionId, address sender) public {
+        pendingRefunds[auctionId][sender] = 0;
     }
 
     function cancelAuction(uint auctionId) public {

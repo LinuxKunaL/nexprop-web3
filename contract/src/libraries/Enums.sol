@@ -22,3 +22,9 @@ enum PurchaseMode {
     Direct,
     Auction
 }
+
+enum EscrowCloseReason {
+    None,
+    DocumentsRejected,
+    TimeLimitExceeded
+}

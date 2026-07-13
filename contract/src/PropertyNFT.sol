@@ -30,7 +30,7 @@ contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender), IPropertyNFT {
             listingType: params.listingType,
             propertyStatus: params.propertyStatus,
             metadataCID: params.metadataCID,
-            documentsCID:params.documentsCID,
+            documentsCID: params.documentsCID,
             isLocked: false,
             createdAt: block.timestamp
         });
@@ -40,11 +40,11 @@ contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender), IPropertyNFT {
         return tokenId;
     }
 
-    function transfer(uint tokenId) public payable returns (address) {
+    function transfer(uint tokenId) public returns (address) {
         require(tokenId > 0 && tokenId <= nextTokenId, "Token not found");
         checkLock(tokenId);
 
-        address payable PropertyOwner = payable(ownerOf(tokenId));
+        address PropertyOwner = ownerOf(tokenId);
 
         _transfer(PropertyOwner, msg.sender, tokenId);
 
@@ -69,6 +69,16 @@ contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender), IPropertyNFT {
         require(tokenId > 0 && tokenId <= nextTokenId, "Token not found");
 
         return properties[tokenId];
+    }
+
+    function getDocumentsCID(
+        uint256 tokenId
+    ) public view returns (string memory) {
+        return properties[tokenId].documentsCID;
+    }
+
+    function getPrice(uint tokenId) public view returns (uint) {
+        return properties[tokenId].price;
     }
 
     function getAll() public view returns (Structs.Property[] memory) {
