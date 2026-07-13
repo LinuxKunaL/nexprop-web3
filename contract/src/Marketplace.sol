@@ -31,7 +31,8 @@ contract Marketplace is IMarketplace {
             listingType: params.listingType,
             price: params.price,
             propertyStatus: params.propertyStatus,
-            metadataCID: params.metadataCID
+            metadataCID: params.metadataCID,
+            documentsCID: params.documentsCID
         });
 
         uint256 tokenId = propertyNFT.mint(propertyNFTData);

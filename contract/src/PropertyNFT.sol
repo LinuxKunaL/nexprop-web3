@@ -30,6 +30,7 @@ contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender), IPropertyNFT {
             listingType: params.listingType,
             propertyStatus: params.propertyStatus,
             metadataCID: params.metadataCID,
+            documentsCID:params.documentsCID,
             isLocked: false,
             createdAt: block.timestamp
         });

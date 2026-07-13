@@ -13,6 +13,7 @@ library Structs {
         uint256 price;
         string propertyStatus;
         string metadataCID;
+        string documentsCID;
         bool isLocked;
         uint256 createdAt;
     }
@@ -37,6 +38,7 @@ library Structs {
         uint auctionEndTime;
         string propertyStatus;
         string metadataCID;
+       string documentsCID;
     }
 
     struct CreateAuctionParams {
@@ -52,6 +54,7 @@ library Structs {
         uint256 price;
         string propertyStatus;
         string metadataCID;
+         string documentsCID;
     }
 
     struct EscrowProgress {
