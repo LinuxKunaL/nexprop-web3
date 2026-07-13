@@ -1,24 +1,27 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.34;
 
+import "../libraries/Structs.sol";
+
 interface IEscrow {
-    function createEscrow(uint) external;
+    function createEscrow(Structs.CreateEscrowParams memory) external;
 
-    function lockFunds(uint) external;
+    function viewDocuments(uint) external view returns (string memory);
 
-    function viewDocuments(uint) external;
     function acceptDocuments(uint) external;
-    function rejectDocuments(uint) external;
 
-    function releasePayment(uint) external;
+    function releaseProperty(uint) external returns (uint, address, bool);
 
-    function completeEscrow(uint) external;
-    function cancelEscrow(uint) external;
-    function expireEscrow(uint) external;
-    function closeEscrow(uint) external;
+    function closeEscrow(
+        uint,
+        EscrowCloseReason
+    ) external returns (uint, address);
 
-    function getEscrow(uint) external;
-    function getAllEscrows() external;
-    function getEscrowStatus(uint) external;
-    function isExpired(uint) external;
+    function getEscrow(uint) external view returns (Structs.Escrow memory);
+
+    function getAllEscrows() external view returns (Structs.Escrow[] memory);
+
+    function getEscrowStatus(
+        uint
+    ) external view returns (Structs.EscrowProgress memory);
 }
