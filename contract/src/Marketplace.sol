@@ -28,8 +28,8 @@ contract Marketplace is IMarketplace {
     function createProperty(
         Structs.CreatePropertyParams calldata params
     ) public {
-
         Structs.NFTMintParams memory propertyNFTData = Structs.NFTMintParams({
+            creator: msg.sender,
             businessId: params.businessId,
             listingType: params.listingType,
             price: params.price,
@@ -45,8 +45,8 @@ contract Marketplace is IMarketplace {
                 .CreateAuctionParams({
                     tokenId: tokenId,
                     startPrice: params.auctionStartPrice,
-                    startTime: params.auctionStartPrice,
-                    endTime: params.auctionStartPrice
+                    startTime: params.auctionStartTime,
+                    endTime: params.auctionEndTime
                 });
             auction.createAuction(auctionData);
         }
