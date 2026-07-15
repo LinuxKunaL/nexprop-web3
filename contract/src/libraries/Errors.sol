@@ -12,3 +12,7 @@ error BidTooLow();
 error NoRefundAvailable();
 
 error NotAuthorized();
+
+error AlreadyInitialized();
+
+error  OnlyAccessByMarketplace();

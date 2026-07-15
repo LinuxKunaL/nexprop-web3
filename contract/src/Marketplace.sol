@@ -16,18 +16,19 @@ contract Marketplace is IMarketplace {
     IEscrow public escrow;
 
     constructor(
-        address auctionAddress,
         address propertyNFTAddress,
+        address auctionAddress,
         address escrowAddress
     ) {
-        auction = IAuction(auctionAddress);
         propertyNFT = IPropertyNFT(propertyNFTAddress);
+        auction = IAuction(auctionAddress);
         escrow = IEscrow(escrowAddress);
     }
 
     function createProperty(
         Structs.CreatePropertyParams calldata params
     ) public {
+
         Structs.NFTMintParams memory propertyNFTData = Structs.NFTMintParams({
             businessId: params.businessId,
             listingType: params.listingType,

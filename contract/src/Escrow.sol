@@ -5,21 +5,33 @@ import "./libraries/Enums.sol";
 import "./libraries/Structs.sol";
 import "./libraries/Errors.sol";
 
+import "./interfaces/IAccessManager.sol";
 import "./interfaces/IPropertyNFT.sol";
 import "./interfaces/IEscrow.sol";
 
 contract Escrow is IEscrow {
     IPropertyNFT public propertyNFT;
+    IAccessManager public accessManager;
 
-    constructor(address propertyNFTAddress) {
+    constructor(address propertyNFTAddress, address accessManagerAddress) {
         propertyNFT = IPropertyNFT(propertyNFTAddress);
+        accessManager = IAccessManager(accessManagerAddress);
+    }
+
+    modifier _onlyMarketplace() {
+        if (!(accessManager.isMarketplace(msg.sender))) {
+            revert OnlyAccessByMarketplace();
+        }
+        _;
     }
 
     uint256 public nextEscrowId = 0;
 
     mapping(uint => Structs.Escrow) escrows;
 
-    function createEscrow(Structs.CreateEscrowParams memory params) public {
+    function createEscrow(
+        Structs.CreateEscrowParams memory params
+    ) public _onlyMarketplace {
         // this fun only call by marketplace
 
         uint256 escrowId = ++nextEscrowId;
@@ -59,7 +71,7 @@ contract Escrow is IEscrow {
         return propertyNFT.getDocumentsCID(escrow.tokenId);
     }
 
-    function acceptDocuments(uint escrowId) public {
+    function acceptDocuments(uint escrowId) public _onlyMarketplace {
         Structs.Escrow storage escrow = escrows[escrowId];
 
         _onlyEscrowParties(escrow.buyer, escrow.seller);
@@ -69,7 +81,7 @@ contract Escrow is IEscrow {
 
     function releaseProperty(
         uint escrowId
-    ) public returns (uint, address, bool) {
+    ) public _onlyMarketplace returns (uint, address, bool) {
         // this fun only call by marketplace
         Structs.Escrow storage escrow = escrows[escrowId];
 
@@ -87,7 +99,7 @@ contract Escrow is IEscrow {
     function closeEscrow(
         uint escrowId,
         EscrowCloseReason reason
-    ) public returns (uint, address) {
+    ) public _onlyMarketplace returns (uint, address) {
         Structs.Escrow storage escrow = escrows[escrowId];
 
         propertyNFT.lock(escrow.tokenId, false);

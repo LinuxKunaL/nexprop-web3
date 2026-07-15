@@ -2,6 +2,10 @@
   "name": "contract",
   "version": "1.0.0",
   "type": "module",
+  "scripts": {
+    "node": "npx hardhat node",
+    "deploy:sm": "npx hardhat run scripts/deploy.ts --network localhost --show-stack-traces"
+  },
   "devDependencies": {
     "@nomicfoundation/hardhat-ethers": "^4.0.14",
     "@types/node": "^22.20.0",

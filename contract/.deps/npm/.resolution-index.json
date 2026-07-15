@@ -59,9 +59,6 @@
   "src/Treasury.sol": {
     "__sources__": {}
   },
-  "src/AccessManager.sol": {
-    "__sources__": {}
-  },
   "src/IdentityRegistry.sol": {
     "__sources__": {}
   },
@@ -69,9 +66,6 @@
     "__sources__": {}
   },
   "src/Escrow.sol": {
-    "__sources__": {}
-  },
-  "src/Marketplace.sol": {
     "__sources__": {}
   },
   "src/libraries/Events.sol": {
@@ -325,5 +319,81 @@
   },
   "@openzeppelin/contracts@5.6.1/access/Ownable.sol": {
     "../utils/Context.sol": ".deps/npm/@openzeppelin/contracts@5.6.1/utils/Context.sol"
+  },
+  "src/AccessManager.sol": {
+    "./interfaces/IAccessManager.sol": "src/interfaces/IAccessManager.sol",
+    "./libraries/Errors.sol": "src/libraries/Errors.sol",
+    "__sources__": {
+      "src/AccessManager.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.34;\n\nimport \"./interfaces/IAccessManager.sol\";\nimport \"./libraries/Errors.sol\";\n\ncontract AccessManager is IAccessManager {\n    address public marketplace;\n\n    function setMarketplace(address marketplaceAddress) public {\n        if (!(marketplace == address(0))) {\n            revert AlreadyInitialized();\n        }\n        marketplace = marketplaceAddress;\n    }\n\n    function isMarketplace(address account) public view returns (bool) {\n        return account == marketplace;\n    }\n}\n",
+        "file": "src/AccessManager.sol"
+      },
+      "src/interfaces/IAccessManager.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.34;\n\ninterface IAccessManager {\n    function isMarketplace(address account) external view returns (bool);\n}\n",
+        "file": "src/interfaces/IAccessManager.sol"
+      },
+      "src/libraries/Errors.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.20;\n\nerror IncorrectPayment();\n\nerror AuctionNotFound();\nerror AuctionNotActive();\nerror AuctionEnded();\nerror SellerCantBid();\nerror FundTransferFailed();\nerror BidTooLow();\nerror NoRefundAvailable();\n\nerror NotAuthorized();\n\nerror AlreadyInitialized();\n\nerror  OnlyAccessByMarketplace();",
+        "file": "src/libraries/Errors.sol"
+      }
+    }
+  },
+  "src/Marketplace.sol": {
+    "./libraries/Enums.sol": "src/libraries/Enums.sol",
+    "./libraries/Structs.sol": "src/libraries/Structs.sol",
+    "./libraries/Errors.sol": "src/libraries/Errors.sol",
+    "./interfaces/IPropertyNFT.sol": "src/interfaces/IPropertyNFT.sol",
+    "./interfaces/IAuction.sol": "src/interfaces/IAuction.sol",
+    "./interfaces/IMarketplace.sol": "src/interfaces/IMarketplace.sol",
+    "./interfaces/IEscrow.sol": "src/interfaces/IEscrow.sol",
+    "__sources__": {
+      "src/Marketplace.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.34;\n\nimport \"./libraries/Enums.sol\";\nimport \"./libraries/Structs.sol\";\nimport \"./libraries/Errors.sol\";\n\nimport \"./interfaces/IPropertyNFT.sol\";\nimport \"./interfaces/IAuction.sol\";\nimport \"./interfaces/IMarketplace.sol\";\nimport \"./interfaces/IEscrow.sol\";\n\ncontract Marketplace is IMarketplace {\n    IAuction public auction;\n    IPropertyNFT public propertyNFT;\n    IEscrow public escrow;\n\n    constructor(\n        address propertyNFTAddress,\n        address auctionAddress,\n        address escrowAddress\n    ) {\n        propertyNFT = IPropertyNFT(propertyNFTAddress);\n        auction = IAuction(auctionAddress);\n        escrow = IEscrow(escrowAddress);\n    }\n\n    function createProperty(\n        Structs.CreatePropertyParams calldata params\n    ) public {\n        Structs.NFTMintParams memory propertyNFTData = Structs.NFTMintParams({\n            businessId: params.businessId,\n            listingType: params.listingType,\n            price: params.price,\n            propertyStatus: params.propertyStatus,\n            metadataCID: params.metadataCID,\n            documentsCID: params.documentsCID\n        });\n\n        uint256 tokenId = propertyNFT.mint(propertyNFTData);\n\n        if (params.listingType == ListingType.auction) {\n            Structs.CreateAuctionParams memory auctionData = Structs\n                .CreateAuctionParams({\n                    tokenId: tokenId,\n                    startPrice: params.auctionStartPrice,\n                    startTime: params.auctionStartPrice,\n                    endTime: params.auctionStartPrice\n                });\n            auction.createAuction(auctionData);\n        }\n    }\n\n    function DeclareAuctionWinner(uint auctionId) public {\n        (uint tokenId, uint amount, address winner) = auction.declareWinner(\n            auctionId\n        );\n\n        buyProperty(\n            Structs.BuyPropertyParams({\n                purchaseMode: PurchaseMode.Auction,\n                tokenId: tokenId,\n                amount: amount,\n                buyer: winner\n            })\n        );\n    }\n\n    function buyProperty(\n        Structs.BuyPropertyParams memory params\n    ) public payable {\n        uint propertyPrice = propertyNFT.getPrice(params.tokenId);\n\n        if (params.purchaseMode == PurchaseMode.Direct) {\n            if (msg.value != propertyPrice) {\n                revert IncorrectPayment();\n            }\n        }\n\n        Structs.CreateEscrowParams memory createEscrowData = Structs\n            .CreateEscrowParams({\n                purchaseMode: params.purchaseMode,\n                tokenId: params.tokenId,\n                amount: params.purchaseMode == PurchaseMode.Auction\n                    ? params.amount\n                    : msg.value,\n                buyer: params.purchaseMode == PurchaseMode.Auction\n                    ? params.buyer\n                    : msg.sender\n            });\n\n        escrow.createEscrow(createEscrowData);\n    }\n\n    function placeBid(uint auctionid) public payable {\n        auction.placeBid(auctionid, msg.sender, msg.value);\n    }\n\n    function withdrawRefund(uint auctionId) public payable {\n        uint amount = auction.getPendingRefund(auctionId, msg.sender);\n\n        auction.clearPendingRefund(auctionId, msg.sender);\n\n        (bool success, ) = payable(msg.sender).call{value: amount}(\"\");\n\n        if (!success) {\n            revert FundTransferFailed();\n        }\n    }\n\n    function releasePayment(uint escrowId) public payable {\n        (uint amount, address seller, bool escrowSuccess) = escrow\n            .releaseProperty(escrowId);\n\n        if (escrowSuccess) {\n            (bool sucess, ) = payable(seller).call{value: amount}(\"\");\n            if (!sucess) {\n                revert FundTransferFailed();\n            }\n        }\n    }\n\n    function cancelEscrow(uint escrowId, EscrowCloseReason reason) public {\n        (uint amount, address buyer) = escrow.closeEscrow(escrowId, reason);\n\n        (bool success, ) = payable(buyer).call{value: amount}(\"\");\n        if (!success) {\n            revert FundTransferFailed();\n        }\n    }\n}\n",
+        "file": "src/Marketplace.sol"
+      },
+      "src/libraries/Enums.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.34;\n\nenum LockStatus {\n    Unlocked,\n    Locked\n}\n\nenum ListingType {\n    direct,\n    auction\n}\n\nenum AuctionStatus {\n    None,\n    Active,\n    Ended,\n    Cancelled\n}\n\nenum PurchaseMode {\n    Direct,\n    Auction\n}\n\nenum EscrowCloseReason {\n    None,\n    DocumentsRejected,\n    TimeLimitExceeded\n}\n",
+        "file": "src/libraries/Enums.sol"
+      },
+      "src/libraries/Structs.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.34;\n\nimport \"./Enums.sol\";\n\nlibrary Structs {\n    struct Property {\n        uint256 tokenId;\n        uint256 businessId;\n        address creator;\n        address owner;\n        ListingType listingType;\n        uint256 price;\n        string propertyStatus;\n        string metadataCID;\n        string documentsCID;\n        bool isLocked;\n        uint256 createdAt;\n    }\n\n    struct Auction {\n        uint auctionId;\n        uint tokenId;\n        uint highestBid;\n        address highestBidder;\n        uint startPrice;\n        uint startTime;\n        uint endTime;\n        AuctionStatus status;\n    }\n\n    struct CreatePropertyParams {\n        uint256 businessId;\n        ListingType listingType;\n        uint256 price;\n        uint auctionStartPrice;\n        uint auctionStartTime;\n        uint auctionEndTime;\n        string propertyStatus;\n        string metadataCID;\n        string documentsCID;\n    }\n\n    struct CreateAuctionParams {\n        uint tokenId;\n        uint startPrice;\n        uint startTime;\n        uint endTime;\n    }\n\n    struct NFTMintParams {\n        uint256 businessId;\n        ListingType listingType;\n        uint256 price;\n        string propertyStatus;\n        string metadataCID;\n        string documentsCID;\n    }\n\n    struct EscrowProgress {\n        bool fundsLocked;\n        bool documentsVerified;\n        bool paymentReleased;\n        bool escrowClosed;\n    }\n\n    struct Escrow {\n        uint escrowId;\n        uint tokenId;\n        PurchaseMode purchaseMode;\n        address seller;\n        address buyer;\n        uint amount;\n        uint createdAt;\n        uint expiresAt;\n        EscrowCloseReason closeReason;\n        EscrowProgress status;\n    }\n    struct CreateEscrowParams {\n        PurchaseMode purchaseMode;\n        uint tokenId;\n        uint amount;\n        address buyer;\n    }\n    struct BuyPropertyParams {\n        PurchaseMode purchaseMode;\n        uint tokenId;\n        uint amount;\n        address buyer;\n    }\n}\n",
+        "file": "src/libraries/Structs.sol"
+      },
+      "src/libraries/Errors.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.20;\n\nerror IncorrectPayment();\n\nerror AuctionNotFound();\nerror AuctionNotActive();\nerror AuctionEnded();\nerror SellerCantBid();\nerror FundTransferFailed();\nerror BidTooLow();\nerror NoRefundAvailable();\n\nerror NotAuthorized();\n\nerror AlreadyInitialized();\n\nerror  OnlyAccessByMarketplace();",
+        "file": "src/libraries/Errors.sol"
+      },
+      "src/interfaces/IPropertyNFT.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.34;\n\nimport \"../libraries/Structs.sol\";\n\ninterface IPropertyNFT {\n    function mint(\n        Structs.NFTMintParams calldata params\n    ) external returns (uint256);\n\n    function transfer(uint) external returns (address);\n\n    function ownerOfToken(uint) external returns (address);\n\n    function lock(uint, bool) external;\n\n    function get(uint256) external view returns (Structs.Property memory);\n\n    function getDocumentsCID(uint) external view returns (string memory);\n\n    function getPrice(uint) external view returns (uint);\n\n    function getAll() external view returns (Structs.Property[] memory);\n\n    function total() external view returns (uint256);\n\n    function checkLock(uint) external view;\n}\n",
+        "file": "src/interfaces/IPropertyNFT.sol"
+      },
+      "src/interfaces/IAuction.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.34;\n\nimport \"../libraries/Structs.sol\";\n\ninterface IAuction {\n    function createAuction(\n        Structs.CreateAuctionParams calldata params\n    ) external;\n\n    function placeBid(uint, address, uint) external;\n\n    function getPendingRefund(uint, address) external returns (uint);\n\n    function clearPendingRefund(uint, address) external;\n\n    function cancelAuction(uint) external;\n\n    function endAuction(uint) external;\n\n    function getAuction(uint) external view returns (Structs.Auction memory);\n\n    function getAllAuctions() external view returns (Structs.Auction[] memory);\n\n    function getHighestBid(uint) external view returns (uint);\n\n    function getHighestBidder(uint) external view returns (address);\n\n    function declareWinner(uint) external returns (uint, uint, address);\n}\n",
+        "file": "src/interfaces/IAuction.sol"
+      },
+      "src/interfaces/IMarketplace.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.34;\nimport \"../libraries/Structs.sol\";\n\ninterface IMarketplace {\n    function createProperty(\n        Structs.CreatePropertyParams calldata params\n    ) external;\n}\n",
+        "file": "src/interfaces/IMarketplace.sol"
+      },
+      "src/interfaces/IEscrow.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.34;\n\nimport \"../libraries/Structs.sol\";\n\ninterface IEscrow {\n    function createEscrow(Structs.CreateEscrowParams memory) external;\n\n    function viewDocuments(uint) external view returns (string memory);\n\n    function acceptDocuments(uint) external;\n\n    function releaseProperty(uint) external returns (uint, address, bool);\n\n    function closeEscrow(\n        uint,\n        EscrowCloseReason\n    ) external returns (uint, address);\n\n    function getEscrow(uint) external view returns (Structs.Escrow memory);\n\n    function getAllEscrows() external view returns (Structs.Escrow[] memory);\n\n    function getEscrowStatus(\n        uint\n    ) external view returns (Structs.EscrowProgress memory);\n}\n",
+        "file": "src/interfaces/IEscrow.sol"
+      }
+    }
+  },
+  "src/libraries/Structs.sol": {
+    "./Enums.sol": "src/libraries/Enums.sol"
+  },
+  "src/interfaces/IPropertyNFT.sol": {
+    "../libraries/Structs.sol": "src/libraries/Structs.sol"
+  },
+  "src/interfaces/IAuction.sol": {
+    "../libraries/Structs.sol": "src/libraries/Structs.sol"
+  },
+  "src/interfaces/IMarketplace.sol": {
+    "../libraries/Structs.sol": "src/libraries/Structs.sol"
+  },
+  "src/interfaces/IEscrow.sol": {
+    "../libraries/Structs.sol": "src/libraries/Structs.sol"
   }
 }

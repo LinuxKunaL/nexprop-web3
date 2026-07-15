@@ -4,6 +4,7 @@ pragma solidity ^0.8.34;
 import "./interfaces/IAuction.sol";
 import "./interfaces/IMarketplace.sol";
 import "./interfaces/IPropertyNFT.sol";
+import "./interfaces/IAccessManager.sol";
 
 import "./libraries/Enums.sol";
 import "./libraries/Structs.sol";
@@ -11,9 +12,18 @@ import "./libraries/Errors.sol";
 
 contract Auction is IAuction {
     IPropertyNFT public propertyNFT;
+    IAccessManager public accessManager;
 
-    constructor(address propertyNFTAddress) {
+    constructor(address propertyNFTAddress, address accessManagerAddress) {
         propertyNFT = IPropertyNFT(propertyNFTAddress);
+        accessManager = IAccessManager(accessManagerAddress);
+    }
+
+    modifier _onlyMarketplace() {
+        if (!(accessManager.isMarketplace(msg.sender))) {
+            revert OnlyAccessByMarketplace();
+        }
+        _;
     }
 
     uint public nextAuctionId = 0;
@@ -21,8 +31,9 @@ contract Auction is IAuction {
     mapping(uint => Structs.Auction) auctions;
     mapping(uint => mapping(address => uint)) pendingRefunds;
 
-    function createAuction(Structs.CreateAuctionParams calldata params) public {
-        // this fun only call by marketplace
+    function createAuction(
+        Structs.CreateAuctionParams calldata params
+    ) public _onlyMarketplace {
 
         uint256 auctionId = ++nextAuctionId;
 
@@ -40,8 +51,11 @@ contract Auction is IAuction {
         auctions[nextAuctionId] = auctionData;
     }
 
-    function placeBid(uint auctionId, address bidder, uint bidAmount) public {
-        // this fun only call by marketplace
+    function placeBid(
+        uint auctionId,
+        address bidder,
+        uint bidAmount
+    ) public _onlyMarketplace {
 
         if (auctionId == 0 || auctionId > nextAuctionId) {
             revert AuctionNotFound();
@@ -88,22 +102,6 @@ contract Auction is IAuction {
         auction.highestBid = currentBidPrice;
     }
 
-    // function withdrawRefund(uint auctionId) public {
-    //     uint withdrawAmount = pendingRefunds[auctionId][msg.sender];
-
-    //     if (withdrawAmount == 0) {
-    //         revert NoRefundAvailable();
-    //     }
-
-    //     pendingRefunds[auctionId][msg.sender] = 0;
-
-    //     (bool success, ) = payable(msg.sender).call{value: withdrawAmount}("");
-
-    //     if (!success) {
-    //         revert FundTransferFailed();
-    //     }
-    // }
-
     function getPendingRefund(
         uint auctionId,
         address sender
@@ -117,11 +115,14 @@ contract Auction is IAuction {
         return withdrawAmount;
     }
 
-    function clearPendingRefund(uint auctionId, address sender) public {
+    function clearPendingRefund(
+        uint auctionId,
+        address sender
+    ) public _onlyMarketplace {
         pendingRefunds[auctionId][sender] = 0;
     }
 
-    function cancelAuction(uint auctionId) public {
+    function cancelAuction(uint auctionId) public _onlyMarketplace {
         uint tokenId = auctions[auctionId].tokenId;
         address ownerOfAuction = propertyNFT.ownerOfToken(tokenId);
 
@@ -133,7 +134,7 @@ contract Auction is IAuction {
         auctions[auctionId].status = AuctionStatus.Cancelled;
     }
 
-    function endAuction(uint auctionId) public {
+    function endAuction(uint auctionId) public _onlyMarketplace {
         auctions[auctionId].status = AuctionStatus.Ended;
     }
 
@@ -169,7 +170,7 @@ contract Auction is IAuction {
 
     function declareWinner(
         uint auctionId
-    ) public returns (uint, uint, address) {
+    ) public _onlyMarketplace returns (uint, uint, address) {
         endAuction(auctionId);
 
         uint amount = auctions[auctionId].highestBid;

@@ -1,14 +1,31 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.34;
+import "hardhat/console.sol";
 
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
+import "./libraries/Errors.sol";
 import "./libraries/Structs.sol";
+
+import "./interfaces/IAccessManager.sol";
 import "./interfaces/IPropertyNFT.sol";
 
 contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender), IPropertyNFT {
-    constructor() ERC721("nexprop main token creation", "NXP") {}
+    IAccessManager public accessManager;
+
+    constructor(
+        address accessManagerAddress
+    ) ERC721("nexprop main token creation", "NXP") {
+        accessManager = IAccessManager(accessManagerAddress);
+    }
+
+    modifier _onlyMarketplace() {
+      if (!(accessManager.isMarketplace(msg.sender))) {
+            revert OnlyAccessByMarketplace();
+        }
+        _;
+    }
 
     uint256 public nextTokenId = 0;
 
@@ -16,7 +33,7 @@ contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender), IPropertyNFT {
 
     function mint(
         Structs.NFTMintParams calldata params
-    ) public returns (uint256) {
+    ) public _onlyMarketplace returns (uint256) {
         uint256 tokenId = ++nextTokenId;
 
         _safeMint(msg.sender, tokenId);
@@ -40,7 +57,7 @@ contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender), IPropertyNFT {
         return tokenId;
     }
 
-    function transfer(uint tokenId) public returns (address) {
+    function transfer(uint tokenId) public _onlyMarketplace returns (address) {
         require(tokenId > 0 && tokenId <= nextTokenId, "Token not found");
         checkLock(tokenId);
 
@@ -57,7 +74,7 @@ contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender), IPropertyNFT {
         return ownerOf(tokenId);
     }
 
-    function lock(uint tokenId, bool locked) public {
+    function lock(uint tokenId, bool locked) public _onlyMarketplace {
         require(tokenId > 0 && tokenId <= nextTokenId, "Token not found");
         // implement the permission for only Aution SM has access of lock
         properties[tokenId].isLocked = locked;
