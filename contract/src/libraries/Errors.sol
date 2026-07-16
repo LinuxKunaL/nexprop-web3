@@ -7,6 +7,8 @@ error AuctionNotFound();
 error AuctionNotActive();
 error AuctionEnded();
 error SellerCantBid();
+error InvalidAuctionDuration();
+error InvalidStartTime();
 error FundTransferFailed();
 error BidTooLow();
 error NoRefundAvailable();

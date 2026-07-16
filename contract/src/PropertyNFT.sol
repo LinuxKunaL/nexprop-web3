@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.34;
-import "hardhat/console.sol";
 
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -21,7 +20,7 @@ contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender), IPropertyNFT {
     }
 
     modifier _onlyMarketplace() {
-      if (!(accessManager.isMarketplace(msg.sender))) {
+        if (!(accessManager.isMarketplace(msg.sender))) {
             revert OnlyAccessByMarketplace();
         }
         _;
@@ -36,12 +35,12 @@ contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender), IPropertyNFT {
     ) public _onlyMarketplace returns (uint256) {
         uint256 tokenId = ++nextTokenId;
 
-        _safeMint(msg.sender, tokenId);
+        _safeMint(params.creator, tokenId);
 
         Structs.Property memory propertyData = Structs.Property({
             tokenId: tokenId,
-            creator: msg.sender,
-            owner: msg.sender,
+            creator: params.creator,
+            owner: params.creator,
             price: params.price,
             businessId: params.businessId,
             listingType: params.listingType,
@@ -116,5 +115,3 @@ contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender), IPropertyNFT {
         require(!properties[tokenId].isLocked, "Token is locked");
     }
 }
-
-// [1,"direact",12,null,null,null,"listing","12312"]

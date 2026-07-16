@@ -34,8 +34,7 @@ library Structs {
         ListingType listingType;
         uint256 price;
         uint auctionStartPrice;
-        uint auctionStartTime;
-        uint auctionEndTime;
+        AuctionDuration auctionDuration;
         string propertyStatus;
         string metadataCID;
         string documentsCID;
@@ -44,11 +43,11 @@ library Structs {
     struct CreateAuctionParams {
         uint tokenId;
         uint startPrice;
-        uint startTime;
-        uint endTime;
+        AuctionDuration duration;
     }
 
     struct NFTMintParams {
+        address creator;
         uint256 businessId;
         ListingType listingType;
         uint256 price;

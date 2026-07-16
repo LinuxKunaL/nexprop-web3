@@ -18,6 +18,14 @@ enum AuctionStatus {
     Cancelled
 }
 
+enum AuctionDuration {
+    THREE_DAYS,
+    FIVE_DAYS,
+    SEVEN_DAYS,
+    FOURTEEN_DAYS,
+    THIRTY_DAYS
+}
+
 enum PurchaseMode {
     Direct,
     Auction
