@@ -47,6 +47,7 @@ async function main() {
   console.log("Marketplace:", await marketplace.getAddress());
 
   await accessManager.setMarketplace(await marketplace.getAddress());
+  await accessManager.setEscrow(await escrow.getAddress());
 
   console.log("Initialization Complete");
 }
