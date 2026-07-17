@@ -7,8 +7,8 @@ enum LockStatus {
 }
 
 enum ListingType {
-    direct,
-    auction
+    Direct,
+    Auction
 }
 
 enum AuctionStatus {
@@ -19,11 +19,11 @@ enum AuctionStatus {
 }
 
 enum AuctionDuration {
-    THREE_DAYS,
-    FIVE_DAYS,
-    SEVEN_DAYS,
-    FOURTEEN_DAYS,
-    THIRTY_DAYS
+    ThreeDays,
+    FiveDays,
+    SevenDays,
+    FourteenDays,
+    ThirtyDays
 }
 
 enum PurchaseMode {
