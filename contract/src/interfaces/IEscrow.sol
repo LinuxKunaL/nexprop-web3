@@ -8,14 +8,18 @@ interface IEscrow {
 
     function viewDocuments(uint) external view returns (string memory);
 
-    function acceptDocuments(uint) external;
+    function acceptDocuments(uint, address) external;
 
-    function releaseProperty(uint) external returns (uint, address, bool);
+    function releaseProperty(
+        uint,
+        address
+    ) external returns (uint, address, bool);
 
     function closeEscrow(
         uint,
+        address,
         EscrowCloseReason
-    ) external returns (uint, address);
+    ) external returns (address, uint);
 
     function getEscrow(uint) external view returns (Structs.Escrow memory);
 
