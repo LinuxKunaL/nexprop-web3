@@ -8,11 +8,15 @@ interface IPropertyNFT {
         Structs.NFTMintParams calldata params
     ) external returns (uint256);
 
-    function transfer(uint) external returns (address);
+    function transfer(uint, address) external returns (address);
 
     function ownerOfToken(uint) external returns (address);
 
-    function lock(uint, bool) external;
+    function lock(uint, bool, LockReason) external;
+
+    function changeStatus(uint, PropertyStatus) external;
+
+    function setListingStatus(uint, bool) external;
 
     function get(uint256) external view returns (Structs.Property memory);
 
@@ -24,5 +28,5 @@ interface IPropertyNFT {
 
     function total() external view returns (uint256);
 
-    function checkLock(uint) external view;
+    function requireUnlocked(uint) external view;
 }

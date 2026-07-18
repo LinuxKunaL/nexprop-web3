@@ -4,6 +4,8 @@ pragma solidity ^0.8.34;
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
+import "hardhat/console.sol";
+
 import "./libraries/Errors.sol";
 import "./libraries/Structs.sol";
 
@@ -20,8 +22,16 @@ contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender), IPropertyNFT {
     }
 
     modifier _onlyMarketplace() {
+        console.log("error from PropertyNFT", msg.sender);
         if (!(accessManager.isMarketplace(msg.sender))) {
             revert OnlyAccessByMarketplace();
+        }
+        _;
+    }
+
+    modifier _onlyEscrow() {
+        if (!(accessManager.isEscrow(msg.sender))) {
+            revert OnlyAccessByEscrow();
         }
         _;
     }
@@ -37,6 +47,8 @@ contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender), IPropertyNFT {
 
         _safeMint(params.creator, tokenId);
 
+        bool isAuction = params.listingType == ListingType.Auction;
+
         Structs.Property memory propertyData = Structs.Property({
             tokenId: tokenId,
             creator: params.creator,
@@ -47,7 +59,8 @@ contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender), IPropertyNFT {
             propertyStatus: params.propertyStatus,
             metadataCID: params.metadataCID,
             documentsCID: params.documentsCID,
-            isLocked: false,
+            isLocked: isAuction ? true : false,
+            lockReason: isAuction ? LockReason.Auction : LockReason.None,
             createdAt: block.timestamp
         });
 
@@ -56,15 +69,19 @@ contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender), IPropertyNFT {
         return tokenId;
     }
 
-    function transfer(uint tokenId) public _onlyMarketplace returns (address) {
+    function transfer(
+        uint tokenId,
+        address transferTo
+    ) public _onlyEscrow returns (address) {
         require(tokenId > 0 && tokenId <= nextTokenId, "Token not found");
-        checkLock(tokenId);
+
+        requireUnlocked(tokenId);
 
         address PropertyOwner = ownerOf(tokenId);
 
-        _transfer(PropertyOwner, msg.sender, tokenId);
+        _transfer(PropertyOwner, transferTo, tokenId);
 
-        properties[tokenId].owner = msg.sender;
+        properties[tokenId].owner = transferTo;
 
         return PropertyOwner;
     }
@@ -73,10 +90,57 @@ contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender), IPropertyNFT {
         return ownerOf(tokenId);
     }
 
-    function lock(uint tokenId, bool locked) public _onlyMarketplace {
+    function lock(
+        uint tokenId,
+        bool locked,
+        LockReason reason
+    ) public _onlyEscrow {
         require(tokenId > 0 && tokenId <= nextTokenId, "Token not found");
-        // implement the permission for only Aution SM has access of lock
+
+        properties[tokenId].lockReason = reason;
         properties[tokenId].isLocked = locked;
+    }
+
+    function changeStatus(
+        uint tokenId,
+        PropertyStatus status
+    ) public _onlyEscrow {
+        properties[tokenId].propertyStatus = status;
+    }
+
+    function setListingStatus(
+        uint tokenId,
+        bool listed
+    ) public _onlyMarketplace {
+        requireUnlocked(tokenId);
+
+        Structs.Property storage property = properties[tokenId];
+
+        PropertyStatus newStatus = listed
+            ? PropertyStatus.Available
+            : PropertyStatus.Unlisted;
+
+        if (property.propertyStatus == newStatus) {
+            revert PropertyAlreadyInStatus();
+        }
+
+        property.propertyStatus = newStatus;
+    }
+
+    function updateMetadataCID(
+        uint tokenId,
+        string calldata newMetadataCID,
+        address owner
+    ) public _onlyMarketplace {
+        requireUnlocked(tokenId);
+
+        Structs.Property storage property = properties[tokenId];
+
+        if (!(owner == property.owner)) {
+            revert NotAuthorized();
+        }
+
+        property.metadataCID = newMetadataCID;
     }
 
     function get(
@@ -111,7 +175,9 @@ contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender), IPropertyNFT {
         return nextTokenId;
     }
 
-    function checkLock(uint tokenId) public view {
-        require(!properties[tokenId].isLocked, "Token is locked");
+    function requireUnlocked(uint tokenId) public view {
+        if (properties[tokenId].isLocked) {
+            revert PropertyLocked(properties[tokenId].lockReason);
+        }
     }
 }
