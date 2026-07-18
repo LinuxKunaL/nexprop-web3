@@ -36,7 +36,8 @@ contract Escrow is IEscrow {
         uint256 escrowId = ++nextEscrowId;
         address propertyOwner = propertyNFT.ownerOfToken(params.tokenId);
 
-        propertyNFT.lock(params.tokenId, true);
+        propertyNFT.lock(params.tokenId, true, LockReason.Escrow);
+        propertyNFT.changeStatus(params.tokenId, PropertyStatus.InEscrow);
 
         Structs.EscrowProgress memory initalEscrowStates = Structs
             .EscrowProgress({
@@ -97,7 +98,7 @@ contract Escrow is IEscrow {
             revert DocumentsNotVerified();
         }
 
-        propertyNFT.lock(escrow.tokenId, false);
+        propertyNFT.lock(escrow.tokenId, false, LockReason.None);
         propertyNFT.transfer(escrow.tokenId, escrow.seller);
 
         escrow.status.escrowClosed = true;
@@ -126,7 +127,7 @@ contract Escrow is IEscrow {
             }
         }
 
-        propertyNFT.lock(escrow.tokenId, false);
+        propertyNFT.lock(escrow.tokenId, false, LockReason.None);
 
         escrow.status.escrowClosed = true;
         escrow.status.fundsLocked = false;
