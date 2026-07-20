@@ -11,6 +11,19 @@ enum ListingType {
     Auction
 }
 
+enum PropertyStatus {
+    Available,
+    Unlisted,
+    InEscrow,
+    Sold
+}
+
+enum LockReason {
+    None,
+    Auction,
+    Escrow
+}
+
 enum AuctionStatus {
     None,
     Active,
