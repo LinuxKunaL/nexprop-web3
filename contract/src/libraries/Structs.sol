@@ -11,10 +11,11 @@ library Structs {
         address owner;
         ListingType listingType;
         uint256 price;
-        string propertyStatus;
+        PropertyStatus propertyStatus;
         string metadataCID;
         string documentsCID;
         bool isLocked;
+        LockReason lockReason;
         uint256 createdAt;
     }
 
@@ -35,9 +36,15 @@ library Structs {
         uint256 price;
         uint auctionStartPrice;
         AuctionDuration auctionDuration;
-        string propertyStatus;
+        PropertyStatus propertyStatus;
         string metadataCID;
         string documentsCID;
+    }
+
+    struct RelistPropertyParams {
+        uint tokenId;
+        uint startPrice;
+        AuctionDuration duration;
     }
 
     struct CreateAuctionParams {
@@ -51,7 +58,7 @@ library Structs {
         uint256 businessId;
         ListingType listingType;
         uint256 price;
-        string propertyStatus;
+        PropertyStatus propertyStatus;
         string metadataCID;
         string documentsCID;
     }
@@ -75,12 +82,14 @@ library Structs {
         EscrowCloseReason closeReason;
         EscrowProgress status;
     }
+
     struct CreateEscrowParams {
         PurchaseMode purchaseMode;
         uint tokenId;
         uint amount;
         address buyer;
     }
+
     struct BuyPropertyParams {
         PurchaseMode purchaseMode;
         uint tokenId;
