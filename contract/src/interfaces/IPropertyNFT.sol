@@ -8,7 +8,7 @@ interface IPropertyNFT {
         Structs.NFTMintParams calldata params
     ) external returns (uint256);
 
-    function transfer(uint, address) external returns (address);
+    function transfer(uint, address) external;
 
     function ownerOfToken(uint) external returns (address);
 

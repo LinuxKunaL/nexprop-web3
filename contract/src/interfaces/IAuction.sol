@@ -26,5 +26,7 @@ interface IAuction {
 
     function getHighestBidder(uint) external view returns (address);
 
+    function isAuctionEnded(uint) external view returns (bool);
+
     function declareWinner(uint) external returns (uint, uint, address);
 }

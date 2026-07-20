@@ -13,7 +13,7 @@ interface IEscrow {
     function releaseProperty(
         uint,
         address
-    ) external returns (uint, address, bool);
+    ) external returns (uint, address, uint, bool);
 
     function closeEscrow(
         uint,
