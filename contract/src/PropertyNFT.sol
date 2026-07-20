@@ -11,8 +11,14 @@ import "./libraries/Structs.sol";
 
 import "./interfaces/IAccessManager.sol";
 import "./interfaces/IPropertyNFT.sol";
+import "./AccessManager.sol";
 
-contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender), IPropertyNFT {
+contract PropertyNFT is
+    ERC721URIStorage,
+    Ownable(msg.sender),
+    IPropertyNFT,
+    AccessManager
+{
     IAccessManager public accessManager;
 
     constructor(
@@ -21,28 +27,13 @@ contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender), IPropertyNFT {
         accessManager = IAccessManager(accessManagerAddress);
     }
 
-    modifier _onlyMarketplace() {
-        console.log("error from PropertyNFT", msg.sender);
-        if (!(accessManager.isMarketplace(msg.sender))) {
-            revert OnlyAccessByMarketplace();
-        }
-        _;
-    }
-
-    modifier _onlyEscrow() {
-        if (!(accessManager.isEscrow(msg.sender))) {
-            revert OnlyAccessByEscrow();
-        }
-        _;
-    }
-
     uint256 public nextTokenId = 0;
 
     mapping(uint256 => Structs.Property) properties;
 
     function mint(
         Structs.NFTMintParams calldata params
-    ) public _onlyMarketplace returns (uint256) {
+    ) public onlyMarketplace returns (uint256) {
         uint256 tokenId = ++nextTokenId;
 
         _safeMint(params.creator, tokenId);
@@ -69,21 +60,20 @@ contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender), IPropertyNFT {
         return tokenId;
     }
 
-    function transfer(
-        uint tokenId,
-        address transferTo
-    ) public _onlyEscrow returns (address) {
+    function transfer(uint tokenId, address transferTo) public onlyEscrow {
         require(tokenId > 0 && tokenId <= nextTokenId, "Token not found");
 
         requireUnlocked(tokenId);
 
-        address PropertyOwner = ownerOf(tokenId);
+        address propertyOwner = ownerOf(tokenId);
 
-        _transfer(PropertyOwner, transferTo, tokenId);
+        if (propertyOwner == transferTo) {
+            revert SelfTransferNotAllowed();
+        }
+
+        _transfer(propertyOwner, transferTo, tokenId);
 
         properties[tokenId].owner = transferTo;
-
-        return PropertyOwner;
     }
 
     function ownerOfToken(uint tokenId) public view returns (address) {
@@ -94,7 +84,7 @@ contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender), IPropertyNFT {
         uint tokenId,
         bool locked,
         LockReason reason
-    ) public _onlyEscrow {
+    ) public onlyEscrow {
         require(tokenId > 0 && tokenId <= nextTokenId, "Token not found");
 
         properties[tokenId].lockReason = reason;
@@ -104,14 +94,14 @@ contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender), IPropertyNFT {
     function changeStatus(
         uint tokenId,
         PropertyStatus status
-    ) public _onlyEscrow {
+    ) public onlyEscrow {
         properties[tokenId].propertyStatus = status;
     }
 
     function setListingStatus(
         uint tokenId,
         bool listed
-    ) public _onlyMarketplace {
+    ) public onlyMarketplace {
         requireUnlocked(tokenId);
 
         Structs.Property storage property = properties[tokenId];
@@ -131,7 +121,7 @@ contract PropertyNFT is ERC721URIStorage, Ownable(msg.sender), IPropertyNFT {
         uint tokenId,
         string calldata newMetadataCID,
         address owner
-    ) public _onlyMarketplace {
+    ) public onlyMarketplace {
         requireUnlocked(tokenId);
 
         Structs.Property storage property = properties[tokenId];

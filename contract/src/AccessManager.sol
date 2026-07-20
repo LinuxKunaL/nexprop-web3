@@ -29,4 +29,18 @@ contract AccessManager is IAccessManager {
     function isEscrow(address account) public view returns (bool) {
         return account == escrow;
     }
+
+    modifier onlyMarketplace() {
+        if (!(isMarketplace(msg.sender))) {
+            revert OnlyAccessByMarketplace();
+        }
+        _;
+    }
+
+    modifier onlyEscrow() {
+        if (!(isEscrow(msg.sender))) {
+            revert OnlyAccessByEscrow();
+        }
+        _;
+    }
 }

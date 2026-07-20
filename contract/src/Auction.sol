@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.34;
 
+import "hardhat/console.sol";
 import "./interfaces/IAuction.sol";
 import "./interfaces/IMarketplace.sol";
 import "./interfaces/IPropertyNFT.sol";
@@ -10,20 +11,15 @@ import "./libraries/Enums.sol";
 import "./libraries/Structs.sol";
 import "./libraries/Errors.sol";
 
-contract Auction is IAuction {
+import "./AccessManager.sol";
+
+contract Auction is IAuction, AccessManager {
     IPropertyNFT public propertyNFT;
     IAccessManager public accessManager;
 
     constructor(address propertyNFTAddress, address accessManagerAddress) {
         propertyNFT = IPropertyNFT(propertyNFTAddress);
         accessManager = IAccessManager(accessManagerAddress);
-    }
-
-    modifier _onlyMarketplace() {
-        if (!(accessManager.isMarketplace(msg.sender))) {
-            revert OnlyAccessByMarketplace();
-        }
-        _;
     }
 
     uint public nextAuctionId = 0;
@@ -33,8 +29,7 @@ contract Auction is IAuction {
 
     function createAuction(
         Structs.CreateAuctionParams calldata params
-    ) public _onlyMarketplace {
-
+    ) public onlyMarketplace {
         uint256 auctionId = ++nextAuctionId;
 
         Structs.Auction memory auctionData = Structs.Auction({
@@ -43,8 +38,8 @@ contract Auction is IAuction {
             highestBid: 0,
             highestBidder: address(0),
             startPrice: params.startPrice,
-            startTime: params.startTime,
-            endTime: params.endTime,
+            startTime: block.timestamp,
+            endTime: block.timestamp + _durationInSeconds(params.duration),
             status: AuctionStatus.Active
         });
 
@@ -55,8 +50,7 @@ contract Auction is IAuction {
         uint auctionId,
         address bidder,
         uint bidAmount
-    ) public _onlyMarketplace {
-
+    ) public onlyMarketplace {
         if (auctionId == 0 || auctionId > nextAuctionId) {
             revert AuctionNotFound();
         }
@@ -118,11 +112,11 @@ contract Auction is IAuction {
     function clearPendingRefund(
         uint auctionId,
         address sender
-    ) public _onlyMarketplace {
+    ) public onlyMarketplace {
         pendingRefunds[auctionId][sender] = 0;
     }
 
-    function cancelAuction(uint auctionId) public _onlyMarketplace {
+    function cancelAuction(uint auctionId) public onlyMarketplace {
         uint tokenId = auctions[auctionId].tokenId;
         address ownerOfAuction = propertyNFT.ownerOfToken(tokenId);
 
@@ -134,9 +128,7 @@ contract Auction is IAuction {
         auctions[auctionId].status = AuctionStatus.Cancelled;
     }
 
-    function endAuction(uint auctionId) public _onlyMarketplace {
-        auctions[auctionId].status = AuctionStatus.Ended;
-    }
+    function endAuction(uint auctionId) public onlyMarketplace {}
 
     function getAuction(
         uint auctionId
@@ -153,7 +145,7 @@ contract Auction is IAuction {
             nextAuctionId
         );
 
-        for (uint i = 1; i < nextAuctionId; i++) {
+        for (uint i = 1; i <= nextAuctionId; i++) {
             auctionList[i - 1] = auctions[i];
         }
 
@@ -168,15 +160,40 @@ contract Auction is IAuction {
         return auctions[auctionId].highestBidder;
     }
 
+    function isAuctionEnded(uint256 auctionId) public view returns (bool) {
+        return block.timestamp >= auctions[auctionId].endTime;
+    }
+
     function declareWinner(
         uint auctionId
-    ) public _onlyMarketplace returns (uint, uint, address) {
-        endAuction(auctionId);
+    ) public onlyMarketplace returns (uint, uint, address) {
+        auctions[auctionId].status = AuctionStatus.Ended;
 
         uint amount = auctions[auctionId].highestBid;
         address winner = auctions[auctionId].highestBidder;
         uint tokenId = auctions[auctionId].tokenId;
 
         return (tokenId, amount, winner);
+    }
+
+    function _durationInSeconds(
+        AuctionDuration duration
+    ) internal pure returns (uint) {
+        uint durationInSeconds;
+
+        if (duration == AuctionDuration.ThreeDays) {
+            durationInSeconds = 3 days;
+        } else if (duration == AuctionDuration.FiveDays) {
+            durationInSeconds = 5 days;
+        } else if (duration == AuctionDuration.SevenDays) {
+            durationInSeconds = 7 days;
+        } else if (duration == AuctionDuration.FourteenDays) {
+            durationInSeconds = 14 days;
+        } else if (duration == AuctionDuration.ThirtyDays) {
+            durationInSeconds = 30 days;
+        } else {
+            revert InvalidAuctionDuration();
+        }
+        return durationInSeconds;
     }
 }

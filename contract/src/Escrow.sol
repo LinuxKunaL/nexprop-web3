@@ -10,8 +10,9 @@ import "./libraries/Errors.sol";
 import "./interfaces/IAccessManager.sol";
 import "./interfaces/IPropertyNFT.sol";
 import "./interfaces/IEscrow.sol";
+import "./AccessManager.sol";
 
-contract Escrow is IEscrow {
+contract Escrow is IEscrow, AccessManager {
     IPropertyNFT public propertyNFT;
     IAccessManager public accessManager;
 
@@ -20,19 +21,13 @@ contract Escrow is IEscrow {
         accessManager = IAccessManager(accessManagerAddress);
     }
 
-    modifier _onlyMarketplace() {
-        console.log("error from Escrow", msg.sender);
-        if (!(accessManager.isMarketplace(msg.sender))) {
-            revert OnlyAccessByMarketplace();
-        }
-        _;
-    }
-
     uint256 public nextEscrowId = 0;
 
     mapping(uint => Structs.Escrow) escrows;
 
-    function createEscrow(Structs.CreateEscrowParams memory params) public {
+    function createEscrow(
+        Structs.CreateEscrowParams memory params
+    ) public onlyMarketplace {
         uint256 escrowId = ++nextEscrowId;
         address propertyOwner = propertyNFT.ownerOfToken(params.tokenId);
 
@@ -66,7 +61,7 @@ contract Escrow is IEscrow {
     function viewDocuments(uint escrowId) public view returns (string memory) {
         Structs.Escrow memory escrow = escrows[escrowId];
 
-        _onlyEscrowParties(escrow.buyer, escrow.seller);
+        onlyEscrowParties(escrow.buyer, escrow.seller);
 
         return propertyNFT.getDocumentsCID(escrow.tokenId);
     }
@@ -74,7 +69,7 @@ contract Escrow is IEscrow {
     function acceptDocuments(
         uint escrowId,
         address buyer
-    ) public _onlyMarketplace {
+    ) public onlyMarketplace {
         Structs.Escrow storage escrow = escrows[escrowId];
 
         if (!(buyer == escrow.buyer)) {
@@ -87,7 +82,7 @@ contract Escrow is IEscrow {
     function releaseProperty(
         uint escrowId,
         address buyer
-    ) public _onlyMarketplace returns (uint, address, bool) {
+    ) public onlyMarketplace returns (uint, address, uint, bool) {
         Structs.Escrow storage escrow = escrows[escrowId];
 
         if (!(buyer == escrow.buyer)) {
@@ -99,19 +94,19 @@ contract Escrow is IEscrow {
         }
 
         propertyNFT.lock(escrow.tokenId, false, LockReason.None);
-        propertyNFT.transfer(escrow.tokenId, escrow.seller);
+        propertyNFT.transfer(escrow.tokenId, escrow.buyer);
 
         escrow.status.escrowClosed = true;
         escrow.status.paymentReleased = true;
 
-        return (escrow.amount, escrow.seller, true);
+        return (escrow.amount, escrow.seller, escrow.tokenId, true);
     }
 
     function closeEscrow(
         uint escrowId,
         address buyer,
         EscrowCloseReason reason
-    ) public _onlyMarketplace returns (address, uint) {
+    ) public onlyMarketplace returns (address, uint) {
         Structs.Escrow storage escrow = escrows[escrowId];
 
         if (reason == EscrowCloseReason.DocumentsRejected) {
@@ -156,10 +151,7 @@ contract Escrow is IEscrow {
         return escrows[escrowId].status;
     }
 
-    function _onlyEscrowParties(address buyer, address seller) internal view {
-        console.log("sender: ", msg.sender);
-        console.log("buyer: ", buyer);
-        console.log("seller: ", seller);
+    function onlyEscrowParties(address buyer, address seller) internal view {
         if (msg.sender != buyer && msg.sender != seller) {
             revert NotAuthorized();
         }

@@ -129,6 +129,10 @@ contract Marketplace is IMarketplace {
     }
 
     function declareAuctionWinner(uint auctionId) public {
+        if (!(auction.isAuctionEnded(auctionId))) {
+            revert AuctionNotEnded();
+        }
+
         (uint tokenId, uint amount, address winner) = auction.declareWinner(
             auctionId
         );
@@ -177,11 +181,13 @@ contract Marketplace is IMarketplace {
         refundEscrowBalance(to, amount);
     }
 
-    function releasePayment(uint escrowId) public payable {
+    function releasePayment(uint escrowId, bool listProperty) public {
         address buyer = msg.sender;
 
-        (uint amount, address seller, bool escrowSuccess) = escrow
+        (uint amount, address seller, uint tokenId, bool escrowSuccess) = escrow
             .releaseProperty(escrowId, buyer);
+
+        propertyNFT.setListingStatus(tokenId, listProperty ? true : false);
 
         if (escrowSuccess) {
             (bool sucess, ) = payable(seller).call{value: amount}("");
