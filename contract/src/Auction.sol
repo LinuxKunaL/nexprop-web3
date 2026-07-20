@@ -120,23 +120,17 @@ contract Auction is IAuction, AccessManager {
         uint tokenId = auctions[auctionId].tokenId;
         address ownerOfAuction = propertyNFT.ownerOfToken(tokenId);
 
-        require(
-            ownerOfAuction == msg.sender,
-            "You are not owner of this auction"
-        );
+        if (ownerOfAuction != msg.sender) revert NotAuctionOwner();
 
         auctions[auctionId].status = AuctionStatus.Cancelled;
     }
 
-    function endAuction(uint auctionId) public onlyMarketplace {}
-
     function getAuction(
         uint auctionId
     ) public view returns (Structs.Auction memory) {
-        require(
-            auctionId > 0 && auctionId <= nextAuctionId,
-            "Auction not found"
-        );
+        if (auctionId == 0 || auctionId > nextAuctionId)
+            revert AuctionNotFound();
+
         return auctions[auctionId];
     }
 

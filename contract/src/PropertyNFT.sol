@@ -61,7 +61,7 @@ contract PropertyNFT is
     }
 
     function transfer(uint tokenId, address transferTo) public onlyEscrow {
-        require(tokenId > 0 && tokenId <= nextTokenId, "Token not found");
+        if (tokenId == 0 || tokenId > nextTokenId) revert TokenNotFound();
 
         requireUnlocked(tokenId);
 
@@ -85,7 +85,7 @@ contract PropertyNFT is
         bool locked,
         LockReason reason
     ) public onlyEscrow {
-        require(tokenId > 0 && tokenId <= nextTokenId, "Token not found");
+        if (tokenId == 0 || tokenId > nextTokenId) revert TokenNotFound();
 
         properties[tokenId].lockReason = reason;
         properties[tokenId].isLocked = locked;
@@ -136,7 +136,7 @@ contract PropertyNFT is
     function get(
         uint256 tokenId
     ) public view returns (Structs.Property memory) {
-        require(tokenId > 0 && tokenId <= nextTokenId, "Token not found");
+        if (tokenId == 0 || tokenId > nextTokenId) revert TokenNotFound();
 
         return properties[tokenId];
     }

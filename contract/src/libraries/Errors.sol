@@ -8,6 +8,7 @@ error InvalidPropertyStatus();
 error PropertyLocked(LockReason reason);
 error PropertyAlreadyInStatus();
 error SelfTransferNotAllowed();
+error TokenNotFound();
 
 error AuctionNotFound();
 error AuctionNotActive();
@@ -21,6 +22,7 @@ error NoRefundAvailable();
 error AuctionNotEnded();
 
 error NotAuthorized();
+error NotAuctionOwner();
 
 error AlreadyInitialized();
 

@@ -16,8 +16,6 @@ interface IAuction {
 
     function cancelAuction(uint) external;
 
-    function endAuction(uint) external;
-
     function getAuction(uint) external view returns (Structs.Auction memory);
 
     function getAllAuctions() external view returns (Structs.Auction[] memory);
