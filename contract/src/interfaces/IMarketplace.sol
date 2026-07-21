@@ -9,7 +9,7 @@ interface IMarketplace {
 
     function relistProperty(Structs.RelistPropertyParams memory) external;
 
-    function buyProperty(Structs.BuyPropertyParams memory) external payable;
+    function buyProperty(uint) external payable;
 
     function placeBid(uint) external payable;
 

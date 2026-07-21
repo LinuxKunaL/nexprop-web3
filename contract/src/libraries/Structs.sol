@@ -91,7 +91,10 @@ library Structs {
     }
 
     struct BuyPropertyParams {
-        PurchaseMode purchaseMode;
+        uint tokenId;
+    }
+
+    struct _ExecutePurchaseParams {
         uint tokenId;
         uint amount;
         address buyer;
