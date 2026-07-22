@@ -213,7 +213,7 @@ contract Marketplace is IMarketplace {
             msg.sender,
             EscrowCloseReason.DocumentsRejected
         );
-        refundEscrowBalance(to, amount);
+        _refundEscrowBalance(to, amount);
     }
 
     /// @notice When escrow verification time is reached, is refund the fund
@@ -226,7 +226,7 @@ contract Marketplace is IMarketplace {
             address(0),
             EscrowCloseReason.TimeLimitExceeded
         );
-        refundEscrowBalance(to, amount);
+        _refundEscrowBalance(to, amount);
     }
 
     /// @notice Buyer are release the payment
@@ -255,7 +255,7 @@ contract Marketplace is IMarketplace {
     /// @param to Buyer address
     /// @param amount The locked Amount
     /// @custom:caller internal
-    function refundEscrowBalance(address to, uint amount) internal {
+    function _refundEscrowBalance(address to, uint amount) internal {
         (bool success, ) = payable(to).call{value: amount}("");
         if (!success) {
             revert FundTransferFailed();
