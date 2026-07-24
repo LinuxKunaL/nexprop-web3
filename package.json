@@ -11,7 +11,8 @@
     "build:android:debug-apk": "cd client/android && ./gradlew assembleDebug",
     "build:android:release-apk": "cd client/android && ./gradlew assembleRelease",
     "install:debug:apk": "adb install client/android/app/build/outputs/apk/debug/app-debug.apk",
-    "install:release:apk": "adb install client/android/app/build/outputs/apk/release/app-release.apk"
+    "install:release:apk": "adb install client/android/app/build/outputs/apk/release/app-release.apk",
+    "server:start": "cd server && npm run dev"
   },
   "keywords": [],
   "author": "",
