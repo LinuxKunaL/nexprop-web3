@@ -1,1 +1,0 @@
-- in fun `mint` i need store the owner of tokenId in `properties` struct, even if ERC721 can store it.
