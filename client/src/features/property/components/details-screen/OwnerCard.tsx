@@ -1,7 +1,7 @@
 import { View, Text, Image } from "react-native";
 import React, { useContext } from "react";
 import IconButton from "@components/buttons/IconButton";
-import { PropertyDetailsContext } from "@feature/property/details-context";
+import { PropertyDetailsContext } from "@features/property/details-context";
 
 const OwnerCard = () => {
   const {

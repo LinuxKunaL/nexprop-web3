@@ -1,1 +1,1 @@
-export { default } from "@feature/settings/components/EditAccount";
+export { default } from "@features/settings/components/EditAccount";

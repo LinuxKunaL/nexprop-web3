@@ -8,8 +8,8 @@ import { useRouter } from "expo-router";
 import { useThemeStore } from "@stores/theme.store";
 import Icon from "@components/display/Icon";
 import { useSharedValue } from "react-native-reanimated";
-import useWishlist from "@feature/wishlist/hooks/use-wishlist";
-import { PropertyDetailsContext } from "@feature/property/details-context";
+import useWishlist from "@features/wishlist/hooks/use-wishlist";
+import { PropertyDetailsContext } from "@features/property/details-context";
 
 const PropertyImageCarousel = () => {
   const router = useRouter();

@@ -1,1 +1,1 @@
-export {default} from "@feature/search/screens/SearchScreen"
+export {default} from "@features/search/screens/SearchScreen"

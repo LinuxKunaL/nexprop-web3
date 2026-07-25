@@ -1,1 +1,1 @@
-export { default} from "@feature/property/screens/PropertyDetailsScreen"
+export { default} from "@features/property/screens/PropertyDetailsScreen"

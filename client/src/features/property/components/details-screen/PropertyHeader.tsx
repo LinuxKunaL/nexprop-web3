@@ -4,7 +4,7 @@ import { useThemeStore } from "@stores/theme.store";
 import Icon from "@components/display/Icon";
 import Badge from "@components/feedback/Badge";
 import PropertyImageCarousel from "./PropertyImageCarousel";
-import { PropertyDetailsContext } from "@feature/property/details-context";
+import { PropertyDetailsContext } from "@features/property/details-context";
 
 const PropertyHeader = () => {
   const { property } = useContext(PropertyDetailsContext);

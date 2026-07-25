@@ -6,10 +6,10 @@ import { View, Text } from "react-native";
 import TouchableText from "@components/buttons/TouchableText";
 import { TSheetRef } from "@types_/bottomSheet";
 
-import LocationBottomSheet from "@feature/search/components/LocationBottomSheet";
-import TypeBottomSheet from "@feature/search/components/TypeBottomSheet";
-import AreaBottomSheet from "@feature/search/components/AreaBottomSheet";
-import PriceBottomSheet from "@feature/search/components/PriceBottomSheet";
+import LocationBottomSheet from "@features/search/components/LocationBottomSheet";
+import TypeBottomSheet from "@features/search/components/TypeBottomSheet";
+import AreaBottomSheet from "@features/search/components/AreaBottomSheet";
+import PriceBottomSheet from "@features/search/components/PriceBottomSheet";
 import PropertyGlassCard from "@components/display/PropertyCard";
 import { propertiesData } from "@data/properties";
 import { useRouter } from "expo-router";

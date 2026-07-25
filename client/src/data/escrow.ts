@@ -1,4 +1,4 @@
-import { TEscrow } from "@feature/escrow/types";
+import { TEscrow } from "@features/escrow/types";
 
 
 export const escrowsData: TEscrow[] = [

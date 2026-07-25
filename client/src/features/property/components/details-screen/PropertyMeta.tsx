@@ -4,7 +4,7 @@ import shortAddress from "@utils/shortAddress";
 import splitCamelCase from "@utils/splitCamelCase";
 import { View, Text, ScrollView, FlatList } from "react-native";
 import TouchableText from "@components/buttons/TouchableText";
-import { PropertyDetailsContext } from "@feature/property/details-context";
+import { PropertyDetailsContext } from "@features/property/details-context";
 
 const PropertyMeta = () => {
   const { property } = useContext(PropertyDetailsContext);

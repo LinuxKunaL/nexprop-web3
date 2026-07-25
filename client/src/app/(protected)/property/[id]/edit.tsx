@@ -1,1 +1,1 @@
-export { default} from "@feature/property/screens/PropertyFormScreen"
+export { default} from "@features/property/screens/PropertyFormScreen"

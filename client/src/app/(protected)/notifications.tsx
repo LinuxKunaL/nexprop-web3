@@ -1,1 +1,1 @@
-export { default } from "@feature/notification/screens/NotificationScreen";
+export { default } from "@features/notification/screens/NotificationScreen";

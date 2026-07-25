@@ -1,1 +1,1 @@
-export { default } from "@feature/wallet/screens/ConnectWalletScreen";
+export { default } from "@features/wallet/screens/ConnectWalletScreen";

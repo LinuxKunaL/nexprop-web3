@@ -1,1 +1,1 @@
-export { default } from "@feature/settings/components/NotificationSetting";
+export { default } from "@features/settings/components/NotificationSetting";

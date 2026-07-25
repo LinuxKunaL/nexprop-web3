@@ -4,7 +4,7 @@ import Button from "@components/buttons/Button";
 import { useThemeStore } from "@stores/theme.store";
 import { View, Text } from "react-native";
 import { useTheme } from "@providers/ThemeProvider";
-import { PropertyDetailsContext } from "@feature/property/details-context";
+import { PropertyDetailsContext } from "@features/property/details-context";
 
 const PurchaseCard = () => {
   const { theme } = useTheme();

@@ -3,7 +3,7 @@ import React, { useCallback, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import PropertyGlassCard from "@components/display/PropertyCard";
 import { usePersistentState } from "@hooks/other/use-persistent-state";
-import { TProperty } from "@feature/property/types";
+import { TProperty } from "@features/property/types";
 
 export default function WishlistScreen() {
   const [wishlist] = usePersistentState<TProperty[]>("wishlist");

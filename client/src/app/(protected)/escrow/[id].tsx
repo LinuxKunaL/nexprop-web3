@@ -1,1 +1,1 @@
-export { default } from "@feature/escrow/screens/EscrowDetailsScreen";
+export { default } from "@features/escrow/screens/EscrowDetailsScreen";

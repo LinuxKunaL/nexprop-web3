@@ -3,7 +3,7 @@ import Icon from "./Icon";
 import { Image } from "react-native";
 import { useRouter } from "expo-router";
 import Badge from "@components/feedback/Badge";
-import { TProperty } from "@feature/property/types";
+import { TProperty } from "@features/property/types";
 import { useThemeStore } from "@stores/theme.store";
 import { View, Text, Pressable } from "react-native";
 

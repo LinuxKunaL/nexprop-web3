@@ -1,1 +1,1 @@
-export { default } from "@feature/settings/components/Appearance";
+export { default } from "@features/settings/components/Appearance";

@@ -1,1 +1,1 @@
-export {default } from "@feature/wishlist/screens/WishlistScreen"
+export {default } from "@features/wishlist/screens/WishlistScreen"

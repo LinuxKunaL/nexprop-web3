@@ -1,4 +1,4 @@
-import { TProperty } from "@feature/property/types";
+import { TProperty } from "@features/property/types";
 import { usePersistentState } from "@hooks/other/use-persistent-state";
 import { useCallback, useEffect, useState } from "react";
 

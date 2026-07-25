@@ -9,7 +9,7 @@ import React, { useCallback } from "react";
 import clsx from "clsx";
 
 import { useRouter } from "expo-router";
-import { TEscrow } from "@feature/escrow/types";
+import { TEscrow } from "@features/escrow/types";
 import { useThemeStore } from "@stores/theme.store";
 
 type Props = {
