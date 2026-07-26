@@ -13,7 +13,7 @@
       "@types_/*": ["./src/types/*"],
       "@context/*": ["./src/context/*"],
       "@data/*": ["./src/data/*"],
-      "@feature/*": ["./src/features/*"],
+      "@features/*": ["./src/features/*"],
       "@stores/*": ["./src/stores/*"],
       "@services/*": ["./src/services/*"]
     }

@@ -2,13 +2,17 @@ module.exports = function (api) {
   api.cache(true);
   return {
     presets: [
-      ["babel-preset-expo", { jsxImportSource: "nativewind" }],
+      [
+        "babel-preset-expo",
+        { jsxImportSource: "nativewind", unstable_transformImportMeta: true },
+      ],
       "nativewind/babel",
     ],
     plugins: [
       [
         "module-resolver",
         {
+          root: ["."],
           alias: {
             "@ui": "./src/components/ui",
             "@components": "./src/components",
@@ -17,17 +21,18 @@ module.exports = function (api) {
             "@assets": "./src/assets",
             "@providers": "./src/providers",
             "@screen": "./src/app",
-            "@theme": "./src/constants",
-            "@types_:": "./src/types",
-            "@context:": "./src/context",
-            "@data:": "./src/data",
-            "@feature:": "./src/features",
-            "@stores:": "./src/stores",
-            "@services:":"./src/services"
+            "@constants": "./src/constants",
+            "@types_": "./src/types",
+            "@context": "./src/context",
+            "@data": "./src/data",
+            "@features": "./src/features",
+            "@stores": "./src/stores",
+            "@services": "./src/services",
           },
           extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
         },
       ],
+      "react-native-reanimated/plugin",
     ],
   };
 };
