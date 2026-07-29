@@ -1,0 +1,3210 @@
+[
+  {
+    "id": "c286eebc742a537cd1d6818363e9dc53b21759a1e8e5d9b263d0c03ec7703576",
+    "name": "1inch Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/3e60118c-b9a9-43df-7975-33ebc8014400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.oneinch.android",
+    "nativeDeepLink": "oneinch://open/nobodywilleveruseit",
+    "universalDeepLink": "https://wallet.1inch.io/app/nobodywilleveruseit"
+  },
+  {
+    "id": "6d1d5b892e02d4c992ae67f18f522398481360c64269f5cdf5e4b80435b20e3d",
+    "name": "3S Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/f3b6a89d-ec8f-49dc-e07f-6bf723e1e500?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "network.bho.wallet",
+    "nativeDeepLink": "bhcwallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "c36b25db7e48aa7ca19acbae35f79d6486b694f4d12def467592daa78c4cd5b7",
+    "name": "AB Pay",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/f635dbaa-dd03-419c-5dce-05aa0f127c00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "org.ab.abwallet.android.release",
+    "nativeDeepLink": "abpay://walletconnect",
+    "universalDeepLink": null
+  },
+  {
+    "id": "b956da9052132e3dabdcd78feb596d5194c99b7345d8c4bd7a47cabdcb69a25f",
+    "name": "ABC Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/e689ea2b-cd49-4a1d-7812-424a0e0d9200?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.myabcwallet.mpc",
+    "nativeDeepLink": "abc-wallet://abcwc",
+    "universalDeepLink": "https://abcwalletconnect.page.link/?apn=io.myabcwallet.mpc&ibi=io.myabcwallet.mpc&isi=1642837445&efr=1&ofl=https://myabcwallet.io/download&link=https://myabcwallet.io"
+  },
+  {
+    "id": "4f854044eea00196b92017037b384bf16118c6606b3a90c60e998af1fb2c01b0",
+    "name": "ADF Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/28acc8ed-a0e7-4004-1968-c54869fa2100?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.adf.wallet",
+    "nativeDeepLink": "adf://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "a0718f5fb1493e4aaac72cff62d162cb85db40ed68fd8700298f36f1d5c4b73d",
+    "name": "AirGap Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/76bfe8cd-cf3f-4341-c33c-60da01065000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "it.airgap.wallet",
+    "nativeDeepLink": "airgap-wallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "6b16d70ace02b208c67e06ad00ed8110f46e91cc075e0fd98c68b825587d4076",
+    "name": "Aktionariat Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/cbb984c3-9238-4660-bc9e-bf55355b8e00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.aktionariat.app",
+    "nativeDeepLink": "aktionariat://",
+    "universalDeepLink": "https://app.aktionariat.com"
+  },
+  {
+    "id": "4b3713c23d5b38f8ae42e0682e81b1286828b0b48ad2e983ba5b928b47f937f4",
+    "name": "Alephium Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/3ece76f1-fc71-4fad-2d28-707f5a8d2300?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "org.alephium.wallet",
+    "nativeDeepLink": "alephium://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "d50cc807305f886f712206c9a8a7e47a776a266a7367bc080fe8ce939fcfa2b8",
+    "name": "Alicebob Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/15be8ddd-0bef-4948-56d1-6101347a6b00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.crypto.ab.wallet.app",
+    "nativeDeepLink": "crypto.ab.wallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "138f51c8d00ac7b9ac9d8dc75344d096a7dfe370a568aa167eabc0a21830ed98",
+    "name": "AlphaWallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/5b1cddfb-056e-4e78-029a-54de5d70c500?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.stormbird.wallet",
+    "nativeDeepLink": "awallet://",
+    "universalDeepLink": "https://aw.app"
+  },
+  {
+    "id": "94135dbd7aaca4908de49c44e49b8920a79c90164a7ce5803ddb33054c7edc57",
+    "name": "Altme",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/7eeac6e8-6852-4d09-8579-e229fd6b9a00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "co.altme.alt.me.altme",
+    "nativeDeepLink": "wc-altme://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "5d12c54d33abc6af163bc0344eed8df90765281c4973ada8863ed9ae12aa137f",
+    "name": "AmazeWallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/38495eb4-efcf-47cb-be73-a695510f9f00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.mining.amaze.wallet",
+    "nativeDeepLink": "amazeapp://amazewallet.com",
+    "universalDeepLink": null
+  },
+  {
+    "id": "6b770c4a0f80472198b577981710f29e5a2d52d6f64af616b49aeea8e1b7cabf",
+    "name": "Arca Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/80cba603-3df7-439c-29fc-9d5ff1fc6400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.constellationnetwork.arca",
+    "nativeDeepLink": "arcawallet://wc",
+    "universalDeepLink": "https://arcawallet.app/wc"
+  },
+  {
+    "id": "0e4915107da5b3408b38e248f7a710f4529d54cd30e9d12ff0eb886d45c18e92",
+    "name": "Arculus Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/f78dab27-7165-4a3d-fdb1-fcff06c0a700?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "co.arculus.wallet.android",
+    "nativeDeepLink": "arculuswc://",
+    "universalDeepLink": "https://gw.arculus.co/app/wc"
+  },
+  {
+    "id": "bc949c5d968ae81310268bf9193f9c9fb7bb4e1283e1284af8f2bd4992535fd6",
+    "name": "Argent",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/215158d2-614b-49c9-410f-77aa661c3900?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "im.argent.contractwalletclient",
+    "nativeDeepLink": "argent://app/",
+    "universalDeepLink": "https://www.argent.xyz/app"
+  },
+  {
+    "id": "dbb64ad8f55b4ed333d909a6d53670cf97d136c22eb1dca800c539ecea165a53",
+    "name": "Arianee Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/13b7fe36-909a-4c83-4f06-5740829a3900?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.arianee.wallet",
+    "nativeDeepLink": "com.arianee.wallet://",
+    "universalDeepLink": "https://i.arian.ee"
+  },
+  {
+    "id": "c6f3d04a4e1a51e7d2045f347a5ebdab30fc600950a740fca21f0c92e230ee05",
+    "name": "Arianee Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/ace938a9-c906-4b9e-f683-b85f1ab72800?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.arianee.wallet",
+    "nativeDeepLink": "com.arianee.wallet://",
+    "universalDeepLink": "https://arianee.net"
+  },
+  {
+    "id": "792fbacfe787d67595dd4eb38ac308e14b3bbc810393db56f477a92e5ac8764b",
+    "name": "Assure",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/64db7104-c8b7-44ea-e102-11ce87124200?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.neuxs.assure",
+    "nativeDeepLink": "assure://",
+    "universalDeepLink": "https://www.assure.pro/Official"
+  },
+  {
+    "id": "aa01d13483db4c065b7a619b813f9eae1cb60c19bf0fc0ed3c36444a07257bd0",
+    "name": "AT.Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/98bd3b9a-097e-4743-8808-986b4ad1ad00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.authentrend.atwallet",
+    "nativeDeepLink": "atwallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "380efff687c7d2222d62378c588d45d2e0ff40a0fc4d8f778c4d6fbe58cec5ed",
+    "name": "Atomic Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/7eca0311-abf5-4902-43e9-51858403e200?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.atomicwallet",
+    "nativeDeepLink": "atomicwallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "76260019aec5a3c44dd2421bf78e80f71a6c090d932c413a287193ed79450694",
+    "name": "Aurora Pass",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/6d93eeba-edce-431c-4293-e25784e61f00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "aurora.pass.android.app",
+    "nativeDeepLink": "aurora-pass://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "94f785c0c8fb8c4f38cd9cd704416430bcaa2137f27e1468782d624bcd155a43",
+    "name": "Avacus",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/a7106965-91cc-4a73-4688-c5c72ae0ed00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.sowaka.avacus",
+    "nativeDeepLink": "avacus://",
+    "universalDeepLink": "https://avacus.app.link"
+  },
+  {
+    "id": "60ce5c2246a0808b32dd4eab598435e1c5bd122cc3e9fab7b0542871ac2a35c7",
+    "name": "AZCoiner",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/c6601184-7eb7-46c9-f6ad-0808cfd16100?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.azc.azcoiner",
+    "nativeDeepLink": "azcoiner://",
+    "universalDeepLink": "https://azcoiner.com/"
+  },
+  {
+    "id": "2bd8c14e035c2d48f184aaa168559e86b0e3433228d3c4075900a221785019b0",
+    "name": "Backpack",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/71ca9daf-a31e-4d2a-fd01-f5dc2dc66900?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "app.backpack.mobile",
+    "nativeDeepLink": "backpack://",
+    "universalDeepLink": "https://backpack.app/ul/v1"
+  },
+  {
+    "id": "6bd4cf3fa61dafe9088f9e93e5d1178c7e792fe349489d9a8141cf4354359712",
+    "name": "Ballet Crypto",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/fd46e96d-350d-4922-a4a9-b2bfe7c92400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.balletcrypto",
+    "nativeDeepLink": "balletcrypto://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "e1882224c4c09a84575c533867d434267c46384f5a365b889605d28b061747c4",
+    "name": "BeeWallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/77743ed9-5ac6-48f7-867d-0f98e481b500?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "network.bee.app",
+    "nativeDeepLink": "bee://",
+    "universalDeepLink": "https://main.apple.bee9527.com"
+  },
+  {
+    "id": "fe68cea63541aa53ce020de7398968566dfe8f3725663a564cac89490247ed49",
+    "name": "Best Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/7f9574ed-eb42-4e04-0888-be2939936700?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.bestwallet.mobile",
+    "nativeDeepLink": "bw://app/connect",
+    "universalDeepLink": "https://best-wallet-prod.web.app/connect"
+  },
+  {
+    "id": "f6488493aa7713ec6f915ebe80070d7a4dd17da9d162d72f53117cc4f230bd75",
+    "name": "Bexo",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/7074bf0c-d0f7-4d86-2dc4-28430d629d00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.beexo",
+    "nativeDeepLink": "beexo://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "37a686ab6223cd42e2886ed6e5477fce100a4fb565dcd57ed4f81f7c12e93053",
+    "name": "Bifrost Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/27c999c6-3492-4161-bbb8-1b75bdb97500?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.bifrostwallet.app",
+    "nativeDeepLink": "bifrostwallet://",
+    "universalDeepLink": "https://app.bifrostwallet.com/"
+  },
+  {
+    "id": "34af9f895e03259fb008e8ff4ea5ca5d75fcfcb606ec563c332004f39ab47803",
+    "name": "Billion",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/8fd9b0c5-87a6-4dd5-19d5-9cb133fbd100?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.billionwallet",
+    "nativeDeepLink": "billionwallet://",
+    "universalDeepLink": "https://w.billionwallet.io"
+  },
+  {
+    "id": "e870e3dc750305af6a6bd7139538a85362963a8e21b6c6e0f9e27d80b92801c9",
+    "name": "BIM Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/dae5a6bb-ac44-4d75-8c25-a361801d3b00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.bimwallet",
+    "nativeDeepLink": "bimwallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "cbc11415130d01316513f735eac34fd1ad7a5d40a993bbb6772d2c02eeef3df8",
+    "name": "Binance.US",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/48aa1a7d-c5fe-4ad6-c2f2-e5684b296900?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.binance.us",
+    "nativeDeepLink": "bncus://binance.us",
+    "universalDeepLink": "https://binance.us/universal_JHHGDSKDJ"
+  },
+  {
+    "id": "21cb3fe9675909aede5dbf4c27f654c0c66d8fb1272f497adb0f12ed01b0a599",
+    "name": "Binox Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/5f290978-c83a-426c-9ecb-4f745b82a400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.binox.wallet",
+    "nativeDeepLink": "binox://",
+    "universalDeepLink": "https://binox.space/wc.html"
+  },
+  {
+    "id": "107bb20463699c4e614d3a2fb7b961e66f48774cb8f6d6c1aee789853280972c",
+    "name": "Bitcoin.com Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/b567c9d7-bd3f-4184-0dc8-297a0e44de00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.bitcoin.mwallet",
+    "nativeDeepLink": "bitcoincom://",
+    "universalDeepLink": "https://wallet.bitcoin.com/"
+  },
+  {
+    "id": "41f20106359ff63cf732adf1f7dc1a157176c9b02fd266b50da6dcc1e9b86071",
+    "name": "Bitizen",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/75dd1471-77e9-4811-ce57-ec8fc980ec00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "org.bitizen.wallet",
+    "nativeDeepLink": "bitizen://wallet/",
+    "universalDeepLink": "https://bitizen.org/wallet/"
+  },
+  {
+    "id": "ee789e749e9af71b1a57a78d9066085d1da1eedbcfd221100963f10cc8452cd6",
+    "name": "Bitnovo Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/c22b2af0-15a0-4e35-3417-1378b8239100?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.bitnovo.Wallet",
+    "nativeDeepLink": "bitnovowallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "372945354184bfbf3eb51e38d8fafde15a4bc11b88904334e7bad7c8229e6bb1",
+    "name": "Bitso Web3 Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/7e4953fb-de22-4761-1ff6-8c494549aa00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.bitso.wallet",
+    "nativeDeepLink": "bitso://bitso.com/web3-wallet",
+    "universalDeepLink": "https://bitso.com/web3-wallet"
+  },
+  {
+    "id": "e6db14424618cf309697eb50dc330ec18b0ad63395f5ac4669233716df5c18be",
+    "name": "Bitverse",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/5851c585-0f2b-41a1-a36a-221a18af5200?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.bitverse.app",
+    "nativeDeepLink": "bitverseapp://open/wallet",
+    "universalDeepLink": "https://bitverseapp.page.link/?apn=com.bitverse.app&afl=https://bitverse.zone/download?deeplink%3Dbitverseapp://open/wallet&isi=1645515614&ibi=com.bitverse.app&link=https://bitverse.zone/download?deeplink%3Dbitverseapp://open/wallet?uri="
+  },
+  {
+    "id": "19c54e02e79e8628512fae334d6dbbac7e2e8b53848a68a06191f3769ede92ff",
+    "name": "BlackFort Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/f2cf0909-3e1e-4f67-8c3f-2b69f7a5eb00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "exchange.blackfort.blackfortwallet",
+    "nativeDeepLink": "blackfortwc://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "a9104b630bac1929ad9ac2a73a17ed4beead1889341f307bff502f89b46c8501",
+    "name": "Blade Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/8fa87652-b043-4992-3a45-78e438d1cd00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "org.bladelabs.wallet",
+    "nativeDeepLink": "org.bladelabs.bladewallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "6342f00659512c995c5b271236fbe8e8c86951bd94f533fa0237d2a3e606c4da",
+    "name": "Blockaura",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/8cc7ddbc-a257-4383-4f84-3847e707bb00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.blockaura_classic",
+    "nativeDeepLink": "blockaura://walletconnect",
+    "universalDeepLink": null
+  },
+  {
+    "id": "84b43e8ddfcd18e5fcb5d21e7277733f9cccef76f7d92c836d0e481db0c70c04",
+    "name": "Blockchain.com",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/6f913b80-86c0-46f9-61ca-cc90a1805900?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "piuk.blockchain.android",
+    "nativeDeepLink": "blockchain-wallet://",
+    "universalDeepLink": "https://login.blockchain.com/app"
+  },
+  {
+    "id": "14e7176536cb3706e221daaa3cfd7b88b7da8c7dfb64d1d241044164802c6bdd",
+    "name": "Blocto",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/374258d3-c749-4f37-7815-77e61f798c00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.portto.blocto",
+    "nativeDeepLink": "blocto://",
+    "universalDeepLink": "https://blocto.app"
+  },
+  {
+    "id": "9207486640ccbe5641b581b9c63d14f9dfdc446b6039a8d22935adb364d6d0a7",
+    "name": "BloFin Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/3f3a5ee7-a0d1-454d-6313-d88b3e1fe700?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.blofin.wallet.wallet",
+    "nativeDeepLink": "blofin-wallet://",
+    "universalDeepLink": "https://wallet.blofin.com/app/"
+  },
+  {
+    "id": "2c5b687e9f6ce2b5d53541ffdf6aa23d7f645c57dc553dbabd465471c1347689",
+    "name": "Bonuz Social Smart Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/eb376138-c5b9-4d82-c610-c98c9c218a00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "market.bonuz.app",
+    "nativeDeepLink": "bonuzapp://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "8ff6eccefefa7506339201bc33346f92a43118d6ff7d6e71d499d8187a1c56a2",
+    "name": "Broearn Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/b3c2c77c-a8cf-46e1-095a-77f0a3891500?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.broearn.browser",
+    "nativeDeepLink": "broearn://wallet/",
+    "universalDeepLink": "https://www.broearn.com/link/wallet"
+  },
+  {
+    "id": "d757db40fd0987092673c8c4f33398ac48bb52aa12abb027a652fb4c50b2dce0",
+    "name": "Bron",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/b848f936-918c-4e1a-0a01-aaf9dd011600?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "org.bron.mobile",
+    "nativeDeepLink": "bron-mobile://wallet-connect",
+    "universalDeepLink": null
+  },
+  {
+    "id": "8821748c25de9dbc4f72a691b25a6ddad9d7df12fa23333fd9c8b5fdc14cc819",
+    "name": "Burrito",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/7eec7187-3f48-4fda-53bb-b0ad55749a00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.burritowallet.app",
+    "nativeDeepLink": "burrito://",
+    "universalDeepLink": "https://app.burritowallet.com"
+  },
+  {
+    "id": "4972842b1c1a3552831f7c29ec53229d1ce00b4d43988a262c59d26dae0627d7",
+    "name": "BUZZUP",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/fb24f0a3-83f5-43e7-2204-25c6348f0000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.chainon.lsyim",
+    "nativeDeepLink": "buzzup://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "15c8b91ade1a4e58f3ce4e7a0dd7f42b47db0c8df7e0d84f63eb39bcb96c4e0f",
+    "name": "Bybit Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/b9e64f74-0176-44fd-c603-673a45ed5b00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.bybit.app",
+    "nativeDeepLink": "bybitapp://open/route?targetUrl=by://web3/walletconnect/",
+    "universalDeepLink": null
+  },
+  {
+    "id": "7468ebbf5e14bd146c4fa12a08fb1a0d8d9af3b66409a5b682b64cffc4f21919",
+    "name": "ByteBank",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/bc7aacd6-b2e2-4146-7d21-06e0c5d44f00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.hideout.wallet",
+    "nativeDeepLink": "hideoutWallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "9aa288a4c66884bec28af54056921660ebde9debd848ef03902363ed534c96d4",
+    "name": "Caesium",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/b3a456db-43c7-463c-cc3c-8c550c5b9500?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.csm_app",
+    "nativeDeepLink": "caesium-app://walletconnect",
+    "universalDeepLink": null
+  },
+  {
+    "id": "32caff85195f843b19e79669e63bf3f4ad97b23b3a48b65b3781c0d193a3fcae",
+    "name": "Cake Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/b05af25b-fa4d-4f91-a4cb-2f8f7d544000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.cakewallet.cake_wallet",
+    "nativeDeepLink": "cakewallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "0e9aa50bb3211c93ab48626d53dd631518e33b1eb6cf88638a83e2a0a377e3d0",
+    "name": "Catecoin Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/d017bc54-db4d-4f07-2de2-69790ce92400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.crypto.wallet.catecoin",
+    "nativeDeepLink": "catecoin://",
+    "universalDeepLink": "https://catecoin.app/apple-app-site-association"
+  },
+  {
+    "id": "39f230db1d706c54b139aa79cdf1e7f1b0dee05d61ecc7a1b4f8d86c1a10354c",
+    "name": "CFCX",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/2f1cda0d-ff0c-43ca-8200-6dd18560c100?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.cfcx",
+    "nativeDeepLink": "cfcx://",
+    "universalDeepLink": "https://cfcx.io/"
+  },
+  {
+    "id": "e86b5fc56c3661726248a7a3f99fae68dca0cc7fa503e2ce96c1873973fea3f5",
+    "name": "CipherTrade",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/f535e1e6-2189-4305-0a0d-147f83031c00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "org.ciphertrade.app",
+    "nativeDeepLink": "ciphertrade://wc",
+    "universalDeepLink": "https://ciphertrade.org/wc"
+  },
+  {
+    "id": "8ece0bce3a95db74077d7861f7767770af5e5746c3af011e4eec7e3d2efe2be4",
+    "name": "Clave",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/f1c538df-15d9-4448-542f-b7b358e95d00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.clave.mobile",
+    "nativeDeepLink": "clave://link/wc/",
+    "universalDeepLink": "https://getclave.io/link/wc"
+  },
+  {
+    "id": "34fca0f0eaa51af856cc7f205bacc36ede45545fa987fd81274e53db7718a183",
+    "name": "COCA Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/16e75893-aee7-4884-2267-b561fb031d00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.wirex.wallet",
+    "nativeDeepLink": "wirexwallet://",
+    "universalDeepLink": "https://wwallet.app.link/wc?uri=wc:00e46b69-d0cc-4b3e-b6a2-cee442f97188@1?bridge=https%3A%2F%2Fbridge.walletconnect.org&key=91303dedf64285cbbaf9120f6e9d160a5c8aa3deb67017a3874cd272323f48ae"
+  },
+  {
+    "id": "8bee2c65ad37240fab769ff3c9f56f94914e53c8d99087e1a805cc5ef39a44f3",
+    "name": "Cogni ",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/b650cd08-21eb-4769-8ef9-96feb6e38e00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.getcogni.app",
+    "nativeDeepLink": "getcogni://web3/",
+    "universalDeepLink": "https://getcogni.com/web3_wc_connect"
+  },
+  {
+    "id": "2a3c89040ac3b723a1972a33a125b1db11e258a6975d3a61252cd64e6ea5ea01",
+    "name": "Coin98 Super Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/e7c6d5d0-b986-4348-de22-fc940e1aee00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "coin98.crypto.finance.media",
+    "nativeDeepLink": "coin98://",
+    "universalDeepLink": "https://coin98.com/"
+  },
+  {
+    "id": "4a4d5b02a47ef7f7162da22983431ee1cf8392a8d4929ed8c69d2759b24e17f0",
+    "name": "CoinEx Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/67650667-cc52-4e7f-2d4b-26fcdb160100?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.viabtc.wallet",
+    "nativeDeepLink": "myApp://https://wallet.coinex.com",
+    "universalDeepLink": null
+  },
+  {
+    "id": "5859076ade608fbc4e9d3fe2f95e8527de80f8451ecbb1dced54ca84deae0dd6",
+    "name": "Coingrig",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/18e38e41-a387-4402-ca31-6d2d5eb91100?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.coingrig",
+    "nativeDeepLink": "coingrig://",
+    "universalDeepLink": "https://link.coingrig.com"
+  },
+  {
+    "id": "15d7610042217f691385d20e640869dc7273e991b04e8f476417cdc5ec856955",
+    "name": "Coinomi",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/3b446d16-a908-40c8-5835-9a6efe90dd00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.coinomi.wallet",
+    "nativeDeepLink": "coinomi://",
+    "universalDeepLink": "https://coinomi.page.link"
+  },
+  {
+    "id": "bcaec16e531fb5f6dc690d7b70d570421e0209af9a0fe77c6419d516fe0098c2",
+    "name": "CoinStats",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/b2a00908-f144-4a49-cc0a-9d7422ad5e00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.coinstats.crypto.portfolio",
+    "nativeDeepLink": "coinstats://",
+    "universalDeepLink": "http://coinstats.app"
+  },
+  {
+    "id": "2ba89f94faff121a7c1091c3cea124167dc4291ebe87123620c66e0f120197cc",
+    "name": "CoinWallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/1c0cd352-ce8e-4bcc-f91d-8763eab60b00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.coinsdo.wallet",
+    "nativeDeepLink": "coinwallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "dd15a3530dc4de4c50ebb22010824c41337403efec713f1187695c72934fb94c",
+    "name": "Cold Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/fa63c977-9637-4d85-960d-058da23e4300?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.PlusWallet",
+    "nativeDeepLink": "pluswallet://",
+    "universalDeepLink": "https://coldwallet.com/"
+  },
+  {
+    "id": "123e6d19e6c0f575b148c469eb191f8b92618c13c94c4758aee35e042e37fa21",
+    "name": "Compass Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/1d7dea00-96be-4ce8-ca15-d14bddbb5000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.leapwallet.compass",
+    "nativeDeepLink": "leapcompass://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "7dcb0e5eb1b4fc6e2e0b143201c489ea6c618259f49527527d4a349d1a95ba7b",
+    "name": "Concordium",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/b1ca907e-2f5f-42a8-d11c-86a15a291600?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.pioneeringtechventures.wallet",
+    "nativeDeepLink": "concordiumwallet://",
+    "universalDeepLink": "https://wallet.concordium.software"
+  },
+  {
+    "id": "1f69170bf7a9bdcf89403ec012659b7124e158f925cdd4a2be49274c24cf5e5d",
+    "name": "CoolWallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/f581365d-e844-4d21-8e35-44a755a32d00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.coolbitx.cwsapp",
+    "nativeDeepLink": "coolwallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "f323633c1f67055a45aac84e321af6ffe46322da677ffdd32f9bc1e33bafe29c",
+    "name": "Core",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/aec2da5c-8867-4a53-8f3d-4d547a30b400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.avaxwallet",
+    "nativeDeepLink": "core://",
+    "universalDeepLink": "https://core.app"
+  },
+  {
+    "id": "feb6ff1fb426db18110f5a80c7adbde846d0a7e96b2bc53af4b73aaf32552bea",
+    "name": "Cosmostation",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/ea26c3c8-adb6-4dc4-ee02-35d6eee02800?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "wannabit.io.cosmostaion",
+    "nativeDeepLink": "cosmostation://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "ce02f1ae74686234eabfa7d31876c442779b730dfe7924a3ca0e6559a7afa30f",
+    "name": "Credit Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/cf606650-415f-4e7f-a45d-fd6b16769400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.creditcoin.mobile",
+    "nativeDeepLink": "creditwallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "594898896007b2e49d4064043871093620867d18cae558ce9782ad1303f371e6",
+    "name": "Cryptic",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/c9645dab-fe5d-4a48-0359-79ebc4229000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.cypherchat",
+    "nativeDeepLink": "cypherchat://wc",
+    "universalDeepLink": null
+  },
+  {
+    "id": "bae2ab14ef450f307f24a395a3c2766a2ef8a9c0e61856985d23f6445e8db03f",
+    "name": "Cryptnox Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/7682ef2f-81b6-41cb-caa5-cb697beda300?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.cryptnox.cryptnoxwallet",
+    "nativeDeepLink": "cryptnox://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "f2436c67184f158d1beda5df53298ee84abfc367581e4505134b5bcf5f46697d",
+    "name": "Crypto.com Onchain",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/88388eb4-4471-4e72-c4b4-852d496fea00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.defi.wallet",
+    "nativeDeepLink": "dfw://",
+    "universalDeepLink": "https://wallet.crypto.com/deeplink"
+  },
+  {
+    "id": "45aa096282002911a77c9e1dba16dade905960e6386e681c2f8d7966f4e475b1",
+    "name": "Cryptokara",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/028ef53f-b5d9-4a63-2bf0-d384c8522500?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.cryptokara",
+    "nativeDeepLink": "cryptokara://StartScreen",
+    "universalDeepLink": "https://play.google.com/store/apps/details?id=com.cryptokara&hl=en_US"
+  },
+  {
+    "id": "f896cbca30cd6dc414712d3d6fcc2f8f7d35d5bd30e3b1fc5d60cf6c8926f98f",
+    "name": "Ctrl Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/749856b0-3f0e-4876-4d0f-27835310db00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "xyz.ctrl.wallet",
+    "nativeDeepLink": "ctrl-mobile://",
+    "universalDeepLink": "https://ctrl.xyz/deeplink/wallet"
+  },
+  {
+    "id": "71719738d0ed2eaba05884b7acb3582f99f224cef9385e4dd5bab1fcd1229cea",
+    "name": "Cyper",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/d48934ec-35b9-4929-dfc3-ade7d34e4700?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.mzl.cyper",
+    "nativeDeepLink": "cyper://app/wallet/index",
+    "universalDeepLink": null
+  },
+  {
+    "id": "44ca80bba6838e116e8d0a2c1a1f37041ea322379cc65a71479b6a240b6fcab2",
+    "name": "Cypher Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/7bce0965-a4cc-4aad-6217-009d51017500?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.cypherd.androidwallet",
+    "nativeDeepLink": "cypherwallet://",
+    "universalDeepLink": "https://app.cypherhq.io"
+  },
+  {
+    "id": "a1f506a38f39b672b369bd13b68abbbd81f83a0489e6625f2bf12aa0389c22ae",
+    "name": "D'CENT Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/e7e60788-6806-47d4-7b4a-a410e7aa3300?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.kr.iotrust.dcent.wallet",
+    "nativeDeepLink": "dcent://",
+    "universalDeepLink": "https://link.dcentwallet.com"
+  },
+  {
+    "id": "078d94b4c8706e12fe379e85242ce963380acfd678518e2d8ea73ee532d9bacc",
+    "name": "DaffiOne",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/1e87bcb9-452c-4ad7-471c-130ae0115000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.me.daffione",
+    "nativeDeepLink": "DaffiOne:// wc://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "bf842c1e1e729282583c4c53d5cd6bb01d7685ae8361fa20bdfa9a843ad2e46f",
+    "name": "Daily Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/8b54bbc5-5d39-4251-9b69-cde070bbd000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.wallet.daily",
+    "nativeDeepLink": "dailywallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "9a8f7601d24db36d0cc82df4b7adc11eb80451b2f651bf203b4e2f8696f16586",
+    "name": "DeBox Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/e59670c8-248e-4b3c-1771-26d71293da00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.tm.security.wallet",
+    "nativeDeepLink": "Debox://",
+    "universalDeepLink": "https://debox.pro/wc"
+  },
+  {
+    "id": "1986e7c874bb906f057d5d64a4806c004e021689536e5228c74d64a6058e8bac",
+    "name": "Defiant",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/11a96ca4-3592-42ae-c781-2b7265ec9200?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "ar.com.andinasmart.defiant",
+    "nativeDeepLink": "defiantapp://",
+    "universalDeepLink": "https://defiantapp.tech/"
+  },
+  {
+    "id": "063c520962a445617ad3fc9ccb9744c81104dd11e34e3d61c6a6a42cc0a6beb3",
+    "name": "Dexari",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/b3902c20-364e-447d-5331-03d92f226d00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.dexari",
+    "nativeDeepLink": "dexari://",
+    "universalDeepLink": "https://dexari.com/join"
+  },
+  {
+    "id": "7e6f68b033a19fd6c2999598f9791e24014f9870c626901d254da50660fda578",
+    "name": "Dfinn Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/9a9c59ce-6346-4af8-db19-778533fb6000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "money.dfinn.wallet",
+    "nativeDeepLink": "dfinnwallet://",
+    "universalDeepLink": "https://dfinnwallet-link.vercel.app/"
+  },
+  {
+    "id": "221eb19f9cfdf577c2f75190fc4fa24523624f604904ced78089bc82ebdb983e",
+    "name": "DGG Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/e4cbed08-8839-4bce-875f-d8917ceb7e00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "network.dgg.wallet",
+    "nativeDeepLink": "dgg://",
+    "universalDeepLink": "https://dggnetwork.app.link"
+  },
+  {
+    "id": "78a926e8758e4464162818353637b11fead41489598dd7f47e4b247eaf8008c3",
+    "name": "DIAM Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/b2f7a394-14b9-4b30-742d-3c6b5d200f00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.diamante.diamwallet",
+    "nativeDeepLink": "diamwallet://wc",
+    "universalDeepLink": "https://dwconnect.diamante.io/wc"
+  },
+  {
+    "id": "a93e0fd6a25178b2fa80eb882150f6b8da53c1e9f3e6d0d92019076671bb07f0",
+    "name": "DIDWallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/bc66fa57-46f4-4e17-6cb7-5f2d9af9c000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.arcblock.wallet.app.product",
+    "nativeDeepLink": "abt://didwallet.io/i",
+    "universalDeepLink": "https://didwallet.io/i"
+  },
+  {
+    "id": "a77eaf6509774b780b22f678fa15168c4e12f71f7eb3102edf85112a222bb503",
+    "name": "Dokwallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/5707f35e-17a1-42b3-35c5-664f7655cd00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.dok.wallet",
+    "nativeDeepLink": "dokwallet://",
+    "universalDeepLink": "https://www.dokwallet.app"
+  },
+  {
+    "id": "2a40b26b3a69de566720e8e5134aaa8cf767b14d66fa8e27faca971984a6a545",
+    "name": "Dollet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/21679e58-e829-44f6-78d3-6a9d6e9ce900?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.dolllet.mainnet",
+    "nativeDeepLink": "dolletwc://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "a2f18257975707ca7dd59322fdcc3ea0282badec2363e0a1db6901e3262856fa",
+    "name": "DomaWallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/a4f93737-0136-49f7-26b6-468a8919be00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.Domawallet",
+    "nativeDeepLink": "goldwallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "394046500fb52c9e57e0091ef30305d513bcae143132a49c1f2a69b594126001",
+    "name": "DOSI Vault",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/0a0d223e-6bf7-4e12-a5b4-1720deb02000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "world.dosi.vault",
+    "nativeDeepLink": "app.dosivault://",
+    "universalDeepLink": "https://dosivault.page.link/qL6j"
+  },
+  {
+    "id": "c7a7721cf4b6deb311e9b2e4bc2ebf07ef05d818149fd373bfb785fa47088823",
+    "name": "Dropmate",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/bf19fe4b-d712-45e8-95f2-b7be36e4c400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "app.dropmate",
+    "nativeDeepLink": "dropmate://app",
+    "universalDeepLink": null
+  },
+  {
+    "id": "303766b6cc6768b384c84d63a02c5f302e1faa1c8d26a624623060316fc1f68c",
+    "name": "Dropp",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/526fb7ea-d0da-482a-ac84-7e38afea1700?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "cc.dropp.wallet",
+    "nativeDeepLink": "dropp://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "d944b6d967e089c6642410e09dccc0e8ca3e2fa521ccae29e61d47cd3d7b9777",
+    "name": "Dropp",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/91b71b72-f9b6-44eb-7720-a674549df800?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "cc.dropp.wallet",
+    "nativeDeepLink": "dropp://",
+    "universalDeepLink": "https://paymentslink.dropp.cc"
+  },
+  {
+    "id": "53dd23581ff2ac3473a517c2995ad41cb214e105ebc99a122bda032051bb54c6",
+    "name": "Earth Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/d3f724c4-f99b-476f-10f8-12aa4af13800?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "earth.wallet.app",
+    "nativeDeepLink": "earthwallet://",
+    "universalDeepLink": "https://wallet.earth"
+  },
+  {
+    "id": "5fb52d5d1316eb09e2a3f7e6e3620e5e78450f3107684166ef7ee36459ebc09c",
+    "name": "Echooo Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/a7b1de20-bafd-4ab9-c31d-7d398cc90a00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.smartwallet.app",
+    "nativeDeepLink": "echooo://echooo.valleysound.xyz/vss/walletconnect",
+    "universalDeepLink": "https://api.valleysound.xyz/vss/*"
+  },
+  {
+    "id": "297bf3864322ce81262df9a40b9a0fdcb504e737ad900bfe8ef47710729456ce",
+    "name": "ECOIN Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/9639c263-d590-4862-ba9f-d5c7c1878d00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "org.ecoinwallet",
+    "nativeDeepLink": "ecoinwallet://",
+    "universalDeepLink": "https://ecoinwallet.org/link"
+  },
+  {
+    "id": "7faed13451e675679e2af297c492914ee4fda540fc82d2993a91e1d73c64d96b",
+    "name": "Edge",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/f0261e29-4981-4e16-4441-165e2d5d6300?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "co.edgesecure.app",
+    "nativeDeepLink": "edge://",
+    "universalDeepLink": "https://deep.edge.app/wc"
+  },
+  {
+    "id": "0c5bba82e70a2b62405871af809020a077d110d765c0798eb660ad5d3131b328",
+    "name": "Edge Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/f601bc29-4298-422f-dbf7-34dac2884f00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "co.edgesecure.app",
+    "nativeDeepLink": "edge://",
+    "universalDeepLink": "https://deep.edge.app/wc"
+  },
+  {
+    "id": "035ded0f263e4a64bf2c84db06b73e6b4c5115929ea407cc2a3127ee6f392e0e",
+    "name": "Elastos Essentials",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/a82369e6-f6cc-4364-1b45-d388b3f84400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.web3essentials.app",
+    "nativeDeepLink": "essentials://",
+    "universalDeepLink": "https://essentials.web3essentials.io"
+  },
+  {
+    "id": "bdc9433ffdaee55d31737d83b931caa1f17e30666f5b8e03eea794bac960eb4a",
+    "name": "Enjin Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/add9626b-a5fa-4c12-178c-e5584e6dcd00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.enjin.mobile.wallet",
+    "nativeDeepLink": "enjinwallet://",
+    "universalDeepLink": "https://deeplink.wallet.enjin.io/"
+  },
+  {
+    "id": "add46dfc2dc09c855fc8c14d950353528e184a8f4346886129c990074450ae9c",
+    "name": "Enno Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/ae4f5167-0b61-43bd-7d76-1f8579271000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.app.awqsome.ennowallet",
+    "nativeDeepLink": "ennowallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "9ec7dc26973b1a7bd708aaae749002fe3bc509254472939a8d8d2ae1f2d483b2",
+    "name": "EtherMail",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/7f3205c6-6051-4cdb-8ef8-84334a7c7f00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.ethermail.ethermail_android",
+    "nativeDeepLink": "ethermail://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "50cca6f943812d2852752b7e021f251d50d410878b54c18a81ad71bcaa439035",
+    "name": "Ethos Self-Custody Vault",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/8bc7fb62-6f6b-4473-2e4a-5691a646fc00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.ethos2.prod",
+    "nativeDeepLink": "myapp://home",
+    "universalDeepLink": null
+  },
+  {
+    "id": "438b07441c5273c60e415efd227862d9b1344ef378d9ee7d1b3bfa8b33384eff",
+    "name": "Everspace",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/80eaa630-6392-4b0a-a604-0a0f808e4d00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.oberton.app",
+    "nativeDeepLink": "everspace://",
+    "universalDeepLink": "https://everspace.app/deeplink"
+  },
+  {
+    "id": "e9ff15be73584489ca4a66f64d32c4537711797e30b6660dbcb71ea72a42b1f4",
+    "name": "Exodus",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/4c16cad4-cac9-4643-6726-c696efaf5200?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "exodusmovement.exodus",
+    "nativeDeepLink": "exodus://",
+    "universalDeepLink": "https://exodus.com/m"
+  },
+  {
+    "id": "79a37a33816cfba8b2ab936c440a69efdd555414e3eed7f43a2f12dab5e8807b",
+    "name": "FINTOKEN",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/420ababa-3c29-4711-4487-84b93bfa5900?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.digitalasset.fintoken",
+    "nativeDeepLink": "fintoken://",
+    "universalDeepLink": "https://ios.fintoken.pro/app"
+  },
+  {
+    "id": "5864e2ced7c293ed18ac35e0db085c09ed567d67346ccb6f58a0327a75137489",
+    "name": "Fireblocks",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/7e1514ba-932d-415d-1bdb-bccb6c2cbc00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.fireblocks.client",
+    "nativeDeepLink": "fireblocks-wc://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "17a4ec96ceb34ade8e5215220df2051614aeebb832cc80ef19ddd7f33d5ba862",
+    "name": "Fizen Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/1160bfa2-b669-42ba-b224-13edcd40c700?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.fizen.io.wallet",
+    "nativeDeepLink": "fw://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "c18e114130f221c8960e75bfa4b86478e70e27465e2d6b22ac8945c08a031a7e",
+    "name": "Flash Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/ded6d2d1-85b0-4eac-5582-3aaeefa8ba00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.flashwallet.production",
+    "nativeDeepLink": "flashwallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "184f15ea2cd5f65e25ed72efdd2ed1979179eddf0c0741ab0dd23c1eb7e0eee5",
+    "name": "Flooz",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/0a04f368-4f56-4c12-0bfa-93b14bb20800?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "wallet.flooz.mobile",
+    "nativeDeepLink": "floozwallet://",
+    "universalDeepLink": "https://wallet.flooz.trade/wc"
+  },
+  {
+    "id": "e6a8cb6abe47f88d7511b0698829eab01d76e78bad82b8ccca66004055055d89",
+    "name": "Flow Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/f67a1db8-5704-4353-ead8-bd85c02a8700?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.flowfoundation.wallet",
+    "nativeDeepLink": "frw://",
+    "universalDeepLink": "https://frw-link.lilico.app"
+  },
+  {
+    "id": "105bc5cd0cf9126c1050e6f88fbdcc3e6b47bbfe4ff08b79ed189198374008c9",
+    "name": "Fncy Mobile Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/c1c8d374-dff3-419c-96af-3515d0192100?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.metaverse.world.cube",
+    "nativeDeepLink": "metaCubeWallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "c7708575a2c3c9e6a8ab493d56cdcc56748f03956051d021b8cd8d697d9a3fd2",
+    "name": "FoxWallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/d673068d-1acf-4372-76ee-8eb931c59e00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.foxwallet.play",
+    "nativeDeepLink": "foxwallet://",
+    "universalDeepLink": "https://link.foxwallet.com"
+  },
+  {
+    "id": "78b7da9fe3b824e2aece877dcd3a3cd0a7f797ce00ce2c6289a8ac0e7309b32e",
+    "name": "Freedom World",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/cfeba020-3a45-4c42-e2ca-7c2720b16c00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.bitazza.freedom.wallet",
+    "nativeDeepLink": "freedom-wallet://freedom.world/",
+    "universalDeepLink": "https://freedom.world/"
+  },
+  {
+    "id": "997a355c8f682468706a76cff1b004a7115f505fb962dac54b6e9b442dd1c380",
+    "name": "Freighter",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/114aa875-487a-4d86-5c87-6f22f4559100?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "org.stellar.freighterwallet",
+    "nativeDeepLink": "freighterwallet://wc-redirect",
+    "universalDeepLink": null
+  },
+  {
+    "id": "85db431492aa2e8672e93f4ea7acf10c88b97b867b0d373107af63dc4880f041",
+    "name": "Frontier",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/a78c4d48-32c1-4a9d-52f2-ec7ee08ce200?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.frontierwallet",
+    "nativeDeepLink": "frontier://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "b56e7a5fe4500d5765726912b6863a92ffc6aee88a7d3a94905e93e1b3e01c2e",
+    "name": "Frostfire",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/3611cc5f-4da4-49ca-dcce-f3bd39cee600?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.velas.frostfire",
+    "nativeDeepLink": "frostfire://wc",
+    "universalDeepLink": null
+  },
+  {
+    "id": "30eb3e6d71fd0727d154e451748815e04a99c06972a84b10dfe7ae1b923c0c92",
+    "name": "FxWallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/46a80541-e639-483d-e230-731fcbf13000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.fxfi.fxwallet",
+    "nativeDeepLink": "fxwallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "b1998499e7502d1d10eddb209edc25b1a7aa7977d6ce6664b066474d66f43bdf",
+    "name": "Gamic",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/cf404c15-391c-4144-1ec0-17f1b119ed00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "app.gamic.guild.gamic_guild_mobile",
+    "nativeDeepLink": "gamic://",
+    "universalDeepLink": "https://www.gamic.app/wc"
+  },
+  {
+    "id": "dcb5cd7bb4a8849288f8b43dea7bf20d7b7e2b096b630964f9ca5bf808531edd",
+    "name": "Gem Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/28f1b431-9d2a-4083-1bf8-5958939a2300?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.gemwallet.android",
+    "nativeDeepLink": "gem://",
+    "universalDeepLink": "https://gemwallet.com"
+  },
+  {
+    "id": "7de190d03faf1f15027a834801f045bc66640045b0d5a0daa4686d7fa89fab74",
+    "name": "Gems Pocket",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/085ac257-f026-469d-4f6b-e947b6aa4a00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.ancryptoWallet",
+    "nativeDeepLink": "ancrypto://app",
+    "universalDeepLink": null
+  },
+  {
+    "id": "994824d1e0b935f48ec3570c9d51fe5af9bbd9246b6f57210906f8b853ad2196",
+    "name": "Girin Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/4a7f0768-f2b9-48be-f4a1-44c4c158e700?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "app.girinwallet",
+    "nativeDeepLink": "girinwallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "aad1cc72005d28969c5c5f92d7ed93e43ab02671c601576eebff361b29770278",
+    "name": "GM² Social",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/f5c2218d-56b4-4fc8-63bf-0ece7276d600?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.gm2.app.prod",
+    "nativeDeepLink": "gm2://home",
+    "universalDeepLink": null
+  },
+  {
+    "id": "746fa59e214ba46cfa688e9540a6b3450b514e89f39bd9c5a00b5a7fdaba8351",
+    "name": "GoldBit",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/11974ef1-21ab-4806-a2b1-362c31499900?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.goldbitpro.wallet",
+    "nativeDeepLink": "goldbit://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "689e621a3585ca018fd44ff404bc89079a0e55e9c632574e8bf8d2b1c7918911",
+    "name": "GoodDollar",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/371ab65b-e2c8-4843-f18a-cbcf2ba2ed00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "org.gooddollar",
+    "nativeDeepLink": "gooddollar://",
+    "universalDeepLink": "https://wallet.gooddollar.org/"
+  },
+  {
+    "id": "3e86467846ea19970efad254ab3fc3cb8fd57e1f38759ed736f1cbea9314a878",
+    "name": "Greenhood",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/7b6aaa4d-fa17-4cc6-71e1-79f2e68c0900?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.greehood.wallet",
+    "nativeDeepLink": "greenhood://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "8631ca765defdf51cd72444ec0284b866c835a947ed082d41c0c756a3b2eb1c2",
+    "name": "Gridlock Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/471e6f61-b95a-453c-670c-029ef3b2bd00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "network.gridlock.AppGridlock",
+    "nativeDeepLink": "network.gridlock.AppGridlock://",
+    "universalDeepLink": "https://gridlock.page.link/Fihx"
+  },
+  {
+    "id": "bccfdfe020b6df7bf7bdec60297be63b8ca4ab6468bd0e0fd95a472da076baa3",
+    "name": "GRRNPay",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/ac873a52-f775-4098-fd54-1f0a8848da00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.grrn.ng.pay",
+    "nativeDeepLink": "grrnpay://wc",
+    "universalDeepLink": "https://grrnpay.grrn.io/wc"
+  },
+  {
+    "id": "b123d9d4aa6b384aed6c45e7738861a28a2eabdf4adb72ad1e408d8578bc9b81",
+    "name": "GUARDIIAN Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/4f095c1d-8a31-4af8-ab58-57e82a398e00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.gardianwallet",
+    "nativeDeepLink": "guardiianwallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "719bd888109f5e8dd23419b20e749900ce4d2fc6858cf588395f19c82fd036b3",
+    "name": "HaHa",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/79285c9f-2630-451e-0680-c71b42fb7400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.permutize.haha",
+    "nativeDeepLink": "haha://",
+    "universalDeepLink": "https://haha.me"
+  },
+  {
+    "id": "95b58bd89109b2bd9989c9956a8e3f5822003126bae800d9f77455c4009db5ba",
+    "name": "hAI by Hacken",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/d2ff6baf-5051-4bf2-edec-32450b451000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.hackenai.hackenaiapp",
+    "nativeDeepLink": "hai://",
+    "universalDeepLink": "https://hacken.ai"
+  },
+  {
+    "id": "24fd8104e07aa1802aef51426222f23868013b83655fb6686c8478744dd2fda1",
+    "name": "Halo Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/80583973-8b44-4bef-0af9-099cfdbed600?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.kucoin.wallet",
+    "nativeDeepLink": "halowallet://",
+    "universalDeepLink": "https://link.kuwallet.com/universallink"
+  },
+  {
+    "id": "47c5a25372f22ccf2df09a8431ccd00c02df19f4b73fa0e7c04c1573b90aec7a",
+    "name": "HAQQ Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/99fe539d-6a2a-4f52-2211-42fd04a9f300?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.haqq.wallet",
+    "nativeDeepLink": "haqq://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "bd44a349197c9d22659b98f0db579589f1e99f0ef51ccc06ffab2544b86e68e7",
+    "name": "HARTi Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/d0407f26-fe0b-4f3c-43c3-69bc8fef2e00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "app.harti",
+    "nativeDeepLink": "HARTi://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "a29498d225fa4b13468ff4d6cf4ae0ea4adcbd95f07ce8a843a1dee10b632f3f",
+    "name": "HashPack",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/8d55dd5a-7c9f-4929-d2d1-00564e41ac00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "app.hashpack.wallet.twa",
+    "nativeDeepLink": "hashpack://",
+    "universalDeepLink": "https://link.hashpack.app"
+  },
+  {
+    "id": "38633830ef578a1249c345848a8d6487551a346b923d21ce197ea57f423f3113",
+    "name": "HashPort Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/0d59745c-6146-4c86-3718-c847855b7b00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.hashport.hashwallet",
+    "nativeDeepLink": "expo2025-wallet://",
+    "universalDeepLink": "https://link.wallet.hashport.com"
+  },
+  {
+    "id": "e7b5947f9960c3026e42ebc575027ba7d78ded8140093e800ce91c7f9d3b3111",
+    "name": "HASHWallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/1e2bf11f-1435-4469-b692-853bad410600?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.esignus.hashwalletmanager",
+    "nativeDeepLink": "hashwallet://app/wc",
+    "universalDeepLink": null
+  },
+  {
+    "id": "2125ab6a3e8be0d73e6d48f9db39c34925a790a631b4b67b84502d823aa47ad3",
+    "name": "HB WALLET",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/f134f8a2-cf58-44dd-7626-dc2cd21a3800?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "co.bacoor.android.hbwallet",
+    "nativeDeepLink": "hbwallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "48e53d96460308a1734614b5d4fdf7ea169e6f998e01eb7b4e18014f57904d67",
+    "name": "helix id",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/4083ef71-8389-4682-ded6-0099236d2e00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.io.helix.id",
+    "nativeDeepLink": "helix-id://helix-id.com",
+    "universalDeepLink": null
+  },
+  {
+    "id": "a1f3f8956346e2ba29e25bc5252c6dc0b2afa9ee17aa13ecd026abafedaf8696",
+    "name": "Hero Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/86a2e74b-7e97-4162-2c26-71bd9ccab000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.hero.wallet",
+    "nativeDeepLink": "herowallet://wc",
+    "universalDeepLink": "https://wallet.hero.io/signin/wc"
+  },
+  {
+    "id": "664b505fea4c2117b8a55c054ef209664e0a68ddaafd7534df739f97a293fa1d",
+    "name": "Hippo Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/f9570968-45f7-47c1-3189-98cf60e25c00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.blockchaincommodities.hippo_wallet",
+    "nativeDeepLink": "hippowallet://",
+    "universalDeepLink": "https://hippowallet.io"
+  },
+  {
+    "id": "b83a346877b71c02b8531f53485ce12bc00033eabcc1213ca3329cbc744813a5",
+    "name": "Holdstation Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/dba228fc-d0c9-497b-903e-843ad1076e00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.holdstation",
+    "nativeDeepLink": "holdstation://",
+    "universalDeepLink": "https://staging-referral.holdstation.com/wallet-connect?uri="
+  },
+  {
+    "id": "2225e93edb4eda791e19e26817b94976607132bdb248684a39a5fc5ac9103782",
+    "name": "HootArk",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/c5f74b15-89cc-4f1f-8387-d3ffeb7a3400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.bose.meta.browser",
+    "nativeDeepLink": "HootArk://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "aee5083aac025c4c3f1c9afc31ea89dbddca0b1c248195bef469fc4886ae3ab2",
+    "name": "HOT Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/809867ce-345f-4180-033a-165019d4c700?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "app.herewallet.hot",
+    "nativeDeepLink": "hotwallet://",
+    "universalDeepLink": "https://app.hot-labs.org"
+  },
+  {
+    "id": "a94328bcaff3ed69de88cb6347b6933370d16455af591e4a46e7e0d7c2a485c8",
+    "name": "HyperPay",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/44abbf25-f8c4-4d04-0ce7-a695e00d8e00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.legendwd.hyperpayW",
+    "nativeDeepLink": "hyperPay://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "d6071018d2199b47d48c9590423f17afe222c35a12727db3f64ca2962a5e5709",
+    "name": "IApp",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/5da95e88-2d6c-4880-e6d8-b6a8d0663900?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.ivirse.figame",
+    "nativeDeepLink": "ivirse://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "fea98faf8b5ae216c1091bb33dfc41ee27278059b871bf1d5b1b7af3744eca72",
+    "name": "IBVM Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/a9b8d4c4-b6e1-4b2e-15c3-81331511c400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.ibvm.wallet",
+    "nativeDeepLink": "ibvm://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "e3c0732167495b407aeaab7cd968cac73db3351421242c9eae717f4032dba411",
+    "name": "icewal",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/bbfa8e6a-984d-4955-c919-8181e8bc9e00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.icecorp.wallet",
+    "nativeDeepLink": "icewal://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "6289878a2ef8c49944cf428184bba626b161b0974f0b4f8b31a15e0317d8861c",
+    "name": "ID Pocket",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/c227ee0a-5127-4707-ded9-c3cd81348d00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.rktechworks.idpocket",
+    "nativeDeepLink": "wc://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "24475df43f0272e91e800eca2698f62db94c3a973e7cda4abfd546d995013b77",
+    "name": "iLuminaryAi Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/0ba5381f-8779-4031-a3ac-944fdd087e00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.iluminary",
+    "nativeDeepLink": "iluminary://",
+    "universalDeepLink": "https://ilumi.app.link"
+  },
+  {
+    "id": "2aca85b74f2fc6af554036e22e4f7f2eeada83023388087aee4488f5d9697973",
+    "name": "iMe",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/25aa3abf-901b-4d82-bb89-c5ade54c0c00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.iMe.android",
+    "nativeDeepLink": "wc://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "816d067b6e3387965911bab9666725e2e53d3bfcd3dade708b74917a6d5c8432",
+    "name": "Impact Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/afc85418-2ca6-46cf-cfb9-daf6bc43e400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.ixo.mobile",
+    "nativeDeepLink": "impactsx://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "ef333840daf915aafdc4a004525502d6d49d77bd9c65e0642dbaefb3c2893bef",
+    "name": "imToken",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/c84b4d9d-9525-4bb5-b373-934b46eafc00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "im.token.app",
+    "nativeDeepLink": "imtokenv2://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "c615c62d619fd52fa1cdf0187229a627f78fa924c90f04391af8960c000b59c5",
+    "name": "IndiGG",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/8e90a32f-130d-4317-7294-4884510aa300?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.indiggcommunity",
+    "nativeDeepLink": "indigg://walletconnect",
+    "universalDeepLink": null
+  },
+  {
+    "id": "dd43441a6368ec9046540c46c5fdc58f79926d17ce61a176444568ca7c970dcd",
+    "name": "Internet Money",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/204b2240-5ce4-4996-6ec4-f06a22726900?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.internetmoneywallet.app",
+    "nativeDeepLink": "internetmoney://",
+    "universalDeepLink": "https://internetmoney.io"
+  },
+  {
+    "id": "1a5f2435e8e31c4034f1d142e85d9f7d3be2a09ddf710e5ef1ad4e36c719d3c0",
+    "name": "ioPay",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/411d80d0-3a75-4932-560f-565d8c715e00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.iotex.iopay.gp",
+    "nativeDeepLink": "iopay://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "7617c61e2d7c85b03d41ceaaf568d49e2ab270f8f6f1b25ddb4af292026fa8f5",
+    "name": "IPMB Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/846ae068-c112-412a-c103-7aa414bc9400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.ipmb.app",
+    "nativeDeepLink": "com.ipmb.app://walletcon",
+    "universalDeepLink": null
+  },
+  {
+    "id": "376cc8495e1b9387084dce611446bc6086780b39b338934ae057ed11c5739735",
+    "name": "IronWallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/b836d372-457c-4d10-5a1d-6e4b0a369b00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.wallet.crypto.btc.eth",
+    "nativeDeepLink": "myApp://app.ironwallet.io",
+    "universalDeepLink": "https://app.ironwallet.io"
+  },
+  {
+    "id": "226d8a12a2e6e5c4185fa9c24313824bfb144c2a180325bddbd121844f497afa",
+    "name": "ISLAMIwallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/8d723c78-28ad-4610-901f-ea391d7e8d00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.islami.wallet",
+    "nativeDeepLink": "islamiwallet://islami.com/path/",
+    "universalDeepLink": "https://islamicoin.finance/.well-known/assetlinks.json"
+  },
+  {
+    "id": "953f348baef1a985ba440822202fee7485e7ae0cae3b29a04f17a712c1a9490a",
+    "name": "ITLX Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/ba64bb85-63c9-40e9-ba3f-03b8d54eb800?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "org.ai.interlinklabs.interlinkId",
+    "nativeDeepLink": "interlinkid://",
+    "universalDeepLink": "https://interlinklabs.ai/deeplink/wallet"
+  },
+  {
+    "id": "797c615e2c556b610c048eb35535f212c0dd58de5d03e763120e90a7d1350a77",
+    "name": "iToken Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/5cd60c34-038d-470c-c024-d58f64260200?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.huobionchainwallet.gp",
+    "nativeDeepLink": "huobiwallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "ca3f372788f7eaceda2429be20dd4f9c8c148f0d103bb7ba8576f8138104f18c",
+    "name": "Jambo",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/b0fd39a1-d147-4bf7-4cb5-68a294b26f00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.jambo",
+    "nativeDeepLink": "jbw://walletconnect",
+    "universalDeepLink": null
+  },
+  {
+    "id": "d9f5432e932c6fad8e19a0cea9d4a3372a84aed16e98a52e6655dd2821a63404",
+    "name": "Joey Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/eefe45e8-0a5e-421c-29d0-fd8191e7e600?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "xyz.joeywallet",
+    "nativeDeepLink": "joey://settings",
+    "universalDeepLink": null
+  },
+  {
+    "id": "0ef262ca2a56b88d179c93a21383fee4e135bd7bc6680e5c2356ff8e38301037",
+    "name": "Jupiter",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/7601bec3-144f-4c9d-30a1-2d4a372ede00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "ag.jup.jupiter.android",
+    "nativeDeepLink": "jupiter://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "c40c24b39500901a330a025938552d70def4890fffe9bd315046bd33a2ece24d",
+    "name": "Kabila",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/f1e6c2f3-29d8-4f33-97ed-e8ed067b7200?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "wallet.kabila.app",
+    "nativeDeepLink": "kabila-wallet://",
+    "universalDeepLink": "https://wallet.kabila.app"
+  },
+  {
+    "id": "3838fdc6c3964023f49d6790af4bd0870f8c07c6d3aa8ce1e01f2732374da486",
+    "name": "Kaia Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/f54d2218-9442-4921-893d-36d8fe829100?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.klutch.wallet",
+    "nativeDeepLink": "kaiawallet://wallet",
+    "universalDeepLink": "https://app.kaiawallet.io"
+  },
+  {
+    "id": "6b2e623f231f3794db2fcb7cfff2d1cc1d902bff70d946980d62956cd880cacc",
+    "name": "Kelp",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/1854e47d-3804-4e92-e455-06829b64b100?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.app.kelpa",
+    "nativeDeepLink": "link.kelp.finance://walletconnect",
+    "universalDeepLink": "https://link.kelp.finance/walletconnect"
+  },
+  {
+    "id": "6adb6082c909901b9e7189af3a4a0223102cd6f8d5c39e39f3d49acb92b578bb",
+    "name": "Keplr",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/750e0f10-0700-4ca5-7c0d-b4a55da72f00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.chainapsis.keplr",
+    "nativeDeepLink": "keplrwallet://wcV2",
+    "universalDeepLink": "https://deeplink.keplr.app/"
+  },
+  {
+    "id": "47bb07617af518642f3413a201ec5859faa63acb1dd175ca95085d35d38afb83",
+    "name": "KEYRING PRO",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/c89ceec5-31dc-4a17-c132-b0b9f272ae00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "co.bacoor.keyring",
+    "nativeDeepLink": "keyring://",
+    "universalDeepLink": "https://keyring.app/"
+  },
+  {
+    "id": "d5fa5b2ef55ee183de99b34b790c2b4966e641b2a32427ab3321c89fb1fae1ad",
+    "name": "KGeN Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/77b4b806-d17e-4b24-597c-bc11c0a88100?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.indiggcommunity",
+    "nativeDeepLink": "kgen://app/wallet",
+    "universalDeepLink": null
+  },
+  {
+    "id": "43c76a3d2a84cb7a10f6329a34261eb6794ac830e74bc8136b42ee05ee54efb1",
+    "name": "Kigo",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/ad83d869-de11-4685-2a24-d3ce93a86400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.augeo.kigo",
+    "nativeDeepLink": "kigo-mobile-app://",
+    "universalDeepLink": "https://kigo-digital.app.link/"
+  },
+  {
+    "id": "fbea6f68df4e6ce163c144df86da89f24cb244f19b53903e26aea9ab7de6393c",
+    "name": "Klever Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/2e181ba3-bf6f-4599-5349-f7409bc62100?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "finance.klever.bitcoin.wallet",
+    "nativeDeepLink": "klever-wallet://dp/walletconnect",
+    "universalDeepLink": "https://klever.page.link"
+  },
+  {
+    "id": "3c2c985c0adff6f46a0d0e466b3924ed8a059043882cd1944ad7f2adf697ed54",
+    "name": "klip",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/f7b6b2a6-ebe7-4779-6ad1-79a3142e6b00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.klipwallet.app",
+    "nativeDeepLink": "klipwallet://",
+    "universalDeepLink": "https://klipwallet.com"
+  },
+  {
+    "id": "e401b54ca287ce5c4c4579a91220e79816cff07cdf18b388fde84449c3be8a51",
+    "name": "Koala Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/0d222367-ffaf-4402-3873-fdc80e521b00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.eucalyptuslabs.kowallet",
+    "nativeDeepLink": "kowallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "de9e8421961e35c5e35cb63e3cd7be9af328a62c7b5a11f95ca116bf128a7424",
+    "name": "Konio",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/305dadb1-395e-4ca8-d4d0-d8ad0cc37000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.adrihoke.konio",
+    "nativeDeepLink": "konio://",
+    "universalDeepLink": "https://konio.io"
+  },
+  {
+    "id": "7ef48bf6722bd9694ab35f1fa9f8239ef1d44dc721c6950b9afe2468a77aad5a",
+    "name": "Kotai Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/11d87117-f551-451c-42e7-7d0ccc2e8f00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.kotaiwallet.app.android",
+    "nativeDeepLink": "kotaiwallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "18450873727504ae9315a084fa7624b5297d2fe5880f0982979c17345a138277",
+    "name": "Kraken Wallet ",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/8909e826-63e4-42b3-60b2-8a6a54060900?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.kraken.superwallet",
+    "nativeDeepLink": "krakenwallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "56bec983b47c8b6eb774890c1c8ae9d95334e10bdb126ab6c11dfaf56fb2b31c",
+    "name": "Kresus SuperApp",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/ee242aea-3ffd-4ad8-db88-e29a1ccd2000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.kresus.superapp",
+    "nativeDeepLink": "com.kresus.superapp://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "488797489e6207d284a796381596453da60399d2d2ef8a88c6126ff4aaf9491c",
+    "name": "KriptoK",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/fbb715e1-280c-49c0-d6a7-f328aad1a300?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.kriptokasam.cryptowallet",
+    "nativeDeepLink": "kriptok://wc",
+    "universalDeepLink": "https://dev-api.kriptok.io/wc"
+  },
+  {
+    "id": "01925725cdc7a5008824c8f19eff85769903fbcc53c62639feb0d4f8d3a6cf52",
+    "name": "Kriptomat",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/774110aa-70f6-4d0c-210f-ab434838fa00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.kriptomat.app",
+    "nativeDeepLink": "kriptomatapp://wallet-connect",
+    "universalDeepLink": null
+  },
+  {
+    "id": "50df7da345f84e5a79aaf617df5167335a4b6751626df2e8a38f07029b3dde7b",
+    "name": "Kriptonio",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/331e57d3-d157-4bc3-8ea5-48a03f705e00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.kriptonio.mobile.android",
+    "nativeDeepLink": "kriptonio://",
+    "universalDeepLink": "https://app.kriptonio.com/mobile"
+  },
+  {
+    "id": "19418ecfd44963883e4d6abca1adeb2036f3b5ffb9bee0ec61f267a9641f878b",
+    "name": "KryptoGO Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/4eb31988-f494-403c-6127-cfcef036ac00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.kryptogo.walletapp",
+    "nativeDeepLink": "kryptogo://",
+    "universalDeepLink": "https://kryptogo.page.link"
+  },
+  {
+    "id": "92dec31cb291452a58043db64f26b20c886607661fd82e921be6362d5fee7f49",
+    "name": "Krystal",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/d2b59965-4eb8-4828-d3d4-fbc0b3379e00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.kyrd.krystal",
+    "nativeDeepLink": "krystalwallet://",
+    "universalDeepLink": "https://wallet.krystal.app/"
+  },
+  {
+    "id": "67f1ec404dbf3bddc509b5fcf615850e05b28c287ccd7167b4fe81b4293ac9df",
+    "name": "KuCoin Web3 Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/70d8a90b-457b-4c04-4bc3-791e97caab00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.kubi.kucoin",
+    "nativeDeepLink": "kucoin:///wallet/walletConnect",
+    "universalDeepLink": null
+  },
+  {
+    "id": "3ed8cc046c6211a798dc5ec70f1302b43e07db9639fd287de44a9aa115a21ed6",
+    "name": "Leap",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/d64ae9c7-c0be-495d-041e-35c6bb2cc100?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.leapwallet.cosmos",
+    "nativeDeepLink": "leapcosmos://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "19177a98252e07ddfc9af2083ba8e07ef627cb6103467ffebb3f8f4205fd7927",
+    "name": "Ledger Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/a7f416de-aa03-4c5e-3280-ab49269aef00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.ledger.live",
+    "nativeDeepLink": "ledgerlive://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "8141668a92aad85f9f9f4b00e59914061df0f189b5b11fb35a15dc2708bb4596",
+    "name": "Legacy Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/ed181b1b-e4c0-4a2e-4a4c-f380a9f13c00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.legacynetwork.app",
+    "nativeDeepLink": "legacy://network.io",
+    "universalDeepLink": null
+  },
+  {
+    "id": "080f1b10c1a55922037a4bda62f42c7ff2b5384bc9b5d6ebf0c7cd93e70489a2",
+    "name": "LegionNetwork",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/26044229-4a61-4b14-a2ed-5413fe435a00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.legion.production",
+    "nativeDeepLink": "legionapp://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "d496d30a1213ee22d7b7b93c1f0ed3d96c9dc5800634b6e319efe7b70b65d694",
+    "name": "LF Wallet App",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/be4b9c16-f8a2-47b9-bfa3-833fa5b70e00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.lfwallet.app",
+    "nativeDeepLink": "lfwallet://",
+    "universalDeepLink": "https://lflabs.fund/wallet"
+  },
+  {
+    "id": "b7cd38c9393f14b8031bc10bc0613895d0d092c33d836547faf8a9b782f6cbcc",
+    "name": "Libera",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/9485d17f-c413-47fe-ebee-a876a9dc9100?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.impactmarket.mobile",
+    "nativeDeepLink": "libera://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "dc8ac638c6fd002950f9404dbb0639ae25bab667bf1a60a419bf8f44a89ed3a7",
+    "name": "Lif3 Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/1a89c0ec-9059-4515-afb6-8204d49f0900?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.lif3.wallet",
+    "nativeDeepLink": "lif3wallet://walletview",
+    "universalDeepLink": null
+  },
+  {
+    "id": "063ab1cdc9123ed56b7e73cbee664d24ecb7fc710ad1e0bded6cc2db0d562055",
+    "name": "Life DeFi",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/d249af4f-e9b8-498d-cbc3-9eab04568700?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "life.lifecrypto.app",
+    "nativeDeepLink": "w3akvrn:/",
+    "universalDeepLink": null
+  },
+  {
+    "id": "a309c4e5e51f106e739b70ca64c9c8a78a59e51a35fb0df3711eeb1a4d642b3a",
+    "name": "LikerLand App",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/501fa316-f0df-4a1b-ead6-5523251b7100?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.oice",
+    "nativeDeepLink": "com.oice://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "dd8ee41915d967e547c80266e883d77ee808427405f4e8026a85ac1308104221",
+    "name": "Linen",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/aff3e4e1-92a9-4066-f48f-3591947cf200?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "app.linen.wallet",
+    "nativeDeepLink": "linen://",
+    "universalDeepLink": "https://linen.app/"
+  },
+  {
+    "id": "76a3d548a08cf402f5c7d021f24fd2881d767084b387a5325df88bc3d4b6f21b",
+    "name": "LOBSTR Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/0dafcaab-0852-47f7-85dd-436b86491d00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.lobstr.client",
+    "nativeDeepLink": "lobstr://",
+    "universalDeepLink": "https://lobstr.co/uni/wc"
+  },
+  {
+    "id": "3968c3f5e1aa69375e71bfc3da08a1d24791ac0b3d1c3b1c7e3a2676d175c856",
+    "name": "Loopring",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/2103feda-4fc8-4635-76a7-02a4ed998000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "loopring.defi.wallet",
+    "nativeDeepLink": "loopring://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "4c33e497bf4017e7df2db570282d27e6e866006d3e0fae5e283c73c10a96df46",
+    "name": "Lumina Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/12ac800b-85fa-4181-6518-af7c0e15a400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.luminawallet.app",
+    "nativeDeepLink": "lumina://wc",
+    "universalDeepLink": "https://luminawallet.org/wc"
+  },
+  {
+    "id": "cb1864a17d4dd1742fb97e95c738543b95f908cea806ff8f090641b6cdebc627",
+    "name": "Lunascape Browser",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/aa7678b9-f508-4d4a-7e3f-4ec0e9cd9900?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "jp.co.lunascape.android.ilunascape",
+    "nativeDeepLink": "lunascape://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "51a21ac39435d61d28bdc1261862bac41a918f9a06269d68749d10f6def2b604",
+    "name": "LxxDaoWallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/4c179a06-3d1f-408d-4d67-93de7099e200?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.lxxdao.wallet",
+    "nativeDeepLink": "lxxdao://",
+    "universalDeepLink": "https://lxxdao.net"
+  },
+  {
+    "id": "f71e9b2c658264f7c6dfe938bbf9d2a025acc7ba4245eea2356e2995b1fd24d3",
+    "name": "M1NTY",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/6ccb7754-acd8-4de2-797e-a587a53d3900?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "app.m1nty.android",
+    "nativeDeepLink": "m1nty://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "8b830a2b724a9c3fbab63af6f55ed29c9dfa8a55e732dc88c80a196a2ba136c6",
+    "name": "Magic Eden",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/62040f22-2ffd-4942-92fc-71ce68c64300?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.magiceden.wallet",
+    "nativeDeepLink": "magiceden://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "7674bb4e353bf52886768a3ddc2a4562ce2f4191c80831291218ebd90f5f5e26",
+    "name": "MathWallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/26a8f588-3231-4411-60ce-5bb6b805a700?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.mathwallet.android",
+    "nativeDeepLink": "mathwallet://",
+    "universalDeepLink": "https://www.mathwallet.org"
+  },
+  {
+    "id": "0db9b539a5e519dab9097250f5abb6f0b2a11c2e17dee313b650401e089945b8",
+    "name": "MaxWallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/2f6e63fb-6443-4ac9-5978-85d61defb600?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.maxwallet.cc",
+    "nativeDeepLink": "maxwallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "540148afe64558bb238cab6c43bd963055ed9248c094eaebff94d7bbb59f9aba",
+    "name": "MDAO Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/82014e92-838b-4e75-e77e-76cdc5539d00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.ttmbank.wallet.app",
+    "nativeDeepLink": "ttmwalletapp://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "7e6bb17d0f776c0449f5e79f8df3b34e7be388c9c527befc4ba92ef8cbe55c44",
+    "name": "Me Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/e9666b15-4296-4384-3661-7e99a5f2a900?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.astrox.me",
+    "nativeDeepLink": "astrox://me/wcx",
+    "universalDeepLink": null
+  },
+  {
+    "id": "9f6fbf4b0a22ef57cf40acf45bc75b83b9b1bd802c8fe2fbc6a380259a05e8f7",
+    "name": "MeCo Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/e95f8d92-32ea-45ad-b163-489def2bd700?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.memecore.wallet",
+    "nativeDeepLink": "mecowallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "c57ca95b47569778a828d19178114f4db188b89b763c899ba0be274e97267d96",
+    "name": "MetaMask",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/eebe4a7f-7166-402f-92e0-1f64ca2aa800?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.metamask",
+    "nativeDeepLink": "metamask://",
+    "universalDeepLink": "https://metamask.app.link"
+  },
+  {
+    "id": "f5b4eeb6015d66be3f5940a895cbaa49ef3439e518cd771270e6b553b48f31d2",
+    "name": "MEW wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/e2024511-2c9b-46d7-3111-52df3d241700?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.myetherwallet.mewwallet",
+    "nativeDeepLink": "mewwallet://",
+    "universalDeepLink": "https://mewwallet.com"
+  },
+  {
+    "id": "73232eaed7a1e4876f3efb13c3d526dfe4e293a152e1380095a62eb4c5814a87",
+    "name": "midoin",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/9728246c-9504-4b0f-9881-ed848c9fa000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.midoin",
+    "nativeDeepLink": "midoin://",
+    "universalDeepLink": "https://midoin.app.link"
+  },
+  {
+    "id": "49bb9d698dbdf2c3d4627d66f99dd9fe90bba1eec84b143f56c64a51473c60bd",
+    "name": "Minerva Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/b57b2163-1bd8-4f6b-3311-470767e6d200?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "digital.minerva",
+    "nativeDeepLink": "minerva://",
+    "universalDeepLink": "https://minerva.digital"
+  },
+  {
+    "id": "66a1b8d00aa8da714ae07a123a565f6226c44156a54ed04ffc6ee5ffe1f56e64",
+    "name": "Mirai App",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/0c8022b0-d5a3-4561-64d5-a3e60d1ed500?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "co.mirailabs.app",
+    "nativeDeepLink": "miraiapp://",
+    "universalDeepLink": "https://go.miraiapp.io"
+  },
+  {
+    "id": "9be416fd7b5a20dfe115930b759e9a69a5dd6299b42f3eab0f3f70ee6ac5331f",
+    "name": "Mixin",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/c5516ab5-57c3-45ec-09e2-b149c9709600?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "one.mixin.messenger",
+    "nativeDeepLink": "mixin://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "c5bba8af012b2139c406cc667a7b67a1503d984aeb0cdd2ef02e667c4abba6fe",
+    "name": "Modular Wallet Prod",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/70485da2-2568-463d-722c-25082997cc00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.modular",
+    "nativeDeepLink": "modularwallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "482b0925a9355574e46629ac396ed48232746bd32f72a7b813767a3fa876ad93",
+    "name": "mOne superapp",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/031df921-c5a5-451c-1ad4-f41d4f8fbb00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.metapro.app",
+    "nativeDeepLink": "mone://",
+    "universalDeepLink": "https://mone.my/app"
+  },
+  {
+    "id": "f5971a12f71b352c3abb3c9fc29818f1044a87d791ce28db6e5ab1962bfff717",
+    "name": "MOONSTAKE",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/22374fae-244c-4224-2e3d-c14912f98a00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.moonstake.wallet",
+    "nativeDeepLink": "moonstake://",
+    "universalDeepLink": "https://moonstake.io/launchApp"
+  },
+  {
+    "id": "d69877e50c4aa2360d723065716609f1e2698e45fc210438da8c325b65922735",
+    "name": "MPCVault | Team crypto wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/3cbf71ea-c90b-427c-6b2c-a9a7c7c0d500?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.mpcvault.mobileapp.android",
+    "nativeDeepLink": "com.mpcvault.mobileapp://wccallback",
+    "universalDeepLink": "https://ulink.mpcvault.com/wccallback"
+  },
+  {
+    "id": "26a582067b4f960e9104768704ec6fa642970450acefa04c782dbbccc575b3b8",
+    "name": "My Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/41869009-80c0-4daa-ebfb-edfedfec1700?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "org.mytonwallet.app",
+    "nativeDeepLink": "mywallet-wc://",
+    "universalDeepLink": "https://my.tt/wc/"
+  },
+  {
+    "id": "e3d6117850435b1359b81d7cef869f6851c00ad2125cadb04f4e003be8074af6",
+    "name": "MynaWallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/ac33496d-cdf4-46f4-9467-3db93b30bb00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "jp.co.mynawallet.MynaWallet",
+    "nativeDeepLink": "mynawallet://wc?uri=wc:abc123",
+    "universalDeepLink": null
+  },
+  {
+    "id": "7be8d8b5e39bbcee13867c50e47387cd752c12e03b3e6fdf2e0638c7b4e3b69f",
+    "name": "Nash",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/65c53de2-05fd-4a62-5f9c-979dcb406c00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.nash.app",
+    "nativeDeepLink": "nash://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "91628e2ae2228af2145bfac21093ad7be682810ec16af540a9e017ad6b933a81",
+    "name": "NeftiWallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/1f812dec-be3d-446c-52f7-a79eb0dd5400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.NEFTiPEDiA.mp",
+    "nativeDeepLink": "nefti://nefti.id/asset/",
+    "universalDeepLink": "https://nefti.id/asset/"
+  },
+  {
+    "id": "f039a4bdf6d5a54065b6cc4b134e32d23bed5d391ad97f25aab5627de26a0784",
+    "name": "Neon Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/322bd6f0-09b5-4595-cb15-0dfab8054800?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "neo.org.freewallet.app",
+    "nativeDeepLink": "neon://uri=",
+    "universalDeepLink": null
+  },
+  {
+    "id": "df1d89401c7320e6d62fa5bc4a516e8df21b604b10a7eedefbee9ada66b20c5d",
+    "name": "Nest Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/9f471f97-0b62-4af9-6198-fc9c4bd58000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "xyz.nestwallet.nestwallet",
+    "nativeDeepLink": "nestwallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "e41335615dc17532477792bb63034f69d430d73dc39ff8da622d17f3bad0b96a",
+    "name": "Nicegram Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/929745a4-5830-480b-f6ab-bb3a854bc700?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "app.nicegram",
+    "nativeDeepLink": "ncg://wallet/home",
+    "universalDeepLink": "https://nicegram.app/"
+  },
+  {
+    "id": "9a4cddbdbc19005be790f37cc9176dd24eae51aa2a49fa3edeb3b6a8b089b7be",
+    "name": "Nightly",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/7fb6e288-6d7e-4f29-d934-8b3f229c2d00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.nightlymobile",
+    "nativeDeepLink": "nightly://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "4a4de89b894737cd99fe857c3253da54773c093b67381a5cd63723543e888a54",
+    "name": "Nodle",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/39badb5c-adeb-4188-c803-a63a5cffdf00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.nodle.cash",
+    "nativeDeepLink": "nodle://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "dbe30fc296ccd75fbf5bc7157fcfe23d839c0cea83c4883ab9601677e0a9a738",
+    "name": "NonBank",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/fe06c7ed-3df1-4cc7-9686-c920914abd00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.nonbank",
+    "nativeDeepLink": "nonbank://",
+    "universalDeepLink": "https://id.nonbank.io/wc"
+  },
+  {
+    "id": "eae2c4b9da3b33b72b20d929a6342830bf54b541665e54c3a46024118e9e0e81",
+    "name": "Noone Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/fbae89d3-d6cb-4b98-bd1c-b2007b61ed00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.noone.androidwallet",
+    "nativeDeepLink": "crypto.noone.wallet://walletcon",
+    "universalDeepLink": null
+  },
+  {
+    "id": "43fd1a0aeb90df53ade012cca36692a46d265f0b99b7561e645af42d752edb92",
+    "name": "Nova Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/4f159b10-419b-483a-f2bf-da3d17855e00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.novafoundation.nova.market",
+    "nativeDeepLink": "novawallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "c482dfe368d4f004479977fd88e80dc9e81107f3245d706811581a6dfe69c534",
+    "name": "NOW Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/b6ee4efc-f53e-475b-927b-a7ded6211700?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.nowwallet",
+    "nativeDeepLink": "nowwallet://",
+    "universalDeepLink": "https://walletnow.app.link"
+  },
+  {
+    "id": "dccbd717df77b395445cc6080e01fffada9d8b92dacfda312a26c70c2e9af673",
+    "name": "Nufinetes",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/4bb6c1ca-4196-4ba3-ece2-c3d335e1f800?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.vimworld.wallet",
+    "nativeDeepLink": "vimwallet://",
+    "universalDeepLink": "https://apple.vimworld.org"
+  },
+  {
+    "id": "531df9c5bd5343e0c3d9383a25301572699a8ad0ccfc55984b379f400a7a052e",
+    "name": "NVXO Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/dc903335-fc95-4c51-9b99-9e7671c1ac00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.nvwallet.wallet",
+    "nativeDeepLink": "nvxowallet://wc",
+    "universalDeepLink": "https://www.nvxowallet.com/wc"
+  },
+  {
+    "id": "37aacf1e6bf6793c892e42c3f7623a61d9ffcb4337010804cc3193c4d596cf5c",
+    "name": "Oasys Passport",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/43eb1fb9-e0db-4c9b-d864-4d7fc5abcc00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.oasys_wallet.oas_app",
+    "nativeDeepLink": "oasys-wallet://",
+    "universalDeepLink": "https://www.oasys-wallet.com/wc/"
+  },
+  {
+    "id": "02957f0659df422d5b8fa31a054a15140479cebdd715dfa1ba875a93a4236b05",
+    "name": "Oblio Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/a0ff2932-e049-4622-a9c8-fa41278cff00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.oblio.wallet",
+    "nativeDeepLink": "oblio://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "031f0187049b7f96c6f039d1c9c8138ff7a17fd75d38b34350c7182232cc29aa",
+    "name": "Obvious",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/fe1b9394-55af-4828-a70d-5c5b7de6b200?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.hashhalli.obvious",
+    "nativeDeepLink": "obvious://",
+    "universalDeepLink": "https://wallet.obvious.technology"
+  },
+  {
+    "id": "4f5de5333fed2ccf47c690579aba3b9128aea78175339ff51ef61704bde7502a",
+    "name": "Okse Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/8a1b36d5-7f40-403a-7000-5d30f9181200?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "wallet.okse.io",
+    "nativeDeepLink": "oksewallet://",
+    "universalDeepLink": "https://okse.io/"
+  },
+  {
+    "id": "550b59942eb58a7226381bf7935f22d311e56ee29c3530e44d96b1de0550a35a",
+    "name": "Okto",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/154c69b7-9bb1-4010-5b4c-6b37eeda8900?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.coindcx.okto",
+    "nativeDeepLink": "okto://",
+    "universalDeepLink": "https://okto.go.link/?adj_t=j39b9kp&adj_fallback=https%3A%2F%2Fokto.tech&adj_redirect_macos=https%3A%2F%2Fokto.tech"
+  },
+  {
+    "id": "971e689d0a5be527bac79629b4ee9b925e82208e5168b733496a09c0faed0709",
+    "name": "OKX Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/45f2f08e-fc0c-4d62-3e63-404e72170500?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.okinc.okex.gp",
+    "nativeDeepLink": "okex://main",
+    "universalDeepLink": "https://www.okx.com/download?appendQuery=true&deeplink=okx://web3/wallet/walletConnect"
+  },
+  {
+    "id": "5d9f1395b3a8e848684848dc4147cbd05c8d54bb737eac78fe103901fe6b01a1",
+    "name": "OKX Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/c55df831-3c52-49fc-d1d1-97a926dc0c00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.okx.wallet",
+    "nativeDeepLink": "okxwallet://main",
+    "universalDeepLink": "https://web3.okx.com/download"
+  },
+  {
+    "id": "afbd95522f4041c71dd4f1a065f971fd32372865b416f95a0b1db759ae33f2a7",
+    "name": "Omni",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/2cd67b4c-282b-4809-e7c0-a88cd5116f00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "fi.steakwallet.app",
+    "nativeDeepLink": "omni://",
+    "universalDeepLink": "https://links.omni.app"
+  },
+  {
+    "id": "1aedbcfc1f31aade56ca34c38b0a1607b41cccfa3de93c946ef3b4ba2dfab11c",
+    "name": "OneKey",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/2067c771-93e8-4b32-b388-b2a0e1d4dc00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "so.onekey.app.wallet",
+    "nativeDeepLink": "onekey-wallet://",
+    "universalDeepLink": "https://app.onekey.so/wc/connect"
+  },
+  {
+    "id": "22eafea695da55c0a8c3a37c5dd6ecd7ee45927a859b9536ae068e5dba4eeed2",
+    "name": "OnlyBulls Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/f51e7b10-7a66-437f-8d13-666c660e8500?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.askroi.onlybulls",
+    "nativeDeepLink": "onlybulls://",
+    "universalDeepLink": "https://onlybulls.com"
+  },
+  {
+    "id": "0f5eca2c7f2c9d11c992fdc707575c484ffb751e58e43eaeeea24510bfe8b8dd",
+    "name": "ONTO",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/14934596-632e-4b29-d45f-61109e959000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.github.ontio.onto",
+    "nativeDeepLink": "ontoprovider://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "e6005646c187fc5e5141247933253346168242dd5ed8f46480f3b5f73a4d1ac9",
+    "name": "Onyx Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/f9d19561-adb3-4526-b852-77ba3d534400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.onyx.walletprod",
+    "nativeDeepLink": "onyxwallet:///",
+    "universalDeepLink": "https://wallet.onyx.org"
+  },
+  {
+    "id": "2f0e39323be165a0972147140c7b822be17e5eb464a5e8558ac0e0ab01c48944",
+    "name": "Open Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/68a3c433-d944-4bf6-5093-4ac415fd5400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.finverselabs.openwallet",
+    "nativeDeepLink": "x-app-open-wallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "25626b660052d4fe15926a48bf3e0ae9ade5b8b6dacdd3d072795c662dbdb3ee",
+    "name": "Openloop Connect",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/d9a5731e-6ac3-4cc4-b753-5e35841f0b00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "jp.haudi.crypto.openloopconnect",
+    "nativeDeepLink": "openloop://",
+    "universalDeepLink": "https://www.crypto.haudi.jp/wc"
+  },
+  {
+    "id": "9504a1c1a86cc0702b2d3e47049e1389b373fb2ff22de3208c748d62912433a4",
+    "name": "Opto Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/3df102e4-e435-49dd-d4b1-5ea74ebed500?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "app.opto.wallet",
+    "nativeDeepLink": "opto://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "0e3c4838e5a7c44b6b16299b7dbc7a2bc147ad9c056588d6190e11ec5804fba9",
+    "name": "OPZ Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/bb347024-46c1-4be1-dd1f-98e6c51f8600?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.opz.dev",
+    "nativeDeepLink": "opz-wallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "022076fddebdd81c287239a7397ef625ef432db168b884f1b8ed8e148ce23a84",
+    "name": "Outlaw Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/290467db-2be9-4cfd-9996-742517ff6d00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.outlawgame.android",
+    "nativeDeepLink": "outlaw://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "4aea33b6f8fd1d4b5be08cdd54356274ea3185868ace51728af7ba8891211a82",
+    "name": "OverFlex",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/ac442ec8-206d-4885-41dc-005aa94bc500?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.superblock.overmobile",
+    "nativeDeepLink": "overflex://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "5a2b2db3d2ed90458a41d2a0c5e4bd28ec67b6fa272b0e201cc8508dc3d4be87",
+    "name": "OWallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/68489978-9f79-47f4-fd59-86a29df9bf00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.io.owallet",
+    "nativeDeepLink": "owallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "159b0423ce9075d5662f588f805931d989627affab3e63e4dd7ebc62b9c6738c",
+    "name": "Oxalus Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/a6e22fcb-6b69-45d2-b52d-a4a347a21e00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.oxalus.wallet",
+    "nativeDeepLink": "oxalus://",
+    "universalDeepLink": "https://oxalus.page.link/?apn=io.oxalus.wallet&isi=1620111723&ibi=io.oxalus.wallet&link=https://deeplink.oxalus.io"
+  },
+  {
+    "id": "4174944732b68fe84b79b98bc0d75c3f0dce4e6e6e9834439fbc1e51fa6eebf3",
+    "name": "OzoneWallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/4eb57479-515a-463a-9fcb-c20e9cc60c00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.chiatk.apps.ozone1",
+    "nativeDeepLink": "chiawallet://ozonewallet.io",
+    "universalDeepLink": null
+  },
+  {
+    "id": "981ee0b205893921cdb52c94070acedd39283e911de238c478652dedf0e1d76d",
+    "name": "Pali Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/4672cbde-0f96-42f3-84a0-524e9ad70a00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.paliwallet",
+    "nativeDeepLink": "paliwallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "259d07628a06aee49007266630381867688fbe96c331adc1b285aa7995380815",
+    "name": "Panaroma Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/4394f728-0c57-4560-acba-48bfd82ddf00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.panaroma.wallet",
+    "nativeDeepLink": "panaromawallet://walletconnect",
+    "universalDeepLink": null
+  },
+  {
+    "id": "fa737fa41e6e5ad02c536bd21afea4e21c061885a039e17237e08802ca5bf0bf",
+    "name": "Pandoshi Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/d5be0305-ff38-4412-6089-a94c2e445300?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.pandoshi.wallet",
+    "nativeDeepLink": "pandoshiwallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "34cc55786257a50b0d0446e197cfd0935216192616787022c6b2819d2874d34a",
+    "name": "Paribu Self",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/4ed03451-43fd-44dd-1adc-565452d75100?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.paribu.self",
+    "nativeDeepLink": "self://",
+    "universalDeepLink": "paribuself.go.link"
+  },
+  {
+    "id": "a562f133f272c97dd0eb1cbe4629a2ded5fd6e4854a2a3acd44ddb61907ca781",
+    "name": "Pass App",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/d098fb77-70ae-4230-3059-3623ba048100?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.passwallet.app",
+    "nativeDeepLink": "passwallet://",
+    "universalDeepLink": "https://pass.app/connect"
+  },
+  {
+    "id": "5dc61e9d57489bccc11306365361614dac3de1d8eab2a9a7877a95970f68712f",
+    "name": "PayBolt",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/cc8f4e0c-56a8-465a-6cb6-3e9d60846500?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.fincrypt.paybolt",
+    "nativeDeepLink": "paybolt://Wallet",
+    "universalDeepLink": null
+  },
+  {
+    "id": "d6fbaf5c2026e050920ed6e6ffbf96c8a6145b93a8b79d102def9653bedc9821",
+    "name": "Payperless",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/4a867e30-44c9-4627-6281-33457b8e2100?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.payperless.wallet",
+    "nativeDeepLink": "payperless://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "00ee7b0d5c47fa12142b37c1cf3a6a847fdd277c23d2f40fea45c1d5166e0084",
+    "name": "PEAKDEFI",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/918006e2-2f6d-4233-0e72-10c2caaed500?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.peakdefiwallet",
+    "nativeDeepLink": "wc://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "f3379d4ac112b75ce80222d6e0d18f36667c87086fa65b6d10f118815d224940",
+    "name": "Pillar",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/87737170-f79f-4359-338b-7c30856c9f00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.pillarproject.wallet",
+    "nativeDeepLink": "pillarwallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "bb71b54ced62aa11f76e4f3edacb37a41300807506db840b98b740379f99cc71",
+    "name": "Pintu",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/b9c5dfd6-ca26-46c2-bc79-bc2570495800?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.valar.pintu",
+    "nativeDeepLink": "pintu://web3wallet",
+    "universalDeepLink": null
+  },
+  {
+    "id": "e5276850a2559a0fd4eb37207e3c9325cfb20b84ebb28a2d6ad5ade43a2a77bd",
+    "name": "PioneWallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/d3ab5013-f497-4857-d169-4e666db89a00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.companyname.swaptobe",
+    "nativeDeepLink": "tobewallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "14e5d957c6eb62d3ee8fc6239703ac2d537d7e3552154836ca0beef775f630bc",
+    "name": "Pitaka",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/c816aeae-e0d1-4c52-f37a-efde6df1ee00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.pitakamobile",
+    "nativeDeepLink": "pitaka://",
+    "universalDeepLink": "https://app.pitaka.io"
+  },
+  {
+    "id": "9654c004e02e492c30904a820154e239886edbf4d66bc5d372060809ef4c9111",
+    "name": "Plena-App",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/9ba07b43-3db1-4e8d-100e-8c91d8430c00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.plena",
+    "nativeDeepLink": "com.plena://auth,org.plenafinance.app://auth",
+    "universalDeepLink": "https://plena.page.link/JNPe"
+  },
+  {
+    "id": "576c90ceaea34f29ff0104837cf2b2e23d201be43be1433feeb18d375430e1fd",
+    "name": "PLTwallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/a5d9dd15-8cef-42de-8bed-09e01a8b0200?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.palettechain.wallet",
+    "nativeDeepLink": "pltwallet://",
+    "universalDeepLink": "https://pltwallet.io/"
+  },
+  {
+    "id": "ff8c6f405f14cbb21fa9b0ab5338159b85822f7cab7f1040d4c4e26bf63ff233",
+    "name": "plug",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/95efae20-7712-4df8-0578-9f117b80d100?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "co.psychedelic.plug",
+    "nativeDeepLink": "plug://",
+    "universalDeepLink": "plugwallet.ooo"
+  },
+  {
+    "id": "91b9a02134bc834b96ebfa333a0bf27ac6372ac56682b5e77bf8577abe0eea78",
+    "name": "Plutope",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/77aab1ef-28e8-4473-b91a-a566fd910900?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.app.plutope",
+    "nativeDeepLink": "plutope://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "016f8161cd78dd01003cf466292b9690c0fd251f2d69415a3cc96659d975e398",
+    "name": "pockie",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/a761beae-1e7e-4402-bcc5-a896a92bfb00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.pilab.pockie",
+    "nativeDeepLink": "pockie://",
+    "universalDeepLink": "https://pockie.app.link"
+  },
+  {
+    "id": "f957ccc70ab232638964242c24cc6286ef75aa7fd0d4d348f46213d2fea0b88c",
+    "name": "PortaWallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/07bc52e6-c402-439d-faea-a5736cd25300?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.wallet.porta.android",
+    "nativeDeepLink": "porta://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "26f021a08d4271860423d778a9b82e39f4ff52acc7c3f6d92a504eba11e3b893",
+    "name": "PrettyGood Keyboard",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/ae26de70-87f2-4dea-d5ce-dcdb1a442400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.pgk.keyboard",
+    "nativeDeepLink": "pgk://wallet",
+    "universalDeepLink": "https://x.prettygood.io/wallet"
+  },
+  {
+    "id": "2ebc33a02906094b8ea5d21a7c6e1673ecdefb33dca723897d13c7de3446d354",
+    "name": "Pundi Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/f095abd7-575e-4851-cf9c-79c2c4e4cc00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.pundix.functionx",
+    "nativeDeepLink": "fxwallet://",
+    "universalDeepLink": "https://fx.wallet/wc"
+  },
+  {
+    "id": "f92b6491e9cccaec7dca667d61c012816629e7e759392c55d3f523a90ec1a584",
+    "name": "PureWallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/ea64c6aa-13aa-440f-f503-0013acb37800?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.nslab.purewalletp",
+    "nativeDeepLink": "purewalletp://",
+    "universalDeepLink": "https://purewallet.ai/api"
+  },
+  {
+    "id": "1aecb6762373f96100f941347bd554d6bdbf6c30a1368c47bf391432021d6ce9",
+    "name": "PureWallet app",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/4e97b9d6-60eb-42cd-6256-5cd7205e3f00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.nslab.purewalletp",
+    "nativeDeepLink": "purewalletp://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "7ee7b95f4ae8b3e08aab5158be7fe8e71f79bcd3717594254b34fa1f3cd4611a",
+    "name": "Puzzle Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/08cb0a68-6271-4e25-90c3-bcc3c0226a00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "online.puzzle",
+    "nativeDeepLink": "puzzleapp://",
+    "universalDeepLink": "https://jigsaw-dev.puzzle.online/"
+  },
+  {
+    "id": "4be461920c1fd1762d71c00cdf554ce5693437e123c4a966faf7e1056d2c6f17",
+    "name": "PWC Super App",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/27403cff-0fcd-4d50-b0bc-40b7a9743c00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.paywithcrypto.paywithcrypto",
+    "nativeDeepLink": "pwc://wallet",
+    "universalDeepLink": null
+  },
+  {
+    "id": "7eb95f5e01a3c45f7f0111f736d73e5c88aa5f268256c6a38b7f631216f620fb",
+    "name": "QIE Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/047f1e60-9c14-4601-f357-3e2804769600?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.qiewallet",
+    "nativeDeepLink": "qiemobilewalletconnect://",
+    "universalDeepLink": "https://www.qiewallet.me/"
+  },
+  {
+    "id": "6148e2d844e21c546354d04255e9c2bb7f87aaccf3113709f09212c5f3277a9b",
+    "name": "Qoin Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/0490da30-b59c-4365-fef8-33a3e0aa4700?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.qoin.wallet",
+    "nativeDeepLink": "wcqoin://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "80afbf1e261cc241e8227127592879c6ebd753c7c7a0a714c75923fa76730e0c",
+    "name": "QubeticsWallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/f6afe67c-41e9-44fc-075a-3e7eda291000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.qubetics.wallet",
+    "nativeDeepLink": "qubetics://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "9034d54985807aaf3d7780f50f155f954daa468fb58d7b14b216fc79d68bbd14",
+    "name": "Qubic Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/535c91a5-a43c-4104-233c-439449ffcd00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "app.qubic.wallet",
+    "nativeDeepLink": "qubic://",
+    "universalDeepLink": "https://wallet.qubic.app"
+  },
+  {
+    "id": "090447a8ce11f1f55f3016fe933044b6e06cb21fbf57d902e7ccc207892b86c6",
+    "name": "R0AR Mobile Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/a8239b76-9877-4809-c29e-d1392b6f4e00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.roar_wallet",
+    "nativeDeepLink": "roarwallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "18388be9ac2d02726dbac9777c96efaac06d744b2f6d580fccdd4127a6d01fd1",
+    "name": "Rabby",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/255e6ba2-8dfd-43ad-e88e-57cbb98f6800?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.debank.rabbymobile",
+    "nativeDeepLink": "rabby://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "1ae92b26df02f0abca6304df07debccd18262fdf5fe82daa81593582dac9a369",
+    "name": "Rainbow",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/7a33d7f1-3d12-4b5c-f3ee-5cd83cb1b500?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "me.rainbow",
+    "nativeDeepLink": "rainbow://",
+    "universalDeepLink": "https://rnbwapp.com"
+  },
+  {
+    "id": "2bc58b1c76e6572fa6cd68c3a448128ce90f7442d563f02e9f9db3b58d01d810",
+    "name": "Renegade",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/6ce2caa3-c597-445a-b61f-0b46b5c15000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.app.renegade",
+    "nativeDeepLink": "renegade-web3wallet://",
+    "universalDeepLink": "https://webapp.myrenegade.net"
+  },
+  {
+    "id": "bec3c4be910f31b01e051525996b8dca85a60a616dba2a756728d5ddeecd6136",
+    "name": "Revelator Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/2027dfea-316d-474a-1c7d-08dead7b4200?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.revelator.originalworks",
+    "nativeDeepLink": "revelatorwallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "10a885156cc07e3a8e424c9dea9eafdb62b5640b77cbf9d2e07295dbd3a334c8",
+    "name": "Rewardy Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/236317b7-986d-4936-ef0d-b33d6e98a600?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.chainwith.rewardy",
+    "nativeDeepLink": "rewardywallet://",
+    "universalDeepLink": "https://www.rewardywallet.com/wc"
+  },
+  {
+    "id": "b248559bff6b18d0d776a23698990641f8d7704c35faa7de60865cc8429818b9",
+    "name": "Rezor",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/0239b3e4-2c96-4045-d7f1-390a1ffc7e00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.rezor",
+    "nativeDeepLink": "rezor://app",
+    "universalDeepLink": null
+  },
+  {
+    "id": "1896aa67ce33d5bde764369c7541a75074baa1b8da97e703c9ee3a4b61e56e65",
+    "name": "Ripio Portal",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/fd56c695-ce58-4df5-1625-767571c80700?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.ripio.android",
+    "nativeDeepLink": "ripio://portal",
+    "universalDeepLink": null
+  },
+  {
+    "id": "8837dd9413b1d9b585ee937d27a816590248386d9dbf59f5cd3422dbbb65683e",
+    "name": "Robinhood Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/dfe0e3e3-5746-4e2b-12ad-704608531500?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.robinhood.gateway",
+    "nativeDeepLink": "robinhood-wallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "541d5dcd4ede02f3afaf75bf8e3e4c4f1fb09edb5fa6c4377ebf31c2785d9adf",
+    "name": "Ronin Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/bd78de7e-36da-4552-ebdd-2e420ba05900?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.skymavis.genesis",
+    "nativeDeepLink": "roninwallet://",
+    "universalDeepLink": "https://wallet.roninchain.com"
+  },
+  {
+    "id": "fa6a09c7efd73c6fe3bc5a68969d0def71b5d760b99a16985e3e8e79d84b0156",
+    "name": "SA ASSISTANT",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/7954b508-9ff0-4416-9aba-16209b571000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.onechain.saas",
+    "nativeDeepLink": "saas://success",
+    "universalDeepLink": null
+  },
+  {
+    "id": "394631c96f2c3201ffd5b3f3f249028163a893ae2ff9076882350e70f3450cb0",
+    "name": "Saakuru All-in-One crypto App",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/bb9120f9-9757-4aae-0378-3e4dc2f82100?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "ventures.aag.metaone",
+    "nativeDeepLink": "metaone://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "6577b7c91453a7047f1c31c5897bd59087a8cca35181e069656079255542abb4",
+    "name": "Sabay Wallet App",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/c4df7014-abaf-4016-8180-fb994804b400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "kh.com.sabay.sabaywallet",
+    "nativeDeepLink": "myApp://kh.com.sabay.sabaywallet",
+    "universalDeepLink": null
+  },
+  {
+    "id": "225affb176778569276e484e1b92637ad061b01e13a048b35a9d280c3b58970f",
+    "name": "Safe",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/3cdfc77d-fcb6-4a17-239c-5785fe847b00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "global.safe.mobileapp",
+    "nativeDeepLink": "safe://",
+    "universalDeepLink": "https://app.safe.global/"
+  },
+  {
+    "id": "a0e04f1086aac204d4ebdd5f985c12ed226cd0006323fd8143715f9324da58d1",
+    "name": "SafeMoon",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/ea0140c7-787c-43a4-838f-d5ab6a342000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "net.safemoon.androidwallet",
+    "nativeDeepLink": "safemoon://",
+    "universalDeepLink": "https://safemoon.com/wc/wc"
+  },
+  {
+    "id": "0b415a746fb9ee99cce155c2ceca0c6f6061b1dbca2d722b3ba16381d0562150",
+    "name": "SafePal",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/252753e7-b783-4e03-7f77-d39864530900?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.safepal.wallet",
+    "nativeDeepLink": "safepalwallet://",
+    "universalDeepLink": "https://link.safepal.io"
+  },
+  {
+    "id": "5265dcf66be0553328dbc727414ab329e22f9a480e593bd2e927b279e4ab244d",
+    "name": "Sahal Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/afa1e46a-331a-418f-ef1f-a29f76def100?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "sahal.wallet.app",
+    "nativeDeepLink": "sahalwallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "a0c4b25a00028162432d173d110dbd8ee086a01c3a00f94d97f70b779d25c794",
+    "name": "Saify",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/83e459aa-7e2c-45cf-1c6c-c71286f34c00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.saify",
+    "nativeDeepLink": "saify://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "bd8a799aed39b284cf4a2c1a765a3d047a2cd709e06db21baa369ac5c1ffe774",
+    "name": "Satu Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/9841bfb4-52d5-4035-041a-6aed6abbed00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.cryptonerd.SatuWallet",
+    "nativeDeepLink": "satuwallet://wc",
+    "universalDeepLink": "https://satuwallet.com/wc"
+  },
+  {
+    "id": "9c78aee7d8a771255942334d06d2cbab89e2178ee49fee4ea3b6c78032fcac76",
+    "name": "Scopuly",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/89dee466-1de6-44e2-f00d-9e9d5eecec00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.sdex.app",
+    "nativeDeepLink": "scopuly://wc",
+    "universalDeepLink": "https://app.scopuly.com/wc"
+  },
+  {
+    "id": "b48cefc7ff96f9bf4e6db66fd93d277d4ee6f4199d7f996c25a56b0b0bb2c352",
+    "name": "ScramberryWallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/2398a924-62b4-4f64-4a59-7ae7a293ce00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.scramberry.wallet",
+    "nativeDeepLink": "io.scramberry.v7bmfgda1vo42ue385xc://deeplink",
+    "universalDeepLink": "https://link1.bsg.scramberry.io"
+  },
+  {
+    "id": "6464873279d46030c0b6b005b33da6be5ed57a752be3ef1f857dc10eaf8028aa",
+    "name": "SecuX",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/98183be0-3125-45ee-a6b6-fbd47ebefd00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.secuxapp",
+    "nativeDeepLink": "secux://",
+    "universalDeepLink": "https://wsweb.secuxtech.com"
+  },
+  {
+    "id": "4457c130df49fb3cb1f8b99574b97b35208bd3d0d13b8d25d2b5884ed2cad13a",
+    "name": "ShapeShift",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/957c34b2-7210-475a-0734-689dfcabc400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.shapeshift.droid_shapeshift",
+    "nativeDeepLink": "shapeshift://",
+    "universalDeepLink": "https://shapeshift.app.link/"
+  },
+  {
+    "id": "2b9085b314023231adf4ba051274a20b9a4b5f64fd85251a7a329e386da1811b",
+    "name": "SheFi",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/a1a909e8-526b-4452-8788-5bb21e2b9e00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "org.shefi.app",
+    "nativeDeepLink": "shefi://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "582506d3ac795e1d72b1674e0ee54b45431ad6fac9b51c0c8c4c1893d923c5f0",
+    "name": "Shido App",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/673b4fdc-8c65-41e0-d0f8-c2eb6c8e5500?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.shido.wallet",
+    "nativeDeepLink": "shido://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "51d2c02e306827d2d0f0dadaa00f22575c623aa19c403f09f4b9c42c67098bb1",
+    "name": "Shinobi-Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/685c986c-3e80-4701-cec6-cd247ba1a700?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.fgraph.shinobiwallet",
+    "nativeDeepLink": "shinobi-wallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "cb9d66ecab6a3a98bff2de2653e4e1ce44e84130a7ab323a2892a5c456956ffe",
+    "name": "Sinohope",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/06d056b9-aba7-453c-ddaf-a077a448ea00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.sinohope.mpcwallet.app",
+    "nativeDeepLink": "sinohopeapp://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "2564a702f3b709b000a7747ccfc6f6dcc58b638c57f29791cd01514fe91cc5f8",
+    "name": "Sinum",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/560d5efa-3fd1-4ac4-9229-f720395ab500?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.sinum.wallet",
+    "nativeDeepLink": "sinum://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "b823fb0d7228ef8e3c0bc9607df9ed79dae2ab3a2811d33f22ade4f573c18232",
+    "name": "Slavi Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/282ce060-0beb-4236-b7b0-1b34cc6c8f00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.defiwalletmobile",
+    "nativeDeepLink": "slaviwallet://",
+    "universalDeepLink": "https://www.slaviwallet.io"
+  },
+  {
+    "id": "56843177b5e89d4bcb19a27dab7c49e0f33d8d3a6c8c4c7e5274f605e92befd6",
+    "name": "Socios.com - Wallet & Tokens",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/eb55679f-9462-45e2-e0ec-dfb851f9e700?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.socios",
+    "nativeDeepLink": "socios-mob://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "1897fdb811ff53a69f9217a98696798b0227c7d77fddf103e8295be551a1e3b6",
+    "name": "Spot On Chain App",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/1bcb5ed6-f6c9-4b0d-f891-b70c48b93d00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "network.spotonchain",
+    "nativeDeepLink": "spotonchain://",
+    "universalDeepLink": "https://spotonchain.ai/"
+  },
+  {
+    "id": "716187d401fb156b08b222b3a624902cf06e3ab5d4dc7d7dfcc37572359e6d9d",
+    "name": "Squirrel Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/2d96f461-ff40-4118-ef09-810c45376200?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.squirrelwallet.app",
+    "nativeDeepLink": "squirrel-wallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "855481a23310c2bccf2a6134367449d61bd2f1c8793f929516c4f68a6aaace7a",
+    "name": "Stablez",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/345a0491-91fb-4282-316b-8db8d2010200?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.blockchain.crypto.wallet.neopin",
+    "nativeDeepLink": "nptwc://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "c2c561ba71ea16a3b9c9003a77d2fad3dc4f597750f0acd385d3e12ddfe55793",
+    "name": "StaticBit",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/e7c58f32-3a5b-40ed-f756-338e915d0d00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.staticbit.wallet",
+    "nativeDeepLink": "staticbit://",
+    "universalDeepLink": "https://link.staticbit.io"
+  },
+  {
+    "id": "af9a6dfff9e63977bbde28fb23518834f08b696fe8bff6dd6827acad1814c6be",
+    "name": "Status Legacy",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/2fc9a263-56c0-4e00-2fd8-dadb9d9ad400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "im.status.ethereum",
+    "nativeDeepLink": "status-app://",
+    "universalDeepLink": "https://status.app"
+  },
+  {
+    "id": "71a83ffbaa7fa38419e8f548a6499c78c8d429163631cf483483fc7efc6b7aae",
+    "name": "Stickey Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/12aab9fb-f3d4-4248-10e0-4eda17a5de00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "app.stickey",
+    "nativeDeepLink": "stickyapp://",
+    "universalDeepLink": "https://stickeyapp.page.link"
+  },
+  {
+    "id": "5a2b2b6e41df46ea80709c11b4f902d31271f01f660f1c892102107fbc2bf88c",
+    "name": "Streakk Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/45ec6eb9-d7fe-4b9b-6dbf-cc675c5d1d00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.streakk",
+    "nativeDeepLink": "streakk://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "36dbd7f82df78f406723eb71599640fbbf703b2583682ba1e419a9098a2d4945",
+    "name": "StrikeX Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/f81642e4-2355-454a-25f5-72e27f2c6f00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.tradestrike",
+    "nativeDeepLink": "strikex://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "9ce87712b99b3eb57396cc8621db8900ac983c712236f48fb70ad28760be3f6a",
+    "name": "SubWallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/03f5c08c-fb30-46a0-ca5c-d8fdd7250b00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "app.subwallet.mobile",
+    "nativeDeepLink": "subwallet://",
+    "universalDeepLink": "https://mobile.subwallet.app/"
+  },
+  {
+    "id": "d15c9975084e5bc349d63aa83be8d9a053941483aa2c3934d00d4c4d73d45667",
+    "name": "Superhero Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/7a8f1546-765c-4b96-e73b-0c07457e3400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.superhero.cordova",
+    "nativeDeepLink": "superhero://",
+    "universalDeepLink": "https://wallet.superhero.com"
+  },
+  {
+    "id": "37ef631ba83835cae97dbbfe270ff828cdf4c9326e998927bcb03f262f98f144",
+    "name": "SuperWallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/e8f30122-5537-4b38-d6d5-9cae46771800?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.superex.ex",
+    "nativeDeepLink": "superwallet://",
+    "universalDeepLink": "https://www.superex.live"
+  },
+  {
+    "id": "dab33dac227aad5740856cb0a2d84dd27fcf311ca0b3fd7612fec041fbbb4d43",
+    "name": "Sweat Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/df295afa-253d-4db9-fe94-4fd70c0b3500?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.sweatwallet",
+    "nativeDeepLink": "sweat:///",
+    "universalDeepLink": "https://wallet.sweateconomy.com"
+  },
+  {
+    "id": "a4604022bf9199ca6d762c5663d8a6186a9ca4b607b9dcb29bcb81054d6f1091",
+    "name": "SwiftEx Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/54c06c6a-333d-49d6-f2fd-7e89d2068500?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "org.app.swiftEx.wallet",
+    "nativeDeepLink": "swiftEx://app.swiftexchange.io",
+    "universalDeepLink": "https://app.swiftexchange.io/"
+  },
+  {
+    "id": "8d14be896cc1660c604525abaa9911630da87127cbb70f712432fcf2e056b4d8",
+    "name": "SWOP",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/6e773b07-efcc-40eb-b3a2-300efc5df800?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.travisheron.swopapp",
+    "nativeDeepLink": "swopapp://",
+    "universalDeepLink": "https://swopme.app"
+  },
+  {
+    "id": "c3b76dabb8b8161b2848a4c313b559a2cd719b43732c3e0da00f345e571241e5",
+    "name": "T+ Wallet ",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/c08ff28f-5a52-4bf2-e63a-205905fd5800?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "org.talkapp",
+    "nativeDeepLink": "talkapp://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "93244de23ba91e52e0d2a92ac1370b0ef0ab32120eb8e83c4bd014f3d5d6b709",
+    "name": "Talisman",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/7b8af324-1b14-44eb-d0b5-ca98550a6900?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "xyz.talisman.app",
+    "nativeDeepLink": "talisman://",
+    "universalDeepLink": "https://talisman.xyz/wc"
+  },
+  {
+    "id": "21030f20fba1a77115858ee3a8bc5841c739ab4537441316e2f4b1d0a8d218af",
+    "name": "Tangem Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/80679c6f-bb0b-43d0-83e0-462ac268b600?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.tangem.wallet",
+    "nativeDeepLink": "tangem://",
+    "universalDeepLink": "https://app.tangem.com"
+  },
+  {
+    "id": "a92d512c649e87a5acba5885ac03f62662cff1f647c20a63833eb45a71a6f877",
+    "name": "TAP WALLET",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/a1fe3361-d754-430e-f55e-72315af52700?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.humbl.wallet.app",
+    "nativeDeepLink": "humblwallet://",
+    "universalDeepLink": "https://wallet.search3.com"
+  },
+  {
+    "id": "e9a73053c7d8cf7f8eb732e3da6a8dfd3cc211ea4dc00e0274b9dec6e3316605",
+    "name": "tastycrypto",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/357878c9-a195-4102-8f69-55eb2c578700?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.tastycrypto",
+    "nativeDeepLink": "tastycrypto://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "ad29e6ba814865dc84111a311f0d64692a6f3fdc220aa1c151034b1e948fe2ef",
+    "name": "Tellaw Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/c1cb03f5-e1c2-4c3e-86e1-9a90565ea300?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.tellaw.tellaw",
+    "nativeDeepLink": "tellaw://walletconnect",
+    "universalDeepLink": null
+  },
+  {
+    "id": "a2eb8a1c403a4440b2f578e9deb185b8e22cf4ec2a2a58441032b84b13aaab87",
+    "name": "The Pulse Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/1f3d46b8-2569-4601-5084-845f7e64da00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.wallet.thepulse",
+    "nativeDeepLink": "wallet.pulse://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "43832260665ea0d076f9af1ee157d580bb0eb44ca0415117fef65666460a2652",
+    "name": "Theta Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/d4afb810-5925-4f00-4ebb-d180fcf29000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "org.theta.wallet",
+    "nativeDeepLink": "wc://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "19fcea5bdddbf5abbb9ecdcb53acf6fb17da23ab0984ee1dbe487688d8d4ffe7",
+    "name": "THORWallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/45165bea-fdae-454e-7caa-31681f255200?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "defisuisse.thorwallet",
+    "nativeDeepLink": "thorwallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "ca331388cfe708d3c0fb094f4b08fb3c7ebd7778d3dfdcecb728990e178a3d81",
+    "name": "Tidus Wallet ",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/797bd108-d862-4d1b-d339-883de9a75000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "co.nycrypto.tiduswallet",
+    "nativeDeepLink": "tiduswallet://walletconnect",
+    "universalDeepLink": null
+  },
+  {
+    "id": "344d0e58b139eb1b6da0c29ea71d52a8eace8b57897c6098cb9b46012665c193",
+    "name": "Timeless X",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/92f1ead4-0bc4-4932-10d3-761c509b4d00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "xyz.timelesswallet.aa",
+    "nativeDeepLink": "timeless-x://connect",
+    "universalDeepLink": "https://timelesswallet.xyz/x"
+  },
+  {
+    "id": "e3787ea98d014ca77e2c3794db97c02ef8bcb39347705f5e79502a55434a1ecf",
+    "name": "TK Finance",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/c4066f68-2247-49bf-ac8a-a677bfa81800?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.trustkeysnetwork",
+    "nativeDeepLink": "tk://",
+    "universalDeepLink": "https://trustkeys.network"
+  },
+  {
+    "id": "d64f041c77e248e6c24b791616f9bcd652fd2183dd590a1156e13ebfa0d15f74",
+    "name": "TokenB",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/e65e7fa9-3a01-423f-d84f-ccc621fba900?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "net.token13.wallet",
+    "nativeDeepLink": "tokenb-web3wallet://",
+    "universalDeepLink": "https://tokenb.com/"
+  },
+  {
+    "id": "20459438007b75f4f4acb98bf29aa3b800550309646d375da5fd4aac6c2a2c66",
+    "name": "TokenPocket",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/cfe00608-cb9e-45e3-0d08-5ffc7f5ad200?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "vip.mytokenpocket",
+    "nativeDeepLink": "tpoutside://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "dacf9f750e579e7aa93a752117fb3870a5bfc2e967441b477cef5e6f1458e33d",
+    "name": "Tokoin | My-T Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/88a2518c-16c2-4ee3-4699-1a1c6903bc00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.tokoin.wallet",
+    "nativeDeepLink": "mtwallet://app",
+    "universalDeepLink": null
+  },
+  {
+    "id": "e053718e3e968b085a0ae5d11ce1c3d74ba6918c27319c70fc358a48138a5cc4",
+    "name": "tomi Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/e0592a0e-1909-4a73-7955-2dbf9caac200?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.tomiapp.production",
+    "nativeDeepLink": "tomiwallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "5e4a8cc31d062b78a7ad9e017135574809b01c4dbbf30e4dbb467ddd43025618",
+    "name": "Tomo Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/95c9f957-b1e4-4619-fa7c-a77569d2fe00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "tomo.app.unyx",
+    "nativeDeepLink": "tomo://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "73e8db145c6b2a2a11444e835a4144416c0361342dec4c7c1bc17f85223aec93",
+    "name": "Trust Asset Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/f64fabc5-1e3f-4ad4-7362-747abd1bc000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.trustassetapp",
+    "nativeDeepLink": "trustassetapp://walletconnect",
+    "universalDeepLink": null
+  },
+  {
+    "id": "4622a2b2d6af1c9844944291e5e7351a6aa24cd7b23099efac1b2fd875da31a0",
+    "name": "Trust Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/7677b54f-3486-46e2-4e37-bf8747814f00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.wallet.crypto.trustapp",
+    "nativeDeepLink": "trust://",
+    "universalDeepLink": "https://link.trustwallet.com"
+  },
+  {
+    "id": "63488e0e0679da829dd964a670f2d0bf8643f52aa2d5a8a8539c3a4fcad6a78a",
+    "name": "Trustee Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/853e6f0a-ccb6-4b7e-e73b-89171a4e0a00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.trusteewallet",
+    "nativeDeepLink": "tw://",
+    "universalDeepLink": "https://trusteeglobal.com/link/Pxxum8Yt"
+  },
+  {
+    "id": "4b9e4f5c43c268174b6e0fac0fcb79f3662f6818c5a802458e2233b2dd436db2",
+    "name": "Trustee Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/9870dc31-9eb2-4f7c-3ebf-9ead998e9b00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.trusteewallet",
+    "nativeDeepLink": "tw://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "38692c32358198bc36b2775615ae615ad0f40404452993de2384ef64b2c5ca61",
+    "name": "TrustKeys Web3 SocialFi",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/35644c6b-c6f3-4e45-b68b-e888c21afd00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.trustkeysnetwork",
+    "nativeDeepLink": "TKwc://",
+    "universalDeepLink": "https://trustkeys.network/"
+  },
+  {
+    "id": "12f913ed1cba36d11c175ffaea4157864f3363a690ecf3cc24e9683ef9ce2915",
+    "name": "TuCOP Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/2d38bfd6-85dc-41b5-a125-a0eca4100200?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "org.tucop",
+    "nativeDeepLink": "myapp://tucop",
+    "universalDeepLink": null
+  },
+  {
+    "id": "9e14926bb64fa2ff359c3acbd75bb675b09efa6f72aed049616a053827140025",
+    "name": "U2U Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/03bca3fc-c191-4877-592d-0b0d6557c900?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "org.u2u.wallet",
+    "nativeDeepLink": "u2uwc://",
+    "universalDeepLink": "https://u2u.page.link/?apn=org.u2u.wallet&isi=6446194312&ibi=org.uniultra.wallet&link=https://uniultra.xyz/?referrer%3D"
+  },
+  {
+    "id": "ec1fddec78ac2ae4d3c2e1215740399885381819c91a4254006177df0e86688d",
+    "name": "UKey Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/c35479b7-c228-4859-1f9b-406493f00000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "app.ukey.io",
+    "nativeDeepLink": "ukey-wallet://",
+    "universalDeepLink": "https://app.ukey.io/wc/connect"
+  },
+  {
+    "id": "bfad79e3d89bfb915b1e230000179a8ffc8e04f3f78a396d2e4f3e1a51223529",
+    "name": "UKISS Hub",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/23f4c933-68e6-46f9-75b6-2d2905ca1300?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.ukiss.uhub.mobile",
+    "nativeDeepLink": "ukisshub://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "8eefa62c2f86b4c73bd68cf5cb178e09d15cbf21399ac5aea234d2b616e9ae9d",
+    "name": "una Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/78118aa8-8dfc-4742-86f7-b51d34e7cf00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "app.unawallet.app",
+    "nativeDeepLink": "unaWallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "c03dfee351b6fcc421b4494ea33b9d4b92a984f87aa76d1663bb28705e95034a",
+    "name": "Uniswap Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/bff9cf1f-df19-42ce-f62a-87f04df13c00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.uniswap.mobile",
+    "nativeDeepLink": "uniswap://",
+    "universalDeepLink": "https://uniswap.org/app"
+  },
+  {
+    "id": "cb7d4e00e9c6ba5ca1ef3b3464ce1ccf0468f7526fbda116106302525f929807",
+    "name": "Unity Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/09b4aad3-c007-40e7-ec8f-6a62585e6900?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.savl",
+    "nativeDeepLink": "savl://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "abcfa7caec0d196ce9a99b48ee6d562884f7e38252fe7520c1fc9f53bf0e2fbc",
+    "name": "UniversalProfiles",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/4537fb11-ada3-4009-37c2-c70ed4b46300?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.universaleverything.universalprofiles",
+    "nativeDeepLink": "io.universaleverything.universalprofiles://wallet-connect",
+    "universalDeepLink": null
+  },
+  {
+    "id": "8308656f4548bb81b3508afe355cfbb7f0cb6253d1cc7f998080601f838ecee3",
+    "name": "Unstoppable Domains",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/4725dda0-4471-4d0f-7adf-6bbe8b929c00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.unstoppabledomains.manager",
+    "nativeDeepLink": "unstoppabledomains://",
+    "universalDeepLink": "https://unstoppabledomains.com/mobile"
+  },
+  {
+    "id": "b3adea6c0b9172c4a49da31d264a7c4aacd70ea04f6af8e8977ecb974298b13c",
+    "name": "Unstoppable Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/a63cbfce-0726-4f94-9187-a761afb94400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.horizontalsystems.bankwallet",
+    "nativeDeepLink": "unstoppable.money://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "d9a4512e145f350693f9beea76326ca17a9af19857af17b3ccfd47f4ecc8bb65",
+    "name": "UP.io",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/f1a3f4d4-871f-42db-89ab-bb36b5c01f00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.up.wallet",
+    "nativeDeepLink": "up-io://",
+    "universalDeepLink": "https://up.io/app/"
+  },
+  {
+    "id": "ca57b69f837149751431765b8cd4ed94ec8f3730b802035764ecf3505b597409",
+    "name": "UPTN",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/5e656c3e-96ae-484f-c0c6-37bc908daa00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.uptn.wallet",
+    "nativeDeepLink": "uptn://dapp-web.uptn.io/",
+    "universalDeepLink": null
+  },
+  {
+    "id": "6af02afbc4ac21d339fb4290d048d48f9f73c3b1a307a994f0474329948c0e5a",
+    "name": "UTORG",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/39c77c0b-d6ea-419d-92b7-513a5eac2c00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.utorg",
+    "nativeDeepLink": "utorg://mainactivity",
+    "universalDeepLink": "https://link.utorg.com/zp0f"
+  },
+  {
+    "id": "fd3a59ae11f279a8cce8ec9b8b9a4eb3a7d8183ae11e1bf1df08d7bffaa52102",
+    "name": "UXUY Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/26597ace-b43b-4267-e907-118fd7c78000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.uxuy.fast",
+    "nativeDeepLink": "uxuyapp://",
+    "universalDeepLink": "https://link.uxuy.id"
+  },
+  {
+    "id": "d01c7758d741b363e637a817a09bcf579feae4db9f5bb16f599fdd1f66e2f974",
+    "name": "Valora",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/a03bfa44-ce98-4883-9b2a-75e2b68f5700?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "co.clabs.valora",
+    "nativeDeepLink": "celo://wallet",
+    "universalDeepLink": "https://valoraapp.com"
+  },
+  {
+    "id": "26237272f132a7bea0380cc54b25967e84ffa8d78b9d5d68fe65d08f6dece444",
+    "name": "Velgazm",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/5359630a-a5dd-4106-6482-4135bedce200?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.velgazm_new",
+    "nativeDeepLink": "velgazm://wc",
+    "universalDeepLink": null
+  },
+  {
+    "id": "0563e0724f434298dda37acaa704857ab293b48f1b39b765569a0072de43c0cf",
+    "name": "Verso",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/109d7c90-86ed-4ee0-e17d-3c87624ddf00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.btuprotocol.btu_wallet",
+    "nativeDeepLink": "verso://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "918b02c222329263fcf7cd555f4a511b55f4211ede0c3aa6b481fc790da0cd2f",
+    "name": "VKX WALLET",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/934348df-b211-4b09-ec11-ca8d29aa3f00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.vkinha.wallet",
+    "nativeDeepLink": "vkxwallet://wc",
+    "universalDeepLink": "https://vkinha.com/wallet"
+  },
+  {
+    "id": "bc661d7eabed5234520e4c26f9cc03377898f5add94b8d66f9fc3d795dd16fac",
+    "name": "Volsungar",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/2c9a67eb-605e-483c-d435-883a6c9ac400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.volsungar.wallet",
+    "nativeDeepLink": "volsungar://",
+    "universalDeepLink": "https://link.volsungar.com/wc"
+  },
+  {
+    "id": "7475258cb07b3e5fbab715aab27f383fc177154f4f0461790c57d97077a47547",
+    "name": "Volt Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/ffddf01a-337f-45c1-61c9-f6d3dd3d3c00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "finance.voltage.app",
+    "nativeDeepLink": "volt://",
+    "universalDeepLink": "https://get.voltage.finance"
+  },
+  {
+    "id": "d9c7ec94218de654cabce846bb26e6ca0ed8495b4cea9d39def83ba377caab20",
+    "name": "Volt: DeFi",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/51d783cb-0686-4ffa-e661-edca0c380000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "finance.voltage.app",
+    "nativeDeepLink": "volt://",
+    "universalDeepLink": "https://get.voltage.finance"
+  },
+  {
+    "id": "565c5bf4c46b4e1945867d8df722473ee8adc812c10d39da50c2fca4afd18726",
+    "name": "W3 Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/2f2d1309-de72-468b-3c04-77d0b9cd8500?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "app.w3wallet.w3wallet",
+    "nativeDeepLink": "w3wallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "fd17a3e21cd546a9e3d3f1ec9ff7ce7760978c2579b8d0bb6144c50bca16b86c",
+    "name": "Wali Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/8f9d0a7b-7836-48cd-9957-2bad43e94200?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.wali.wallet",
+    "nativeDeepLink": "wali://wali.network",
+    "universalDeepLink": null
+  },
+  {
+    "id": "2c724cd7e745016e6e4acccebdcc49464e13ec17ee23141c4fb2fe8004be2504",
+    "name": "Wallacy",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/9496c3d8-8b60-495f-bd55-c3af19519d00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.wallacy.cryptowallet",
+    "nativeDeepLink": "wallacy://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "34c19e0afafeb86ffa75df1c04445b8840450217e79d30abc6def9aa537fb7d6",
+    "name": "Wallet 3",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/34ab7558-9e64-4436-f4e6-9069f2533d00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "jp.co.chainbow.wallet3.mobile",
+    "nativeDeepLink": "wallet3://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "4e31b586738468554eefc1df9ec954ac81398b7660ded4e32750299ba7ea52df",
+    "name": "Wallet Today",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/2832b510-477f-4e76-09c4-376297d8e600?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.today.wallet",
+    "nativeDeepLink": "wallettoday://",
+    "universalDeepLink": "https://wallet2day.com/wc"
+  },
+  {
+    "id": "cce5ade88eff235ffae06f65c16f371ef8fa885cea6e01070e9e4878edcb05e7",
+    "name": "Wallet V",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/93ebe6e8-475c-46f1-5f0d-c43a7971be00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "prod.walletv.virgo",
+    "nativeDeepLink": "virgowallet://",
+    "universalDeepLink": "dl.walletv.io"
+  },
+  {
+    "id": "fb89797a75f4547b3c90c1eeb378d0df0423ea75606bb0193c4d873ef2e2150b",
+    "name": "Walletverse",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/ca91138e-0546-4cfe-071d-2181241dc600?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.walletverse",
+    "nativeDeepLink": "walletverse://",
+    "universalDeepLink": "https://wvv.to"
+  },
+  {
+    "id": "e4a1c7bbe47145640f527c91d25e5d8a4d3db0979668f2d3a95268cfb209f248",
+    "name": "walllet.com",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/5e1a1930-7505-48fd-be6d-648be854ee00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.walllet.app",
+    "nativeDeepLink": "walllet://",
+    "universalDeepLink": "https://walllet.com/"
+  },
+  {
+    "id": "c34de246586459b8a33e82efe825fec5f75ac6cee50098e76abfd8161de827f2",
+    "name": "WebAuth",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/93fcd24e-431d-421f-32c2-9563d725c800?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.metallicus.webauth",
+    "nativeDeepLink": "proton://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "4eb754ffaf9e177eef0ef26f82b7c2fdf8d7178c52682704bf3e7830071d3427",
+    "name": "WEMIX Play",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/3d7b7226-3005-4ace-4a35-d5f67aee2300?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.wemade.wemixplay",
+    "nativeDeepLink": "wpapp://wemixplay.com/",
+    "universalDeepLink": "https://wemixplay.onelink.me/Bq1n/cssdwedi"
+  },
+  {
+    "id": "fa9c3adc4f0bbe263db1565d200f776e5da900ead0f1914e0ecbf8b313d268e9",
+    "name": "WemixWallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/2439d9a4-2c1e-4d29-3bc6-654fc23a4b00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.wemixfoundation.wemixwallet",
+    "nativeDeepLink": "wemixwallet30://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "8b68d7428a3a80a7390a21c1a0019348d58b3d29bd4efbd9da3cb9f231251933",
+    "name": "Whitewallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/328ddfc6-0987-4981-69cf-c4bd7a19dc00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.clear.whitewallet",
+    "nativeDeepLink": "whitewallet://",
+    "universalDeepLink": "https://whitewalletapp.io"
+  },
+  {
+    "id": "0cb0c532b518aa842786d5167e13df22046bc9301b6677808d7134c3d7366a9d",
+    "name": "Wigwam",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/6200b005-f202-41d5-7bd9-966c970f6700?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.wigwamapp",
+    "nativeDeepLink": "wigwam://",
+    "universalDeepLink": "https://wigwam.app/"
+  },
+  {
+    "id": "cb604c517064f096976972384dc89948a5c850bca9b04866a443e10171d5965d",
+    "name": "Wombat",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/e675efa3-4ffc-4199-9c22-b9692baea900?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.getwombat.android",
+    "nativeDeepLink": "wombat-wc://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "b06656d0b04f34279945f36452bc4089e8b62a44e1d58f9e98807525ac37af06",
+    "name": "WOW EARN",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/1985a753-7fd8-4d75-4c50-7998ea68a800?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.hxg.wallet",
+    "nativeDeepLink": "ullawallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "7819f9cd07e8d7101a483087869f1e57b7d448f3ec5f4ef3eda63c19b926dc17",
+    "name": "Xellar",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/67b5a91d-a9ce-4268-d73d-b2f924a0b400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.xellar.wallets",
+    "nativeDeepLink": "xellar://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "48e11e0de0448147be34e0cccdeb84e90e7355e7f01f6f2bc5a31ad73a184985",
+    "name": "XENEA Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/a7f06d8c-3196-42c9-bcb3-410d260e3d00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.xenea.wallet",
+    "nativeDeepLink": "xenea://",
+    "universalDeepLink": "https://xenea.app"
+  },
+  {
+    "id": "c39d8ee468e50474fdf3a0bd6b981be404d4671e2702a3d633aae95bcbaa032a",
+    "name": "XFUN Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/a665f8f3-09ef-4d17-2bd0-26dca4518400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.xfun.wallet",
+    "nativeDeepLink": "xfunwallet://",
+    "universalDeepLink": "https://xfun.io"
+  },
+  {
+    "id": "4119a5b3e5ebc809b6a3680a280ae517b92fead02e4c07b7cec0d3385c87aee2",
+    "name": "xPortal",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/1bc53e49-1e7f-4129-4c87-3f8c7b91cb00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.elrond.maiar.wallet",
+    "nativeDeepLink": "xportal://",
+    "universalDeepLink": "https://xportal.app.link"
+  },
+  {
+    "id": "3e2f036d9c513d07af5468ad7672e42a27432a54eb1242e498d1a1be1f488c4d",
+    "name": "Xucre",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/6a560c0d-817d-4f62-ef21-b91636b30f00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "xucre.expo.client",
+    "nativeDeepLink": "xucre.expo.client://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "2a87d74ae02e10bdd1f51f7ce6c4e1cc53cd5f2c0b6b5ad0d7b3007d2b13de7b",
+    "name": "Xverse Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/785e20ef-c68c-4a85-6cb9-053443871e00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.secretkeylabs.xverse",
+    "nativeDeepLink": "xverse://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "6db5c2cd78ea5a09e820b7543dacc90bf3b1727e5bbaddff544b301de1f74f39",
+    "name": "Yo Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/a38db32b-8291-4d25-9aae-4bf4b6e6f300?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.yowallet.app",
+    "nativeDeepLink": "yo-wallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "f9b40e3615afddce7aea739d37d543b922e5f70a4f30b886b6b59062c43b2437",
+    "name": "YoWallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/750079a0-6372-4e32-d1af-fe8ec2bbe400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.yowallet.app",
+    "nativeDeepLink": "yo-wallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "4b0ef81be0008b86e873d57554e533a7b93b99dd6e9376ae4cbb4fea29b64269",
+    "name": "Yuse Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/2cd61458-59c2-4208-c8ee-98b5e0076b00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.yuse.wallet",
+    "nativeDeepLink": "yuse://wallet://",
+    "universalDeepLink": "https://yusewallet.page.link/tobR"
+  },
+  {
+    "id": "d166c283d59164538cdc50e414546a7433d5f62b9410c9aa563e4e2ec496a106",
+    "name": "Zelcore",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/9fa44558-a22b-47b1-87a4-b7655eb30700?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.zelcash.zelcore",
+    "nativeDeepLink": "zel://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "00e39f835988d1bb783b2a0748e18bc6278dec03492d00b0e102a466cd8b3d77",
+    "name": "Zelus",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/aeba2105-6c84-4642-f441-b3f5817ac400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.zelus.wallet",
+    "nativeDeepLink": "zeluswallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "32074fa3b78ad30b7847e28ce1ffd6aecbd36415156cfe9f5fe5aa15f31c596e",
+    "name": "Zelus Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/a173eba6-05b4-43f4-0df6-400563637b00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.zelus.wallet",
+    "nativeDeepLink": "zeluswallet://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "9414d5a85c8f4eabc1b5b15ebe0cd399e1a2a9d35643ab0ad22a6e4a32f596f0",
+    "name": "Zengo Wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/6133c399-ae32-4eba-0c5a-0fb84492bf00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.zengo.wallet",
+    "nativeDeepLink": "zengo://get.zengo.com/",
+    "universalDeepLink": "https://get.zengo.com/"
+  },
+  {
+    "id": "ecc4036f814562b41a5268adc86270fba1365471402006302e70169465b7ac18",
+    "name": "Zerion",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/73f6f52f-7862-49e7-bb85-ba93ab72cc00?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "io.zerion.android",
+    "nativeDeepLink": "zerion://",
+    "universalDeepLink": "https://wallet.zerion.io/wc"
+  },
+  {
+    "id": "482779b01ffd93b70c1f62e7905658ca1a6b02799f498b07cce423f7841aed75",
+    "name": "Zypto",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/4f6ae851-7fe6-41ac-5714-3a910b2ff400?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.zypto",
+    "nativeDeepLink": "zypto://",
+    "universalDeepLink": null
+  },
+  {
+    "id": "053ac0ac602e0969736941cf5aa07a3af57396d4601cb521a173a626e1015fb1",
+    "name": "αU wallet",
+    "logoUrl": "https://explorer-api.walletconnect.com/v3/logo/md/40489ba1-6eb0-49a1-a9d4-439fefe52000?projectId=8be9aa238897192da4a9391bba89e9c3",
+    "androidPackage": "com.kddi.wallet",
+    "nativeDeepLink": "alpha-u-wallet://",
+    "universalDeepLink": "https://alphauwallet.page.link/?apn=com.kddi.wallet&ibi=com.kddi.wallet&isi=6444401106&link=https://web.wallet.alpha-u.io/intro.html"
+  }
+]

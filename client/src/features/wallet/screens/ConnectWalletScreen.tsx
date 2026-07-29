@@ -1,10 +1,20 @@
-import Button from "@components/buttons/Button";
+// import { useAppKit, useAccount, useProvider } from "@reown/appkit-react-native";
+import { useRef } from "react";
 import { View, Text } from "react-native";
-import { useRouter } from "expo-router";
+import { TSheetRef } from "@types_/bottomSheet";
+import Button from "@components/buttons/Button";
 import WalletEth from "@assets/images/svgs/wallet-eth";
+import SelectWalletSheet from "../components/SelectWalletSheet";
+import useWallet from "../hooks/use-wallet";
 
 export default function ConnectWalletScreen() {
-  const router = useRouter();
+  const selectWalletSheetRef = useRef<TSheetRef | null>(null);
+  const {getWalletDetails} = useWallet();
+
+  const connectWallet = () => {
+    selectWalletSheetRef.current?.open();
+  };
+
   return (
     <View
       className="flex-1 dark:bg-background-dark bg-background"
@@ -27,15 +37,23 @@ export default function ConnectWalletScreen() {
           <Button
             size="md"
             fontSize="lg"
-            onPress={() => {
-              router.navigate("/create-business");
-            }}
+            onPress={connectWallet}
             variant="secondary"
             icon={{ name: "wallet", color: "white" }}
           >
             Connect Wallet
           </Button>
+          <Button
+            size="md"
+            fontSize="lg"
+            onPress={getWalletDetails}
+            variant="secondary"
+            icon={{ name: "wallet", color: "white" }}
+          >
+           get session
+          </Button>
         </View>
+        <SelectWalletSheet ref={selectWalletSheetRef} />
       </View>
     </View>
   );
