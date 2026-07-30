@@ -1,20 +1,26 @@
-import { getClient } from "../services/client.service";
+import { useWalletStore } from "@stores/wallet.store";
 import walletService from "../services/wallet.service";
-import { TWallet } from "../types/wallet";
+import { TWalletCatlog } from "../types/wallet";
+import { useRouter } from "expo-router";
 
 export default function useWallet() {
-  const connectWallet = async (wallet: TWallet) => {
+  const setWalletData = useWalletStore((state) => state.setWalletData);
+
+  const connectWallet = async (wallet: TWalletCatlog): Promise<boolean> => {
     const result = await walletService.connect(wallet.nativeDeepLink);
-    console.log(result);
+    if (result) {
+      setWalletData(result);
+      return true;
+    }
+    return false;
   };
 
-  const getWalletDetails = async () => {
-    await walletService.disconnect();
-  };
+  const getWalletDetails = async () => {};
 
-  const disconnectWallet = () => {};
+  const disconnectWallet = async () => {};
 
   return {
+    disconnectWallet,
     getWalletDetails,
     connectWallet,
   };

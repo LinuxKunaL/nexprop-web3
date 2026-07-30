@@ -1,14 +1,15 @@
-import IconButton from "@components/buttons/IconButton";
 import React, { RefObject } from "react";
-import { View, Text, Image, ScrollView } from "react-native";
-import { TSheetRef } from "@types_/bottomSheet";
-import BottomSheetContainer from "@components/overlays/BottomSheetContainer";
-import Button from "@components/buttons/Button";
 import Icon from "@components/display/Icon";
-import { useThemeStore } from "@stores/theme.store";
-import useSupportedWallets from "@features/wallet/hooks/use-supported-wallets";
 import useWallet from "../hooks/use-wallet";
-import { TWallet } from "../types/wallet";
+import { TSheetRef } from "@types_/bottomSheet";
+import Button from "@components/buttons/Button";
+import { useThemeStore } from "@stores/theme.store";
+import IconButton from "@components/buttons/IconButton";
+import { View, Text, Image, ScrollView, ToastAndroid } from "react-native";
+import BottomSheetContainer from "@components/overlays/BottomSheetContainer";
+import useSupportedWallets from "@features/wallet/hooks/use-supported-wallets";
+import { TWalletCatlog } from "../types/wallet";
+import { useRouter } from "expo-router";
 
 type Props = {
   ref: RefObject<TSheetRef | null>;
@@ -18,10 +19,19 @@ type Props = {
 export default function SelectWalletSheet({ ref, height = 600 }: Props) {
   const colors = useThemeStore((st) => st.colors);
   const { walletList } = useSupportedWallets();
-  
-  const {connectWallet} = useWallet();
+  const router = useRouter();
 
- 
+  const { connectWallet } = useWallet();
+
+  const handleWalletSelect = async (wallet: TWalletCatlog) => {
+    const isConnected = await connectWallet(wallet);
+    if (isConnected) {
+      router.navigate("/(auth)/create-business");
+    } else {
+      ToastAndroid.show("Wallet is not connected", 1000);
+    }
+  };
+
   return (
     <BottomSheetContainer ref={ref} height={height}>
       <View className="gap-1 flex-1">
@@ -71,9 +81,9 @@ export default function SelectWalletSheet({ ref, height = 600 }: Props) {
             </View>
             <ScrollView>
               <View className="gap-4">
-                {walletList.map((wallet) => (
+                {walletList.map((wallet, inx) => (
                   <View
-                    key={wallet.id}
+                    key={inx}
                     className="bg-primary/5 rounded-xl border-[1px] border-primary/30 p-2 flex-row items-center justify-between"
                   >
                     <View className="flex-row gap-2 items-center">
@@ -86,9 +96,7 @@ export default function SelectWalletSheet({ ref, height = 600 }: Props) {
                       </Text>
                     </View>
                     <Button
-                      onPress={() => {
-                        connectWallet(wallet);
-                      }}
+                      onPress={() => handleWalletSelect(wallet)}
                       variant="solid"
                       size="md"
                       fontSize="sm"

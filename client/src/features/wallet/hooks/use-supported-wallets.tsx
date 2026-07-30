@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import { NativeModules } from "react-native";
 import walletCatlog from "@data/wallet_catalog.json";
-import { TWallet } from "../types/wallet";
+import { TWalletCatlog } from "../types/wallet";
 
 function useSupportedWallets() {
   const { AppScanner } = NativeModules;
-  const [walletList, setWalletList] = useState<TWallet[]>([]);
+  const [walletList, setWalletList] = useState<TWalletCatlog[]>([]);
 
   useEffect(() => {
     AppScanner.getInstalledPackages().then((apps: string[]) => {
-      walletCatlog.map((wallet: TWallet) => {
+      walletCatlog.map((wallet: TWalletCatlog) => {
         apps.map((app) => {
           if (wallet.androidPackage === app) {
             setWalletList((prev) => [...prev, wallet]);
