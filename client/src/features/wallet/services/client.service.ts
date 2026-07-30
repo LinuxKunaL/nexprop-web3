@@ -7,7 +7,7 @@ import { SignClient } from "@walletconnect/sign-client";
 let client: InstanceType<typeof SignClient> | null = null;
 
 export const getClient = async () => {
-  if (client) client;
+  if (client) return client;
 
   client = await SignClient.init({
     projectId: "8be9aa238897192da4a9391bba89e9c3",
