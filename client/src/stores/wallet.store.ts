@@ -11,6 +11,7 @@ export const useWalletStore = create<TWalletStore>()((set) => ({
   isConnected: false,
   chainId: 0,
   topic: "",
+  nativeDeepLink:"",
   setWalletData: (data: TWalletConnection) => set({ ...data }),
   clearWallet: () =>
     set({
