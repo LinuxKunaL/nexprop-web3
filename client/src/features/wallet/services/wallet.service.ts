@@ -1,16 +1,28 @@
 import { Linking } from "react-native";
+import { SignatureLike } from "ethers";
 import { getClient } from "./client.service";
-import { TWalletConnection } from "../types/wallet";
+import { useWalletStore } from "@stores/wallet.store";
+import type { ErrorResponse } from "@walletconnect/jsonrpc-types";
+import { TWalletConnection, TWalletMethods } from "../types/wallet";
 
-const connect = async (deepLink: string): Promise<TWalletConnection | undefined> => {
+const connect = async (
+  deepLink: string,
+): Promise<TWalletConnection | undefined> => {
   const client = await getClient();
 
   try {
     const { uri, approval } = await client.connect({
       optionalNamespaces: {
         eip155: {
-          chains: ["eip155:1"],
-          methods: ["eth_requestAccounts"],
+          chains: ["eip155:1","eip155:31337"],
+          methods: [
+            "eth_requestAccounts",
+            "personal_sign",
+            "eth_sign",
+            "eth_signTypedData",
+            "eth_sendTransaction",
+            "wallet_switchEthereumChain",
+          ],
           events: ["accountsChanged", "chainChanged"],
         },
       },
@@ -23,6 +35,7 @@ const connect = async (deepLink: string): Promise<TWalletConnection | undefined>
     const session = await approval();
 
     return {
+      nativeDeepLink: deepLink,
       isConnected: true,
       topic: session.topic,
       chainId: Number(session.namespaces.eip155.chains?.[0]!),
@@ -32,10 +45,6 @@ const connect = async (deepLink: string): Promise<TWalletConnection | undefined>
     console.log("connectivity is rejected");
     return undefined;
   }
-};
-
-const getBalance = async () => {
-  const client = await getClient();
 };
 
 const disconnect = async (topic: string) => {
@@ -50,23 +59,62 @@ const disconnect = async (topic: string) => {
   });
 };
 
-const requestHalper = async (method: string, params: unknown[]) => {
+const signature = async (
+  address: string,
+  message: string,
+): Promise<SignatureLike | undefined> => {
+  if (!address && !message) {
+    console.log("Fialds are required");
+    return;
+  }
+  try {
+    const result = await walletRequest<SignatureLike>("personal_sign", [
+      message,
+      address,
+    ]);
+    return result;
+  } catch (error) {
+    if ((error as ErrorResponse)?.code == 5000) {
+      console.log("User Reject for sign");
+    }
+  }
+};
+
+const createProperty = async () => {
+  // const data;
+
+  const result = await walletRequest("eth_sendTransaction", [{}]);
+};
+
+const walletRequest = async <T>(
+  method: TWalletMethods,
+  params: unknown[],
+): Promise<T> => {
   const client = await getClient();
+  const { nativeDeepLink } = useWalletStore.getState();
 
   const session = client.session.getAll()[0];
-  const chainId = session.namespaces.eip155.chains?.[0]!;
+  const chainId = session.namespaces.eip155.chains?.[1]!;
 
-  console.log(session.topic);
-  console.log(chainId);
-
-  return client.request({
+  const promise = client.request<T>({
     topic: session.topic,
     chainId,
     request: {
-      method,
-      params,
+      method: method,
+      params: params,
     },
   });
+
+  if (nativeDeepLink) {
+    await Linking.openURL(nativeDeepLink);
+  }
+  return await promise;
 };
 
-export default { connect, disconnect, requestHalper };
+export default {
+  connect,
+  disconnect,
+  signature,
+  createProperty,
+  walletRequest,
+};
