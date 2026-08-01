@@ -10,15 +10,21 @@ import "./libraries/Errors.sol";
 import "./interfaces/IAccessManager.sol";
 import "./interfaces/IPropertyNFT.sol";
 import "./interfaces/IEscrow.sol";
-import "./AccessManager.sol";
 
-contract Escrow is IEscrow, AccessManager {
+contract Escrow is IEscrow {
     IPropertyNFT public propertyNFT;
     IAccessManager public accessManager;
 
     constructor(address propertyNFTAddress, address accessManagerAddress) {
         propertyNFT = IPropertyNFT(propertyNFTAddress);
         accessManager = IAccessManager(accessManagerAddress);
+    }
+
+    modifier onlyMarketplace() {
+        if (!accessManager.isMarketplace(msg.sender)) {
+            revert OnlyAccessByMarketplace();
+        }
+        _;
     }
 
     uint256 public nextEscrowId = 0;

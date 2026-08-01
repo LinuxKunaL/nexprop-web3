@@ -11,13 +11,11 @@ import "./libraries/Structs.sol";
 
 import "./interfaces/IAccessManager.sol";
 import "./interfaces/IPropertyNFT.sol";
-import "./AccessManager.sol";
 
 contract PropertyNFT is
     ERC721URIStorage,
     Ownable(msg.sender),
-    IPropertyNFT,
-    AccessManager
+    IPropertyNFT
 {
     IAccessManager public accessManager;
 
@@ -25,6 +23,20 @@ contract PropertyNFT is
         address accessManagerAddress
     ) ERC721("nexprop main token creation", "NXP") {
         accessManager = IAccessManager(accessManagerAddress);
+    }
+
+    modifier onlyMarketplace() {
+        if (!accessManager.isMarketplace(msg.sender)) {
+            revert OnlyAccessByMarketplace();
+        }
+        _;
+    }
+
+    modifier onlyEscrow() {
+        if (!accessManager.isEscrow(msg.sender)) {
+            revert OnlyAccessByEscrow();
+        }
+        _;
     }
 
     uint256 public nextTokenId = 0;

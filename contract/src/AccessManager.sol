@@ -30,17 +30,4 @@ contract AccessManager is IAccessManager {
         return account == escrow;
     }
 
-    modifier onlyMarketplace() {
-        if (!(isMarketplace(msg.sender))) {
-            revert OnlyAccessByMarketplace();
-        }
-        _;
-    }
-
-    modifier onlyEscrow() {
-        if (!(isEscrow(msg.sender))) {
-            revert OnlyAccessByEscrow();
-        }
-        _;
-    }
 }

@@ -11,9 +11,8 @@ import "./libraries/Enums.sol";
 import "./libraries/Structs.sol";
 import "./libraries/Errors.sol";
 
-import "./AccessManager.sol";
 
-contract Auction is IAuction, AccessManager {
+contract Auction is IAuction {
     IPropertyNFT public propertyNFT;
     IAccessManager public accessManager;
 
@@ -22,6 +21,14 @@ contract Auction is IAuction, AccessManager {
         accessManager = IAccessManager(accessManagerAddress);
     }
 
+
+    modifier onlyMarketplace() {
+        if (!accessManager.isMarketplace(msg.sender)) {
+            revert OnlyAccessByMarketplace();
+        }
+        _;
+    }
+    
     uint public nextAuctionId = 0;
 
     mapping(uint => Structs.Auction) auctions;
