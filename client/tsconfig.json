@@ -15,7 +15,9 @@
       "@data/*": ["./src/data/*"],
       "@features/*": ["./src/features/*"],
       "@stores/*": ["./src/stores/*"],
-      "@services/*": ["./src/services/*"]
+      "@services/*": ["./src/services/*"],
+      "@abi/*": ["./src/abi/*"],
+      "@config": ["./src/config.ts"]
     }
   },
   "include": [
@@ -23,6 +25,7 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts",
-    "nativewind-env.d.ts"
+    "nativewind-env.d.ts",
+    "env.d.ts"
   ]
 }

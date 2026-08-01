@@ -28,11 +28,20 @@ module.exports = function (api) {
             "@features": "./src/features",
             "@stores": "./src/stores",
             "@services": "./src/services",
+            "@abi": "./src/abi",
+            "@config":"./src/config.ts"
           },
           extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
         },
       ],
       "react-native-reanimated/plugin",
+      [
+        "module:react-native-dotenv",
+        {
+          moduleName: "@env",
+          path: ".env",
+        },
+      ],
     ],
   };
 };
