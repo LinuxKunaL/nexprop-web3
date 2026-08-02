@@ -24,12 +24,8 @@ export default function SelectWalletSheet({ ref, height = 600 }: Props) {
   const { connectWallet } = useWallet();
 
   const handleWalletSelect = async (wallet: TWalletCatlog) => {
-    const isConnected = await connectWallet(wallet);
-    if (isConnected) {
-      router.navigate("/(auth)/create-business");
-    } else {
-      ToastAndroid.show("Wallet is not connected", 1000);
-    }
+    ref.current?.close();
+    await connectWallet(wallet);
   };
 
   return (
