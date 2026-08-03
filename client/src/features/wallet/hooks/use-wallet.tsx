@@ -1,47 +1,60 @@
+import { useRouter } from "expo-router";
+import { useToast } from "@components/toast";
 import { useWalletStore } from "@stores/wallet.store";
 import walletService from "../services/wallet.service";
-import { TWalletCatlog } from "../types/wallet";
-import { v4 as uuidv4 } from "uuid";
-import { verifyMessage } from "ethers";
-import marketplaceService from "@services/blockchain/marketplace.service";
+import { TWalletCatlog, TWalletConnection } from "../types/wallet";
+import useSaveCurrentPath from "@hooks/other/use-save-current-path";
 
 export default function useWallet() {
   const { setWalletData } = useWalletStore();
+  const { savePath } = useSaveCurrentPath();
+  const toast = useToast();
+  const router = useRouter();
 
-  const connectWallet = async (wallet: TWalletCatlog): Promise<boolean> => {
-    const result = await walletService.connect(wallet.nativeDeepLink);
-    if (result) {
-      setWalletData(result);
-      const { address } = result;
-      // backend call logic here
-      const uuid = uuidv4();
+  const connectWallet = async (wallet: TWalletCatlog) => {
+    const result = walletService.connect(wallet.nativeDeepLink);
+    savePath();
 
-      const message = `Connect to NexProp\nNonce: ${uuid}`;
+    toast.promise(result, {
+      loading: "connecting to wallet !",
+      success: (params) => {
+        if (params) onSucess(params);
+        return {
+          title: `${params?.walletName} Connected!`,
+          message: "Redirecting to the business setup",
+        };
+      },
+      error: (e) => ({ title: "Connection Failed", message: String(e) }),
+    });
 
-      const signature = (await walletService.signature(address, message)) || "";
+    const onSucess = async (params: TWalletConnection) => {
+      setWalletData(params);
 
-      verifyMessage(message, signature);
+      if (params.authState == "connected") {
+        setTimeout(() => {
+          router.replace("/create-business");
+        }, 800);
+      }
 
-      console.log(verifyMessage(message, signature));
+      // const message = `Connect to NexProp\nNonce: ${uuid}`;
+
+      // const signature =
+      //   (await walletService.signature(params.address, message)) || "";
+
+      // verifyMessage(message, signature);
+
+      // console.log(verifyMessage(message, signature));
       //
-
-      return true;
-    }
-    return false;
+    };
   };
 
   const getWalletDetails = async () => {};
 
   const disconnectWallet = async () => {};
 
-  const createProperty = async () => {
-    await marketplaceService.createProperty();
-  };
-
   return {
     disconnectWallet,
     getWalletDetails,
     connectWallet,
-    createProperty,
   };
 }
