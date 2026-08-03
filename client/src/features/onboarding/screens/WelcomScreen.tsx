@@ -26,9 +26,7 @@ type TOnboardingSlides = {
 };
 
 export default function WelcomeScreen() {
-  const colors = useThemeStore((st) => st.colors);
   const [currentSlide, setCurrentSlide] = useState<number>(0);
-  const { theme } = useTheme();
   const translateX = useSharedValue<number>(0);
   const router = useRouter();
   const onboardingSlides: TOnboardingSlides[] = [
@@ -88,7 +86,7 @@ export default function WelcomeScreen() {
       translateX.value += 19.3;
       setCurrentSlide(currentSlide + 1);
     } else {
-      router.navigate("/login");
+      router.navigate("/connect-wallet");
     }
   };
 

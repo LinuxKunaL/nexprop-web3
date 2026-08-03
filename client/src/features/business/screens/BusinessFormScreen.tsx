@@ -7,13 +7,22 @@ import ScreenHeader from "@components/layout/ScreenHeader";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
+import { useWalletStore } from "@stores/wallet.store";
+import { TWalletConnection } from "@features/wallet/types/wallet";
 
 export default function BusinessFormScreen() {
   const { id } = useLocalSearchParams();
   const { top } = useSafeAreaInsets();
+  const { changeAuthState } = useWalletStore();
   const isEdit = id ? true : false;
 
   const router = useRouter();
+
+  const handleSubmit = () => {
+    router.navigate("/(protected)/(tabs)/home");
+    // changeAuthState("connected");
+  };
+
   return (
     <KeyboardAwareScrollView
       showsVerticalScrollIndicator={false}
@@ -72,9 +81,7 @@ export default function BusinessFormScreen() {
           variant="solid"
           fontSize="md"
           size="md"
-          onPress={() => {
-            router.navigate("/(protected)/(tabs)/home");
-          }}
+          onPress={handleSubmit}
         >
           Submit
         </Button>
