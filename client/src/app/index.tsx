@@ -1,7 +1,5 @@
-import { Redirect } from "expo-router";
+import AppGate from "./AppGate";
 
-const Index = () => {
-  return <Redirect href="/splash" />;
-};
-
-export default Index;
+export default function Index() {
+  return <AppGate />;
+}
