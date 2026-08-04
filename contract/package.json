@@ -4,7 +4,12 @@
   "type": "module",
   "scripts": {
     "node": "npx hardhat node",
-    "deploy:sm": "npx hardhat run scripts/deploy.ts --network localhost --show-stack-traces"
+    "error:collect": "node scripts/collect-errors.js",
+    "clean": "npx hardhat clean",
+    "compile": "npx hardhat compile",
+    "recompile": "npx hardhat clean && hardhat compile",
+    "abi:generate": "node scripts/generate-abi.js",
+    "deploy": "npx hardhat run scripts/deploy.js --network localhost --show-stack-traces"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-ethers": "^4.0.14",
