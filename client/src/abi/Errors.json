@@ -1,0 +1,248 @@
+[
+  {
+    "inputs": [],
+    "name": "AlreadyInitialized",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "AuctionEnded",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "AuctionNotActive",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "AuctionNotFound",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "BidTooLow",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidAuctionDuration",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NoRefundAvailable",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NotAuctionOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyAccessByMarketplace",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SellerCantBid",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "DocumentsNotVerified",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NotAuthorized",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "TimeExceededInvalid",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "AuctionNotEnded",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "CannotBuyOwnProperty",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "FundTransferFailed",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IncorrectPayment",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidPropertyStatus",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      }
+    ],
+    "name": "ERC721IncorrectOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "operator",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "ERC721InsufficientApproval",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "approver",
+        "type": "address"
+      }
+    ],
+    "name": "ERC721InvalidApprover",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "operator",
+        "type": "address"
+      }
+    ],
+    "name": "ERC721InvalidOperator",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      }
+    ],
+    "name": "ERC721InvalidOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "receiver",
+        "type": "address"
+      }
+    ],
+    "name": "ERC721InvalidReceiver",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      }
+    ],
+    "name": "ERC721InvalidSender",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "ERC721NonexistentToken",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyAccessByEscrow",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnableInvalidOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "OwnableUnauthorizedAccount",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "PropertyAlreadyInStatus",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "enum LockReason",
+        "name": "reason",
+        "type": "uint8"
+      }
+    ],
+    "name": "PropertyLocked",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SelfTransferNotAllowed",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "TokenNotFound",
+    "type": "error"
+  }
+]

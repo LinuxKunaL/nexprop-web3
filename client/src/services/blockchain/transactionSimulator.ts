@@ -4,7 +4,7 @@ import {
   TransactionRequest,
   CallExceptionError,
 } from "ethers";
-import errorsABI from "@abi/errors.json";
+import errorsABI from "@abi/Errors.json";
 import config from "@config";
 
 const errorsInterface = new Interface(errorsABI);

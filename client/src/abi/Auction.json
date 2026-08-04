@@ -1,0 +1,412 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "propertyNFTAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "accessManagerAddress",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [],
+    "name": "AuctionEnded",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "AuctionNotActive",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "AuctionNotFound",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "BidTooLow",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidAuctionDuration",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NoRefundAvailable",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NotAuctionOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyAccessByMarketplace",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SellerCantBid",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "accessManager",
+    "outputs": [
+      {
+        "internalType": "contract IAccessManager",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "auctionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "cancelAuction",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "auctionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      }
+    ],
+    "name": "clearPendingRefund",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "tokenId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "startPrice",
+            "type": "uint256"
+          },
+          {
+            "internalType": "enum AuctionDuration",
+            "name": "duration",
+            "type": "uint8"
+          }
+        ],
+        "internalType": "struct Structs.CreateAuctionParams",
+        "name": "params",
+        "type": "tuple"
+      }
+    ],
+    "name": "createAuction",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "auctionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "declareWinner",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getAllAuctions",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "auctionId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "tokenId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "highestBid",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "highestBidder",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "startPrice",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "startTime",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "endTime",
+            "type": "uint256"
+          },
+          {
+            "internalType": "enum AuctionStatus",
+            "name": "status",
+            "type": "uint8"
+          }
+        ],
+        "internalType": "struct Structs.Auction[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "auctionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getAuction",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "auctionId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "tokenId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "highestBid",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "highestBidder",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "startPrice",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "startTime",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "endTime",
+            "type": "uint256"
+          },
+          {
+            "internalType": "enum AuctionStatus",
+            "name": "status",
+            "type": "uint8"
+          }
+        ],
+        "internalType": "struct Structs.Auction",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "auctionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getHighestBid",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "auctionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getHighestBidder",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "auctionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      }
+    ],
+    "name": "getPendingRefund",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "auctionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "isAuctionEnded",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "nextAuctionId",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "auctionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "bidder",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "bidAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "placeBid",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "propertyNFT",
+    "outputs": [
+      {
+        "internalType": "contract IPropertyNFT",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

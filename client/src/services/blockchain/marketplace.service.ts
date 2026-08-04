@@ -1,5 +1,5 @@
 import { Interface, parseEther } from "ethers";
-import MarketplaceABI from "../../abi/Marketplace.json";
+import MarketplaceABI from "@abi/Marketplace.json";
 import { walletSendTransaction } from "./walletRequest";
 
 const Marketplace = new Interface(MarketplaceABI);
