@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import { View, Text } from "react-native";
-import useWallet from "../hooks/use-wallet";
 import { TSheetRef } from "@types_/bottomSheet";
 import Button from "@components/buttons/Button";
 import WalletEth from "@assets/images/svgs/wallet-eth";
