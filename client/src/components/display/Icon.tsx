@@ -24,7 +24,6 @@ export default function Icon({
 }: IconProps) {
   const { theme } = useTheme();
 
-  // ✅ hook inside component
   const colors = useThemeStore((st) => st.colors);
 
   const defaultColor = colors["background-dark"];
