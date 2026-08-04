@@ -3,16 +3,23 @@
   "version": "1.0.0",
   "description": "Nexprop Application",
   "scripts": {
-    "start:app": "cd client && npm run start",
-    "start:app:mirror": "scrcpy",
-    "start:app:android": "cd client && npm run android",
-    "install:client:packages": "cd client && npm install",
-    "install:server:packages": "cd server && npm install",
-    "build:android:debug-apk": "cd client/android && ./gradlew assembleDebug",
-    "build:android:release-apk": "cd client/android && ./gradlew assembleRelease",
-    "install:debug:apk": "adb install client/android/app/build/outputs/apk/debug/app-debug.apk",
-    "install:release:apk": "adb install client/android/app/build/outputs/apk/release/app-release.apk",
-    "server:start": "cd server && npm run dev"
+    "start:client": "cd client && npm run start",
+    "start:android": "cd client && npm run android",
+    "start:mirror": "scrcpy",
+    "start:server": "cd server && npm run dev",
+    
+    "build:android:debug": "cd client/android && ./gradlew assembleDebug",
+    "build:android:release": "cd client/android && ./gradlew assembleRelease",
+    
+    "install:client": "cd client && npm i",
+    "install:server": "cd server && npm i",
+    "install:apk:debug": "cd client && npm run apk:debug",
+    "install:apk:release": "cd client && npm run apk:release",
+
+    "contract:compile": "cd contract && npm run recompile",
+    "contract:abi": "cd contract && npm run abi:generate && npm run error:collect",
+    "contract:deploy": "cd contract && npm run deploy",
+    "contract:testnode": "cd contract && npm run node"
   },
   "keywords": [],
   "author": "",
