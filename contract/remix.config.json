@@ -1,11 +1,4 @@
 {
-  "script-runner": {
-    "defaultConfig": "ethers6",
-    "customConfig": {
-      "baseConfiguration": "default",
-      "dependencies": []
-    }
-  },
   "mcp": {
     "version": "1.0.0",
     "security": {
@@ -166,6 +159,13 @@
           ]
         }
       }
+    }
+  },
+  "script-runner": {
+    "defaultConfig": "ethers6",
+    "customConfig": {
+      "baseConfiguration": "default",
+      "dependencies": []
     }
   }
 }
