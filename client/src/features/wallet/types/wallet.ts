@@ -8,12 +8,17 @@ export type TWalletCatlog = {
 };
 
 export type TWalletConnection = {
-  isConnected: boolean;
+  authState: TAuthState;
   topic: string;
   address: string;
   chainId: number;
   nativeDeepLink:string;
+  walletName:string;
 };
+
+type TAuthState =
+  | "disconnected"
+  | "connected"
 
 export type TWalletMethods =
   | "eth_accounts"

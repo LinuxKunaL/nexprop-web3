@@ -4,17 +4,22 @@ import { getClient } from "./client.service";
 import { useWalletStore } from "@stores/wallet.store";
 import type { ErrorResponse } from "@walletconnect/jsonrpc-types";
 import { TWalletConnection, TWalletMethods } from "../types/wallet";
+import { usePathname } from "expo-router";
 
 const connect = async (
   deepLink: string,
 ): Promise<TWalletConnection | undefined> => {
   const client = await getClient();
 
+  if (client.session.getAll().length == 1) {
+    throw "Wallet is already connected";
+  }
+
   try {
     const { uri, approval } = await client.connect({
       optionalNamespaces: {
         eip155: {
-          chains: ["eip155:1","eip155:31337"],
+          chains: ["eip155:1", "eip155:31337"],
           methods: [
             "eth_requestAccounts",
             "personal_sign",
@@ -32,18 +37,19 @@ const connect = async (
       const walletDeepLink = `${deepLink}wc?uri=${encodeURIComponent(uri)}`;
       Linking.openURL(walletDeepLink);
     }
+
     const session = await approval();
 
     return {
-      nativeDeepLink: deepLink,
-      isConnected: true,
+      authState: "connected",
       topic: session.topic,
+      nativeDeepLink: deepLink,
+      walletName: session.peer.metadata.name,
       chainId: Number(session.namespaces.eip155.chains?.[0]!),
       address: session.namespaces.eip155.accounts[0].split(":")[2],
     };
   } catch (error: unknown) {
-    console.log("connectivity is rejected");
-    return undefined;
+    throw "Connection rejected by the user";
   }
 };
 
