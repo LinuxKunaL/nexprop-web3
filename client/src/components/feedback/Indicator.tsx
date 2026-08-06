@@ -2,12 +2,13 @@ import { View } from "react-native";
 import Animated, {
   withSpring,
   useAnimatedStyle,
+  SharedValue,
 } from "react-native-reanimated";
 import React from "react";
 
-export default function Indicator({ translateX }: { translateX: number }) {
+export default function Indicator({ translateX }: { translateX: SharedValue<number> }) {
   const animatedStyles = useAnimatedStyle(() => ({
-    transform: [{ translateX: withSpring(translateX * 2) }],
+    transform: [{ translateX: withSpring(translateX.get() * 2) }],
   }));
 
   return (
