@@ -21,7 +21,7 @@ export default function SelectWalletSheet({ ref, height = 600 }: Props) {
   const { walletList } = useSupportedWallets();
   const router = useRouter();
 
-  const { connectWallet } = useWallet();
+  const { connectWallet, loading } = useWallet();
 
   const handleWalletSelect = async (wallet: TWalletCatlog) => {
     ref.current?.close();
@@ -96,6 +96,7 @@ export default function SelectWalletSheet({ ref, height = 600 }: Props) {
                       variant="solid"
                       size="md"
                       fontSize="sm"
+                      disabled={loading}
                     >
                       Connect
                     </Button>

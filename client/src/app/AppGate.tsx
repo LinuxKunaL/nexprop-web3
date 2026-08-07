@@ -14,6 +14,9 @@ const AppGate = () => {
         router.replace("/home");
         return;
       }
+      if (authState == "signature_pending") {
+        router.replace("/connect-wallet");
+      }
       router.replace("/splash");
       return;
     }

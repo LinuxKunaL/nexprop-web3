@@ -4,16 +4,23 @@ import { getClient } from "./client.service";
 import { useWalletStore } from "@stores/wallet.store";
 import type { ErrorResponse } from "@walletconnect/jsonrpc-types";
 import { TWalletConnection, TWalletMethods } from "../types/wallet";
-import { usePathname } from "expo-router";
+
+function timeout(ms: number): Promise<never> {
+  return new Promise<never>((_, reject) => {
+    setTimeout(() => {
+      reject(new Error("Connection timed out"));
+    }, ms);
+  });
+}
 
 const connect = async (
   deepLink: string,
 ): Promise<TWalletConnection | undefined> => {
   const client = await getClient();
 
-  if (client.session.getAll().length == 1) {
-    throw "Wallet is already connected";
-  }
+  // if (client.session.getAll().length == 1) {
+  //   throw "Wallet is already connected";
+  // }
 
   try {
     const { uri, approval } = await client.connect({
@@ -38,10 +45,10 @@ const connect = async (
       Linking.openURL(walletDeepLink);
     }
 
-    const session = await approval();
+    const session = await Promise.race([approval(), timeout(40000)]);
 
     return {
-      authState: "connected",
+      authState: "disconnected",
       topic: session.topic,
       nativeDeepLink: deepLink,
       walletName: session.peer.metadata.name,
@@ -49,7 +56,12 @@ const connect = async (
       address: session.namespaces.eip155.accounts[0].split(":")[2],
     };
   } catch (error: unknown) {
-    throw "Connection rejected by the user";
+    if (error instanceof Error) {
+      throw error.message;
+    }
+    if ((error as ErrorResponse).code == 4001) {
+      throw "Connection is rejected by user";
+    }
   }
 };
 
@@ -74,22 +86,17 @@ const signature = async (
     return;
   }
   try {
-    const result = await walletRequest<SignatureLike>("personal_sign", [
+    const result = walletRequest<SignatureLike>("personal_sign", [
       message,
       address,
     ]);
-    return result;
+    return await Promise.race([result, timeout(30000)]);
   } catch (error) {
-    if ((error as ErrorResponse)?.code == 5000) {
-      console.log("User Reject for sign");
+    if ((error as ErrorResponse).code === 5000) {
+      return Promise.reject("User rejected for sign");
     }
+    return Promise.reject(error)
   }
-};
-
-const createProperty = async () => {
-  // const data;
-
-  const result = await walletRequest("eth_sendTransaction", [{}]);
 };
 
 const walletRequest = async <T>(
@@ -101,26 +108,28 @@ const walletRequest = async <T>(
 
   const session = client.session.getAll()[0];
   const chainId = session.namespaces.eip155.chains?.[1]!;
+  try {
+    const promise = client.request<T>({
+      topic: session.topic,
+      chainId,
+      request: {
+        method: method,
+        params: params,
+      },
+    });
 
-  const promise = client.request<T>({
-    topic: session.topic,
-    chainId,
-    request: {
-      method: method,
-      params: params,
-    },
-  });
-
-  if (nativeDeepLink) {
-    await Linking.openURL(nativeDeepLink);
+    if (nativeDeepLink) {
+      await Linking.openURL(nativeDeepLink);
+    }
+    return await promise;
+  } catch (error) {
+    return Promise.reject(error);
   }
-  return await promise;
 };
 
 export default {
   connect,
   disconnect,
   signature,
-  createProperty,
   walletRequest,
 };

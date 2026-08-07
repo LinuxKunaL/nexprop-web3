@@ -12,13 +12,15 @@ export type TWalletConnection = {
   topic: string;
   address: string;
   chainId: number;
-  nativeDeepLink:string;
-  walletName:string;
+  nativeDeepLink: string;
+  walletName: string;
 };
 
 type TAuthState =
   | "disconnected"
-  | "connected"
+  | "signature_pending"
+  | "signature_verified"
+  | "connected";
 
 export type TWalletMethods =
   | "eth_accounts"
