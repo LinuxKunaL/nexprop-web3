@@ -1,23 +1,34 @@
 import clsx from "clsx";
 import React from "react";
 import { View, Text } from "react-native";
-import Input from "@components/inputs/Input";
 import Button from "@components/buttons/Button";
 import ScreenHeader from "@components/layout/ScreenHeader";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
+import { useForm } from "react-hook-form";
+import InputController from "@components/inputs/InputController";
+import useBusiness from "../hook/use-business";
+
+export type TBusiness = {
+  id?: string;
+  businessName: string;
+  businessType: string;
+  businessAddress: string;
+};
 
 export default function BusinessFormScreen() {
   const { id } = useLocalSearchParams();
   const { top } = useSafeAreaInsets();
+  const { createBusiness, loading } = useBusiness();
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<TBusiness>();
   const isEdit = id ? true : false;
 
-  const router = useRouter();
-
-  const handleSubmit = () => {
-    router.navigate("/home");
-  };
+  const onSubmit = (data: TBusiness) => createBusiness(data);
 
   return (
     <KeyboardAwareScrollView
@@ -46,38 +57,45 @@ export default function BusinessFormScreen() {
           <Text className="font-medium dark:text-foreground-dark text-foreground">
             Business name
           </Text>
-          <Input placeholder="Enter business name" />
+          <InputController
+            isRequired
+            control={control}
+            errors={errors}
+            name="businessName"
+            placeholder="Enter business name"
+          />
         </View>
         <View className="gap-4" testID="form-input">
           <Text className="font-medium dark:text-foreground-dark text-foreground">
             Business Type
           </Text>
-          <Input placeholder="Enter business Type" />
+          <InputController
+            isRequired
+            control={control}
+            errors={errors}
+            name="businessType"
+            placeholder="Enter business Type"
+          />
         </View>
         <View className="gap-4" testID="form-input">
           <Text className="font-medium dark:text-foreground-dark text-foreground">
             Business address
           </Text>
-          <Input placeholder="Enter business address" />
-        </View>
-        <View className="gap-4" testID="form-input">
-          <Text className="font-medium dark:text-foreground-dark text-foreground">
-            Your name
-          </Text>
-          <Input placeholder="Enter your name" />
-        </View>
-        <View className="gap-4" testID="form-input">
-          <Text className="font-medium dark:text-foreground-dark text-foreground">
-            Contact
-          </Text>
-          <Input placeholder="Enter your contact" />
+          <InputController
+            isRequired
+            control={control}
+            errors={errors}
+            name="businessAddress"
+            placeholder="Enter business address"
+          />
         </View>
         <Button
+          size="md"
+          fontSize="md"
           className="mt-2"
           variant="solid"
-          fontSize="md"
-          size="md"
-          onPress={handleSubmit}
+          disabled={loading}
+          onPress={handleSubmit(onSubmit)}
         >
           Submit
         </Button>
