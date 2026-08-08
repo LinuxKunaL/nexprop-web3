@@ -1,5 +1,7 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import type { AxiosInstance } from "axios";
+import { useNavigationStore } from "@stores/navigation.store";
+import { useWalletStore } from "@stores/wallet.store";
+import { AxiosError, isAxiosError, type AxiosInstance } from "axios";
 
 const setInterceptors = (apiClient: AxiosInstance) => {
   apiClient.interceptors.request.use(
@@ -12,14 +14,21 @@ const setInterceptors = (apiClient: AxiosInstance) => {
 
       return config;
     },
-    (error) => Promise.reject(error),
+    (error) => Promise.resolve(error),
   );
 
   apiClient.interceptors.response.use(
     async (response) => response,
     async (error) => {
-      console.log(error);
-      return Promise.reject(error);
+      if (isAxiosError(error)) {
+        console.log(error.response?.data);
+        if (error.response?.data.code == "USER_UNVERIFIED") {
+          useWalletStore.getState().clearWallet();
+          useNavigationStore.getState().clearReturnRoute();
+          await AsyncStorage.removeItem("token");
+        }
+        return Promise.reject(error.response?.data);
+      }
     },
   );
 };
