@@ -5,25 +5,35 @@ import { useWalletStore } from "@stores/wallet.store";
 
 const AppGate = () => {
   const router = useRouter();
+
   const { returnRoute, clearReturnRoute } = useNavigationStore();
   const { authState } = useWalletStore();
 
   useEffect(() => {
-    if (!returnRoute) {
-      if (authState == "connected") {
-        router.replace("/home");
-        return;
-      }
-      if (authState == "signature_pending") {
-        router.replace("/connect-wallet");
-      }
-      router.replace("/splash");
+    if (returnRoute) {
+      router.replace(returnRoute);
+      clearReturnRoute();
       return;
     }
 
-    router.replace(returnRoute);
-    clearReturnRoute();
-  }, [returnRoute]);
+    switch (authState) {
+      case "connected":
+        router.replace("/home");
+        break;
+
+      case "signature_pending":
+        router.replace("/connect-wallet");
+        break;
+
+      case "business_pending":
+        router.replace("/create-business");
+        break;
+
+      default:
+        router.replace("/splash");
+        break;
+    }
+  }, [returnRoute, authState, router, clearReturnRoute]);
 
   return null;
 };
