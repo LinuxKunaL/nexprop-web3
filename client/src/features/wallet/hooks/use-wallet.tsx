@@ -7,6 +7,7 @@ import walletService from "../services/wallet.service";
 import authService from "@services/api/auth.service";
 import { TWalletCatlog, TWalletConnection } from "../types/wallet";
 import useSaveCurrentPath from "@hooks/other/use-save-current-path";
+import { usePersistentState } from "@hooks/other/use-persistent-state";
 
 export default function useWallet() {
   const { setWalletData, changeAuthState } = useWalletStore();
@@ -14,6 +15,7 @@ export default function useWallet() {
   const { savePath } = useSaveCurrentPath();
   const toast = useToast();
   const router = useRouter();
+  const [_, setToken] = usePersistentState("token");
 
   const connectWallet = async (wallet: TWalletCatlog) => {
     setLoading(true);
@@ -48,8 +50,9 @@ export default function useWallet() {
     const result = await authService.createUser({
       address: params.address,
       walletName: params.walletName,
-      name: "kunal",
+      name: null,
     });
+    setToken(result.jwtToken);
 
     try {
       if (!result.isNewUser) {
@@ -74,7 +77,7 @@ export default function useWallet() {
         }
       } else {
         setTimeout(() => {
-          changeAuthState("connected");
+          changeAuthState("business_pending");
           router.replace("/create-business");
         }, 800);
       }
@@ -92,7 +95,6 @@ export default function useWallet() {
 
     if (data.signatureVerify) {
       setLoading(false);
-      toast.success("Signature is verified", "Navigating to home screen");
       changeAuthState("connected");
       router.replace("/home");
     }
