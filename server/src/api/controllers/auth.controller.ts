@@ -3,7 +3,7 @@ import {
   verifySignatureValidator,
 } from "../validators/auth.validator.ts";
 import { StatusCodes } from "http-status-codes";
-import type { Request, Response } from "express";
+import type { NextFunction, Request, Response } from "express";
 import authService from "@/api/services/auth.service.ts";
 import { zodErrorDecoder } from "@/utils/zodErrorDecoder.ts";
 
@@ -18,7 +18,7 @@ const createAccount = async (req: Request, res: Response) => {
 
   try {
     const result = await authService.createUser(data);
-    return res.status(StatusCodes.OK).send(result);
+    res.status(StatusCodes.OK).send(result);
   } catch (error) {}
 };
 
@@ -33,8 +33,16 @@ const verifySignature = async (req: Request, res: Response) => {
 
   try {
     const result = await authService.verifySignature(data);
-    return res.status(StatusCodes.OK).json(result);
+    res.status(StatusCodes.OK).json(result);
   } catch (error) {}
 };
 
-export default { createAccount, verifySignature };
+const selfVerify = async (_: Request, res: Response, next: NextFunction) => {
+  try {
+    res.status(StatusCodes.OK).json({ message: "verified", success: true });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export default { createAccount, verifySignature, selfVerify };

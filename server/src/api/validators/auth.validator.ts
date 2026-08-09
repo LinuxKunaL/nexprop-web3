@@ -3,7 +3,7 @@ import { z } from "zod";
 const createUserZodSchema = z.object({
   address: z.string(),
   walletName: z.string(),
-  name: z.string(),
+  name: z.string().nullable(),
 });
 
 const verifySignatureZodSchema = z.object({

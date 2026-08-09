@@ -1,7 +1,13 @@
 import { apiClient } from "@api/client";
 import { API } from "@api/endpoints";
 
-const createUser = async (data: any) => {
+type TCreateUserRetrun = {
+  isNewUser: string;
+  nonce: string;
+  jwtToken: string;
+};
+
+const createUser = async (data: any): Promise<TCreateUserRetrun> => {
   const result = await apiClient.post(API.AUTH.CREATE, data);
   return result.data;
 };
@@ -11,4 +17,9 @@ const verifySignature = async (data: any) => {
   return result.data;
 };
 
-export default { createUser, verifySignature };
+const selfVerify = async () => {
+    const result = await apiClient.post(API.AUTH.SELFVERIFY);
+    return result.data;
+};
+
+export default { createUser, verifySignature, selfVerify };

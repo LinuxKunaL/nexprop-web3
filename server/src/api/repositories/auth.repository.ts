@@ -2,19 +2,19 @@ import { prisma } from "@/config/prisma.ts";
 import type { Prisma } from "@/prisma/generated/prisma/client.ts";
 
 class AuthRepository {
-  create(data: Prisma.userCreateInput) {
+  create(data: Prisma.UserCreateInput) {
     return prisma.user.create({
       data,
     });
   }
-  update(id: number, data: Prisma.userUpdateInput) {
+  update(id: number, data: Prisma.UserUpdateInput) {
     return prisma.user.update({
       where: { id },
       data,
     });
   }
   findByWalletAddress(address: string) {
-    return prisma.user.findFirst({
+    return prisma.user.findUnique({
       where: { address },
     });
   }
