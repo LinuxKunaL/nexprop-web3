@@ -2,11 +2,13 @@ import Icon from "@components/display/Icon";
 import React, { useContext } from "react";
 import { ProfileContext } from "../context";
 import Animated from "react-native-reanimated";
-import { View, Text, Image } from "react-native";
+import { View, Text, useWindowDimensions } from "react-native";
+import { Avatar as AvatarView } from "@components/display/Avatar";
 
 const Avatar = () => {
   const { headerHeight, onProfileLayout, profileZoom } =
     useContext(ProfileContext);
+  const { width } = useWindowDimensions();
 
   return (
     <View
@@ -17,19 +19,18 @@ const Avatar = () => {
       onLayout={onProfileLayout}
       className="overflow-hidden"
     >
-      <Animated.Image
-        className="absolute w-full h-44 opacity-30"
+      <Animated.View
+        className="absolute w-full h-44 opacity-30s overflow-hidden items-center justify-center"
         style={profileZoom}
-        src="https://cdn.pfpfinder.com/uploads/Link-Click-1705112947006.jpg"
-      />
+      >
+        <View className="bg-white/60 dark:bg-black/60 z-10 size-full absolute" />
+        <AvatarView isGradient size={width} shape="square" />
+      </Animated.View>
       <View
         testID="profile-photo"
         className="gap-2 justify-center items-center"
       >
-        <Image
-          className="size-28 rounded-full"
-          src="https://cdn.pfpfinder.com/uploads/Link-Click-1705112947006.jpg"
-        />
+        <AvatarView size={112} shape="circle" />
         <View className="gap-2 items-center">
           <Text className="text-foreground dark:text-foreground-dark text-xl font-medium">
             Kunal lokhande

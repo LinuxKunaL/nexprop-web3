@@ -5,6 +5,7 @@ import { useMeStore } from "@stores/me.store";
 import { useThemeStore } from "@stores/theme.store";
 import { View, Text, Pressable, Image } from "react-native";
 import NotificationBell from "@components/feedback/NotificationBell";
+import { Avatar } from "@components/display/Avatar";
 
 const Header = () => {
   const { locationModel, setLocationModel } = useContext(HomeContext);
@@ -22,10 +23,7 @@ const Header = () => {
         testID="profile-location"
         className="flex-row gap-3"
       >
-        <Image
-          className="size-14 rounded-full"
-          src="https://cdn.pfpfinder.com/uploads/Link-Click-1705112947006.jpg"
-        />
+        <Avatar shape="circle" size={56}/>
         <View className="flex-col gap-0">
           <Text className="font-medium text-foreground dark:text-foreground-dark">
             Location
