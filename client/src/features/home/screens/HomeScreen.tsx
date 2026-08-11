@@ -1,13 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { HomeContext, HomeProvider } from "../context";
 import LocationModel from "../components/LocationModel";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { ScrollView, View } from "react-native";
+import { BackHandler, ScrollView, View } from "react-native";
 import Header from "../components/Header";
 import Search from "../components/Search";
 import FeaturedProperties from "../components/FeaturedProperties";
 import LatestProperties from "../components/LatestProperties";
 import Categories from "../components/Categories";
+import { useNavigation } from "expo-router";
 
 export default function HomeScreen() {
   return (
@@ -19,6 +20,15 @@ export default function HomeScreen() {
 
 function HomeContent() {
   const { locationModel } = useContext(HomeContext);
+  const navigation = useNavigation();
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener("beforeRemove", (e) => {
+      e.preventDefault();
+      BackHandler.exitApp();
+    });
+    return unsubscribe;
+  }, []);
 
   return (
     <SafeAreaView
