@@ -8,6 +8,7 @@ import "hardhat/console.sol";
 
 import "./libraries/Errors.sol";
 import "./libraries/Structs.sol";
+import "./libraries/Events.sol";
 
 import "./interfaces/IAccessManager.sol";
 import "./interfaces/IPropertyNFT.sol";
@@ -69,6 +70,12 @@ contract PropertyNFT is
 
         properties[tokenId] = propertyData;
 
+        emit PropertyCreated(
+            tokenId,
+            params.creator,
+            params.metadataCID
+        );
+        
         return tokenId;
     }
 
