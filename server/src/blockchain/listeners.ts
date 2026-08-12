@@ -1,9 +1,6 @@
 import { propertyNFT } from "./contracts.ts";
+import events from "./events.ts";
 
 export async function startPropertyNFTListener() {
-  propertyNFT.on("PropertyCreated", (tokenId, owner, metadataCID) => {
-    console.log(tokenId);
-    console.log(owner);
-    console.log(metadataCID);
-  });
+  propertyNFT.on("PropertyCreated", events.propertyCreated);
 }
