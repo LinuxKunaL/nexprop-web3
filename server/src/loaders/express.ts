@@ -1,6 +1,7 @@
 import express, { type Express } from "express";
 import authRouters from "@/api/routers/auth.route.ts";
 import businessRouters from "@/api/routers/business.route.ts";
+import propertyRouters from "@/api/routers/property.route.ts";
 import cors from "cors";
 import userVerify from "@/middlewares/user-verify.middleware.ts";
 import { errorMiddleware } from "@/middlewares/error-middleware.ts";
@@ -15,6 +16,7 @@ export default function (): Express {
 
   app.use("/api/auth", authRouters);
   app.use("/api/business", businessRouters);
+  app.use("/api/property", propertyRouters);
 
   app.use(errorMiddleware);
 

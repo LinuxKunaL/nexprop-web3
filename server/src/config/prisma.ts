@@ -15,7 +15,6 @@ export const prisma =
   globalForPrisma.prisma ??
   new PrismaClient({
     adapter,
-    log: ["query", "warn", "error"],
   });
 
 globalForPrisma.prisma = prisma;
