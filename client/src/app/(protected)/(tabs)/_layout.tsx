@@ -7,7 +7,7 @@ export default function TabLayout() {
   return (
     <View className="flex-1 dark:bg-background-dark bg-background">
       <Tabs
-        screenOptions={{ headerShown: false, animation: "none" }}
+        screenOptions={{ headerShown: false, animation: "fade" }}
         tabBar={(props) => <CustomTabBar {...props} />}
       />
     </View>

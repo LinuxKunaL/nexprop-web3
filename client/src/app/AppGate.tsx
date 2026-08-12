@@ -6,7 +6,7 @@ import { useWalletStore } from "@stores/wallet.store";
 const AppGate = () => {
   const router = useRouter();
   const { returnRoute, clearReturnRoute } = useNavigationStore();
-  const { authState } = useWalletStore();
+  const authState = useWalletStore((state) => state.authState);
 
   useEffect(() => {
     if (returnRoute) {
