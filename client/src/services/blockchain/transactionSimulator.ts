@@ -5,20 +5,15 @@ import {
   CallExceptionError,
 } from "ethers";
 import errorsABI from "@abi/Errors.json";
-import config from "@config";
+import { web3provider } from "./web3provider";
 
 const errorsInterface = new Interface(errorsABI);
-
-const provider = new JsonRpcProvider(
-  config.blockchain.rpcUrl,
-  config.blockchain.chainId,
-);
 
 export const transactionSimulator = async (
   tx: TransactionRequest,
 ): Promise<{ success: boolean; error?: string }> => {
   try {
-    await provider.call(tx);
+    await web3provider.call(tx);
 
     return { success: true };
   } catch (error) {
