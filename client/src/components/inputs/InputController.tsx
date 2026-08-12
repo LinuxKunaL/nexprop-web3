@@ -7,8 +7,12 @@ import {
   FieldValues,
   FieldErrorsImpl,
 } from "react-hook-form";
-import { KeyboardTypeOptions, Text, View } from "react-native";
+import { KeyboardTypeOptions, View } from "react-native";
 import { startCase } from "lodash";
+import Animated, {
+  useAnimatedStyle,
+  withTiming,
+} from "react-native-reanimated";
 
 type Props<T extends FieldValues> = {
   control: Control<T>;
@@ -40,16 +44,27 @@ function InputController<T extends FieldValues>(props: Props<T>) {
           ? { required: `${startCase(props.name).toLowerCase()} is required` }
           : {}
       }
-      render={({ field: { value, onChange } }) => (
-        <View>
-          <Input {...props} onChangeText={onChange} value={value} />
-          {props.errors[props.name] && (
-            <Text className="mt-2 font-medium text-danger italic">
-              {props.errors[props.name]?.message?.toString()}
-            </Text>
-          )}
-        </View>
-      )}
+      render={({ field: { value, onChange }, fieldState }) => {
+        const error = fieldState.error;
+        const errorAnimatedStyle = useAnimatedStyle(() => ({
+          opacity: withTiming(error ? 1 : 0, {
+            duration: 250,
+          }),
+        }));
+        return (
+          <View>
+            <Input {...props} onChangeText={onChange} value={value} />
+            {error && (
+              <Animated.Text
+                style={errorAnimatedStyle}
+                className="mt-2 ml-2 font-medium text-danger italic"
+              >
+                {error?.message?.toString()}
+              </Animated.Text>
+            )}
+          </View>
+        );
+      }}
     />
   );
 }
