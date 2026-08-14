@@ -7,7 +7,12 @@ import {
   FieldValues,
   FieldErrorsImpl,
 } from "react-hook-form";
-import { KeyboardTypeOptions, View } from "react-native";
+import {
+  KeyboardTypeOptions,
+  TextInputAndroidProps,
+  TextInputProps,
+  View,
+} from "react-native";
 import { startCase } from "lodash";
 import Animated, {
   useAnimatedStyle,
@@ -17,13 +22,17 @@ import Animated, {
 type Props<T extends FieldValues> = {
   control: Control<T>;
   name: Path<T>;
+  numberOfLines?: number;
+  className?: string;
   requiredMessage?: string;
   pattern?: RegExp;
+  multiline?: boolean | undefined;
+  type?: "string" | "number";
   invalidMassage?: string;
-  errors: FieldErrorsImpl<T>;
   caretHidden?: boolean;
   isPassword?: boolean;
   placeholder?: string;
+  textAlignVertical?: TextInputAndroidProps["textAlignVertical"];
   onChangeText?: (parm: any) => void;
   onBlur?: (parm: any) => void;
   keyboardType?: KeyboardTypeOptions;
@@ -53,7 +62,13 @@ function InputController<T extends FieldValues>(props: Props<T>) {
         }));
         return (
           <View>
-            <Input {...props} onChangeText={onChange} value={value} />
+            <Input
+              {...props}
+              onChangeText={(value) =>
+                onChange(props.type == "number" ? Number(value) : value)
+              }
+              value={value}
+            />
             {error && (
               <Animated.Text
                 style={errorAnimatedStyle}

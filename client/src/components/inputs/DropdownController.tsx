@@ -8,12 +8,13 @@ import {
   FieldErrorsImpl,
 } from "react-hook-form";
 import { Dropdown } from "./Dropdown";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import { startCase } from "lodash";
 import Animated, {
   useAnimatedStyle,
   withTiming,
 } from "react-native-reanimated";
+import clsx from "clsx";
 
 type Props<T extends FieldValues> = {
   control: Control<T>;
@@ -22,13 +23,15 @@ type Props<T extends FieldValues> = {
   requiredMessage?: string;
   pattern?: RegExp;
   invalidMassage?: string;
-  errors: FieldErrorsImpl<T>;
+  disable?: boolean;
   placeholder?: string;
   onChange?: (parm: any) => void;
   onBlur?: (parm: any) => void;
   value?: string;
   defaultValue?: string;
   isRequired?: boolean;
+  type?: "string" | "number";
+  dropdownPosition?: "auto" | "top" | "bottom" | undefined;
 };
 
 const DropdownController = <T extends FieldValues>(props: Props<T>) => {
@@ -54,14 +57,19 @@ const DropdownController = <T extends FieldValues>(props: Props<T>) => {
           <View>
             <Dropdown
               className="selection:w-full placeholder:font-sans rounded-lg bg-card dark:bg-card-dark px-3 py-3 font-rubik border-[1px] border-transparent dark:border-border-dark/30"
+              dropdownPosition={props.dropdownPosition}
               itemTextClassName="dark:text-muted-dark text-muted text-base font-rubik rounded-lg"
               selectedTextClassName="dark:text-white text-foreground font-rubik text-base"
               data={props.data}
               labelField="label"
+              disable={props.disable || false}
               valueField="value"
               placeholder={props.placeholder}
-              placeholderClassName="text-muted-dark"
-              value={props.defaultValue || value}
+              placeholderClassName={clsx(
+                "text-muted-dark",
+                props.disable && "opacity-40 ",
+              )}
+              value={String(props.defaultValue) || String(value)}
               onBlur={onBlur}
               activeColor={colors["primary/20"]}
               containerClassName="overflow-hidden rounded-lg bg-card dark:bg-background-dark border-[1px] border-transparent dark:border-border-dark/30 border-border-dark/10 shadow-none"
@@ -69,7 +77,9 @@ const DropdownController = <T extends FieldValues>(props: Props<T>) => {
                 if (!item.value) {
                   return;
                 }
-                onChange(item.value);
+                onChange(
+                  props.type === "number" ? Number(item.value) : item.value,
+                );
                 props?.onChange?.(item);
               }}
             />
