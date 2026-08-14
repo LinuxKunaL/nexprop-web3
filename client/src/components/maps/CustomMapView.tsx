@@ -1,30 +1,25 @@
-import { Image, View } from "react-native";
+import { View } from "react-native";
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import MapView, {
-  LongPressEvent,
-  MapType,
-  Marker,
-  MarkerDragStartEndEvent,
-  Region,
-} from "react-native-maps";
+import MapView, { MapType, Region } from "react-native-maps";
 import IconButton from "@components/buttons/IconButton";
 import { useUserLocation } from "@hooks/map/use-user-location";
 import { useTheme } from "@providers/ThemeProvider";
 import { TCoords } from "./types";
-import clsx from "clsx";
 import MapMarker from "./MapMarker";
 import Button from "@components/buttons/Button";
 
 type Props = {
   onPinDrag?: ({ latitude, longitude }: TCoords) => null;
   onPinDrop?: ({ latitude, longitude }: TCoords) => any;
-  onSearchIcon?: ({ latitude, longitude }: TCoords) => any;
+  onSearchButton?: ({ latitude, longitude }: TCoords) => any;
   onLoad?: () => any;
   height?: "fixed" | "full";
-  initialRegion?: {
-    latitude: number;
-    longitude: number;
-  };
+  initialRegion?:
+    | {
+        latitude: number;
+        longitude: number;
+      }
+    | "live";
 };
 
 const darkMapStyle = [
@@ -58,6 +53,7 @@ const CustomMapView = (props: Props) => {
   const [mapType, setmapType] = useState<MapType>("standard");
   const mapRef = useRef<MapView>(null);
   const [isPinDrag, setIsPinDrag] = useState(false);
+  const [isInitalDragPin, setIsInitalDragPin] = useState(false);
 
   const [pinLocation, setPinLocation] = useState<TCoords>({
     longitude: 0,
@@ -65,7 +61,7 @@ const CustomMapView = (props: Props) => {
   });
 
   useEffect(() => {
-    if (props.initialRegion) {
+    if (typeof props.initialRegion == "object") {
       setPinLocation(props.initialRegion);
       mapRef.current?.animateToRegion(
         {
@@ -84,22 +80,6 @@ const CustomMapView = (props: Props) => {
     }
   }, [location]);
 
-  const handlePinFocus = useCallback(() => {
-    mapRef.current?.animateToRegion(
-      {
-        ...pinLocation,
-        latitudeDelta: 0.005,
-        longitudeDelta: 0.005,
-      },
-      300,
-    );
-  }, [pinLocation]);
-
-  const handleRefreshPin = () => {
-    setPinLocation(location);
-    handlePinFocus();
-  };
-
   const handleSwitchLayer = () => {
     if (mapType === "standard") {
       setmapType("hybrid");
@@ -110,15 +90,29 @@ const CustomMapView = (props: Props) => {
 
   const handleDragPin = ({ longitude, latitude }: Region) => {
     setPinLocation({ longitude, latitude });
-    if (props.onPinDrop) {
-      props.onPinDrop({ latitude, longitude });
+  };
+
+  const handleFindAddress = () => {
+    if (props.onSearchButton) {
+      props.onSearchButton(pinLocation);
     }
   };
 
-  const handleFindAddressByPinDrop = () => {
-    if (props.onSearchIcon) {
-      props.onSearchIcon(pinLocation);
+  const handleUserLocationChange = (coordinate: TCoords) => {
+    if (!isInitalDragPin) {
+      if (coordinate) {
+        mapRef.current?.animateToRegion(
+          {
+            ...coordinate,
+            latitudeDelta: 0.005,
+            longitudeDelta: 0.005,
+          },
+          300,
+        );
+        setPinLocation(coordinate);
+      }
     }
+    setIsInitalDragPin(true);
   };
 
   return (
@@ -133,6 +127,9 @@ const CustomMapView = (props: Props) => {
         zoomControlEnabled={true}
         showsUserLocation={true}
         showsMyLocationButton={true}
+        onUserLocationChange={(e) =>
+          handleUserLocationChange(e.nativeEvent.coordinate as TCoords)
+        }
         moveOnMarkerPress
         onMapLoaded={props.onLoad}
         customMapStyle={theme === "dark" ? darkMapStyle : []}
@@ -150,40 +147,11 @@ const CustomMapView = (props: Props) => {
           setIsPinDrag(true);
         }}
         onRegionChangeComplete={(e) => {
-          setTimeout(() => {
-            handleDragPin(e);
-            setIsPinDrag(false);
-          }, 1000);
+          handleDragPin(e);
+          setIsPinDrag(false);
         }}
       />
       <MapMarker isPinDrag={isPinDrag} />
-      <IconButton
-        testID="focus-pin"
-        color="white"
-        variant="primary"
-        name="map-marker"
-        onPress={handlePinFocus}
-        className="absolute bottom-14 left-2"
-      />
-      <IconButton
-        testID="pin-refresh"
-        color="white"
-        variant="primary"
-        name="refresh"
-        onPress={handleRefreshPin}
-        className="absolute bottom-2 left-14"
-      />
-      {props.onSearchIcon && (
-        <IconButton
-          disabled={isPinDrag}
-          color="white"
-          variant="primary"
-          name="map-search"
-          testID="search-address"
-          className="absolute bottom-14 left-14"
-          onPress={handleFindAddressByPinDrop}
-        />
-      )}
       <IconButton
         testID="layers"
         color="white"
@@ -192,6 +160,15 @@ const CustomMapView = (props: Props) => {
         onPress={handleSwitchLayer}
         className="absolute bottom-2 left-2"
       />
+      <Button
+        variant="solid"
+        size="md"
+        fontSize="sm"
+        className="absolute bottom-2 left-14"
+        onPress={handleFindAddress}
+      >
+        Fatch address
+      </Button>
     </View>
   );
 };
