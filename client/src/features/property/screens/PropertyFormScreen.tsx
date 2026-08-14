@@ -1,4 +1,4 @@
-import React, { ReactElement, useCallback, useState } from "react";
+import React, { ReactElement, useCallback, useContext, useState } from "react";
 
 import { clsx } from "clsx";
 import { View, Text } from "react-native";
@@ -13,26 +13,25 @@ import Location from "../components/form-screen/Location";
 import Media from "../components/form-screen/Media";
 import Document from "../components/form-screen/Documents";
 import BackButton from "@components/navigation/BackButton";
+import PropertyFormProvider, { PropertyFormContext } from "../form-context";
 
 const AddPropertyScreen = () => {
+  return (
+    <PropertyFormProvider>
+      <AddPropertyScreenContend />
+    </PropertyFormProvider>
+  );
+};
+
+const AddPropertyScreenContend = () => {
   const [currentTab, setCurrentTab] = useState("Overview");
+  const { handleSubmit } = useContext(PropertyFormContext);
 
   const TABS = ["Overview", "Location", "Media", "Document"];
 
-  const RenderTabScreen = useCallback((): ReactElement | undefined => {
-    switch (currentTab) {
-      case "Overview":
-        return <Overview />;
-      case "Location":
-        return <Location />;
-      case "Media":
-        return <Media />;
-      case "Document":
-        return <Document />;
-      default:
-        break;
-    }
-  }, [currentTab]);
+  const onSubmit = (params: any) => {
+    console.log(params);
+  };
 
   return (
     <SafeAreaView
@@ -74,10 +73,18 @@ const AddPropertyScreen = () => {
           ))}
         </View>
         <View className="mt-7 mb-3 px-4 flex-1" testID="rendered-tab-screens">
-          {RenderTabScreen()}
+          {currentTab === "Overview" && <Overview />}
+          {currentTab === "Location" && <Location />}
+          {currentTab === "Media" && <Media />}
+          {currentTab === "Document" && <Document />}
         </View>
         <View className="px-4 pb-6">
-          <Button variant="solid" size="md" fontSize="md">
+          <Button
+            onPress={handleSubmit(onSubmit)}
+            variant="solid"
+            size="md"
+            fontSize="md"
+          >
             Add Propriety
           </Button>
         </View>
