@@ -1,4 +1,4 @@
-import React, { ReactElement, useCallback, useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 
 import { clsx } from "clsx";
 import { View, Text } from "react-native";
@@ -13,7 +13,12 @@ import Location from "../components/form-screen/Location";
 import Media from "../components/form-screen/Media";
 import Document from "../components/form-screen/Documents";
 import BackButton from "@components/navigation/BackButton";
-import PropertyFormProvider, { PropertyFormContext } from "../form-context";
+import PropertyFormProvider, {
+  PropertyFormContext,
+  TCreateProperty,
+  TTabs,
+} from "../form-context";
+import { useToast } from "@components/toast";
 
 const AddPropertyScreen = () => {
   return (
@@ -24,13 +29,52 @@ const AddPropertyScreen = () => {
 };
 
 const AddPropertyScreenContend = () => {
-  const [currentTab, setCurrentTab] = useState("Overview");
-  const { handleSubmit } = useContext(PropertyFormContext);
+  const TABS = ["Overview", "Location", "Media", "Document"] as const;
+  const [currentTab, setCurrentTab] = useState<TTabs>("Overview");
 
-  const TABS = ["Overview", "Location", "Media", "Document"];
+  const { handleSubmit, setErrorTabLevel } = useContext(PropertyFormContext);
+  const toast = useToast();
 
-  const onSubmit = (params: any) => {
-    console.log(params);
+  const onSubmit = async (params: TCreateProperty) => {
+    try {
+      tabLevelValidation(params);
+      console.log(params);
+    } catch (error) {
+      if (error instanceof Error) {
+        toast.warning(error.message);
+        const cause = error.cause as TTabs;
+        setErrorTabLevel({ tab: cause, trigger: true });
+        setCurrentTab(cause);
+      }
+    }
+  };
+
+  const tabLevelValidation = (params: TCreateProperty) => {
+    if (
+      !(params.title && params.category && params.type && params.description)
+    ) {
+      throw new Error("Overview details are missing.", {
+        cause: "Overview",
+      });
+    }
+
+    if (!(Object.values(params.address).filter((i) => i).length === 5)) {
+      throw new Error("Location details are missing.", {
+        cause: "Location",
+      });
+    }
+
+    if (params.media.length !== 5) {
+      throw new Error("Media details are missing.", {
+        cause: "Media",
+      });
+    }
+
+    if (!params.documents.every((item) => item.name.trim())) {
+      throw new Error("Documents details are missing.", {
+        cause: "Document",
+      });
+    }
   };
 
   return (

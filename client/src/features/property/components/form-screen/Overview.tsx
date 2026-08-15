@@ -1,6 +1,5 @@
 import { clsx } from "clsx";
-import React, { useContext, useState } from "react";
-import Input from "@components/inputs/Input";
+import React, { useContext, useEffect, useState } from "react";
 import Icon from "@components/display/Icon";
 import { View, Text } from "react-native";
 import TouchableText from "@components/buttons/TouchableText";
@@ -18,19 +17,22 @@ import Switch from "@components/inputs/Switch";
 import { EListingType } from "@types_/enum";
 
 const Overview = () => {
-  const [listingType, setListingType] = useState<EListingType>(
-    EListingType.Direct,
-  );
-  const { control } = useContext(PropertyFormContext);
-
-  var va: any = [];
-
-  // console.log(va);
+  const { control, setValue, errorTabLevel, setErrorTabLevel, trigger } =
+    useContext(PropertyFormContext);
+  const listingType = useWatch({ control, name: "listingType" });
 
   const category = useWatch({
     control,
     name: "category",
   });
+
+  useEffect(() => {
+    if (errorTabLevel.trigger && errorTabLevel.tab === "Overview") {
+      trigger().finally(() => {
+        setErrorTabLevel({ tab: null, trigger: false });
+      });
+    }
+  }, [errorTabLevel, trigger]);
 
   return (
     <View className="flex-1">
@@ -79,7 +81,7 @@ const Overview = () => {
           </View>
           <View className="p-2 border border-transparent dark:border-border-dark/30 dark:bg-card-dark bg-card rounded-lg flex-row">
             <TouchableText
-              onPress={() => setListingType(EListingType.Direct)}
+              onPress={() => setValue("listingType", EListingType.Direct)}
               textClassName={clsx(
                 "text-center font-semibold",
                 listingType === EListingType.Direct
@@ -94,7 +96,7 @@ const Overview = () => {
               Direct Sale
             </TouchableText>
             <TouchableText
-              onPress={() => setListingType(EListingType.Auction)}
+              onPress={() => setValue("listingType", EListingType.Auction)}
               textClassName={clsx(
                 "text-center font-semibold",
                 listingType === EListingType.Auction

@@ -1,10 +1,19 @@
-import { createContext, useContext, useEffect } from "react";
-import { FieldValues, useForm, type UseFormReturn } from "react-hook-form";
-import { PROPERTY_CATEGORIES, TCategory } from "@data/propertyDropdown";
+import {
+  createContext,
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
+import { useForm, type UseFormReturn } from "react-hook-form";
+import { TCategory } from "@data/propertyDropdown";
+import { EListingType } from "@types_/enum";
 
 type Props = {
   children: React.ReactNode[] | React.ReactNode;
 };
+
+export type TTabs = "Overview" | "Location" | "Media" | "Document";
 
 type TPropertyAddress = {
   country: string;
@@ -23,7 +32,7 @@ export type TCreateProperty = {
   type: string;
   description: string;
   propertyStatus: number;
-  sellingType: string;
+  listingType: EListingType;
   fiatPrice: number;
   startingBidfiatPrice: number;
   auctionDuration: number;
@@ -36,21 +45,46 @@ export type TCreateProperty = {
   }[];
 };
 
+type TErrorTabLevel = {
+  trigger: boolean;
+  tab: TTabs | null;
+};
+
+type TCustomType = {
+  errorTabLevel: TErrorTabLevel;
+  setErrorTabLevel: Dispatch<SetStateAction<TErrorTabLevel>>;
+};
+
 export const PropertyFormContext = createContext<
-  UseFormReturn<TCreateProperty>
->({} as UseFormReturn<TCreateProperty>);
+  UseFormReturn<TCreateProperty> & TCustomType
+>({} as UseFormReturn<TCreateProperty> & TCustomType);
 
 export default function PropertyFormProvider({ children }: Props) {
   const formControl = useForm<TCreateProperty>({
     defaultValues: {
       propertyStatus: 0,
       media: [],
-      documents: [{}],
+      documents: [{ name: "" }],
+      address: {
+        country: "",
+        state: "",
+        addressLine: "",
+        coordinates: { latitude: 0, longitude: 0 },
+        zipCode: 0,
+      },
+      listingType: EListingType.Direct,
     },
   });
 
+  const [errorTabLevel, setErrorTabLevel] = useState<TErrorTabLevel>({
+    trigger: false,
+    tab: null,
+  });
+
   return (
-    <PropertyFormContext.Provider value={formControl}>
+    <PropertyFormContext.Provider
+      value={{ ...formControl, errorTabLevel, setErrorTabLevel }}
+    >
       {children}
     </PropertyFormContext.Provider>
   );

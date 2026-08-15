@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Icon from "@components/display/Icon";
 import { Controller } from "react-hook-form";
 import IconButton from "@components/buttons/IconButton";
@@ -7,7 +7,16 @@ import { PropertyFormContext } from "@features/property/form-context";
 import { View, ScrollView, Text, Pressable, Image } from "react-native";
 
 const Media = () => {
-  const { control } = useContext(PropertyFormContext);
+  const { control, errorTabLevel, setErrorTabLevel, trigger } =
+    useContext(PropertyFormContext);
+
+  useEffect(() => {
+    if (errorTabLevel.trigger && errorTabLevel.tab === "Media") {
+      trigger().finally(() => {
+        setErrorTabLevel({ tab: null, trigger: false });
+      });
+    }
+  }, [errorTabLevel, trigger]);
 
   const handleOnPick = async (
     index: number,
@@ -45,7 +54,7 @@ const Media = () => {
           name="media"
           rules={{
             validate: (value: any[]) =>
-              value.length === 4 && value.every(Boolean)
+              value.length === 5 && value.every(Boolean)
                 ? true
                 : "Please upload an image",
           }}

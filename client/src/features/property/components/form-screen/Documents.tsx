@@ -1,12 +1,9 @@
-import { View, Text, Pressable, ScrollView } from "react-native";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Icon from "@components/display/Icon";
 import { useThemeStore } from "@stores/theme.store";
-import { Controller, useFieldArray, useWatch } from "react-hook-form";
-import {
-  PropertyFormContext,
-  TCreateProperty,
-} from "@features/property/form-context";
+import { Controller, useFieldArray } from "react-hook-form";
+import { View, Text, Pressable, ScrollView } from "react-native";
+import { PropertyFormContext } from "@features/property/form-context";
 import { pick, types } from "@react-native-documents/picker";
 import IconButton from "@components/buttons/IconButton";
 import { getFileName } from "@utils/getFileType";
@@ -15,11 +12,20 @@ import { useToast } from "@components/toast";
 const Document = () => {
   const colors = useThemeStore((st) => st.colors);
   const toast = useToast();
-  const { control, setValue } = useContext(PropertyFormContext);
+  const { control, errorTabLevel, setErrorTabLevel, trigger } =
+    useContext(PropertyFormContext);
   const documents = useFieldArray({
     control,
     name: "documents",
   });
+
+  useEffect(() => {
+    if (errorTabLevel.trigger && errorTabLevel.tab === "Document") {
+      trigger().finally(() => {
+        setErrorTabLevel({ tab: null, trigger: false });
+      });
+    }
+  }, [errorTabLevel, trigger]);
 
   const handleOnPick = async (idx: number) => {
     try {
