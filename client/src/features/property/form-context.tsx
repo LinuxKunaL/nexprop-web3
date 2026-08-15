@@ -42,7 +42,11 @@ export const PropertyFormContext = createContext<
 
 export default function PropertyFormProvider({ children }: Props) {
   const formControl = useForm<TCreateProperty>({
-    defaultValues: { propertyStatus: 0, media: [], documents: [{}] },
+    defaultValues: {
+      propertyStatus: 0,
+      media: [],
+      documents: [{}],
+    },
   });
 
   return (
