@@ -90,6 +90,9 @@ const CustomMapView = (props: Props) => {
 
   const handleDragPin = ({ longitude, latitude }: Region) => {
     setPinLocation({ longitude, latitude });
+    if (props.onPinDrop) {
+      props.onPinDrop({ latitude, longitude });
+    }
   };
 
   const handleFindAddress = () => {
@@ -160,7 +163,7 @@ const CustomMapView = (props: Props) => {
         onPress={handleSwitchLayer}
         className="absolute bottom-2 left-2"
       />
-      <Button
+     {props.onSearchButton && <Button
         variant="solid"
         size="md"
         fontSize="sm"
@@ -168,7 +171,7 @@ const CustomMapView = (props: Props) => {
         onPress={handleFindAddress}
       >
         Fatch address
-      </Button>
+      </Button>}
     </View>
   );
 };
