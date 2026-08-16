@@ -60,7 +60,6 @@ export default function BusinessFormScreen() {
           <InputController
             isRequired
             control={control}
-            errors={errors}
             name="businessName"
             placeholder="Enter business name"
           />
@@ -72,7 +71,6 @@ export default function BusinessFormScreen() {
           <InputController
             isRequired
             control={control}
-            errors={errors}
             name="businessType"
             placeholder="Enter business Type"
           />
@@ -84,7 +82,6 @@ export default function BusinessFormScreen() {
           <InputController
             isRequired
             control={control}
-            errors={errors}
             name="businessAddress"
             placeholder="Enter business address"
           />

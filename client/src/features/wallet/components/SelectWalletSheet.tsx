@@ -1,15 +1,12 @@
 import React, { RefObject } from "react";
 import Icon from "@components/display/Icon";
-import useWallet from "../hooks/use-wallet";
 import { TSheetRef } from "@types_/bottomSheet";
 import Button from "@components/buttons/Button";
 import { useThemeStore } from "@stores/theme.store";
 import IconButton from "@components/buttons/IconButton";
-import { View, Text, Image, ScrollView, ToastAndroid } from "react-native";
+import { View, Text, Image, ScrollView } from "react-native";
 import BottomSheetContainer from "@components/overlays/BottomSheetContainer";
-import useSupportedWallets from "@features/wallet/hooks/use-supported-wallets";
-import { TWalletCatlog } from "../types/wallet";
-import { useRouter } from "expo-router";
+import { useSupportedWallets, useWallet, type TWalletCatlog } from "@wallet";
 
 type Props = {
   ref: RefObject<TSheetRef | null>;
@@ -19,7 +16,6 @@ type Props = {
 export default function SelectWalletSheet({ ref, height = 600 }: Props) {
   const colors = useThemeStore((st) => st.colors);
   const { walletList } = useSupportedWallets();
-  const router = useRouter();
 
   const { connectWallet, loading } = useWallet();
 

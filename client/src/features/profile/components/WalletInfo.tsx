@@ -2,11 +2,13 @@ import { View, Text } from "react-native";
 import React from "react";
 import Icon from "@components/display/Icon";
 import { useThemeStore } from "@stores/theme.store";
-
-
+import { useWalletStore } from "@stores/wallet.store";
+import shortAddress from "@utils/shortAddress";
+import useWallet from "@features/wallet/hooks/use-wallet";
 
 const WalletInfo = () => {
   const colors = useThemeStore((st) => st.colors);
+  const { address,balance } = useWalletStore();
   return (
     <View className="px-4 gap-5" testID="wallet-info">
       <View className="flex-row gap-2">
@@ -19,7 +21,7 @@ const WalletInfo = () => {
           </Text>
           <View className="flex-row gap-2 items-center">
             <Text className="text-muted dark:text-muted-dark font-sans">
-              0xAb5....aeC9B
+              {shortAddress(address)}
             </Text>
             <Icon
               name="clipboard-text-outline"
@@ -38,7 +40,7 @@ const WalletInfo = () => {
             Wallet Balance
           </Text>
           <Text className="text-muted dark:text-muted-dark font-sans">
-            12.34 ETH
+            {balance} ETH
           </Text>
         </View>
       </View>
