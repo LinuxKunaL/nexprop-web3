@@ -2,6 +2,15 @@ import { View } from "react-native";
 import MapPin from "@assets/images/svgs/map-pin.svg";
 import React from "react";
 import clsx from "clsx";
+import {
+  configureReanimatedLogger,
+  ReanimatedLogLevel,
+} from "react-native-reanimated";
+
+configureReanimatedLogger({
+  level: ReanimatedLogLevel.warn,
+  strict: false,
+});
 
 type Props = {
   isPinDrag: boolean;

@@ -7,9 +7,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import {
   View,
   Text,
-  Vibration,
   Pressable as PressView,
-  Platform,
 } from "react-native";
 import { useRouter } from "expo-router";
 import { useThemeStore } from "@stores/theme.store";

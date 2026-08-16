@@ -67,7 +67,7 @@ function InputController<T extends FieldValues>(props: Props<T>) {
               onChangeText={(value) =>
                 onChange(props.type == "number" ? Number(value) : value)
               }
-              value={value}
+              value={typeof value === "number" ? String(value) : value}
             />
             {error && (
               <Animated.Text

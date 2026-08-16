@@ -19,7 +19,7 @@ import clsx from "clsx";
 type Props<T extends FieldValues> = {
   control: Control<T>;
   name: Path<T>;
-  data: Object[];
+  data: { label: string; value: string }[];
   requiredMessage?: string;
   pattern?: RegExp;
   invalidMassage?: string;
@@ -69,7 +69,7 @@ const DropdownController = <T extends FieldValues>(props: Props<T>) => {
                 "text-muted-dark",
                 props.disable && "opacity-40 ",
               )}
-              value={String(props.defaultValue) || String(value)}
+              value={props.data.find((item) => item.value == value)}
               onBlur={onBlur}
               activeColor={colors["primary/20"]}
               containerClassName="overflow-hidden rounded-lg bg-card dark:bg-background-dark border-[1px] border-transparent dark:border-border-dark/30 border-border-dark/10 shadow-none"
