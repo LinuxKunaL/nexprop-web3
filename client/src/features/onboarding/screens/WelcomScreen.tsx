@@ -86,7 +86,7 @@ export default function WelcomeScreen() {
       translateX.value += 19.3;
       setCurrentSlide(currentSlide + 1);
     } else {
-      router.navigate("/connect-wallet");
+      router.replace("/connect-wallet");
     }
   };
 
@@ -115,7 +115,7 @@ export default function WelcomeScreen() {
           className="items-center z-10 justify-center flex-1 w-full px-4"
           testID="intro-content"
         >
-          <Indicator translateX={translateX.value} />
+          <Indicator translateX={translateX} />
           <Animated.View
             key={`title-${currentSlide}`}
             entering={FadeIn}
