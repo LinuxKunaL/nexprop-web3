@@ -18,6 +18,7 @@ import Animated, {
   useAnimatedStyle,
   withTiming,
 } from "react-native-reanimated";
+import { regexPattern, TRegexPattern } from "@utils/RegexPattern";
 
 type Props<T extends FieldValues> = {
   control: Control<T>;
@@ -25,7 +26,6 @@ type Props<T extends FieldValues> = {
   numberOfLines?: number;
   className?: string;
   requiredMessage?: string;
-  pattern?: RegExp;
   multiline?: boolean | undefined;
   type?: "string" | "number";
   invalidMassage?: string;
@@ -41,6 +41,7 @@ type Props<T extends FieldValues> = {
   editable?: boolean;
   onPress?: () => void;
   isRequired?: boolean;
+  pattern?: TRegexPattern;
 };
 
 function InputController<T extends FieldValues>(props: Props<T>) {
@@ -50,7 +51,10 @@ function InputController<T extends FieldValues>(props: Props<T>) {
       control={props.control}
       rules={
         props.isRequired
-          ? { required: `${startCase(props.name).toLowerCase()} is required` }
+          ? {
+              required: `${startCase(props.name).toLowerCase()} is required`,
+              pattern: props.pattern && regexPattern(props.pattern),
+            }
           : {}
       }
       render={({ field: { value, onChange }, fieldState }) => {
