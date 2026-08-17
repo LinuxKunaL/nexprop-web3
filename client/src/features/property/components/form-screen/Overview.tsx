@@ -34,6 +34,16 @@ const Overview = () => {
     }
   }, [errorTabLevel, trigger]);
 
+  const handleChangeListingType = (listingType: EListingType) => {
+    setValue("listingType", listingType);
+    if (listingType == EListingType.Auction) {
+      setValue("fiatPrice", null);
+    } else {
+      setValue("auctionDuration", null);
+      setValue("startingBidfiatPrice", null);
+    }
+  };
+
   return (
     <View className="flex-1">
       <KeyboardAwareScrollView
@@ -81,7 +91,7 @@ const Overview = () => {
           </View>
           <View className="p-2 border border-transparent dark:border-border-dark/30 dark:bg-card-dark bg-card rounded-lg flex-row">
             <TouchableText
-              onPress={() => setValue("listingType", EListingType.Direct)}
+              onPress={() => handleChangeListingType(EListingType.Direct)}
               textClassName={clsx(
                 "text-center font-semibold",
                 listingType === EListingType.Direct
@@ -96,7 +106,7 @@ const Overview = () => {
               Direct Sale
             </TouchableText>
             <TouchableText
-              onPress={() => setValue("listingType", EListingType.Auction)}
+              onPress={() => handleChangeListingType(EListingType.Auction)}
               textClassName={clsx(
                 "text-center font-semibold",
                 listingType === EListingType.Auction
@@ -119,6 +129,7 @@ const Overview = () => {
               name="fiatPrice"
               control={control}
               type="number"
+              pattern="not-zero"
               keyboardType="numeric"
               placeholder="Price in fiat, ex ₹ or $"
             />
@@ -131,6 +142,7 @@ const Overview = () => {
                 name="startingBidfiatPrice"
                 keyboardType="numeric"
                 control={control}
+                pattern="not-zero"
                 placeholder="Starting Bid Price in fiat, ex ₹ or $"
               />
               <DropdownController

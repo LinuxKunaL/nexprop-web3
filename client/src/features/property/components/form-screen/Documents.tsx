@@ -32,18 +32,14 @@ const Document = () => {
       const file = await pick({
         type: [types.doc, types.pdf, types.docx],
       });
-      documents.update(idx, {
-        name: file[0]?.name || "",
-        data: file[0]?.uri || "",
-        type: getFileName(file[0]?.nativeType || ""),
-      });
+      documents.update(idx, file[0]);
     } catch (error) {}
   };
 
   const handleAddDocumentField = () => {
     const documentLenght = documents.fields.length;
     if (documentLenght < 6) {
-      documents.append({ data: "", name: "", type: "pdf" });
+      documents.append(null);
     } else {
       toast.warning("Maximum 6 documents allowed");
     }

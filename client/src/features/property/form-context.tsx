@@ -7,7 +7,8 @@ import {
 } from "react";
 import { useForm, type UseFormReturn } from "react-hook-form";
 import { TCategory } from "@data/propertyDropdown";
-import { EListingType } from "@types_/enum";
+import { EAuctionDuration, EListingType } from "@types_/enum";
+import { DocumentPickerResponse, PickDirectoryResponse } from "@react-native-documents/picker";
 
 type Props = {
   children: React.ReactNode[] | React.ReactNode;
@@ -33,16 +34,12 @@ export type TCreateProperty = {
   description: string;
   propertyStatus: number;
   listingType: EListingType;
-  fiatPrice: number;
-  startingBidfiatPrice: number;
-  auctionDuration: number;
+  fiatPrice: number | null;
+  startingBidfiatPrice: number | null;
+  auctionDuration: EAuctionDuration | null;
   address: TPropertyAddress;
   media: string[];
-  documents: {
-    name: string;
-    data: string;
-    type: "pdf" | "doc";
-  }[];
+  documents: DocumentPickerResponse[] | null[];
 };
 
 type TErrorTabLevel = {
