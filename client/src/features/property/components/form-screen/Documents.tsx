@@ -6,7 +6,6 @@ import { View, Text, Pressable, ScrollView } from "react-native";
 import { PropertyFormContext } from "@features/property/form-context";
 import { pick, types } from "@react-native-documents/picker";
 import IconButton from "@components/buttons/IconButton";
-import { getFileName } from "@utils/getFileType";
 import { useToast } from "@components/toast";
 
 const Document = () => {
