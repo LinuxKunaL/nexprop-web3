@@ -1,8 +1,9 @@
-import type { ReactNode } from 'react';
+import { AxiosError } from "axios";
+import type { ReactNode } from "react";
 
-export type ToastType = 'success' | 'error' | 'warning' | 'processing';
+export type ToastType = "success" | "error" | "warning" | "processing";
 
-export type ToastPosition = 'top' | 'bottom';
+export type ToastPosition = "top" | "bottom";
 
 export interface ToastOptions {
   title: string;
@@ -67,24 +68,27 @@ export interface Alert {
   updatedAt: number;
 }
 
-export type ToastPromiseContent = Omit<ToastOptions, 'type' | 'position' | 'id'>;
+export type ToastPromiseContent = Omit<
+  ToastOptions,
+  "type" | "position" | "id"
+>;
 
 export type ToastPromiseArg<T> =
   | string
   | ToastPromiseContent
   | ((value: T) => string | ToastPromiseContent);
 
-export interface ToastPromiseOptions<T> {
+export interface ToastPromiseOptions<T, TError> {
   loading: string | ToastPromiseContent;
   success: ToastPromiseArg<T>;
-  error: ToastPromiseArg<unknown>;
-  presentation?: 'toast' | 'alert';
+  error: ToastPromiseArg<TError>;
+  presentation?: "toast" | "alert";
 }
 
 export type ToastShorthand = (
   title: string,
   message?: string,
-  options?: Partial<Omit<ToastOptions, 'title' | 'message' | 'type'>>
+  options?: Partial<Omit<ToastOptions, "title" | "message" | "type">>,
 ) => string;
 
 export interface ToastContextValue {
@@ -95,9 +99,9 @@ export interface ToastContextValue {
   error: ToastShorthand;
   warning: ToastShorthand;
   processing: ToastShorthand;
-  promise: <T>(
+  promise: <T, TError>(
     promise: Promise<T>,
-    options: ToastPromiseOptions<T>
+    options: ToastPromiseOptions<T, TError>,
   ) => Promise<T>;
   update: (id: string, options: Partial<ToastOptions>) => void;
   hide: (id: string) => void;

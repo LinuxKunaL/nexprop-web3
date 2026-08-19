@@ -1,7 +1,7 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useNavigationStore } from "@stores/navigation.store";
 import { useWalletStore } from "@stores/wallet.store";
-import { AxiosError, isAxiosError, type AxiosInstance } from "axios";
+import { isAxiosError, type AxiosInstance } from "axios";
 
 const setInterceptors = (apiClient: AxiosInstance) => {
   apiClient.interceptors.request.use(

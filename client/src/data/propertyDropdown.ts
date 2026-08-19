@@ -1,4 +1,4 @@
-import { AuctionDuration } from "@types_/enum";
+import { EAuctionDuration } from "@types_/enum";
 import { startCase } from "lodash";
 
 export const PROPERTY_CATEGORIES = [
@@ -60,10 +60,10 @@ export const PROPERTY_TYPES = {
   ],
 };
 
-let AUCTION_DURATION: Object[] = [];
+let AUCTION_DURATION: { label: string; value: string }[] = [];
 
 (() => {
-  Object.entries(AuctionDuration).map((i) => {
+  Object.entries(EAuctionDuration).map((i) => {
     if (typeof i[1] == "string") {
       AUCTION_DURATION.push({
         label: startCase(i[1]),
@@ -71,7 +71,7 @@ let AUCTION_DURATION: Object[] = [];
       });
     }
   });
-  AUCTION_DURATION.reverse()
+  AUCTION_DURATION.reverse();
 })();
 
 export { AUCTION_DURATION };
