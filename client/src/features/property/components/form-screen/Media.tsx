@@ -28,7 +28,7 @@ const Media = () => {
 
       const updated = [...(value || [])];
 
-      updated[index] = file[0].uri;
+      updated[index] = file[0];
 
       onChange(updated);
     } catch (error) {}
@@ -75,7 +75,7 @@ const Media = () => {
                         color="white"
                         onPress={() => handleRemoveMedia(0, onChange, value)}
                       />
-                      <Image className="size-full" source={{ uri: value[0] }} />
+                      <Image className="size-full" source={{ uri: value[0].uri }} />
                     </View>
                   ) : (
                     <>
@@ -105,7 +105,7 @@ const Media = () => {
                         />
                         <Image
                           className="size-full"
-                          source={{ uri: value[1] }}
+                          source={{ uri: value[1].uri }}
                         />
                       </View>
                     ) : (
@@ -132,7 +132,7 @@ const Media = () => {
                         />
                         <Image
                           className="size-full"
-                          source={{ uri: value[2] }}
+                          source={{ uri: value[2].uri }}
                         />
                       </View>
                     ) : (
@@ -161,7 +161,7 @@ const Media = () => {
                         />
                         <Image
                           className="size-full"
-                          source={{ uri: value[3] }}
+                          source={{ uri: value[3].uri }}
                         />
                       </View>
                     ) : (
@@ -188,7 +188,7 @@ const Media = () => {
                         />
                         <Image
                           className="size-full"
-                          source={{ uri: value[4] }}
+                          source={{ uri: value[4].uri }}
                         />
                       </View>
                     ) : (
