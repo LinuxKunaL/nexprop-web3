@@ -16,7 +16,6 @@ const userVerify = async (req: Request, res: Response, next: NextFunction) => {
 
     if (isVerify && user != null) {
       req.user = user;
-      console.log(user);
       next();
       return;
     }
