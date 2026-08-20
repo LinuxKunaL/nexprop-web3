@@ -4,7 +4,6 @@ import Icon from "@components/display/Icon";
 import { useThemeStore } from "@stores/theme.store";
 import { useWalletStore } from "@stores/wallet.store";
 import shortAddress from "@utils/shortAddress";
-import useWallet from "@features/wallet/hooks/use-wallet";
 
 const WalletInfo = () => {
   const colors = useThemeStore((st) => st.colors);

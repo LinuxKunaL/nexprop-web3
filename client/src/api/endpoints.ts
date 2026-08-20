@@ -6,7 +6,7 @@ export const API = {
   },
   PROPERTY: {
     LIST: "",
-    UPLOAD_NTFS: "",
+    METADATA: "/property/metadata",
   },
   PROILE: {
     ME: "",

@@ -2,8 +2,6 @@ import { View, Text } from "react-native";
 import React from "react";
 import Button from "@components/buttons/Button";
 
-
-
 const Action = () => {
   return (
     <View className="px-4 gap-5" testID="action">
@@ -13,16 +11,6 @@ const Action = () => {
         </Text>
       </View>
       <View className="flex-col gap-4" testID="button-list">
-        <Button
-          size="lg"
-          className="bg-[#EA4335]/20"
-          fontSize="md"
-          textColor="#EA4335"
-          variant="transparent"
-          icon={{ name: "logout", color: "#EA4335", size: 20 }}
-        >
-          Logout
-        </Button>
         <Button
           size="lg"
           className="bg-[#EA4335]/20"
