@@ -6,10 +6,20 @@ import { createJSONStorage, persist } from "zustand/middleware";
 export const useMeStore = create<TMe>()(
   persist(
     (set) => ({
+      username: null,
       userLocation: null,
+      setUserName: (value) =>
+        set({
+          username: value,
+        }),
       setUserLocation: (value) =>
         set({
           userLocation: value,
+        }),
+      clearUser: () =>
+        set({
+          username: null,
+          userLocation: null,
         }),
     }),
     {
