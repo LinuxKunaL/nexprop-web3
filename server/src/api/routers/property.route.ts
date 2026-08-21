@@ -1,6 +1,7 @@
 import { Router } from "express";
 import controller from "@/api/controllers/property.controller.ts";
 import multer from "multer";
+import { fileSave } from "@/middlewares/multer-middleware.ts";
 
 const router = Router();
 
@@ -9,6 +10,6 @@ router.get("/list", controller.getProperties);
 
 router.get("/by-business", controller.getPropertiesByBusiness);
 
-router.post("/metadata",controller.uploadMetadeta);
+router.post("/metadata", fileSave, controller.uploadMetadeta);
 
 export default router;

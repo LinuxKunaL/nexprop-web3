@@ -23,7 +23,10 @@ const getPropertiesByBusiness = async (req: Request, res: Response) => {
   } catch (error) {}
 };
 
-const uploadMetadeta = async (req: Request, res: Response) => {};
+const uploadMetadeta = async (req: Request, res: Response) => {
+  console.log(req.files);
+  // console.log(req.body);
+};
 
 export default {
   getProperties,
