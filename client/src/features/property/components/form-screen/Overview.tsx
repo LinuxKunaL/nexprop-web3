@@ -1,5 +1,5 @@
 import { clsx } from "clsx";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import Icon from "@components/display/Icon";
 import { View, Text } from "react-native";
 import TouchableText from "@components/buttons/TouchableText";

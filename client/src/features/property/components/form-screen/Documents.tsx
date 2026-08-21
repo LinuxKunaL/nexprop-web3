@@ -1,12 +1,13 @@
-import React, { useContext, useEffect } from "react";
 import Icon from "@components/display/Icon";
 import { useThemeStore } from "@stores/theme.store";
+import React, { useContext, useEffect } from "react";
 import { Controller, useFieldArray } from "react-hook-form";
 import { View, Text, Pressable, ScrollView } from "react-native";
 import { PropertyFormContext } from "@features/property/form-context";
 import { pick, types } from "@react-native-documents/picker";
 import IconButton from "@components/buttons/IconButton";
 import { useToast } from "@components/toast";
+import { getFileType } from "@utils/getFileType";
 
 const Document = () => {
   const colors = useThemeStore((st) => st.colors);
@@ -82,15 +83,17 @@ const Document = () => {
                     className="bg-card dark:bg-card-dark gap-2 h-24 rounded-lg justify-between flex-row p-4 items-center border-2 border-border border-dashed dark:border-border-dark/30"
                   >
                     {file.name ? (
-                      <View className="flex-row gap-2 items-center">
+                      <View className="flex-row gap-2 items-center flex-1">
                         <Icon
-                          name={
-                            file.type == "pdf" ? "file-pdf-box" : "file-word"
-                          }
+                          name={getFileType(file.type)}
                           size={24}
                           isThemed
                         />
-                        <Text className="font-medium dark:text-foreground-dark text-foreground text-base">
+                        <Text
+                          className="font-medium dark:text-foreground-dark text-foreground text-base w-4/5"
+                          numberOfLines={1}
+                          ellipsizeMode="middle"
+                        >
                           {file.name}
                         </Text>
                       </View>

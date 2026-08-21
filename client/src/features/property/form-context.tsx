@@ -8,7 +8,10 @@ import {
 import { useForm, type UseFormReturn } from "react-hook-form";
 import { TCategory } from "@data/propertyDropdown";
 import { EAuctionDuration, EListingType } from "@types_/enum";
-import { DocumentPickerResponse, PickDirectoryResponse } from "@react-native-documents/picker";
+import {
+  DocumentPickerResponse,
+  PickDirectoryResponse,
+} from "@react-native-documents/picker";
 
 type Props = {
   children: React.ReactNode[] | React.ReactNode;
@@ -38,7 +41,7 @@ export type TCreateProperty = {
   startingBidfiatPrice: number | null;
   auctionDuration: EAuctionDuration | null;
   address: TPropertyAddress;
-  media: string[];
+  media: DocumentPickerResponse[] | null[];
   documents: DocumentPickerResponse[] | null[];
 };
 
@@ -60,7 +63,7 @@ export default function PropertyFormProvider({ children }: Props) {
   const formControl = useForm<TCreateProperty>({
     defaultValues: {
       propertyStatus: 0,
-      media: [],
+      media: Array.from<DocumentPickerResponse>({ length: 5 }),
       documents: [{ name: "" }],
       address: {
         country: "",
@@ -77,6 +80,10 @@ export default function PropertyFormProvider({ children }: Props) {
     trigger: false,
     tab: null,
   });
+
+  formControl.register("fiatPrice");
+  formControl.register("auctionDuration");
+  formControl.register("startingBidfiatPrice");
 
   return (
     <PropertyFormContext.Provider
