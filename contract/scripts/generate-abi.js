@@ -6,7 +6,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const ARTIFACTS = path.join(__dirname, "../artifacts/src");
-const OUT_DIR = path.join("__dirname", "../../client/src/abi");
+const OUT_DIR_CLIENT = path.join("__dirname", "../../client/src/abi");
+const OUT_DIR_SERVER = path.join("__dirname", "../../server/src/blockchain/abi");
 const SKIP = new Set(["AccessManager.sol", "Struct.sol", "Structs.sol"]);
 
 (function walk(dir) {
@@ -36,11 +37,14 @@ const SKIP = new Set(["AccessManager.sol", "Struct.sol", "Structs.sol"]);
     }
 
     const contractName = path.basename(entry.name, ".json");
-    const outputPath = path.join(OUT_DIR, `${contractName}.json`);
+    const outputPathClient = path.join(OUT_DIR_CLIENT, `${contractName}.json`);
+    const outputPathServer = path.join(OUT_DIR_SERVER, `${contractName}.json`);
 
-    fs.mkdirSync(OUT_DIR, { recursive: true });
+    fs.mkdirSync(OUT_DIR_CLIENT, { recursive: true });
+    fs.mkdirSync(OUT_DIR_SERVER, { recursive: true });
 
-    fs.writeFileSync(outputPath, JSON.stringify(artifact.abi, null, 2));
+    fs.writeFileSync(outputPathClient, JSON.stringify(artifact.abi, null, 2));
+    fs.writeFileSync(outputPathServer, JSON.stringify(artifact.abi, null, 2));
 
     console.log(`✓ ${contractName}`);
   }
