@@ -19,6 +19,8 @@ import PropertyFormProvider, {
   TTabs,
 } from "../form-context";
 import { useToast } from "@components/toast";
+import { EListingType } from "@types_/enum";
+import useProperty from "../hooks/use-property";
 
 const AddPropertyScreen = () => {
   return (
@@ -31,14 +33,14 @@ const AddPropertyScreen = () => {
 const AddPropertyScreenContend = () => {
   const TABS = ["Overview", "Location", "Media", "Document"] as const;
   const [currentTab, setCurrentTab] = useState<TTabs>("Overview");
-
+  const { uploadMetadata } = useProperty();
   const { handleSubmit, setErrorTabLevel } = useContext(PropertyFormContext);
   const toast = useToast();
 
   const onSubmit = async (params: TCreateProperty) => {
     try {
       tabLevelValidation(params);
-      console.log(params);
+      uploadMetadata(params);
     } catch (error) {
       if (error instanceof Error) {
         toast.warning(error.message);
@@ -51,7 +53,13 @@ const AddPropertyScreenContend = () => {
 
   const tabLevelValidation = (params: TCreateProperty) => {
     if (
-      !(params.title && params.category && params.type && params.description)
+      !(params.title &&
+      params.category &&
+      params.type &&
+      params.description &&
+      params.listingType == EListingType.Direct
+        ? params.fiatPrice
+        : params.auctionDuration && params.startingBidfiatPrice)
     ) {
       throw new Error("Overview details are missing.", {
         cause: "Overview",
@@ -70,7 +78,7 @@ const AddPropertyScreenContend = () => {
       });
     }
 
-    if (!params.documents.every((item) => item.name.trim())) {
+    if (!params.documents.every((item) => item?.name?.trim())) {
       throw new Error("Documents details are missing.", {
         cause: "Document",
       });
@@ -124,7 +132,9 @@ const AddPropertyScreenContend = () => {
         </View>
         <View className="px-4 pb-6">
           <Button
-            onPress={handleSubmit(onSubmit)}
+            onPress={handleSubmit(onSubmit, (e) => {
+              console.log("error in form");
+            })}
             variant="solid"
             size="md"
             fontSize="md"
