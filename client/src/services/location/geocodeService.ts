@@ -15,7 +15,7 @@ type TDataRespose = {
       osm_key: string;
       osm_value: string;
       type: string;
-      postcode: string;
+      postcode: number;
       countrycode: string;
       name: string;
       city: string;
@@ -34,7 +34,7 @@ type TReturn = {
   status?: number;
   city?: string;
   country?: string;
-  postcode?: string;
+  postcode?: number;
   name?: string;
   state?: string;
 };
@@ -57,6 +57,6 @@ export const getPlaceName = async (coords: TCoords): Promise<TReturn|undefined> 
     }
     throw { status: 404 };
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 };
