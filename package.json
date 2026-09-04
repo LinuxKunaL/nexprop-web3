@@ -19,7 +19,7 @@
     "contract:compile": "cd contract && npm run recompile",
     "contract:abi": "cd contract && npm run abi:generate && npm run error:collect",
     "contract:deploy": "cd contract && npm run deploy",
-    "contract:testnode": "cd contract && npm run node"
+    "blockchain:testnode": "cd contract && npm run node"
   },
   "keywords": [],
   "author": "",

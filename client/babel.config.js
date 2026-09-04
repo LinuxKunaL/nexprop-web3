@@ -29,7 +29,9 @@ module.exports = function (api) {
             "@stores": "./src/stores",
             "@services": "./src/services",
             "@abi": "./src/abi",
-            "@config":"./src/config.ts"
+            "@config": "./src/config.ts",
+            "@api": "./src/api",
+            "@wallet": "./src/wallet",
           },
           extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
         },
