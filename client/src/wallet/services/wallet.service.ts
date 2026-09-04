@@ -18,15 +18,15 @@ const connect = async (
 ): Promise<TWalletConnection | undefined> => {
   const client = await getClient();
 
-  // if (client.session.getAll().length == 1) {
-  //   throw "Wallet is already connected";
-  // }
+  if (client.session.getAll().length == 1) {
+    throw "Wallet is already connected";
+  }
 
   try {
     const { uri, approval } = await client.connect({
       optionalNamespaces: {
         eip155: {
-          chains: ["eip155:31337"],
+          chains: ["eip155:31337","eip155:1"],
           methods: [
             "eth_requestAccounts",
             "personal_sign",
