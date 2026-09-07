@@ -63,7 +63,7 @@ export default function PropertyFormProvider({ children }: Props) {
   const formControl = useForm<TCreateProperty>({
     defaultValues: {
       propertyStatus: 0,
-      media: Array.from<DocumentPickerResponse>({ length: 5 }),
+      media: Array.from<DocumentPickerResponse>({ length: 0 }),
       documents: [{ name: "" }],
       address: {
         country: "",
