@@ -3,7 +3,7 @@ import { SignatureLike } from "ethers";
 import { getClient } from "./client.service";
 import { useWalletStore } from "@stores/wallet.store";
 import type { ErrorResponse } from "@walletconnect/jsonrpc-types";
-import { type TWalletMethods, TWalletConnection } from "@wallet";
+import { type TWalletMethods, TWalletCatlog, TWalletConnection } from "@wallet";
 
 function timeout(ms: number): Promise<never> {
   return new Promise<never>((_, reject) => {
@@ -14,7 +14,7 @@ function timeout(ms: number): Promise<never> {
 }
 
 const connect = async (
-  deepLink: string,
+  wallet: TWalletCatlog,
 ): Promise<TWalletConnection | undefined> => {
   const client = await getClient();
 
@@ -26,7 +26,7 @@ const connect = async (
     const { uri, approval } = await client.connect({
       optionalNamespaces: {
         eip155: {
-          chains: ["eip155:31337","eip155:1"],
+          chains: ["eip155:31337", "eip155:1"],
           methods: [
             "eth_requestAccounts",
             "personal_sign",
@@ -40,18 +40,17 @@ const connect = async (
     });
 
     if (uri) {
-      const walletDeepLink = `${deepLink}wc?uri=${encodeURIComponent(uri)}`;
+      const walletDeepLink = `${wallet.nativeDeepLink}wc?uri=${encodeURIComponent(uri)}`;
       Linking.openURL(walletDeepLink);
     }
 
     const session = await Promise.race([approval(), timeout(40000)]);
-
+    
     return {
       authState: "disconnected",
       topic: session.topic,
       balance: 0,
-      nativeDeepLink: deepLink,
-      walletName: session.peer.metadata.name,
+      wallet: wallet,
       chainId: Number(session.namespaces.eip155.chains?.[0]!),
       address: session.namespaces.eip155.accounts[0].split(":")[2],
     };
@@ -104,7 +103,9 @@ const walletRequest = async <T>(
   params: unknown[],
 ): Promise<T> => {
   const client = await getClient();
-  const { nativeDeepLink } = useWalletStore.getState();
+  const {
+    wallet: { nativeDeepLink },
+  } = useWalletStore.getState();
 
   const session = client.session.getAll()[0];
   const chainId = session.namespaces.eip155.chains?.[0]!;

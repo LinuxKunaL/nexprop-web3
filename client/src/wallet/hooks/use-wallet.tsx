@@ -9,9 +9,13 @@ import { type TWalletCatlog, TWalletConnection } from "@wallet";
 import useSaveCurrentPath from "@hooks/other/use-save-current-path";
 import { usePersistentState } from "@hooks/other/use-persistent-state";
 import { web3provider } from "@services/blockchain/web3provider";
+import { useNavigationStore } from "@stores/navigation.store";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function useWallet() {
-  const { setWalletData, changeAuthState, setBalance } = useWalletStore();
+  const { setWalletData, changeAuthState, setBalance, clearWallet, topic } =
+    useWalletStore();
+  const { clearReturnRoute } = useNavigationStore();
   const [loading, setLoading] = useState(false);
   const { savePath } = useSaveCurrentPath();
   const toast = useToast();
@@ -24,12 +28,12 @@ export default function useWallet() {
 
     try {
       const result = await toast.promise(
-        walletService.connect(wallet.nativeDeepLink),
+        walletService.connect(wallet),
         {
           loading: "Connecting to wallet!",
           success: (params) => {
             return {
-              title: `${params?.walletName} Connected!`,
+              title: `${params?.wallet.name} Connected!`,
             };
           },
           error: (e) => {
@@ -50,7 +54,7 @@ export default function useWallet() {
 
     const result = await authService.createUser({
       address: params.address,
-      walletName: params.walletName,
+      walletName: params.wallet.name,
       name: null,
     });
     setToken(result.jwtToken);
@@ -108,7 +112,12 @@ export default function useWallet() {
     return Number(ethers.formatEther(balance.toString()));
   };
 
-  const disconnectWallet = async () => {};
+  const disconnectWallet = async () => {
+    await walletService.disconnect(topic);
+    clearWallet();
+    clearReturnRoute();
+    await AsyncStorage.removeItem("token");
+  };
 
   return {
     loading,

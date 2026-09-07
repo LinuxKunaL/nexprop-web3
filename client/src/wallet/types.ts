@@ -13,8 +13,7 @@ export type TWalletConnection = {
   address: string;
   balance: number;
   chainId: number;
-  nativeDeepLink: string;
-  walletName: string;
+  wallet:TWalletCatlog
 };
 
 type TAuthState =

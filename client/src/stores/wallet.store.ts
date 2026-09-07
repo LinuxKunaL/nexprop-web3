@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { TWalletConnection } from "@wallet";
+import { TWalletCatlog, TWalletConnection } from "@wallet";
 
 export type TWalletStore = TWalletConnection & {
   setWalletData: (params: TWalletConnection) => void;
@@ -17,18 +17,16 @@ export const useWalletStore = create<TWalletStore>()(
       balance: 0,
       chainId: 0,
       topic: "",
-      nativeDeepLink: "",
-      walletName: "",
       authState: "disconnected",
+      wallet: {} as TWalletCatlog,
       setWalletData: (data: TWalletConnection) => set({ ...data }),
       clearWallet: () => {
         return set({
           address: "",
           chainId: 0,
-          balance:0,
+          balance: 0,
           topic: "",
-          nativeDeepLink: "",
-          walletName: "",
+          wallet: {} as TWalletCatlog,
           authState: "disconnected",
         });
       },
