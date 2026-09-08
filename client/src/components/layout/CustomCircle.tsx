@@ -40,7 +40,7 @@ const CircleWithStroke = ({
         width={size}
         height={size}
         style={[
-          StyleSheet.absoluteFillObject,
+          StyleSheet.absoluteFill,
           { transform: [{ rotate: "182deg" }] },
         ]}
       >
