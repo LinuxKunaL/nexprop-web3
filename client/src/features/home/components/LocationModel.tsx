@@ -27,6 +27,7 @@ const LocationModel = () => {
 
   const handleSubmitLocation = () => {
     if (selectedLocation) {
+      setLocationModel(false);
       setUserLocation(selectedLocation);
     }
   };
