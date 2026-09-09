@@ -1,17 +1,31 @@
-import {
-  createContext,
-  Dispatch,
-  SetStateAction,
-  useEffect,
-  useState,
-} from "react";
+import { createContext, Dispatch, SetStateAction, useState } from "react";
 import { useForm, type UseFormReturn } from "react-hook-form";
 import { TCategory } from "@data/propertyDropdown";
 import { EAuctionDuration, EListingType } from "@types_/enum";
-import {
-  DocumentPickerResponse,
-  PickDirectoryResponse,
-} from "@react-native-documents/picker";
+import { DocumentPickerResponse } from "@react-native-documents/picker";
+
+export type TDocumentBuffer = {
+  encrypted: {
+    version: number;
+    algorithm: string;
+    kdf: {
+      memory: number;
+      iterations: number;
+      parallelism: number;
+      hashLength: number;
+      algorithm: string;
+      salt: Uint8Array<ArrayBuffer>;
+    };
+    uri: string;
+    iv: Uint8Array<ArrayBufferLike>;
+  };
+  document: {
+    uri?: string | null;
+    name: string;
+    size: number;
+    type: string;
+  };
+};
 
 type Props = {
   children: React.ReactNode[] | React.ReactNode;
@@ -42,7 +56,7 @@ export type TCreateProperty = {
   auctionDuration: EAuctionDuration | null;
   address: TPropertyAddress;
   media: DocumentPickerResponse[] | null[];
-  documents: DocumentPickerResponse[] | null[];
+  documents: TDocumentBuffer[];
 };
 
 type TErrorTabLevel = {
@@ -64,7 +78,7 @@ export default function PropertyFormProvider({ children }: Props) {
     defaultValues: {
       propertyStatus: 0,
       media: Array.from<DocumentPickerResponse>({ length: 0 }),
-      documents: [{ name: "" }],
+      documents: [{ document: { name: "" } }],
       address: {
         country: "",
         state: "",

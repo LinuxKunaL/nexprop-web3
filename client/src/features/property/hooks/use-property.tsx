@@ -9,9 +9,9 @@ export default function useProperty() {
       for (const file of data.documents) {
         if (!file) continue;
         formData.append("documents", {
-          uri: file.uri,
-          name: file.name,
-          type: file.type || "application/octet-stream",
+          uri: file.encrypted.uri,
+          name: file.document.name,
+          type: file.document.type || "application/octet-stream",
         } as any);
       }
 
@@ -23,16 +23,15 @@ export default function useProperty() {
           type: file.type || "application/octet-stream",
         } as any);
       }
-
-      const metadata = {
-        name: data.title,
-        description: data.description,
-      };
-
-      formData.append("data", data as any);
-
-      const result = await propertyService.uploadMetadata(data);
-      console.log(result);
+      Object.entries(data).map(([key, value]) => {
+        if (!(key.includes("documents") || key.includes("media"))) {
+          if (key == "address") {
+            formData.append(key, JSON.stringify(value));
+          }
+          formData.append(key, value as string);
+        }
+      });
+      const result = await propertyService.uploadMetadata(formData);
     } catch (error) {}
   }
 

@@ -78,8 +78,18 @@ const AddPropertyScreenContend = () => {
       });
     }
 
-    if (!params.documents.every((item) => item?.name?.trim())) {
+    if (!params.documents.every(({ document }) => document.name?.trim())) {
       throw new Error("Documents details are missing.", {
+        cause: "Document",
+      });
+    }
+
+    if (
+      !params.documents.every(
+        ({ encrypted }) => encrypted.version !== undefined,
+      )
+    ) {
+      throw new Error("Documents is not encrypted.", {
         cause: "Document",
       });
     }

@@ -1,19 +1,26 @@
 import Icon from "@components/display/Icon";
 import { useThemeStore } from "@stores/theme.store";
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Controller, useFieldArray } from "react-hook-form";
 import { View, Text, Pressable, ScrollView } from "react-native";
-import { PropertyFormContext } from "@features/property/form-context";
+import {
+  PropertyFormContext,
+  TDocumentBuffer,
+} from "@features/property/form-context";
 import { pick, types } from "@react-native-documents/picker";
 import IconButton from "@components/buttons/IconButton";
 import { useToast } from "@components/toast";
 import { getFileType } from "@utils/getFileType";
+import Button from "@components/buttons/Button";
+import EncryptDocuments from "./EncryptDocuments";
 
 const Document = () => {
   const colors = useThemeStore((st) => st.colors);
+  const [isEncryptionBoxVisible, setIsEncryptionBoxVisible] = useState(false);
   const toast = useToast();
   const { control, errorTabLevel, setErrorTabLevel, trigger } =
     useContext(PropertyFormContext);
+
   const documents = useFieldArray({
     control,
     name: "documents",
@@ -29,20 +36,33 @@ const Document = () => {
 
   const handleOnPick = async (idx: number) => {
     try {
-      const file = await pick({
+      const [{ name, uri, size, type }] = await pick({
         type: [types.doc, types.pdf, types.docx],
       });
-      documents.update(idx, file[0]);
+      if (name && uri && size && type) {
+        documents.update(idx, {
+          document: { name, uri, size, type },
+          encrypted: {} as any,
+        });
+      }
     } catch (error) {}
   };
 
   const handleAddDocumentField = () => {
     const documentLenght = documents.fields.length;
     if (documentLenght < 6) {
-      documents.append(null);
+      documents.append({ document: { name: "" } } as TDocumentBuffer);
     } else {
       toast.warning("Maximum 6 documents allowed");
     }
+  };
+
+  const handleRemoveDocument = (idx: number) => {
+    if (documents.fields.length === 1) {
+      toast.warning("You cannot remove the last document");
+      return;
+    }
+    documents.remove(idx);
   };
 
   return (
@@ -67,14 +87,14 @@ const Document = () => {
 
       <ScrollView showsVerticalScrollIndicator={false}>
         <View className="gap-4" testID="file-upload-screen">
-          {documents.fields.map((file, idx) => (
+          {documents.fields.map(({ document, encrypted }, idx) => (
             <Controller
               key={idx}
               control={control}
               name={`documents.${idx}`}
               rules={{
                 validate: (value) =>
-                  value?.name?.trim() ? true : "Document is required",
+                  value?.document.name?.trim() ? true : "Document is required",
               }}
               render={({ fieldState: { error } }) => (
                 <View>
@@ -82,10 +102,14 @@ const Document = () => {
                     onPress={() => handleOnPick(idx)}
                     className="bg-card dark:bg-card-dark gap-2 h-24 rounded-lg justify-between flex-row p-4 items-center border-2 border-border border-dashed dark:border-border-dark/30"
                   >
-                    {file.name ? (
+                    {document?.name ? (
                       <View className="flex-row gap-2 items-center flex-1">
                         <Icon
-                          name={getFileType(file.type)}
+                          name={
+                            encrypted.version
+                              ? "lock"
+                              : getFileType(document.type)
+                          }
                           size={24}
                           isThemed
                         />
@@ -94,7 +118,7 @@ const Document = () => {
                           numberOfLines={1}
                           ellipsizeMode="middle"
                         >
-                          {file.name}
+                          {document?.name}
                         </Text>
                       </View>
                     ) : (
@@ -111,7 +135,7 @@ const Document = () => {
                       </View>
                     )}
                     <IconButton
-                      onPress={() => documents.remove(idx)}
+                      onPress={() => handleRemoveDocument(idx)}
                       name="close-circle-outline"
                       variant="theme"
                       size="lg"
@@ -130,6 +154,14 @@ const Document = () => {
           ))}
         </View>
       </ScrollView>
+      {documents.fields.every(({ document }) => document.name) && (
+        <Button onPress={() => setIsEncryptionBoxVisible(true)} variant="ghost">
+          Encrypt Documents
+        </Button>
+      )}
+      {isEncryptionBoxVisible && (
+        <EncryptDocuments setVisible={setIsEncryptionBoxVisible} />
+      )}
     </View>
   );
 };
