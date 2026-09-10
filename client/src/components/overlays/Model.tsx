@@ -7,7 +7,7 @@ import Hr from "@components/layout/Hr";
 import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
 
 type Props = {
-  height: "h-2/3" | "h-1/2" | "h-2/4" | "h-3/4";
+  height: "h-2/3" | "h-1/2" | "h-2/4" | "h-3/4" | "auto";
   title: string;
   visible: boolean;
   setVisible: React.Dispatch<React.SetStateAction<boolean>>;
